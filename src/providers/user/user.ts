@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
 
 import { Api } from '../api/api';
 
+
+
 /**
  * Most apps have the concept of a User. This is a simple provider
  * with stubs for login/signup/etc.
@@ -26,6 +28,12 @@ import { Api } from '../api/api';
 @Injectable()
 export class User {
   _user: any;
+
+
+  Lang = {
+    EN: 'en',
+    FR: 'fr'
+  };
 
   constructor(public api: Api) { }
 
@@ -80,5 +88,13 @@ export class User {
    */
   _loggedIn(resp) {
     this._user = resp.user;
+  }
+
+  setLang(lang: string) {
+    console.log(lang);
+  }
+
+  getLang() {
+
   }
 }
