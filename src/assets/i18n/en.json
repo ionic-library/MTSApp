@@ -1,10 +1,13 @@
 {
+  "LOGIN_PREAMBLE": "You have chosen to complete your report in English. Please note that you will not be able to change to French once you start your online session. If you wish to change language please do so before you begin.",
   "BACK_BUTTON_TEXT": "Back",
 
-  "NAME": "Name",
-  "EMAIL": "Email",
-  "USERNAME": "Username",
-  "PASSWORD": "Password",
+  "SIN": "Numéro d'assurance sociale (NAS) :",
+  "AC": "Code d'accès :",
+  "PROVINCE_RESIDENCE": "Province de résidence :",
+  "CONTINUE_BUTTON": "Continue",
+  "LOGIN_TITLE": "Login",
+
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
@@ -42,7 +45,6 @@
 
   "WELCOME_TITLE": "Welcome",
 
-  "LOGIN_TITLE": "Sign in",
   "LOGIN_ERROR": "Unable to sign in. Please check your account information and try again.",
   "LOGIN_BUTTON": "Sign in",
   "SIGNUP_TITLE": "Sign up",
