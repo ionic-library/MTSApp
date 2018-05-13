@@ -1,6 +1,9 @@
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+export class TranslateMock{
+
+};
 export class PlatformMock {
   public ready(): Promise<string> {
     return new Promise((resolve) => {
