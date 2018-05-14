@@ -7,10 +7,10 @@ import { IonicPage, NavController } from 'ionic-angular';
 */
 @IonicPage()
 @Component({
-  selector: 'page-grid',
-  templateUrl: 'grid.html'
+  selector: 'page-home',
+  templateUrl: 'home.html'
 })
-export class GridPage {
+export class HomePage {
 
   constructor(public navCtrl: NavController) { }
   
