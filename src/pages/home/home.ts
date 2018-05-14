@@ -13,5 +13,9 @@ import { IonicPage, NavController } from 'ionic-angular';
 export class HomePage {
 
   constructor(public navCtrl: NavController) { }
+
+  SearchClick() {
+    this.navCtrl.push('SearchPage');
+  }
   
 }
