@@ -1,9 +1,46 @@
 page-home {
-  ion-grid {
-    margin-top: 1rem;
+
+  ion-header {
+    .button-inner {
+      color: white;
+    }
+
+    .toolbar {
+      position: absolute;
+
+      .toolbar-background {
+        background: transparent;
+      }
+
+      .toolbar-title {
+        color: white;
+      }
+    }
+    
+    #home-help-button {
+      padding-right: 0.8rem;
+    }
   }
+
+
+  .curved-img {
+    border-radius: 0 0 40% 40%;
+  }
+
+  .scroll-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  #home-page-show-more-container {
+    padding: 0 1.8rem 0 1.8rem;
+  }
+
+  ion-grid {
+    // margin-top: 1rem;
+  }
+
   ion-col div {
-    background-color: #f0f5ff;
     border: 1px solid #e6e9ee;
     border-radius: 2px;
     padding: 5px;
@@ -19,5 +56,17 @@ page-home {
   p {
     padding: 10px 0 0 0 !important;
     margin: 0;
+  }
+}
+
+.service-select {
+  border-radius: 0;
+}
+
+@media only screen and (min-width: 700px) {
+  #header-image-container {
+    margin-left: 0;
+    margin-top: -20%;
+    width: 80rem;
   }
 }
