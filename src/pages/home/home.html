@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name='menu'></ion-icon>
+    </button>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-icon name="notifications"></ion-icon>
+          <p>My Notifications</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-icon name="list-box"></ion-icon>
+          <p>Benefit Finder</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+            <ion-icon name="search" (click)="SearchClick()"></ion-icon>
+            <p>{{ 'SEARCH_TITLE' | translate }}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div>
+          <ion-icon name="paper-plane"></ion-icon>
+          <p>My EI Report</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-icon name="globe"></ion-icon>
+          <p>Service Canada Locations</p>
+        </div>
+      </ion-col>
+      <ion-col>
+        <div>
+          <ion-icon name="people"></ion-icon>
+          <p>Live Events</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <button ion-button block>Show More</button>
+
+  <!-- <div class="row">
+    <button ion-button class="col button button-positive">button 1</button>
+    <button ion-button class="col button button-balanced">button 2</button>
+  </div>
+  <div class="row">
+    <button ion-button class="col button button-energized">button 3</button>
+    <button ion-button class="col button button-royal">button 4</button>
+  </div> -->
+</ion-content>

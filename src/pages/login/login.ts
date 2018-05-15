@@ -38,9 +38,11 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.setRoot(MainPage)
+      this.navCtrl.popToRoot();
     }, (err) => {
-      this.navCtrl.push(MainPage);
+      this.navCtrl.setRoot(MainPage)
+      this.navCtrl.popToRoot();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
