@@ -1,12 +1,42 @@
 page-home {
 
+  ion-header {
+    .button-inner {
+      color: white;
+    }
+
+    .toolbar {
+      position: absolute;
+  
+      .toolbar-background {
+        background: transparent;
+      }
+      .toolbar-title {
+        color: white;
+      }
+    }
+  }
+
+  #header-image-container {
+    margin-top: -20%;
+    margin-left: -46%;
+    width: 80rem;
+  }
+
+  img {
+    object-fit: contain;
+    object-position: 0 20rem;
+    margin-top: -30%;
+    border-radius: 50%;
+  }
+
   .scroll-content {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
 
-  img {
-    width: 500vw;
+  #home-page-show-more-container {
+    padding: 0 1.8rem 0 1.8rem;
   }
 
   ion-grid {
