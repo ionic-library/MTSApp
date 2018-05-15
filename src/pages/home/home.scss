@@ -1,7 +1,18 @@
 page-home {
+
+  .scroll-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  img {
+    width: 500vw;
+  }
+
   ion-grid {
     // margin-top: 1rem;
   }
+
   ion-col div {
     border: 1px solid #e6e9ee;
     border-radius: 2px;
