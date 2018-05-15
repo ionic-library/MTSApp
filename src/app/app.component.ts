@@ -44,6 +44,9 @@ export class MyApp {
     { title: 'Menu', component: 'MenuPage' },
     { title: 'Settings', component: 'SettingsPage' },
     { title: 'Search', component: 'SearchPage' },
+
+    { title: 'Confirmation', component: 'ConfirmationPage'},
+
     { title: 'Questionaire', component: 'QuestionairePage' }
    
   ]

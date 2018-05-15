@@ -1,3 +1,72 @@
-page-home {
+page-confirmation{
+    .icon-container{
+        text-align: center;
+        vertical-align: center;
+        padding-top: 40%;
+    }
 
+    .button-container{
+        text-align: center;
+        vertical-align: baseline;
+    }
+    .menu{
+        color: #fff;
+    }
+    .checkmark{
+        font-size: 8rem;
+        color: #0f71cf;
+        
+    }
+
+    .start{
+        position: absolute;
+        left: 0;
+    }
+    .p{
+        font-family: OpenSans, sans-serif;
+        font-size: 21px;
+        font-weight: 600;
+        text-align: center;
+    }
+    ion-title{
+        text-align: center;
+        color: white;
+        background-color: #31485b;
+       
+    }
+    .toolbar-title{
+        color: white;
+        font-family: OpenSans, sans-serif;
+        min-height: 100%;
+        margin-top: 2.5rem;
+        font-size: 15px;
+    }
+    .button-inner{
+        font-family: OpenSans, sans-serif;
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .back{
+        padding-left: 5rem;
+        color: #fff;
+        font-size: 20px;
+        width: 14.5px;
+        margin-right: 10rem;
+        left: 0;
+    }
+
+    .help{
+        padding-right: 3rem;
+        color: #fff;
+        font-size: 22.5px;
+    }
+
+    .home-button{
+    margin-bottom: 10%;
+     padding-right: 10%;
+     padding-left: 10%;
+
+    }
+    
 }
