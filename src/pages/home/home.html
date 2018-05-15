@@ -9,52 +9,56 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-grid>
+<ion-content>
+  <div id="header-image-container">
+    <img src="../../assets//img/arctic-aurora-aurora-borealis-258112.jpg" alt="Header image">
+  </div>
+  <ion-searchbar padding placeholder="How Can We Help?"></ion-searchbar>
+  <ion-grid padding>
     <ion-row>
-      <ion-col>
-        <div>
+      <ion-col style="padding-right: 0; padding-bottom: 0;">
+        <div class="service-select" style="border-left: none; border-top: none;">
           <ion-icon name="notifications"></ion-icon>
           <p>My Notifications</p>
         </div>
       </ion-col>
-      <ion-col>
-        <div>
+      <ion-col style="padding-left: 0; padding-bottom: 0; padding-right: 0;">
+        <div class="service-select" style="border-top: none;">
           <ion-icon name="list-box"></ion-icon>
           <p>Benefit Finder</p>
         </div>
       </ion-col>
-      <ion-col>
-        <div>
+      <ion-col style="padding-left: 0; padding-bottom: 0;">
+        <div class="service-select" style="border-top: none; border-right: none;">
             <ion-icon name="search" (click)="SearchClick()"></ion-icon>
             <p>{{ 'SEARCH_TITLE' | translate }}</p>
         </div>
       </ion-col>
     </ion-row>
     <ion-row>
-      <ion-col>
-        <div>
+      <ion-col style="padding-top: 0; padding-right: 0;">
+        <div class="service-select" style="border-left: none; border-bottom: none;">
           <ion-icon name="paper-plane"></ion-icon>
           <p>My EI Report</p>
         </div>
       </ion-col>
-      <ion-col>
-        <div>
+      <ion-col style="padding-left: 0; padding-top: 0; padding-right: 0;">
+        <div class="service-select" style="border-bottom: none;">
           <ion-icon name="globe"></ion-icon>
           <p>Service Canada Locations</p>
         </div>
       </ion-col>
-      <ion-col>
-        <div>
+      <ion-col style="padding-left: 0; padding-top: 0;">
+        <div class="service-select" style="border-bottom: none; border-right: none;">
           <ion-icon name="people"></ion-icon>
           <p>Live Events</p>
         </div>
       </ion-col>
     </ion-row>
   </ion-grid>
-
-  <button ion-button block>Show More</button>
-
+  <div id="home-page-show-more-container">
+    <button ion-button block>Show More</button>
+  </div>
   <!-- <div class="row">
     <button ion-button class="col button button-positive">button 1</button>
     <button ion-button class="col button button-balanced">button 2</button>
