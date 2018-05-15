@@ -10,8 +10,10 @@ import {
   PlatformMock,
   StatusBarMock,
   SplashScreenMock,
-  TranslateMock
+  TranslateMock,
+  SettingsMock
 } from '../../test-config/mocks-ionic';
+import { Settings } from '../providers/settings/settings';
 
 describe('MyApp Component', () => {
   let fixture;
@@ -27,7 +29,8 @@ describe('MyApp Component', () => {
         { provide: StatusBar, useClass: StatusBarMock },
         { provide: SplashScreen, useClass: SplashScreenMock },
         { provide: Platform, useClass: PlatformMock },
-        { provide: TranslateService, useClass: TranslateMock}
+        { provide: TranslateService, useClass: TranslateMock},
+        { provide: Settings, useClass: SettingsMock}
       ]
     })
   }));
