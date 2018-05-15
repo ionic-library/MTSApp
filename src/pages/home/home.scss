@@ -11,9 +11,14 @@ page-home {
       .toolbar-background {
         background: transparent;
       }
+
       .toolbar-title {
         color: white;
       }
+    }
+    
+    #home-help-button {
+      padding-right: 0.8rem;
     }
   }
 
@@ -56,4 +61,12 @@ page-home {
 
 .service-select {
   border-radius: 0;
+}
+
+@media only screen and (min-width: 700px) {
+  #header-image-container {
+    margin-left: 0;
+    margin-top: -20%;
+    width: 80rem;
+  }
 }
