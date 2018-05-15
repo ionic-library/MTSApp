@@ -19,6 +19,9 @@
 
   "MAP_TITLE": "Carte",
 
+  
+  "QUESTIONAIRE_TITLE":"Mobile Reporting Service",
+
   "TUTORIAL_SLIDE1_TITLE": "Bienvenue dans le kit de démarrage Ionic Super Starter",
   "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> est un kit complet pour démarrer sur Ionic. Il repose sur les meilleures pratiques et implémente de nombreux types de pages.",
 
