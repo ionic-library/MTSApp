@@ -14,13 +14,29 @@ export class LoginPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { sin: string, 
+  account: { sin: string,
              accesscode: string,
              residence: string } = {
     sin : "",
     accesscode: "",
     residence: "ON"
   };
+
+  public provinces = [
+    "AB",
+    "BC",
+    "MB",
+    "NB",
+    "NL",
+    "NS",
+    "ON",
+    "PE",
+    "QC",
+    "SK",
+    "NT",
+    "NU",
+    "YT"
+  ]
 
   // Our translated text strings
   private loginErrorString: string;

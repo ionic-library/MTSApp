@@ -1,13 +1,11 @@
-import { StatusBar } from '@ionic-native/status-bar';
-import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from "@ionic-native/status-bar";
+import { SplashScreen } from "@ionic-native/splash-screen";
 
-export class TranslateMock{
-
-};
+export class SettingsMock {}
 export class PlatformMock {
   public ready(): Promise<string> {
-    return new Promise((resolve) => {
-      resolve('READY');
+    return new Promise(resolve => {
+      resolve("READY");
     });
   }
 
@@ -16,7 +14,7 @@ export class PlatformMock {
   }
 
   public registerBackButtonAction(fn: Function, priority?: number): Function {
-    return (() => true);
+    return () => true;
   }
 
   public hasFocus(ele: HTMLElement): boolean {
@@ -33,10 +31,10 @@ export class PlatformMock {
 
   public getElementComputedStyle(container: any): any {
     return {
-      paddingLeft: '10',
-      paddingTop: '10',
-      paddingRight: '10',
-      paddingBottom: '10',
+      paddingLeft: "10",
+      paddingTop: "10",
+      paddingRight: "10",
+      paddingBottom: "10"
     };
   }
 
@@ -44,8 +42,12 @@ export class PlatformMock {
     return callback;
   }
 
-  public registerListener(ele: any, eventName: string, callback: any): Function {
-    return (() => true);
+  public registerListener(
+    ele: any,
+    eventName: string,
+    callback: any
+  ): Function {
+    return () => true;
   }
 
   public win(): Window {
@@ -65,7 +67,7 @@ export class PlatformMock {
   }
 
   public getActiveElement(): any {
-    return document['activeElement'];
+    return document["activeElement"];
   }
 }
 
@@ -82,37 +84,33 @@ export class SplashScreenMock extends SplashScreen {
 }
 
 export class NavMock {
- 
   public pop(): any {
     return new Promise(function(resolve: Function): void {
       resolve();
     });
   }
- 
+
   public push(): any {
     return new Promise(function(resolve: Function): void {
       resolve();
     });
   }
- 
+
   public getActive(): any {
     return {
-      'instance': {
-        'model': 'something',
-      },
+      instance: {
+        model: "something"
+      }
     };
   }
- 
+
   public setRoot(): any {
     return true;
   }
 
   public registerChildNav(nav: any): void {
-    return ;
+    return;
   }
-
 }
 
-export class DeepLinkerMock {
-
-}
+export class DeepLinkerMock {}
