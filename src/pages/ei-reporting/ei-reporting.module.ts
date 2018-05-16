@@ -4,7 +4,7 @@ import { EiReportingPage } from './ei-reporting';
 
 @NgModule({
   declarations: [
-    EiReportingPage,
+    EiReportingPage
   ],
   imports: [
     IonicPageModule.forChild(EiReportingPage),
