@@ -18,19 +18,19 @@
     <ion-row>
       <ion-col style="padding-right: 0; padding-bottom: 0;">
         <div class="service-select" style="border-left: none; border-top: none;">
-          <ion-icon name="notifications"></ion-icon>
+          <ion-icon name="notifications" (click)="openPage('myNotification')"></ion-icon>
           <p>My Notifications</p>
         </div>
       </ion-col>
       <ion-col style="padding-left: 0; padding-bottom: 0; padding-right: 0;">
         <div class="service-select" style="border-top: none;">
-          <ion-icon name="list-box"></ion-icon>
+          <ion-icon name="list-box" (click)="openPage('benefitFinder')"></ion-icon>
           <p>Benefit Finder</p>
         </div>
       </ion-col>
       <ion-col style="padding-left: 0; padding-bottom: 0;">
         <div class="service-select" style="border-top: none; border-right: none;">
-            <ion-icon name="search" (click)="SearchClick()"></ion-icon>
+            <ion-icon name="search" (click)="openPage('jobSearch')"></ion-icon>
             <p>{{ 'SEARCH_TITLE' | translate }}</p>
         </div>
       </ion-col>
@@ -38,20 +38,20 @@
     <ion-row>
       <ion-col style="padding-top: 0; padding-right: 0;">
         <div class="service-select" style="border-left: none; border-bottom: none;">
-          <ion-icon name="paper-plane"></ion-icon>
+          <ion-icon name="paper-plane" (click)="openPage('eiReport')"></ion-icon>
           <p>My EI Report</p>
         </div>
       </ion-col>
       <ion-col style="padding-left: 0; padding-top: 0; padding-right: 0;">
         <div class="service-select" style="border-bottom: none;">
-          <ion-icon name="globe"></ion-icon>
+          <ion-icon name="globe" (click)="openPage('scLocations')"></ion-icon>
           <p>Service Canada Locations</p>
         </div>
       </ion-col>
       <ion-col style="padding-left: 0; padding-top: 0;">
         <div class="service-select" style="border-bottom: none; border-right: none;">
-          <ion-icon name="people"></ion-icon>
-          <p>Live Events</p>
+          <ion-icon name="people" (click)="openPage('lifeEvents')"></ion-icon>
+          <p>Life Events</p>
         </div>
       </ion-col>
     </ion-row>
