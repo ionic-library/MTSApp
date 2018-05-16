@@ -65,10 +65,13 @@ page-confirmation{
     .checkmark{
         font-size: 8rem;
         color: #0f71cf;
+        display: block;
         
     }
-    .grid{
-        margin-top: 5%;
+   
+
+    .col{
+        height: 100%;
     }
 
     
@@ -77,6 +80,10 @@ page-confirmation{
         font-size: 21px;
         font-weight: 600;
         text-align: center;
+        float: left;
+        margin-top: 0;
+        margin-bottom: 0;
+        color: #0a1a2b;
     }
   
 
@@ -90,22 +97,12 @@ page-confirmation{
     
 
     .home-button{
-    margin-bottom: 10%;
+    margin-bottom: 5%;
      padding-right: 10%;
      padding-left: 10%;
 
     }
 
-    .icon-container{
-        text-align: center;
-        vertical-align: center;
-        padding-top: 40%;
-    }
-
-    .button-container{
-        text-align: center;
-        vertical-align: baseline;
-    }
     
 }
 
