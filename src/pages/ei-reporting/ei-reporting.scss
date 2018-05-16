@@ -23,7 +23,7 @@ page-ei-reporting {
     min-height: 100%;
     font-size: 2.5vh;
   }
-  ion-title {
+  .page-title {
     text-align: center;
     color: white;
   }
@@ -55,14 +55,14 @@ page-ei-reporting {
   .item-block:last-child {
     border-bottom: none;
   }
-  ion-item {
-    h2 {
+  .ei-report-item {
+    .ei-report-header {
       font-weight: 450 !important;
       color: #0f71c4 !important;
     }
-    button {
+    .start-report-button {
         height: 6.5vh !important;
-        width: 20vh;
+        width: 35vw;
     }
     .good-status {
         font-size: 3vh;
@@ -70,7 +70,7 @@ page-ei-reporting {
         padding-top: .5vh;
     }
   }
-  ion-card-header {
+  .ei-report-card-header {
     background-color: #4e5e6f;
     color: #fff !important;
     font-weight: 400;
