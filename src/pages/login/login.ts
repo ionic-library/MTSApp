@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
-import { User } from '../../providers';
+import { User, ProvincesProvider} from '../../providers';
 import { MainPage } from '../';
 
 @IonicPage()
@@ -10,11 +10,12 @@ import { MainPage } from '../';
   selector: 'page-login',
   templateUrl: 'login.html'
 })
+
 export class LoginPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
-  account: { sin: string, 
+  account: { sin: string,
              accesscode: string,
              residence: string } = {
     sin : "",
@@ -22,13 +23,15 @@ export class LoginPage {
     residence: "ON"
   };
 
+
   // Our translated text strings
   private loginErrorString: string;
 
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    public provinces: ProvincesProvider) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;

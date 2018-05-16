@@ -1,4 +1,17 @@
 {
+  "AB": "Alberta",
+  "BC": "Colombie-Britannique",
+  "MB": "Manitoba",
+  "NB": "Nouveau-Brunswick",
+  "NL": "Terre-Neuve-et-Labrador",
+  "NS": "Nouvelle-Écosse",
+  "ON": "Ontario",
+  "PE": "Île-du-Prince-Édouard",
+  "QC": "Québec",
+  "SK": "Saskatoon",
+  "NT": "Territoires du Nord-Ouest",
+  "NU": "Nunavut",
+  "YT": "Yukon",
 
   "LOGIN_PREAMBLE": "Vous avez choisi de remplir votre déclaration en français. Veuillez noter que vous ne pourrez pas changer vers l'anglais après que vous aurez débuté votre session en direct. Si vous désirez changer la langue, veuillez le faire maintenant.",
   "LOGIN": "Connexion",
@@ -7,7 +20,7 @@
   "PROVINCE_RESIDENCE": "Province de résidence :",
   "CONTINUE_BUTTON": "Poursuivre",
   "LOGIN_TITLE": "Ouverture de session",
-  
+
   "NAME": "Nom",
   "PASSWORD": "Mot de passe",
   "EMAIL": "E-mail",
@@ -19,7 +32,7 @@
 
   "MAP_TITLE": "Carte",
 
-  
+
   "QUESTIONAIRE_TITLE":"Mobile Reporting Service",
 
   "TUTORIAL_SLIDE1_TITLE": "Bienvenue dans le kit de démarrage Ionic Super Starter",
