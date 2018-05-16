@@ -1,61 +1,82 @@
 page-ei-reporting {
+  /********* NAV BAR CSS STARTS HERE **********/
+  .menu {
+    color: #fff;
+  }
+  .start {
+    position: absolute;
+    left: 0;
+  }
+  .toolbar-background {
+    background-color: #31485b;
+  }
+  .toolbar-title-md {
+    padding: 0 6px;
+    margin-top: 0px;
+    font-weight: 600;
+  }
+  .toolbar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 100%;
+    font-size: 2.5vh;
+  }
+  ion-title {
+    text-align: center;
+    color: white;
+  }
+  .back-button {
+    color: #fff;
+  }
+  .back {
+    //padding-left: 5rem;
+    margin-left: 5rem;
+    color: #fff;
+    font-size: 20px;
+    width: 14.5px;
+    margin-right: 10rem;
+    left: 0;
+  }
+  .help {
+    //padding-right: 3rem;
+    margin-right: 3rem;
+    color: #fff;
+    font-size: 22.5px;
+  }
+  /********* NAV BAR CSS ENDS HERE **********/
 
-    /********* NAV BAR CSS STARTS HERE **********/
+  /************* CARD CSS *******************/
 
-    .menu{
-        color: #fff;
+  .item-block {
+    border-bottom: 1px solid #BBBB
+  }
+  .item-block:last-child {
+    border-bottom: none;
+  }
+  ion-item {
+    h2 {
+      font-weight: 450 !important;
+      color: #0f71c4 !important;
     }
-    
-    .start{
-        position: absolute;
-        left: 0;
+    button {
+        height: 6.5vh !important;
+        width: 20vh;
     }
-    
-    .toolbar-background{
-        background-color: #31485b; 
+    .good-status {
+        font-size: 3vh;
+        color: #49a60e;
+        padding-top: .5vh;
     }
-
-    .toolbar-title-md {
-        padding: 0 6px;
-        margin-top: 0px;
-        font-weight: 600;
-    }
-
-    .toolbar-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        min-height: 100%;
-        font-size: 2.5vh;
-    }
-
-    ion-title{
-        text-align: center;
-        color: white;
-    }
-
-    .back-button {
-        color: #fff;
-    }
-
-    .back{
-        //padding-left: 5rem;
-        margin-left: 5rem;
-        color: #fff;
-        font-size: 20px;
-        width: 14.5px;
-        margin-right: 10rem;
-        left: 0;
-    }
-
-    .help{
-        //padding-right: 3rem;
-        margin-right: 3rem;
-        color: #fff;
-        font-size: 22.5px;
-    }
-
-    /********* NAV BAR CSS ENDS HERE **********/
-
+  }
+  ion-card-header {
+    background-color: #4e5e6f;
+    color: #fff !important;
+    font-weight: 400;
+  }
+  .item-inner {
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+  }
 }
