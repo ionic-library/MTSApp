@@ -27,4 +27,7 @@ export class EiReportingPage {
     console.log('ionViewDidLoad EiReportingPage');
   }
 
+  startReport() {
+    this.navCtrl.push('QuestionairePage');
+  }
 }

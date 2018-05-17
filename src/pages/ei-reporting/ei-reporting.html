@@ -42,7 +42,7 @@
         <p *ngIf="report.dueDate !== 'Due Tomorrow'" class="ei-report-duedate">
           {{ report.dueDate }}
         </p>
-        <button *ngIf="report.status === 'new'" ion-button item-right class="start-report-button">Submit Report</button>
+        <button *ngIf="report.status === 'new'" (click)="startReport()" ion-button item-right class="start-report-button">Submit Report</button>
         <p *ngIf="report.status === 'Submitted'" item-right class="status">Submitted</p>
         <p *ngIf="report.status === 'Approved'" item-right class="status">Approved</p>
         <ion-icon *ngIf="report.status === 'Approved' || 'Submitted' && report.status !== 'new'" item-right class="good-status" name="checkmark-circle"></ion-icon>
