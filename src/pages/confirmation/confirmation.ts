@@ -10,4 +10,14 @@ export class ConfirmationPage {
 
   constructor(public navCtrl: NavController) { }
 
+  openPage(page) {
+    console.log(page);
+    switch (page) {
+      case 'home':
+        this.navCtrl.push('HomePage')
+        break;
+     
+
+}
+  }
 }
