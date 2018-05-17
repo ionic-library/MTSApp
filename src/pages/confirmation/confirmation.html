@@ -1,16 +1,53 @@
+
 <ion-header>
+  
   <ion-navbar>
-    <ion-title>
-      Confirmation
-    </ion-title>
-  </ion-navbar>
+      <ion-buttons class="start" start>
+        <ion-icon class="back" name="arrow-back"></ion-icon>
+      </ion-buttons> 
+
+      <button ion-button menuToggle icon-only>
+        <ion-icon class="menu" name='menu'></ion-icon>
+      </button>
+    
+  <ion-title>Report Submitted
+  </ion-title>
+    
+  <ion-buttons end>
+      <ion-icon class="help" name="help-circle"></ion-icon>
+  </ion-buttons>
+
+  </ion-navbar> 
+
 </ion-header>
 
+
 <ion-content padding>
-  <p>
-    This is a perfect starting point for a page with primarily text content. The body is padded nicely and ready for prose.
-  </p>
+            <!-- <div class="icon-container" style="vertical-align: center;">
+                <ion-icon class="checkmark" name="checkmark-circle"></ion-icon>
+                <p>
+                  Thanks for submitting your report.
+                </p>
+              </div>  -->
+
+
+              <ion-grid class="grid" style="height: 45%;">
+                  <ion-row justify-content-center align-items-end style="height:100%">            
+                      <ion-icon class="checkmark" name="checkmark-circle" style="display:block; margin-top:5%"></ion-icon>
+                    </ion-row>      
+              </ion-grid>
+              <ion-grid style="height:30%">
+                  <ion-row justify-content-center align-items-start style="height:100%;">
+                      <p class="p" style="display: block" > Thanks for submitting your report.</p>
+                  </ion-row>   
+              </ion-grid>
+              <ion-grid style="height:20%">
+                <ion-row justify-content-center align-items-end style="height:100%;">
+                  <button class="Rectangle-3" ion-button block>Return to my EI Reporting Dashboard</button>
+                </ion-row>   
+            </ion-grid>
 </ion-content>
+
 
 
 

@@ -1,0 +1,82 @@
+page-ei-reporting {
+  /********* NAV BAR CSS STARTS HERE **********/
+  .menu {
+    color: #fff;
+  }
+  .start {
+    position: absolute;
+    left: 0;
+  }
+  .toolbar-background {
+    background-color: #31485b;
+  }
+  .toolbar-title-md {
+    padding: 0 6px;
+    margin-top: 0px;
+    font-weight: 600;
+  }
+  .toolbar-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-height: 100%;
+    font-size: 2.5vh;
+  }
+  .page-title {
+    text-align: center;
+    color: white;
+  }
+  .back-button {
+    color: #fff;
+  }
+  .back {
+    //padding-left: 5rem;
+    margin-left: 5rem;
+    color: #fff;
+    font-size: 20px;
+    width: 14.5px;
+    margin-right: 10rem;
+    left: 0;
+  }
+  .help {
+    //padding-right: 3rem;
+    margin-right: 3rem;
+    color: #fff;
+    font-size: 22.5px;
+  }
+  /********* NAV BAR CSS ENDS HERE **********/
+
+  /************* CARD CSS *******************/
+
+  .item-block {
+    border-bottom: 1px solid #BBBB
+  }
+  .item-block:last-child {
+    border-bottom: none;
+  }
+  .ei-report-item {
+    .ei-report-header {
+      font-weight: 450 !important;
+      color: #0f71c4 !important;
+    }
+    .start-report-button {
+        height: 6.5vh !important;
+        width: 35vw;
+    }
+    .good-status {
+        font-size: 3vh;
+        color: #49a60e;
+        padding-top: .5vh;
+    }
+  }
+  .ei-report-card-header {
+    background-color: #4e5e6f;
+    color: #fff !important;
+    font-weight: 400;
+  }
+  .item-inner {
+      padding-top: 1.5vh;
+      padding-bottom: 1.5vh;
+  }
+}
