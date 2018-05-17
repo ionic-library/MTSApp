@@ -35,7 +35,13 @@
 
       <ion-item *ngFor="let report of currentReports" class="ei-report-item">
         <h2 class="ei-report-header">{{ report.dateRange }}</h2>
-        <p class="ei-report-duedate">{{ report.dueDate }}</p>
+        <p *ngIf="report.dueDate === 'Due Tomorrow'" class="ei-report-duedate-alert">
+          <ion-icon class="alert-due-date" name="alert"></ion-icon>
+          {{ report.dueDate }}
+        </p>
+        <p *ngIf="report.dueDate !== 'Due Tomorrow'" class="ei-report-duedate">
+          {{ report.dueDate }}
+        </p>
         <button *ngIf="report.status === 'new'" ion-button item-right class="start-report-button">Submit Report</button>
         <p *ngIf="report.status === 'Submitted'" item-right class="status">Submitted</p>
         <p *ngIf="report.status === 'Approved'" item-right class="status">Approved</p>
