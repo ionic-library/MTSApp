@@ -1,0 +1,50 @@
+<!--
+  Generated template for the IssueWithReportPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  
+  <ion-navbar>
+      <ion-buttons class="start" start>
+        <ion-icon class="back" name="arrow-back"></ion-icon>
+      </ion-buttons> 
+
+      <button ion-button menuToggle icon-only>
+        <ion-icon class="menu" name='menu'></ion-icon>
+      </button>
+    
+  <ion-title>Issue With Report
+  </ion-title>
+    
+  <ion-buttons end>
+      <ion-icon class="help" name="help-circle"></ion-icon>
+  </ion-buttons>
+
+  </ion-navbar> 
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-grid class="grid" style="height: 15%;">
+        <ion-row justify-content-center align-items-end style="height:100%">            
+            <ion-icon class="ex" name="alert"></ion-icon>
+           
+          </ion-row>      
+    </ion-grid>
+    <ion-grid style="height:30%">
+        <ion-row justify-content-center align-items-start align-self-center style="height:70%; width: 75%; margin: 0 auto;">
+            <p class="p" > Unfortunately, at this time we are not able to complete your online report</p>
+            <p class="p" >In order to continue: </p>
+        </ion-row>   
+    </ion-grid>
+    <ion-grid style="height:20%">
+      <ion-row justify-content-center align-items-end style="height:100%;">
+        <button class="Rectangle-3" ion-button block (click)="openPage('home')">Return to my EI Reporting Dashboard</button>
+      </ion-row>   
+  </ion-grid> 
+
+</ion-content>
