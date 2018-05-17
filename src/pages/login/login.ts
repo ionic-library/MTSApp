@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
-import { User } from '../../providers';
+import { User, ProvincesProvider} from '../../providers';
 import { MainPage } from '../';
 
 @IonicPage()
@@ -10,6 +10,7 @@ import { MainPage } from '../';
   selector: 'page-login',
   templateUrl: 'login.html'
 })
+
 export class LoginPage {
   // The account fields for the login form.
   // If you're using the username field with or without email, make
@@ -22,21 +23,6 @@ export class LoginPage {
     residence: "ON"
   };
 
-  public provinces = [
-    "AB",
-    "BC",
-    "MB",
-    "NB",
-    "NL",
-    "NS",
-    "ON",
-    "PE",
-    "QC",
-    "SK",
-    "NT",
-    "NU",
-    "YT"
-  ]
 
   // Our translated text strings
   private loginErrorString: string;
@@ -44,7 +30,8 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
     public user: User,
     public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+    public translateService: TranslateService,
+    public provinces: ProvincesProvider) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
@@ -57,8 +44,6 @@ export class LoginPage {
       this.navCtrl.setRoot(MainPage)
       this.navCtrl.popToRoot();
     }, (err) => {
-      this.navCtrl.setRoot(MainPage)
-      this.navCtrl.popToRoot();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,

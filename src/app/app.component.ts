@@ -37,7 +37,6 @@ export class MyApp {
     { title: "Tabs", component: "TabsPage" },
     { title: "Cards", component: "CardsPage" },
     { title: "Content", component: "ContentPage" },
-    { title: "Home", component: "HomePage" },
     { title: "Login", component: "LoginPage" },
     { title: "Signup", component: "SignupPage" },
     { title: "Master Detail", component: "ListMasterPage" },

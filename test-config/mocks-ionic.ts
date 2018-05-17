@@ -1,7 +1,13 @@
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
-export class SettingsMock {}
+export class TranslateMock{
+  public setDefaultLang(){ }
+  public getBrowserLang = () => "en";
+};
+export class SettingsMock {
+
+}
 export class PlatformMock {
   public ready(): Promise<string> {
     return new Promise(resolve => {
@@ -113,4 +119,6 @@ export class NavMock {
   }
 }
 
-export class DeepLinkerMock {}
+export class DeepLinkerMock {
+
+}
