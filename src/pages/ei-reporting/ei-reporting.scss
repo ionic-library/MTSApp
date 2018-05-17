@@ -21,7 +21,7 @@ page-ei-reporting {
     justify-content: center;
     color: white;
     min-height: 100%;
-    font-size: 2.5vh;
+    font-size: 1.7rem;
   }
   .page-title {
     text-align: center;
@@ -61,7 +61,7 @@ page-ei-reporting {
       color: #0f71c4 !important;
     }
     .start-report-button {
-        height: 6.5vh !important;
+        height: 11vw !important;
         width: 35vw;
     }
     .good-status {
@@ -78,5 +78,22 @@ page-ei-reporting {
   .item-inner {
       padding-top: 1.5vh;
       padding-bottom: 1.5vh;
+  }
+}
+
+// Media Queries
+page-ei-reporting {
+  @media screen and (min-width: 600px) {
+    .ei-report-item {
+      .start-report-button {
+        height: 8vw !important;
+        width: 35vw;
+      }
+      .good-status {
+        font-size: 5vh;
+        color: #49a60e;
+        padding-top: 1vh;
+      }
+    }
   }
 }
