@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Reports } from '../../mocks/providers/mock-ei-reports';
+import { Report } from '../../models/mockEiReport';
 
 /**
  * Generated class for the EiReportingPage page.
@@ -15,11 +17,17 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class EiReportingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public currentReports: Report[];
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public reports: Reports) {
+    this.currentReports = this.reports.query();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EiReportingPage');
   }
 
+  startReport() {
+    this.navCtrl.push('QuestionairePage');
+  }
 }
