@@ -44,8 +44,6 @@ export class LoginPage {
       this.navCtrl.setRoot(MainPage)
       this.navCtrl.popToRoot();
     }, (err) => {
-      this.navCtrl.setRoot(MainPage)
-      this.navCtrl.popToRoot();
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,
