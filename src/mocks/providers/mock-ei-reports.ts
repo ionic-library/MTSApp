@@ -9,17 +9,23 @@ export class Reports {
   constructor() {
     let reports = [
       {
-        "dateRange": "Week 21/22 Report",
+        "startDate": "2018-07-08",
+        "endDate": "2018-07-14",
+        "schedule": "Week 21/22 Report",
         "dueDate": "Due Tomorrow",
         "status": "new"
       },
       {
-        "dateRange": "Week 19/20 Report",
+        "startDate": "2018-07-01",
+        "endDate": "2018-07-07",
+        "schedule": "Week 19/20 Report",
         "dueDate": "Saturday July 1, 2018",
         "status": "Submitted"
       },
       {
-        "dateRange": "Week 17/18 Report",
+        "startDate": "2018-06-24",
+        "endDate": "2018-06-31",
+        "schedule": "Week 17/18 Report",
         "dueDate": "Saturday June 24, 2018",
         "status": "Approved"
       }
