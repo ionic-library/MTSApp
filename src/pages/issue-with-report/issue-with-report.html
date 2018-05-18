@@ -29,22 +29,33 @@
 
 <ion-content padding>
 
-    <ion-grid class="grid" style="height: 15%;">
+    <ion-grid class="grid" style="height: 17%;">
         <ion-row justify-content-center align-items-end style="height:100%">            
             <ion-icon class="ex" name="alert"></ion-icon>
            
           </ion-row>      
     </ion-grid>
-    <ion-grid style="height:30%">
+    <ion-grid style="height:45%">
         <ion-row justify-content-center align-items-start align-self-center style="height:70%; width: 75%; margin: 0 auto;">
-            <p class="p" > Unfortunately, at this time we are not able to complete your online report</p>
+            <p class="p" > Unfortunately, at this time we are not able to complete your report online</p>
             <p class="p" >In order to continue: </p>
-        </ion-row>   
+        </ion-row>
+        <ion-row justify-content-center align-items-start style="height:20%;">
+            <ion-icon class='call' name="call"></ion-icon>
+        </ion-row>
+        <ion-row justify-content-center align-items-center style="height: 45%; width: 40%; margin: 0 auto;">
+          <p class="p" style="padding-top: 10px;">Call Service Canada at 1-800-206-7218</p>
+        </ion-row> 
+    </ion-grid> 
+    <ion-grid class="grid" style="height: 30%;">
+        <ion-row justify-content-center align-items-center style="height:35%">            
+            <p class="p">or</p>
+           
+          </ion-row>  
+        <ion-row justify-content-center align-items-end style="height:60%">            
+            <ion-icon class="pin" name="pin"></ion-icon>
+          </ion-row> 
+          <ion-row justify-content-center align-items-end style="height:20%">Find a Service Canada location</ion-row>     
     </ion-grid>
-    <ion-grid style="height:20%">
-      <ion-row justify-content-center align-items-end style="height:100%;">
-        <button class="Rectangle-3" ion-button block (click)="openPage('home')">Return to my EI Reporting Dashboard</button>
-      </ion-row>   
-  </ion-grid> 
 
 </ion-content>
