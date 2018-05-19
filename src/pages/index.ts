@@ -9,3 +9,26 @@ export const MainPage = 'HomePage';
 export const Tab1Root = 'ListMasterPage';
 export const Tab2Root = 'SearchPage';
 export const Tab3Root = 'SettingsPage';
+
+export class SitePages {
+    public readonly EiReporting : string = 'EiReportingPage';
+    public readonly Home : string = 'HomePage';
+    public readonly BenefitFinder : string  = 'BenefitFinderPage' ;
+    public readonly JobSearch : string = 'JobSearchPage' ;
+    public readonly LifeEvents : string = 'LifeEventsPage' ;
+    public readonly MyNotifications : string = 'MynotificationsPage' ;
+    public readonly SCCLocations : string = 'ScLocationsPage' ;
+    public readonly Confirmation : string = 'ConfirmationPage';
+    public readonly Questionaire : string = 'QuestionairePage';
+    public readonly EILogin : string = 'LoginPage';
+//     'WelcomePage' ,
+ //    'TabsPage' ,
+  //   'CardsPage' ,
+  //   'ContentPage' ,
+  //   'SignupPage' ,
+  //   'ListMasterPage' ,
+  //   'MenuPage' ,
+  //   'SettingsPage' ,
+  //   'SearchPage' ,
+  //   'IssueWithReportPage'
+}
