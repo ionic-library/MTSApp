@@ -15,11 +15,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class IssueWithReportPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor() { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad IssueWithReportPage');
-  }
+  ionViewDidLoad = () => console.log('ionViewDidLoad IssueWithReportPage');
 
 }

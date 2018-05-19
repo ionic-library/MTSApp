@@ -19,7 +19,8 @@ export class EiReportingPage {
 
   public currentReports: Report[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public reports: Reports) {
+  constructor( private navCtrl: NavController,
+               private reports: Reports) {
     this.currentReports = this.reports.query();
   }
 
@@ -27,8 +28,5 @@ export class EiReportingPage {
     console.log('ionViewDidLoad EiReportingPage');
   }
 
-  startReport(report) {
-    
-    this.navCtrl.push('QuestionairePage', {report});
-  }
+  startReport = (report) => this.navCtrl.push('QuestionairePage', {report});
 }

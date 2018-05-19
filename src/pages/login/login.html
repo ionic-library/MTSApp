@@ -35,7 +35,7 @@
       <ion-item>
         <ion-label stacked>{{ 'PROVINCE_RESIDENCE' | translate}}</ion-label>
         <ion-select [(ngModel)]='account.residence' name="residence">
-          <ion-option *ngFor="let provinceCode of provinces.getProvinces()" value="{{provinceCode}}">{{  provinceCode | translate }}</ion-option>
+          <ion-option *ngFor="let provinceCode of this.provinces.provinceCodes" value="{{provinceCode}}">{{  provinceCode | translate }}</ion-option>
         </ion-select>
       </ion-item>
 

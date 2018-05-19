@@ -13,13 +13,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   selector: 'page-mynotifications',
   templateUrl: 'mynotifications.html',
 })
-export class MynotificationsPage {
+export class MyNotificationsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor() {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad MynotificationsPage');
-  }
+  ionViewDidLoad= () => console.log('Loaded MyNotificationsPage');
 
 }

@@ -1,3 +1,4 @@
+import { SitePages } from '../pages';
 import { Component, ViewChild } from "@angular/core";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
@@ -32,18 +33,18 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Home', component: 'HomePage' },
-    { title: 'Benefit Finder', component: 'BenefitFinderPage' },
-    { title: 'EI Reporting', component: 'EiReportingPage' },
-    { title: 'Job Search', component: 'JobSearchPage' },
-    { title: 'Life Events', component: 'LifeEventsPage' },
-    { title: 'My Notifications', component: 'MynotificationsPage' },
-    { title: 'Service Canada Locations', component: 'ScLocationsPage' },
-    { title: 'Confirmation', component: 'ConfirmationPage'},
-    { title: 'Questionaire', component: 'QuestionairePage' },
-    { title: 'Login', component: 'LoginPage' },
-    { title: 'Settings', component: 'SettingsPage' },
-    { title: 'Issue', component: 'IssueWithReportPage'}
+    { title: 'Home', component: SitePages.Home },
+    { title: 'Benefit Finder', component: SitePages.BenefitFinder },
+    { title: 'EI Reporting', component: SitePages.EiReporting },
+    { title: 'Job Search', component: SitePages.JobSearch },
+    { title: 'Life Events', component: SitePages.LifeEvents },
+    { title: 'My Notifications', component: SitePages.MyNotifications },
+    { title: 'Service Canada Locations', component: SitePages.SCCLocations },
+    { title: 'Confirmation', component: SitePages.Confirmation},
+    { title: 'Questionaire', component: SitePages.Questionaire },
+    { title: 'Login', component: SitePages.EILogin },
+    { title: 'Settings', component: SitePages.Settings },
+    { title: 'Issue', component: SitePages.IssueWithReport}
   ]
 
   constructor(

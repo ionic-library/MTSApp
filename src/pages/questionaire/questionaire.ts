@@ -19,7 +19,8 @@ export class QuestionairePage {
 
     report: Report;
 
-  constructor(public navCtrl: NavController, public translateService: TranslateService, public navParams: NavParams) {
+  constructor( public translate: TranslateService,
+               public navParams: NavParams ) {
     this.report = navParams.get('report');
   }
 

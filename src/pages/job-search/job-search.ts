@@ -15,11 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class JobSearchPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor() { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad JobSearchPage');
-  }
-
+  ionViewDidLoad = () => console.log('ionViewDidLoad JobSearchPage');
 }

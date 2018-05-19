@@ -10,16 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-sc-locations',
-  templateUrl: 'sc-locations.html',
+  selector: 'page-scc-locations',
+  templateUrl: 'scc-locations.html',
 })
-export class ScLocationsPage {
+export class SccLocationsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor() { }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ScLocationsPage');
-  }
+  ionViewDidLoad = () => console.log('Loaded SCCLocationsPage');
 
 }
