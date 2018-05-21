@@ -12,7 +12,7 @@ export enum SitePages {
   LifeEvents = 'LifeEventsPage' ,
   MyNotifications = 'MyNotificationsPage' ,
   Questionaire = 'QuestionairePage',
-  SCCLocations = 'ScLocationsPage' ,
+  SCCLocations = 'SccLocationsPage' ,
   Settings = 'SettingsPage'
 }
 
