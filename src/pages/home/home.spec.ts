@@ -13,24 +13,23 @@ import { NavController } from 'ionic-angular';
 let { expect } = chai;
 chai.use(sinonChai);
 
+function testNav(navCommand : Function,
+                 navCtl : NavController) {
+}
 
 describe("The Home Page", () => {
-  let sut;
+  let sut : ComponentFixture<HomePage>;
   let homePage : HomePage;
+  let navSpy : sinon.SinonSpy;
   let fakeNavController : NavMock;
 
-  testNav(navCommand, page){
-    var navSpy  = sinon.spy(fakeNavController, 'push');
-    navCommand();
-    expect(navSpy).to.have.been.calledWith(SitePages.EILogin);
-  }
   beforeEach(async () => {
     fakeNavController = new NavMock();
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([HomePage]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
-        {provide: NavController, useClass: fakeNavController}
+        {provide: NavController, useValue: fakeNavController}
       ])
     });
   });
@@ -38,6 +37,7 @@ describe("The Home Page", () => {
   beforeEach(() => {
     sut = TestBed.createComponent(HomePage);
     homePage = sut.componentInstance;
+    navSpy  = sinon.spy(fakeNavController, 'push');
   });
 
   //public = () => this.navCtrl.push(SitePages.EiReporting);
@@ -47,8 +47,9 @@ describe("The Home Page", () => {
   // public navigatetoscclocationpage = () => this.navctrl.push(sitepages.scclocations);
   // public navigatetolifeeventspage = () => this.navctrl.push(sitepages.lifeevents);
 
-
   it("Should navigate to the EI Reporting Login Page when navigateToEIReportingPage is called is hit", () => {
-    this.testnav(homePage.navigateToEIReportingPage(), SitePages.EILogin);
+    homePage.navigateToSCCLocationPage();
+    expect(navSpy).to.have.been.calledWith(SitePages.SCCLocations);
   });
+
 });
