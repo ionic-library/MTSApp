@@ -127,7 +127,7 @@ export class NavParamsMock {
     }
     return 'default';
   }
-  static setParams(value){
+  public setParams(value){
     NavParamsMock.returnParam = value;
   }
 }

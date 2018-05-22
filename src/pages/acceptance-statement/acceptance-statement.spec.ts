@@ -16,9 +16,9 @@ describe("The Acceptance Statement Page", () => {
   let sut: ComponentFixture<AcceptanceStatementPage>;
   let acceptanceStatementPage: AcceptanceStatementPage;
   let navSpy: sinon.SinonSpy;
-  let paramSpy: sinon.SinonSpy;
   let fakeNavController: NavMock;
   let fakeNavParams: NavParamsMock;
+  
 
   beforeEach(async () => {
     fakeNavController = new NavMock();
@@ -28,7 +28,6 @@ describe("The Acceptance Statement Page", () => {
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
         { provide: NavController, useValue: fakeNavController },
-        {provide: NavParams, useClass: NavParamsMock},
         { provide: NavParams, useValue: fakeNavParams }
       ])
     });
@@ -38,23 +37,27 @@ describe("The Acceptance Statement Page", () => {
     sut = TestBed.createComponent(AcceptanceStatementPage);
     acceptanceStatementPage = sut.componentInstance;
     navSpy = sinon.spy(fakeNavController, "push");
-
   });
 
-  beforeEach(() => {
-    NavParamsMock.setParams(this.report); //set your own params here
-  })
-
   it("Should navigate to the Questionaire when acceptStatement is called", () => {
+    let report = fakeNavParams.get(0);
     acceptanceStatementPage.acceptStatement(this.report);
     expect(navSpy).to.have.been.calledWith(SitePages.Questionaire);
   });
 
-  it("Should pass Report object to the Questionaire Page when acceptStatement is called", () => {
-    let report = this.report
-    acceptanceStatementPage.acceptStatement(this.report);
-    expect(navSpy).to.have.been.calledWith(SitePages.Questionaire, {report});
+  it("Should call NavParams.get() with 'report' as argument", () => {
+    let navParamsSpy = sinon.spy(fakeNavParams, "get");
+    let page = TestBed.createComponent(AcceptanceStatementPage);
+    acceptanceStatementPage = page.componentInstance;
+    expect(navParamsSpy).to.be.calledWith('report');
   });
+
+  // it("Should receive Report object of type Report", () => {
+  //   let navParamsSpy = sinon.spy(fakeNavParams, "get");
+  //   let page = TestBed.createComponent(AcceptanceStatementPage);
+  //   acceptanceStatementPage = page.componentInstance;
+  //   expect(acceptanceStatementPage.report).to.be.a('Report');
+  // });
 
   it("Should navigate to the Home Page when refuseStatement is called", () => {
     acceptanceStatementPage.refuseStatement(event);
