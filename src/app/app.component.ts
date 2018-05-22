@@ -44,7 +44,8 @@ export class MyApp {
     { title: 'Questionaire', component: 'QuestionairePage' },
     { title: 'Login', component: 'LoginPage' },
     { title: 'Settings', component: 'SettingsPage' },
-    { title: 'Issue', component: 'IssueWithReportPage'}
+    { title: 'Issue', component: 'IssueWithReportPage'},
+    { title: 'LoginFailed', component: 'LoginFailedPage'}
   ]
 
   constructor(
