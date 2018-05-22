@@ -15,17 +15,29 @@ page-home {
       .toolbar-title {
         color: white;
       }
-      
-      .toolbar-background-ios{
+
+      .toolbar-background-ios {
         display: none;
       }
     }
-    
+
     #home-help-button {
       padding-right: 0.8rem;
     }
   }
 
+  @media all and (orientation:portrait) {
+      
+  }
+
+  @media all and (orientation:landscape) {
+    #header-image-container {
+      display: none;
+    }
+    .searchbar{
+      padding-top:60px;
+    }
+  }
 
   .curved-img {
     width: 100%;
