@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
 import { SitePages } from "../index";
+import { Lang } from "../../providers/Lang/Lang";
 
 /**
  * Home page where user selects services from an
@@ -15,7 +16,9 @@ import { SitePages } from "../index";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController) {
+ 
+  }
 
   public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);
   public navigateToSearchPage = () => this.navCtrl.push(SitePages.JobSearch);
@@ -25,5 +28,6 @@ export class HomePage {
   public navigateToLifeEventsPage = () => this.navCtrl.push(SitePages.LifeEvents);
 
   public ionViewDidLoad = () => console.log("Loading Home Page");
+
 
 }
