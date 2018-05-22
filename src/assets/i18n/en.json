@@ -112,11 +112,13 @@
   "CONFIRMATION_P_TEXT": "Thanks for submitting your report.",
   "CONFIRMATION_HOME_BUTTON": "Return to my EI Reporting Dashboard",
 
-  "ISSUE_TITLE": "Issue With Report",
-  "ISSUE_P1_TEXT": "Unfortunately, at this time we are not able to complete your report online",
-  "ISSUE_P2_TEXT": "In order to continue:",
-  "ISSUE_P3_TEXT": "Call Service Canada at 1-800-206-7218",
-  "ISSUE_P4_TEXT": "or",
-  "ISSUE_P5_TEXT": "Find a Service Canada location"
+  "LOGIN_FAILED_TITLE": "Login Failed",
+
+  "ISSUE_PAGE_TITLE": "Issue With Report",
+  "ISSUE_PAGE_P1_TEXT": "Unfortunately, at this time we are not able to complete your report online",
+  "ISSUE_PAGE_P2_TEXT": "In order to continue:",
+  "ISSUE_PAGE_P3_TEXT": "Call Service Canada at 1-800-206-7218",
+  "ISSUE_PAGE_P4_TEXT": "or",
+  "ISSUE_PAGE_P5_TEXT": "Find a Service Canada location"
 
 }
