@@ -57,6 +57,7 @@ page-ei-reporting {
   }
   .ei-report-item {
     .ei-report-header {
+      font-size: 1.75rem;
       font-weight: 450 !important;
       color: #0f71c4 !important;
     }
@@ -101,6 +102,20 @@ page-ei-reporting {
         font-size: 5vh;
         color: #49a60e;
         padding-top: 1vh;
+      }
+    }
+  }
+  // For small screens ie. iPhone 5/SE
+  @media screen and (max-width: 400px){
+    .ei-report-item {
+      .ei-report-header {
+        font-size: 1.15rem;
+      }
+      .ei-report-duedate-alert {
+        font-size: 1.2rem;
+      }
+      .ei-report-duedate {
+        font-size: 1.2rem;
       }
     }
   }
