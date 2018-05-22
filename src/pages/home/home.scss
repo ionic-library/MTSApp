@@ -1,6 +1,6 @@
 page-home {
 
-  ion-header {
+  .page-header {
     .button-inner {
       color: white;
     }
@@ -14,6 +14,10 @@ page-home {
 
       .toolbar-title {
         color: white;
+      }
+      
+      .toolbar-background-ios{
+        display: none;
       }
     }
     
@@ -36,11 +40,7 @@ page-home {
     padding: 0 1.8rem 0 1.8rem;
   }
 
-  ion-grid {
-    // margin-top: 1rem;
-  }
-
-  ion-col div {
+  .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
     border-radius: 2px;
     padding: 5px;
@@ -48,12 +48,12 @@ page-home {
     height: 15rem;
   }
 
-  ion-icon {
+  .service-icon {
     padding-top: 2rem;
     font-size: 6rem;
   }
 
-  p {
+  .service-title {
     padding: 10px 0 0 0 !important;
     margin: 0;
   }
