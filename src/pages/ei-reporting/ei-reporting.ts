@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Reports } from '../../mocks/providers/mock-ei-reports';
 import { Report } from '../../models/mockEiReport';
+import { SitePages } from '..';
 
 /**
  * Generated class for the EiReportingPage page.
@@ -28,5 +29,5 @@ export class EiReportingPage {
     console.log('ionViewDidLoad EiReportingPage');
   }
 
-  startReport = (report) => this.navCtrl.push('QuestionairePage', {report});
+  startReport = (report) => this.navCtrl.push(SitePages.AcceptanceStatement, {report});
 }
