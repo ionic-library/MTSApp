@@ -46,4 +46,31 @@ page-acceptance-statement {
     font-size: 22.5px;
   }
   // Nav Bar CSS ends here
+
+  .statement-section {
+    padding-top: 5vw;
+  }
+  .statement-content {
+    line-height: 3.5vh;
+  }
+  .accept-button {
+    width: 24vh;
+    height: 6.5vh;
+  }
+  .refuse-button {
+    padding-left: 20vw;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  .section-seperator {
+    margin-top: 5vw;
+    margin-bottom: 5vw;
+    border-bottom: solid 1px #dedede;
+    padding: 0px !important;
+  }
+  .faq-link {
+    font-size: 1.75rem;
+    font-weight: 500;
+    line-height: 10vw;
+  }
 }

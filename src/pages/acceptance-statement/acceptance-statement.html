@@ -6,29 +6,46 @@
 -->
 <ion-header>
 
-    <ion-navbar>
-  
-      <button ion-button menuToggle icon-only>
-        <ion-icon class="menu" name='menu'></ion-icon>
-      </button>
-  
-      <ion-title class="page-title">{{this.report.schedule}}
-      </ion-title>
-  
-      <ion-buttons end>
-        <ion-icon class="help" name="help-circle"></ion-icon>
-      </ion-buttons>
-  
-    </ion-navbar>
-  
-  </ion-header>
+  <ion-navbar>
+
+    <button ion-button menuToggle icon-only>
+      <ion-icon class="menu" name='menu'></ion-icon>
+    </button>
+
+    <ion-title class="page-title">{{ this.report.schedule }}
+    </ion-title>
+
+    <ion-buttons end>
+      <ion-icon class="help" name="help-circle"></ion-icon>
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
 
 
 <ion-content padding>
 
   <div class="statement-section">
-    <h1 class="statement-header"></h1>
-    <p class="statement-content"></p>
+    <h1 class="statement-header">Acceptance Statement</h1>
+    <p class="statement-content">I acknowledge that it is my responsibility to read and understand the information contained within each heading presented
+      on this page.</p>
+    <ion-buttons>
+      <button class="accept-button" ion-button>I Accept</button>
+      <a class="refuse-button" href="">I refuse</a>
+    </ion-buttons>
+  </div>
+  <div class="section-seperator" row-no-padding></div>
+  <div class="faq-section">
+    <a class="faq-link" href="">When should you submit your information?</a>
+    <br>
+    <a class="faq-link" href="">When your payment is issued</a>
+    <br>
+    <a class="faq-link" href="">What you need to know to file your report</a>
+    <br>
+    <a class="faq-link" href="">Next steps after completing your report</a>
+    <br>
+    <a class="faq-link" href="">New address and direct deposit information</a>
   </div>
 
 </ion-content>
