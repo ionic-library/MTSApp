@@ -1,4 +1,4 @@
-<ion-header>
+<ion-header class="page-header">
   <ion-toolbar>
     <button ion-button menuToggle icon-only>
       <ion-icon name='menu'></ion-icon>
@@ -14,44 +14,44 @@
     <img class="curved-img" src="../../assets//img/flag_front_pageCROP.png" alt="Header image">
   </div>
   <ion-searchbar padding placeholder="How Can We Help?"></ion-searchbar>
-  <ion-grid padding>
-    <ion-row>
-      <ion-col style="padding-right: 0; padding-bottom: 0;">
+  <ion-grid class="grid" padding>
+    <ion-row class="row">
+      <ion-col class="grid-column" style="padding-right: 0; padding-bottom: 0;">
         <div (click)="openPage('myNotification')" class="service-select" style="border-left: none; border-top: none;">
-          <ion-icon name="notifications"></ion-icon>
-          <p>My Notifications</p>
+          <ion-icon class="service-icon" name="notifications"></ion-icon>
+          <p class="service-title">My Notifications</p>
         </div>
       </ion-col>
-      <ion-col style="padding-left: 0; padding-bottom: 0; padding-right: 0;">
+      <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0; padding-right: 0;">
         <div (click)="openPage('benefitFinder')" class="service-select" style="border-top: none;">
-          <ion-icon name="list-box"></ion-icon>
-          <p>Benefit Finder</p>
+          <ion-icon class="service-icon" name="list-box"></ion-icon>
+          <p class="service-title">Benefit Finder</p>
         </div>
       </ion-col>
-      <ion-col style="padding-left: 0; padding-bottom: 0;">
+      <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0;">
         <div (click)="openPage('jobSearch')" class="service-select" style="border-top: none; border-right: none;">
-            <ion-icon name="search"></ion-icon>
-            <p>{{ 'SEARCH_TITLE' | translate }}</p>
+            <ion-icon class="service-icon" name="search"></ion-icon>
+            <p class="service-title">{{ 'SEARCH_TITLE' | translate }}</p>
         </div>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col style="padding-top: 0; padding-right: 0;">
+    <ion-row class="row">
+      <ion-col class="grid-column" style="padding-top: 0; padding-right: 0;">
         <div (click)="openPage('eiReport')" class="service-select" style="border-left: none; border-bottom: none;">
-          <ion-icon name="paper-plane"></ion-icon>
-          <p>My EI Report</p>
+          <ion-icon class="service-icon" name="paper-plane"></ion-icon>
+          <p class="service-title">My EI Report</p>
         </div>
       </ion-col>
-      <ion-col style="padding-left: 0; padding-top: 0; padding-right: 0;">
+      <ion-col class="grid-column" style="padding-left: 0; padding-top: 0; padding-right: 0;">
         <div (click)="openPage('scLocations')" class="service-select" style="border-bottom: none;">
-          <ion-icon name="globe"></ion-icon>
-          <p>Service Canada Locations</p>
+          <ion-icon class="service-icon" name="globe"></ion-icon>
+          <p class="service-title">Service Canada Locations</p>
         </div>
       </ion-col>
-      <ion-col style="padding-left: 0; padding-top: 0;">
+      <ion-col class="grid-column" style="padding-left: 0; padding-top: 0;">
         <div (click)="openPage('lifeEvents')" class="service-select" style="border-bottom: none; border-right: none;">
-          <ion-icon name="people"></ion-icon>
-          <p>Life Events</p>
+          <ion-icon class="service-icon" name="people"></ion-icon>
+          <p class="service-title">Life Events</p>
         </div>
       </ion-col>
     </ion-row>
