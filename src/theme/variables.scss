@@ -29,10 +29,13 @@ $background-color:  #fff;
 $colors: (
   primary:    #0f71cf,
   secondary:  #32db64,
-  danger:     #f53d3d,
+  danger:     #d0021b,
   light:      #ffffff,
   dark:       #0a1a2b,
-  headerBlue: #31485b
+  mainHeader: #31485b,
+  secondaryHeader:  #4e5e6f,
+  borderBox: #979797,
+  secondaryButton: (base: #fff , contrast: #60605e)
 );
 
 
