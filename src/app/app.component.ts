@@ -35,7 +35,7 @@ export class MyApp {
     { title: 'Home', component: 'HomePage' },
     { title: 'Benefit Finder', component: 'BenefitFinderPage' },
     { title: 'EI Reporting', component: 'EiReportingPage' },
-    { title: 'Job Search', component: 'JobSearchPage' },
+    { title: 'Search', component: 'JobSearchPage' },
     { title: 'Life Events', component: 'LifeEventsPage' },
     { title: 'My Notifications', component: 'MynotificationsPage' },
     { title: 'Service Canada Locations', component: 'ScLocationsPage' },
