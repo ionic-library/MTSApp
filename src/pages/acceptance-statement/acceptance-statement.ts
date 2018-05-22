@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Report } from '../../models/mockEiReport';
 
 /**
  * Generated class for the AcceptanceStatementPage page.
@@ -15,7 +17,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class AcceptanceStatementPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  report: Report;
+
+  constructor(public translate: TranslateService,
+    public navParams: NavParams) {
+    this.report = navParams.get('report');
   }
 
   ionViewDidLoad() {
