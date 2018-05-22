@@ -41,15 +41,14 @@ describe("The Acceptance Statement Page", () => {
 
   it("Should navigate to the Questionaire when acceptStatement is called", () => {
     let report = fakeNavParams.get(0);
-    acceptanceStatementPage.acceptStatement(this.report);
+    acceptanceStatementPage.acceptStatement(report);
     expect(navSpy).to.have.been.calledWith(SitePages.Questionaire);
   });
 
   it("Should call NavParams.get() with 'report' as argument", () => {
     let navParamsSpy = sinon.spy(fakeNavParams, "get");
     let page = TestBed.createComponent(AcceptanceStatementPage);
-    acceptanceStatementPage = page.componentInstance;
-    expect(navParamsSpy).to.be.calledWith('report');
+    expect(navParamsSpy).to.have.been.calledWith('report');
   });
 
   // it("Should receive Report object of type Report", () => {
