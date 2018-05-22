@@ -36,6 +36,7 @@ export class MyApp {
     { title: 'Home', component: 'HomePage' },
     { title: 'Benefit Finder', component: 'BenefitFinderPage' },
     { title: 'EI Reporting', component: 'EiReportingPage' },
+    { title: 'Acceptance Statement', component: 'AcceptanceStatementPage' },
     { title: 'Search', component: 'JobSearchPage' },
     { title: 'Life Events', component: 'LifeEventsPage' },
     { title: 'My Notifications', component: 'MynotificationsPage' },

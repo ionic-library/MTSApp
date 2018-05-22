@@ -2,6 +2,7 @@ import { IssueWithReportPage } from './issue-with-report/issue-with-report';
 import { BenefitFinderPage } from './benefit-finder/benefit-finder';
 
 export enum SitePages {
+  AcceptanceStatement = 'AcceptanceStatementPage',
   BenefitFinder = 'BenefitFinderPage',
   Confirmation = 'ConfirmationPage',
   EILogin = 'LoginPage',

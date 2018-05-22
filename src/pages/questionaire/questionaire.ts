@@ -17,16 +17,8 @@ import { Report } from '../../models/mockEiReport';
 })
 export class QuestionairePage {
 
-    report: Report;
-
-  constructor( public translate: TranslateService,
-               public navParams: NavParams ) {
-    this.report = navParams.get('report');
-  }
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionairePage');
-    console.log(this.report);
   }
 
 }
