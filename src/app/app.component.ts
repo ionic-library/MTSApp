@@ -1,3 +1,4 @@
+import { SitePages } from '../pages';
 import { Component, ViewChild } from "@angular/core";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";

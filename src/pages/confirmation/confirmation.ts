@@ -1,3 +1,5 @@
+import { HomePage } from './../home/home';
+import { SitePages } from '..';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 
@@ -8,16 +10,10 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class ConfirmationPage {
 
-  constructor(public navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) { }
 
-  openPage(page) {
-    console.log(page);
-    switch (page) {
-      case 'home':
-        this.navCtrl.push('HomePage')
-        break;
-     
+  navigateHome = () => this.navCtrl.push(SitePages.Home);
 
-}
-  }
+  ionViewDidLoad = () => console.log("Loadded ConfirmationPage");
+
 }

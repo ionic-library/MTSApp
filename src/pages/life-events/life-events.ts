@@ -15,11 +15,9 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LifeEventsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor() {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad LifeEventsPage');
-  }
+  ionViewDidLoad = () => console.log('ionViewDidLoad LifeEventsPage');
 
 }

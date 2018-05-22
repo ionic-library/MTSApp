@@ -4,6 +4,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { Settings } from "../providers/settings/settings";
 import { createTranslateLoader } from "./app.module";
+import assign from "lodash/assign";
 import {
   HttpClientTestingModule,
   HttpTestingController
@@ -37,13 +38,13 @@ export class CommonTestModule {
       })
     ].concat(arr || []);
 
-  public static getProviders = (arr?) =>  [
-    { provide: NavController, useClass: NavMock },
-    { provide: StatusBar, useClass: StatusBarMock },
-    { provide: SplashScreen, useClass: SplashScreenMock },
-    { provide: Platform, useClass: PlatformMock },
-    { provide: TranslateService, useClass: TranslateService },
-    { provide: Settings, useClass: SettingsMock }
-  ].concat(arr || []);
+  public static getProviders = (overrides?) => assign([
+      { provide: NavController, useClass: NavMock },
+      { provide: StatusBar, useClass: StatusBarMock },
+      { provide: SplashScreen, useClass: SplashScreenMock },
+      { provide: Platform, useClass: PlatformMock },
+      { provide: TranslateService, useClass: TranslateService },
+      { provide: Settings, useClass: SettingsMock }
+    ], overrides);
 
 }

@@ -17,19 +17,19 @@
   <ion-grid class="grid" padding>
     <ion-row class="row">
       <ion-col class="grid-column" style="padding-right: 0; padding-bottom: 0;">
-        <div (click)="openPage('myNotification')" class="service-select" style="border-left: none; border-top: none;">
+        <div (click)="this.navigateToMyNotificationsPage()" class="service-select" style="border-left: none; border-top: none;">
           <ion-icon class="service-icon" name="notifications"></ion-icon>
           <p class="service-title">My Notifications</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0; padding-right: 0;">
-        <div (click)="openPage('benefitFinder')" class="service-select" style="border-top: none;">
+        <div (click)="this.navigateToBenefitFinderPage()" class="service-select" style="border-top: none;">
           <ion-icon class="service-icon" name="list-box"></ion-icon>
           <p class="service-title">Benefit Finder</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0;">
-        <div (click)="openPage('jobSearch')" class="service-select" style="border-top: none; border-right: none;">
+        <div (click)="this.navigateToSearchPage()" class="service-select" style="border-top: none; border-right: none;">
             <ion-icon class="service-icon" name="search"></ion-icon>
             <p class="service-title">{{ 'SEARCH_TITLE' | translate }}</p>
         </div>
@@ -37,19 +37,19 @@
     </ion-row>
     <ion-row class="row">
       <ion-col class="grid-column" style="padding-top: 0; padding-right: 0;">
-        <div (click)="openPage('eiReport')" class="service-select" style="border-left: none; border-bottom: none;">
+        <div (click)="this.navigateToEIReportingPage()" class="service-select" style="border-left: none; border-bottom: none;">
           <ion-icon class="service-icon" name="paper-plane"></ion-icon>
           <p class="service-title">My EI Report</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-top: 0; padding-right: 0;">
-        <div (click)="openPage('scLocations')" class="service-select" style="border-bottom: none;">
+        <div (click)="this.navigateToSCCLocationPage()" class="service-select" style="border-bottom: none;">
           <ion-icon class="service-icon" name="globe"></ion-icon>
           <p class="service-title">Service Canada Locations</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-top: 0;">
-        <div (click)="openPage('lifeEvents')" class="service-select" style="border-bottom: none; border-right: none;">
+        <div (click)="this.navigateToLifeEventsPage()" class="service-select" style="border-bottom: none; border-right: none;">
           <ion-icon class="service-icon" name="people"></ion-icon>
           <p class="service-title">Life Events</p>
         </div>
@@ -59,12 +59,4 @@
   <div id="home-page-show-more-container">
     <button ion-button block>Show More</button>
   </div>
-  <!-- <div class="row">
-    <button ion-button class="col button button-positive">button 1</button>
-    <button ion-button class="col button button-balanced">button 2</button>
-  </div>
-  <div class="row">
-    <button ion-button class="col button button-energized">button 3</button>
-    <button ion-button class="col button button-royal">button 4</button>
-  </div> -->
 </ion-content>

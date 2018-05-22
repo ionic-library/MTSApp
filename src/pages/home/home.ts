@@ -1,39 +1,29 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { Component } from "@angular/core";
+import { IonicPage, NavController } from "ionic-angular";
+import { SitePages } from "../index";
 
 /**
  * Home page where user selects services from an
  * icon grid.
-*/
+ */
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: "page-home",
+  templateUrl: "home.html"
 })
+
 export class HomePage {
+  logController;
 
-  constructor(public navCtrl: NavController) { }
+  constructor(private navCtrl: NavController) {}
 
-  openPage(page) {
-    console.log(page);
-    switch (page) {
-      case 'myNotification':
-        this.navCtrl.push('MynotificationsPage')
-        break;
-      case 'benefitFinder':
-        this.navCtrl.push('BenefitFinderPage')
-        break;
-      case 'jobSearch':
-        this.navCtrl.push('SearchPage')
-        break;
-      case 'eiReport':
-        this.navCtrl.push('EiReportingPage')
-        break;
-      case 'scLocations':
-        this.navCtrl.push('ScLocationsPage')
-        break;
-      case 'lifeEvents':
-        this.navCtrl.push('LifeEventsPage')
-    }
-  }
+  public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);
+  public navigateToSearchPage = () => this.navCtrl.push(SitePages.JobSearch);
+  public navigateToMyNotificationsPage = () => this.navCtrl.push(SitePages.MyNotifications);
+  public navigateToBenefitFinderPage = () => this.navCtrl.push(SitePages.BenefitFinder);
+  public navigateToSCCLocationPage = () => this.navCtrl.push(SitePages.SCCLocations);
+  public navigateToLifeEventsPage = () => this.navCtrl.push(SitePages.LifeEvents);
+
+  public ionViewDidLoad = () => console.log("Loading Home Page");
+
 }

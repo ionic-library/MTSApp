@@ -7,14 +7,14 @@ import * as chai from "chai";
 let { expect } = chai;
 
 describe("Provinces provider", () => {
-  let provinceProvider;
+  let provinceProvider : ProvincesProvider;
 
   beforeEach(() => {
     provinceProvider = new ProvincesProvider();
   });
 
   it("Should return the list of province codes", () => {
-    let result = provinceProvider.getProvinces();
+    let result = provinceProvider.provinceCodes;
     expect(result).to.have.members(["AB", "BC", "MB", "NB", "NL", "NS", "ON", "PE", "QC", "SK", "NT", "NU", "YT" ]);
 
   });

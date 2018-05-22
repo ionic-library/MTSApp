@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the JobSearchPage page.
+ * Generated class for the SccLocationsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,12 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-job-search',
-  templateUrl: 'job-search.html',
+  selector: 'page-scc-locations',
+  templateUrl: 'scc-locations.html',
 })
-export class JobSearchPage {
+export class SccLocationsPage {
 
   constructor() { }
 
-  ionViewDidLoad = () => console.log('ionViewDidLoad JobSearchPage');
+  ionViewDidLoad = () => console.log('Loaded SCCLocationsPage');
+
 }
