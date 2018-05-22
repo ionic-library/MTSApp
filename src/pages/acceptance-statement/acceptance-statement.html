@@ -31,8 +31,8 @@
     <p class="statement-content">I acknowledge that it is my responsibility to read and understand the information contained within each heading presented
       on this page.</p>
     <ion-buttons>
-      <button class="accept-button" ion-button>I Accept</button>
-      <a class="refuse-button" href="">I refuse</a>
+      <button class="accept-button" ion-button (click)="acceptStatement(report)">I Accept</button>
+      <a class="refuse-button" (click)="refuseStatement($event)" href="">I refuse</a>
     </ion-buttons>
   </div>
   <div class="section-seperator" row-no-padding></div>
