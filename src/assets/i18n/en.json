@@ -106,5 +106,19 @@
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
+
+  "CONFIRMATION_TITLE": "Report Submitted",
+  "CONFIRMATION_P_TEXT": "Thanks for submitting your report.",
+  "CONFIRMATION_HOME_BUTTON": "Return to my EI Reporting Dashboard",
+
+  "LOGIN_FAILED_TITLE": "Login Failed",
+
+  "ISSUE_PAGE_TITLE": "Issue With Report",
+  "ISSUE_PAGE_P1_TEXT": "Unfortunately, at this time we are not able to complete your report online",
+  "ISSUE_PAGE_P2_TEXT": "In order to continue:",
+  "ISSUE_PAGE_P3_TEXT": "Call Service Canada at 1-800-206-7218",
+  "ISSUE_PAGE_P4_TEXT": "or",
+  "ISSUE_PAGE_P5_TEXT": "Find a Service Canada location"
+
 }

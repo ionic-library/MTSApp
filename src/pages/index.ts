@@ -14,7 +14,8 @@ export enum SitePages {
   MyNotifications = 'MyNotificationsPage' ,
   Questionaire = 'QuestionairePage',
   SCCLocations = 'SccLocationsPage' ,
-  Settings = 'SettingsPage'
+  Settings = 'SettingsPage',
+  LoginFalied = 'LoginFailedPage'
 }
 
 // The page the user lands on after opening the app and without a session
