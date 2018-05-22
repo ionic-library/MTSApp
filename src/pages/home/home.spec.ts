@@ -11,8 +11,6 @@ import * as sinonChai from "sinon-chai";
 let { expect } = chai;
 chai.use(sinonChai);
 
-function testNav(navCommand: Function, navCtl: NavController) {}
-
 describe("The Home Page", () => {
   let sut: ComponentFixture<HomePage>;
   let homePage: HomePage;
