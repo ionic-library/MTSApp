@@ -19,7 +19,7 @@ export class HomePage {
 
   public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);
   public navigateToSearchPage = () => this.navCtrl.push(SitePages.JobSearch);
-  public navigateToMynotificationsPage = () => this.navCtrl.push(SitePages.MyNotifications);
+  public navigateToMyNotificationsPage = () => this.navCtrl.push(SitePages.MyNotifications);
   public navigateToBenefitFinderPage = () => this.navCtrl.push(SitePages.BenefitFinder);
   public navigateToSCCLocationPage = () => this.navCtrl.push(SitePages.SCCLocations);
   public navigateToLifeEventsPage = () => this.navCtrl.push(SitePages.LifeEvents);
