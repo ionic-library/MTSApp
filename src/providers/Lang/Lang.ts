@@ -8,7 +8,7 @@ export enum LangCodes {
 @Injectable()
 export class Lang {
 
-  static GetCurrentLang(){
+  public static GetCurrentLang(){
     return LangCodes.EN;
   }
 

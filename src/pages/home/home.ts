@@ -16,10 +16,10 @@ import { Lang, LangCodes } from "../../providers";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController,
-  langProvider : Lang) {
-    
-    console.log(langProvider.GetCurrentLang());
+  constructor(private navCtrl: NavController) {
+
+    console.log("Current lang is " + Lang.GetCurrentLang());
+
   }
 
   public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);
