@@ -31,6 +31,16 @@
 
   "MAP_TITLE": "Map",
 
+  "ACCEPTANCE_STATEMENT_HEADER": "Acceptance Statement",
+  "ACCEPTANCE_STATEMENT_CONTENT": "I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
+  "ACCEPT_BUTTON": "I Accept",
+  "REFUSE_BUTTON": "I refuse",
+  "FAQ_LINK_ONE": "When should you submit your information?",
+  "FAQ_LINK_TWO": "When your payment is issued",
+  "FAQ_LINK_THREE": "What you need to know to file your report",
+  "FAQ_LINK_FOUR": "Next steps after completing your report",
+  "FAQ_LINK_FIVE": "New address and direct deposit information",
+
   "QUESTIONAIRE_TITLE":"Mobile Reporting Service",
   "RESPONSE_YES": "Yes",
   "RESPONSE_NO": "No",

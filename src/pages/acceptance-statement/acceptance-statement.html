@@ -12,7 +12,7 @@
       <ion-icon class="menu" name='menu'></ion-icon>
     </button>
 
-    <ion-title class="page-title">{{ this.report.schedule }}
+    <ion-title class="page-title">{{ this.report.schedule | translate }}
     </ion-title>
 
     <ion-buttons end>
@@ -27,25 +27,24 @@
 <ion-content padding>
 
   <div class="statement-section">
-    <h1 class="statement-header">Acceptance Statement</h1>
-    <p class="statement-content">I acknowledge that it is my responsibility to read and understand the information contained within each heading presented
-      on this page.</p>
+    <h1 class="statement-header">{{ 'ACCEPTANCE_STATEMENT_HEADER' | translate }}</h1>
+    <p class="statement-content">{{ 'ACCEPTANCE_STATEMENT_CONTENT' | translate }}</p>
     <ion-buttons>
-      <button class="accept-button" ion-button (click)="acceptStatement(report)">I Accept</button>
-      <a class="refuse-button" (click)="refuseStatement($event)" href="">I refuse</a>
+      <button class="accept-button" ion-button (click)="acceptStatement(report)">{{ ACCEPT_BUTTON | translate }}</button>
+      <a class="refuse-button" (click)="refuseStatement($event)" href="">{{ REFUSE_BUTTON | translate }}</a>
     </ion-buttons>
   </div>
   <div class="section-seperator" row-no-padding></div>
   <div class="faq-section">
-    <a class="faq-link" href="">When should you submit your information?</a>
+    <a class="faq-link" href="">{{ 'FAQ_LINK_ONE' | translate }}</a>
     <br>
-    <a class="faq-link" href="">When your payment is issued</a>
+    <a class="faq-link" href="">{{ 'FAQ_LINK_TWO' | translate}}</a>
     <br>
-    <a class="faq-link" href="">What you need to know to file your report</a>
+    <a class="faq-link" href="">{{ 'FAQ_LINK_THREE' | translate }}</a>
     <br>
-    <a class="faq-link" href="">Next steps after completing your report</a>
+    <a class="faq-link" href="">{{ 'FAQ_LINK_FOUR' | translate }}</a>
     <br>
-    <a class="faq-link" href="">New address and direct deposit information</a>
+    <a class="faq-link" href="">{{ 'FAQ_LINK_FIVE' | tranlsate }}</a>
   </div>
 
 </ion-content>
