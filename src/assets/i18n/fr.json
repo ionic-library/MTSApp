@@ -13,20 +13,6 @@
   "NU": "Nunavut",
   "YT": "Yukon",
 
-  "AB": "Alberta",
-  "BC": "Colombie-Britannique",
-  "MB": "Manitoba",
-  "NB": "Nouveau-Brunswick",
-  "NL": "Terre-Neuve-et-Labrador",
-  "NS": "Nouvelle-Écosse",
-  "ON": "Ontario",
-  "PE": "Île-du-Prince-Édouard",
-  "QC": "Québec",
-  "SK": "Saskatoon",
-  "NT": "Territoires du Nord-Ouest",
-  "NU": "Nunavut",
-  "YT": "Yukon",
-
   "LOGIN_PREAMBLE": "Vous avez choisi de remplir votre déclaration en français. Veuillez noter que vous ne pourrez pas changer vers l'anglais après que vous aurez débuté votre session en direct. Si vous désirez changer la langue, veuillez le faire maintenant.",
   "LOGIN": "Connexion",
   "SIN": "Numéro d'assurance sociale (NAS) :",
@@ -45,6 +31,16 @@
   "TAB3_TITLE": "Paramètres",
 
   "MAP_TITLE": "Carte",
+
+  "ACCEPTANCE_STATEMENT_HEADER": "(FR)Acceptance Statement",
+  "ACCEPTANCE_STATEMENT_CONTENT": "(FR)I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
+  "ACCEPT_BUTTON": "(FR)I Accept",
+  "REFUSE_BUTTON": "(FR)I refuse",
+  "FAQ_LINK_ONE": "(FR)When should you submit your information?",
+  "FAQ_LINK_TWO": "(FR)When your payment is issued",
+  "FAQ_LINK_THREE": "(FR)What you need to know to file your report",
+  "FAQ_LINK_FOUR": "(FR)Next steps after completing your report",
+  "FAQ_LINK_FIVE": "(FR)New address and direct deposit information",
 
   "QUESTIONAIRE_TITLE":"Mobile Reporting Service",
   "RESPONSE_YES": "Oui",
