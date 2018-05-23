@@ -11,9 +11,7 @@ import { Questionaire_2Page } from '../questionaire-2/questionaire-2';
 })
 export class QuestionairePage {
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad QuestionairePage');
-  }
+
   params: Object;
   pushPage: any;
   constructor(){
