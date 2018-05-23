@@ -42,16 +42,32 @@ $colors: (
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
-
-
-
+$toolbar-order-ios: (
+  back-button: 1,
+  menu-toggle-start: 0,
+  buttons-left: 2,
+  buttons-start: 3,
+  content: 4,
+  buttons-end: 5,
+  buttons-right: 6,
+  menu-toggle-end: 7,
+);
+$toolbar-ios-title-font-size: 14px;
 
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
-
-
-
+$toolbar-order-md: (
+  back-button: 1,
+  menu-toggle-start: 0,
+  buttons-left: 2,
+  content: 3,
+  buttons-start: 4,
+  buttons-end: 5,
+  buttons-right: 6,
+  menu-toggle-end: 7,
+);
+$toolbar-md-title-font-size: 14px;
 
 // App Windows Variables
 // --------------------------------------------------
