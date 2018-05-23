@@ -85,7 +85,7 @@ page-home {
   }
 
 // iPad Pro Media Query
-  @media only screen and (orientation: landscape) and (min-width: 1000px) {
+  @media only screen and (orientation: landscape) and (min-width: 1200px) {
     .grid {
       height: 60em;
 
@@ -106,4 +106,27 @@ page-home {
       }
     }
   }
+// iPad Media Query
+@media only screen and (orientation: landscape) and (min-width: 1000px) {
+  .grid {
+    height: 50em;
+
+    .row {
+      height: 60em;
+
+      .grid-column .service-select {
+        height: 100%;
+        
+        .service-icon {
+          padding-top: 0;
+          font-size: 15em;
+        }
+
+        .service-title {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+}
 }
