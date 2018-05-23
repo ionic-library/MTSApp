@@ -18,7 +18,10 @@ export class HomePage {
 
   constructor(private navCtrl: NavController, private user: User) {
 
+    console.log(user.isLangSet());
     console.log("Current lang is " + user.getLang());
+    //console.log("Set lang to " + user.setLang(""));
+    //console.log("Current lang is " + user.getLang());
 
   }
 
