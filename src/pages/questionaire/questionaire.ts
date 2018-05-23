@@ -13,21 +13,19 @@ export class QuestionairePage {
 
 
   report: Report;
-
+  params: Object;
+  pushPage: any;
   constructor(public translate: TranslateService,
     public navParams: NavParams, public navCtrl: NavController) {
     this.report = navParams.get('report');
     console.log(this.report);
+    this.pushPage = Questionaire_2Page;
+    this.params = { id: 42 };
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionairePage');
   }
 
-  params: Object;
-  pushPage: any;
-  constructor(){
-    this.pushPage = Questionaire_2Page;
-    this.params = { id: 42 };
-  }
+ 
 }
