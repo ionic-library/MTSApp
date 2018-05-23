@@ -22,7 +22,7 @@ describe("EI Reporting Login Page", () => {
       declarations: CommonTestModule.getDeclarations([LoginPage]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
-        { provide: User, useClass: ineeda<User>() }
+        { provide: User, useFactory: ineeda.factory<User>() }
       ])
     });
   });
@@ -41,18 +41,18 @@ describe("EI Reporting Login Page", () => {
   }
 
   it ("Should report an error if no SIN is entered", () => {
-    updateForm('', '1234', 'on');
-    expect(loginPage.login.valid).to.be.false;
+    updateForm("", "1234", "on");
+    expect(loginPage.login.controls.sin.valid).to.be.false;
   });
 
   it("Should validate 100000009 as a valid sin", () =>{
-    updateForm('100000009','1234','en');
-    expect(loginPage.login.valid).to.be.true;
+    updateForm("100000009","1234","on");
+    expect(loginPage.login.controls.sin.valid).to.be.true;
   });
 
   it("Should reject 123456789 as an invalid sin", () => {
-    updateForm('123456789','1234','en');
-    expect(loginPage.login.valid).to.be.true;
+    updateForm("123456789","1234","on");
+    expect(loginPage.login.controls.sin.valid).to.be.false;
   });
 
 });

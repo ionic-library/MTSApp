@@ -29,6 +29,7 @@ export class LoginPage {
 
   // Our translated text strings
   private loginErrorString: string;
+  submitAttempt : boolean;
 
   constructor( public navCtrl: NavController,
                public user: User,
@@ -46,13 +47,17 @@ export class LoginPage {
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
+
+    this.submitAttempt = false;
   }
 
-
+  showError(str : string) : boolean {
+    return !this.login.controls[str].valid && (this.login.controls[str].dirty || this.submitAttempt);
+  }
 
   // Attempt to login in through our User service
   doLogin() {
-    debugger;
+    this.submitAttempt = true;
     if (!this.login.valid){
       let toast = this.toastCtrl.create({
         message: 'You Suck',

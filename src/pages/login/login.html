@@ -22,19 +22,23 @@
   <p>{{ 'LOGIN_PREAMBLE' | translate }}</p>
   <form [formGroup]="login" (submit)="doLogin()">
     <ion-list>
-      <ion-item>
-        <ion-label stacked>{{ 'SIN' | translate }}</ion-label>
-        <ion-input formGroupName="sin" type="password"></ion-input>
+      <ion-item no-lines >
+        <ion-label text-wrap stacked>{{ 'SIN' | translate }}
+          <span class="errorText" *ngIf="this.showError('sin')">{{ 'SIN_ERROR' | translate }}</span></ion-label>
+        <ion-input class="boxInput" [class.invalid]="this.showError('sin')"  formGroupName="sin" type="password" ></ion-input>
+      </ion-item>
+      <ion-item no-lines >
+        <ion-label stacked>{{ 'AC' | translate }}
+          <span class="errorText" *ngIf="this.showError('accessCode')">{{'ACCESS_CODE_ERROR' | translate }}</span>
+        </ion-label>
+        <ion-input class="boxInput" [class.invalid]="this.showError('accessCode')" formGroupName="accessCode" type="password" ></ion-input>
       </ion-item>
 
-      <ion-item>
-        <ion-label stacked>{{ 'AC' | translate }}</ion-label>
-        <ion-input formGroupName="accessCode" type="password" ></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label stacked>{{ 'PROVINCE_RESIDENCE' | translate}}</ion-label>
-        <ion-select formGroupName="provinceOfResidence">
+      <ion-item no-lines >
+        <ion-label stacked>{{ 'PROVINCE_RESIDENCE' | translate }}
+          <span class="errorText" *ngIf="this.showError('provinceOfResidence')">{{'PROVINCE_OF_RESIDENCE_ERROR' | translate }}</span>
+        </ion-label>
+        <ion-select class="boxInput" [class.invalid]="this.showError('provinceOfResidence')" formGroupName="provinceOfResidence" >
           <ion-option *ngFor="let provinceCode of provinces.provinceCodes" value="{{provinceCode}}">{{  provinceCode | translate }}</ion-option>
         </ion-select>
       </ion-item>

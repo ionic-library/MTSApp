@@ -4,7 +4,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { Settings } from "../providers/settings/settings";
 import { createTranslateLoader } from "./app.module";
-import assign from "lodash/assign";
+import * as _ from "lodash";
 import {
   HttpClientTestingModule,
   HttpTestingController
@@ -22,6 +22,8 @@ import {
   SettingsMock,
   NavMock
 } from "../../test-config/mocks-ionic";
+import { Provider } from "@angular/compiler/src/core";
+import { ProvincesProvider } from "../providers";
 
 export class CommonTestModule {
   public static getDeclarations = (arr?) => [MyApp].concat(arr || []);
@@ -38,13 +40,35 @@ export class CommonTestModule {
       })
     ].concat(arr || []);
 
-  public static getProviders = (overrides?) => assign([
+  public static getProviders = (overrides? : Provider[]) : Provider[] => {
+
+    let providers = [
       { provide: NavController, useClass: NavMock },
       { provide: StatusBar, useClass: StatusBarMock },
       { provide: SplashScreen, useClass: SplashScreenMock },
       { provide: Platform, useClass: PlatformMock },
       { provide: TranslateService, useClass: TranslateService },
-      { provide: Settings, useClass: SettingsMock }
-    ], overrides);
+      { provide: Settings, useClass: SettingsMock },
+      { provide: ProvincesProvider, useClass: ProvincesProvider}
+    ];
+
+    if (overrides == null){
+      return providers;
+    }
+    var retVal = CommonTestModule.overrideProviders(overrides, providers);
+    return retVal;
+  }
+
+  private static overrideProviders(overrides : Provider[], providers: Provider[]) : Provider[]{
+   overrides.forEach((ele : Provider) => {
+    let i = _.findIndex(providers, {provide: ele.Provide})
+    if (i === -1){
+      providers.push(ele);
+    }else{
+      providers.splice(i,1, ele);
+    }
+   });
+   return providers;
+  }
 
 }
