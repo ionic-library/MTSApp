@@ -22,7 +22,6 @@ page-home {
     }
   }
 
-
   .curved-img {
     width: 100%;
   }
@@ -52,10 +51,54 @@ page-home {
     padding: 10px 0 0 0 !important;
     margin: 0;
   }
-}
+// Global Landscape Orientation CSS
+  @media only screen and (orientation: landscape) {
+    .page-header {
+      .button-inner {
+        color: black;
+      }
+  
+      .toolbar {
+        position: absolute;
+  
+        .toolbar-background {
+          background: transparent;
+        }
+  
+        .toolbar-title {
+          color: black;
+        }
+        
+        .toolbar-background-ios{
+          display: none;
+        }
+      }
+    }
 
-@media only screen and (orientation: landscape) {
-  #header-image-container {
-    display: none;
+    #header-image-container {
+      display: none;
+    }
+    .searchbar {
+      margin-top: 3em;
+    }
+  }
+
+// iPad Pro Media Query
+  @media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .grid {
+      height: 60em;
+      .row {
+        height: 60em;
+        .grid-column .service-select {
+          height: 100%;
+          .service-icon {
+            font-size: 15em;
+          }
+          .service-title {
+            font-size: 2em;
+          }
+        }
+      }
+    }
   }
 }
