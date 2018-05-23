@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
 import { SitePages } from "../index";
-import { Lang, LangCodes } from "../../providers";
+import { Lang, LangCodes, User } from "../../providers";
 
 /**
  * Home page where user selects services from an
@@ -16,9 +16,9 @@ import { Lang, LangCodes } from "../../providers";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController, private user: User) {
 
-    console.log("Current lang is " + Lang.GetCurrentLang());
+    console.log("Current lang is " + user.getLang());
 
   }
 
