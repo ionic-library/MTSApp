@@ -35,6 +35,10 @@ page-home {
     padding: 0 1.5em 0 1.5em;
   }
 
+  .grid .row .grid-column {
+    width: 30%;
+  }
+
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
     padding: .75em;
