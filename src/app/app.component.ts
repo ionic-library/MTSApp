@@ -42,6 +42,7 @@ export class MyApp {
   { title: 'Service Canada Locations', component: SitePages.SCCLocations },
   { title: 'Confirmation', component: SitePages.Confirmation },
   { title: 'Questionaire', component: SitePages.Questionaire },
+  { title: 'Questionaire 2', component: SitePages.Questionaire2 },
   { title: 'Login', component: SitePages.EILogin },
   { title: 'Settings', component: SitePages.Settings },
   { title: 'Issue', component: SitePages.IssueWithReport },
@@ -61,6 +62,9 @@ export class MyApp {
       // Here you can do any higher level native things you might need.
       this.statusBar.styleDefault();
       this.splashScreen.hide();
+      this.config.set("ios", "backButtonText",'');
+      this.config.set('android', "backButtonText",'');
+      
     });
     this.initTranslate();
   }
@@ -69,7 +73,7 @@ export class MyApp {
     // Set the default language for translation strings, and the current language.
     this.translate.setDefaultLang("en");
     const browserLang = this.translate.getBrowserLang();
-
+    
     if (browserLang) {
       if (browserLang === "zh") {
         const browserCultureLang = this.translate.getBrowserCultureLang();
@@ -88,6 +92,7 @@ export class MyApp {
 
     this.translate.get(["BACK_BUTTON_TEXT"]).subscribe(values => {
       this.config.set("ios", "backButtonText", values.BACK_BUTTON_TEXT);
+
     });
   }
 
