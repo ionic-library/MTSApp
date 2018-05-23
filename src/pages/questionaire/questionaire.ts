@@ -12,6 +12,18 @@ import { Questionaire_2Page } from '../questionaire-2/questionaire-2';
 export class QuestionairePage {
 
 
+  report: Report;
+
+  constructor(public translate: TranslateService,
+    public navParams: NavParams, public navCtrl: NavController) {
+    this.report = navParams.get('report');
+    console.log(this.report);
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad QuestionairePage');
+  }
+
   params: Object;
   pushPage: any;
   constructor(){

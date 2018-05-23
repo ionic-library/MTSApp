@@ -119,6 +119,19 @@ export class NavMock {
   }
 }
 
+export class NavParamsMock {
+  static returnParam = null;
+  public get(key): any {
+    if (NavParamsMock.returnParam) {
+       return NavParamsMock.returnParam
+    }
+    return 'default';
+  }
+  public setParams(value){
+    NavParamsMock.returnParam = value;
+  }
+}
+
 export class DeepLinkerMock {
 
 }
