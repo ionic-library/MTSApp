@@ -1,9 +1,14 @@
-import { FormControl } from "@angular/forms";
+import { FormControl, ValidationErrors } from "@angular/forms";
 import luhn from 'luhn';
 export class SinValidator {
-  static isValid(control: FormControl){
+
+  static isValid(control: FormControl) : ValidationErrors | null{
     let input :string = control.value;
-    return luhn.validate(input);
+
+    if(!luhn.validate(input)){
+      return { "foo": "bar" };
+    }
+    return null;
   }
 }
 
