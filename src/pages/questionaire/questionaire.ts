@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, NavParams } from 'ionic-angular';
 import { Report } from '../../models/mockEiReport';
-
-/**
- * Generated class for the QuestionairePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Questionaire_2Page } from '../questionaire-2/questionaire-2';
 
 @IonicPage()
 @Component({
@@ -28,5 +22,10 @@ export class QuestionairePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad QuestionairePage');
   }
-
+  params: Object;
+  pushPage: any;
+  constructor(){
+    this.pushPage = Questionaire_2Page;
+    this.params = { id: 42 };
+  }
 }
