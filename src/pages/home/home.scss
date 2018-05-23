@@ -9,7 +9,7 @@ page-home {
       position: absolute;
 
       .toolbar-background {
-        background: transparent;
+        display: none;
       }
 
       .toolbar-title {
@@ -35,10 +35,6 @@ page-home {
     padding: 0 1.5em 0 1.5em;
   }
 
-  .grid .row .grid-column {
-    width: 30%;
-  }
-
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
     padding: .75em;
@@ -48,7 +44,7 @@ page-home {
 
   .service-icon {
     padding-top: .25em;
-    font-size: 5.5em;
+    font-size: 5em;
   }
 
   .service-title {
@@ -89,16 +85,20 @@ page-home {
   }
 
 // iPad Pro Media Query
-  @media only screen and (orientation: landscape) and (min-width: 1200px) {
+  @media only screen and (orientation: landscape) and (min-width: 1000px) {
     .grid {
       height: 60em;
+
       .row {
         height: 60em;
+
         .grid-column .service-select {
           height: 100%;
+          
           .service-icon {
             font-size: 15em;
           }
+
           .service-title {
             font-size: 2em;
           }
