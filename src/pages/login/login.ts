@@ -1,3 +1,4 @@
+import { SinValidator } from './../../validators/sin';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
@@ -37,7 +38,7 @@ export class LoginPage {
                private formBuilder: FormBuilder ) {
 
     this.login = this.formBuilder.group({
-      "sin" : ['', Validators.compose([Validators.required, Validators.minLength(9)])],
+      "sin" : ['', Validators.compose([Validators.required, Validators.minLength(9), SinValidator.isValid])],
       "accessCode" : ['', Validators.required],
       "provinceOfResidence" : ['', Validators.required]
     });

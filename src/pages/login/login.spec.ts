@@ -1,3 +1,4 @@
+import { User } from './../../providers/user/user';
 
 import { CommonTestModule } from "./../../app/sharedModules";
 import { LoginPage } from "./login";
@@ -6,6 +7,7 @@ import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
+import { Ineeda, ineeda } from "ineeda";
 
 let { expect } = chai;
 chai.use(sinonChai);
@@ -19,7 +21,9 @@ describe("EI Reporting Login Page", () => {
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([LoginPage]),
       imports: CommonTestModule.getImports(),
-      providers: CommonTestModule.getProviders()
+      providers: CommonTestModule.getProviders([
+        { provide: User, useClass: ineeda<User>() }
+      ])
     });
   });
 
