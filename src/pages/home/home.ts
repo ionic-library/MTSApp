@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
 import { SitePages } from "../index";
-import { Lang } from "../../providers/Lang/Lang";
+import { Lang, LangCodes } from "../../providers";
 
 /**
  * Home page where user selects services from an
@@ -16,8 +16,10 @@ import { Lang } from "../../providers/Lang/Lang";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController) {
- 
+  constructor(private navCtrl: NavController,
+  langProvider : Lang) {
+    
+    console.log(langProvider.GetCurrentLang());
   }
 
   public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);

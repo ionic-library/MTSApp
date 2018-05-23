@@ -3,4 +3,4 @@ export { Items } from '../mocks/providers/items';
 export { Settings } from './settings/settings';
 export { User } from './user/user';
 export { ProvincesProvider } from './provinces/provinces';
-export { Lang } from "./Lang/Lang";
+export { Lang, LangCodes } from "./Lang/Lang";
