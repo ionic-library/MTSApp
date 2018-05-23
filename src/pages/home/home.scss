@@ -15,29 +15,17 @@ page-home {
       .toolbar-title {
         color: white;
       }
-
-      .toolbar-background-ios {
+      
+      .toolbar-background-ios{
         display: none;
       }
     }
-
+    
     #home-help-button {
       padding-right: 0.8rem;
     }
   }
 
-  @media all and (orientation:portrait) {
-      
-  }
-
-  @media all and (orientation:landscape) {
-    #header-image-container {
-      display: none;
-    }
-    .searchbar{
-      padding-top:60px;
-    }
-  }
 
   .curved-img {
     width: 100%;
@@ -54,15 +42,14 @@ page-home {
 
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
-    border-radius: 2px;
     padding: 5px;
     text-align: center;
-    height: 15rem;
+    height: 28vh;
   }
 
   .service-icon {
     padding-top: 2rem;
-    font-size: 6rem;
+    font-size: 8rem;
   }
 
   .service-title {
