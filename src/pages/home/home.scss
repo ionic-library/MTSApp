@@ -9,33 +9,16 @@ page-home {
       position: absolute;
 
       .toolbar-background {
-        background: transparent;
+        display: none;
       }
 
       .toolbar-title {
         color: white;
       }
-
-      .toolbar-background-ios {
+      
+      .toolbar-background-ios{
         display: none;
       }
-    }
-
-    #home-help-button {
-      padding-right: 0.8rem;
-    }
-  }
-
-  @media all and (orientation:portrait) {
-      
-  }
-
-  @media all and (orientation:landscape) {
-    #header-image-container {
-      display: none;
-    }
-    .searchbar{
-      padding-top:60px;
     }
   }
 
@@ -49,34 +32,101 @@ page-home {
   }
 
   #home-page-show-more-container {
-    padding: 0 1.8rem 0 1.8rem;
+    padding: 0 1.5em 0 1.5em;
   }
 
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
-    border-radius: 2px;
-    padding: 5px;
+    padding: .75em;
     text-align: center;
-    height: 15rem;
+    height: 12em;
   }
 
   .service-icon {
-    padding-top: 2rem;
-    font-size: 6rem;
+    padding-top: .25em;
+    font-size: 5em;
   }
 
   .service-title {
     padding: 10px 0 0 0 !important;
     margin: 0;
+    font-size: .9em;
+  }
+// Global Landscape Orientation CSS
+  @media only screen and (orientation: landscape) {
+    .page-header {
+      .button-inner {
+        color: black;
+      }
+  
+      .toolbar {
+        position: absolute;
+  
+        .toolbar-background {
+          background: transparent;
+        }
+  
+        .toolbar-title {
+          color: black;
+        }
+        
+        .toolbar-background-ios{
+          display: none;
+        }
+      }
+    }
+
+    #header-image-container {
+      display: none;
+    }
+    .searchbar {
+      margin-top: 3em;
+    }
+  }
+
+// iPad Pro Media Query
+  @media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .grid {
+      height: 60em;
+
+      .row {
+        height: 60em;
+
+        .grid-column .service-select {
+          height: 100%;
+          
+          .service-icon {
+            font-size: 15em;
+          }
+
+          .service-title {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+  }
+// iPad Media Query
+@media only screen and (orientation: landscape) and (min-width: 1000px) {
+  .grid {
+    height: 50em;
+
+    .row {
+      height: 60em;
+
+      .grid-column .service-select {
+        height: 100%;
+        
+        .service-icon {
+          padding-top: 0;
+          font-size: 15em;
+        }
+
+        .service-title {
+          font-size: 2em;
+        }
+      }
+    }
   }
 }
-
-.service-select {
-  border-radius: 0;
-}
-
-@media only screen and (min-width: 650px) {
-  .curved-img {
-    margin-top: -35%;
-  }
 }
