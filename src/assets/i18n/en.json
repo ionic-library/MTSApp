@@ -22,6 +22,9 @@
   "CONTINUE_BUTTON": "Continue",
   "LOGIN_TITLE": "Login",
 
+  "SIN_ERROR" : "Error: You must enter your 9 digit numeric Social Insurance Number",
+  "ACCESS_CODE_ERROR": "Error: You must enter a valid Access Code.",
+  "PROVINCE_OF_RESIDENCE_ERROR" : "Error: You must enter a valid Access Code.",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
@@ -65,7 +68,7 @@
   "QUESTION_SEVEN_TITLE" : "Other Money",
   "QUESTION_SEVEN_TEXT" : "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
   "QUESTION_SEVEN_HELP" : "",
-  
+
 
   "TUTORIAL_SKIP_BUTTON": "Skip",
   "TUTORIAL_CONTINUE_BUTTON": "Continue",

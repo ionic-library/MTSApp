@@ -21,6 +21,11 @@
   "CONTINUE_BUTTON": "Poursuivre",
   "LOGIN_TITLE": "Ouverture de session",
 
+
+  "SIN_ERROR" : "(FR)Error: You must enter your 9 digit numeric Social Insurance Number",
+  "ACCESS_CODE_ERROR": "(FR)Error: You must enter a valid Access Code.",
+  "PROVINCE_OF_RESIDENCE_ERROR" : "(FR)Error: You must enter a valid Access Code.",
+
   "NAME": "Nom",
   "PASSWORD": "Mot de passe",
   "EMAIL": "E-mail",
