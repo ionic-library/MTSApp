@@ -13,20 +13,6 @@
   "NU": "Nunavut",
   "YT": "Yukon",
 
-  "AB": "Alberta",
-  "BC": "Colombie-Britannique",
-  "MB": "Manitoba",
-  "NB": "Nouveau-Brunswick",
-  "NL": "Terre-Neuve-et-Labrador",
-  "NS": "Nouvelle-Écosse",
-  "ON": "Ontario",
-  "PE": "Île-du-Prince-Édouard",
-  "QC": "Québec",
-  "SK": "Saskatoon",
-  "NT": "Territoires du Nord-Ouest",
-  "NU": "Nunavut",
-  "YT": "Yukon",
-
   "LOGIN_PREAMBLE": "Vous avez choisi de remplir votre déclaration en français. Veuillez noter que vous ne pourrez pas changer vers l'anglais après que vous aurez débuté votre session en direct. Si vous désirez changer la langue, veuillez le faire maintenant.",
   "LOGIN": "Connexion",
   "SIN": "Numéro d'assurance sociale (NAS) :",
@@ -34,6 +20,11 @@
   "PROVINCE_RESIDENCE": "Province de résidence :",
   "CONTINUE_BUTTON": "Poursuivre",
   "LOGIN_TITLE": "Ouverture de session",
+
+
+  "SIN_ERROR" : "(FR)Error: You must enter your 9 digit numeric Social Insurance Number",
+  "ACCESS_CODE_ERROR": "(FR)Error: You must enter a valid Access Code.",
+  "PROVINCE_OF_RESIDENCE_ERROR" : "(FR)Error: You must enter a valid Access Code.",
 
   "NAME": "Nom",
   "PASSWORD": "Mot de passe",
@@ -45,6 +36,16 @@
   "TAB3_TITLE": "Paramètres",
 
   "MAP_TITLE": "Carte",
+
+  "ACCEPTANCE_STATEMENT_HEADER": "(FR)Acceptance Statement",
+  "ACCEPTANCE_STATEMENT_CONTENT": "(FR)I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
+  "ACCEPT_BUTTON": "(FR)I Accept",
+  "REFUSE_BUTTON": "(FR)I refuse",
+  "FAQ_LINK_ONE": "(FR)When should you submit your information?",
+  "FAQ_LINK_TWO": "(FR)When your payment is issued",
+  "FAQ_LINK_THREE": "(FR)What you need to know to file your report",
+  "FAQ_LINK_FOUR": "(FR)Next steps after completing your report",
+  "FAQ_LINK_FIVE": "(FR)New address and direct deposit information",
 
   "QUESTIONAIRE_TITLE":"Mobile Reporting Service",
   "RESPONSE_YES": "Oui",
@@ -103,5 +104,18 @@
 
   "CARDS_TITLE": "Social",
 
-  "SEARCH_TITLE": "Recherche"
+  "SEARCH_TITLE": "Recherche",
+  
+  "CONFIRMATION_TITLE": "(FR)Report Submitted",
+  "CONFIRMATION_P_TEXT": "(FR)Thanks for submitting your report.",
+  "CONFIRMATION_HOME_BUTTON": "(FR)Return to my EI Reporting Dashboard",
+
+  "LOGIN_FAILED_TITLE": "(FR)Login Failed",
+
+  "ISSUE_PAGE_TITLE": "(FR)Issue With Report",
+  "ISSUE_PAGE_P1_TEXT": "(FR)Unfortunately, at this time we are not able to complete your report online",
+  "ISSUE_PAGE_P2_TEXT": "(FR)In order to continue:",
+  "ISSUE_PAGE_P3_TEXT": "(FR)Call Service Canada at 1-800-206-7218",
+  "ISSUE_PAGE_P4_TEXT": "(FR)or",
+  "ISSUE_PAGE_P5_TEXT": "(FR)Find a Service Canada location"
 }

@@ -22,6 +22,9 @@
   "CONTINUE_BUTTON": "Continue",
   "LOGIN_TITLE": "Login",
 
+  "SIN_ERROR" : "Error: You must enter your 9 digit numeric Social Insurance Number",
+  "ACCESS_CODE_ERROR": "Error: You must enter a valid Access Code.",
+  "PROVINCE_OF_RESIDENCE_ERROR" : "Error: You must enter a valid Access Code.",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
@@ -30,6 +33,16 @@
   "TAB3_TITLE": "Settings",
 
   "MAP_TITLE": "Map",
+
+  "ACCEPTANCE_STATEMENT_HEADER": "Acceptance Statement",
+  "ACCEPTANCE_STATEMENT_CONTENT": "I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
+  "ACCEPT_BUTTON": "I Accept",
+  "REFUSE_BUTTON": "I refuse",
+  "FAQ_LINK_ONE": "When should you submit your information?",
+  "FAQ_LINK_TWO": "When your payment is issued",
+  "FAQ_LINK_THREE": "What you need to know to file your report",
+  "FAQ_LINK_FOUR": "Next steps after completing your report",
+  "FAQ_LINK_FIVE": "New address and direct deposit information",
 
   "QUESTIONAIRE_TITLE":"Mobile Reporting Service",
   "RESPONSE_YES": "Yes",
@@ -55,7 +68,7 @@
   "QUESTION_SEVEN_TITLE" : "Other Money",
   "QUESTION_SEVEN_TEXT" : "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
   "QUESTION_SEVEN_HELP" : "",
-  
+
 
   "TUTORIAL_SKIP_BUTTON": "Skip",
   "TUTORIAL_CONTINUE_BUTTON": "Continue",
@@ -106,5 +119,19 @@
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Search",
-  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\""
+  "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
+
+  "CONFIRMATION_TITLE": "Report Submitted",
+  "CONFIRMATION_P_TEXT": "Thanks for submitting your report.",
+  "CONFIRMATION_HOME_BUTTON": "Return to my EI Reporting Dashboard",
+
+  "LOGIN_FAILED_TITLE": "Login Failed",
+
+  "ISSUE_PAGE_TITLE": "Issue With Report",
+  "ISSUE_PAGE_P1_TEXT": "Unfortunately, at this time we are not able to complete your report online",
+  "ISSUE_PAGE_P2_TEXT": "In order to continue:",
+  "ISSUE_PAGE_P3_TEXT": "Call Service Canada at 1-800-206-7218",
+  "ISSUE_PAGE_P4_TEXT": "or",
+  "ISSUE_PAGE_P5_TEXT": "Find a Service Canada location"
+
 }

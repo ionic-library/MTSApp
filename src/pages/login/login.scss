@@ -1,2 +1,13 @@
 page-login {
+  .invalid {
+      border: 1px solid color($colors, danger);
+  }
+  .errorText {
+    color: color($colors, danger);
+    display: block;
+  }
+
+  .boxInput {
+    border: 1px solid color($colors, dark);
+  }
 }
