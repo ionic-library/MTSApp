@@ -9,6 +9,7 @@ import { AcceptanceStatementPage } from './acceptance-statement';
   ],
   imports: [
     IonicPageModule.forChild(AcceptanceStatementPage),
+    TranslateModule.forChild()
   ],
 })
 export class AcceptanceStatementPageModule {}
