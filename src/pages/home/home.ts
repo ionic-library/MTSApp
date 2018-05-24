@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
 import { SitePages } from "../index";
+import { Lang, LangCodes, User } from "../../providers";
 
 /**
  * Home page where user selects services from an
@@ -15,7 +16,14 @@ import { SitePages } from "../index";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController) {}
+  constructor(private navCtrl: NavController, private user: User) {
+
+    console.log(user.isLangSet());
+    console.log("Current lang is " + user.getLang());
+    //console.log("Set lang to " + user.setLang(""));
+    //console.log("Current lang is " + user.getLang());
+
+  }
 
   public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);
   public navigateToSearchPage = () => this.navCtrl.push(SitePages.JobSearch);
@@ -25,5 +33,6 @@ export class HomePage {
   public navigateToLifeEventsPage = () => this.navCtrl.push(SitePages.LifeEvents);
 
   public ionViewDidLoad = () => console.log("Loading Home Page");
+
 
 }

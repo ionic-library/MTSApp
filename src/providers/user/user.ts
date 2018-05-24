@@ -1,8 +1,9 @@
 import 'rxjs/add/operator/toPromise';
-
 import { Injectable } from '@angular/core';
-
+import { Storage } from '@ionic/storage';
 import { Api } from '../api/api';
+import { Lang, LangCodes } from "../../providers";
+import { VALID } from '@angular/forms/src/model';
 
 
 
@@ -29,13 +30,7 @@ import { Api } from '../api/api';
 export class User {
   _user: any;
 
-
-  Lang = {
-    EN: 'en',
-    FR: 'fr'
-  };
-
-  constructor(public api: Api) { }
+  constructor(public api: Api, public storage: Storage) { }
 
   /**
    * Send a POST request to our login endpoint with the data
@@ -73,10 +68,32 @@ export class User {
   }
 
   setLang(lang: string) {
-    console.log(lang);
+    this.storage.set('lang', lang);
   }
 
   getLang() {
+    //if (!this.isLangSet) {
+    //  //### We have to decide what to do here later
+    //  return false;
+    //} else {
+      this.storage.get('lang').then((val) => {
+        if (val == "fr") {
+          return "fr";// LangCodes.FR;
+        } else {
+          return "en";// LangCodes.EN;
+        }
+      })
+    //}
+    
+  }
 
+  isLangSet() {
+    this.storage.get('lang').then((val) => {
+      if (val == null) {
+        return false;
+      } else {
+        return true;
+      }
+    })
   }
 }
