@@ -34,6 +34,13 @@
 
   "MAP_TITLE": "Map",
 
+  "EI_REPORTING_HEADER": "EI Reporting",
+  "EI_REPORT_CARD_HEADER": "My EI Reports",
+  "START_REPORT_BUTTON_TEXT": "Start Report",
+  "SUBMITTED_STATUS_TEXT": "Submitted",
+  "APPROVED_STATUS_TEXT": "Approved",
+  
+
   "ACCEPTANCE_STATEMENT_HEADER": "Acceptance Statement",
   "ACCEPTANCE_STATEMENT_CONTENT": "I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
   "ACCEPT_BUTTON": "I Accept",

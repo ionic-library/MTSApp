@@ -12,7 +12,7 @@
       <ion-icon class="menu" name='menu'></ion-icon>
     </button>
 
-    <ion-title class="page-title">EI Reporting
+    <ion-title class="page-title">{{ 'EI_REPORTING_HEADER' | translate }}
     </ion-title>
 
     <ion-buttons end>
@@ -28,7 +28,7 @@
 
   <ion-card>
     <ion-card-header class="ei-report-card-header">
-      My EI Reports
+      {{ 'EI_REPORT_CARD_HEADER' | translate }}
     </ion-card-header>
 
     <ion-list>
@@ -42,9 +42,9 @@
         <p *ngIf="report.dueDate !== 'Due Tomorrow'" class="ei-report-duedate">
           {{ report.dueDate }}
         </p>
-        <button *ngIf="report.status === 'new'" (click)="startReport(report)" ion-button item-right class="start-report-button">Start Report</button>
-        <p *ngIf="report.status === 'Submitted'" item-right class="status">Submitted</p>
-        <p *ngIf="report.status === 'Approved'" item-right class="status">Approved</p>
+        <button *ngIf="report.status === 'new'" (click)="startReport(report)" ion-button item-right class="start-report-button">{{ 'START_REPORT_BUTTON_TEXT' | translate }}</button>
+        <p *ngIf="report.status === 'Submitted'" item-right class="status">{{ 'SUBMITTED_STATUS_TEXT' | translate }}</p>
+        <p *ngIf="report.status === 'Approved'" item-right class="status">{{ 'APPROVED_STATUS_TEXT' | translate }}</p>
         <ion-icon *ngIf="report.status === 'Approved' || 'Submitted' && report.status !== 'new'" item-right class="good-status" name="checkmark-circle"></ion-icon>
       </ion-item>
 
