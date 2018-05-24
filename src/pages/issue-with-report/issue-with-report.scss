@@ -45,12 +45,12 @@ color: #FFF;
 
 @media only screen and (orientation: landscape) and (min-width: 568px) and (max-width: 823px) {
         .grid{
-            height: 125%;
+            height: 140%;
         }
     
 
     }
-@media only screen and (orientation: portrait) and (min-width: 768px) {
+@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
     .p{
         font-size: 3rem;
     }
