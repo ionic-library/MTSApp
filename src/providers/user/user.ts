@@ -29,6 +29,7 @@ import { VALID } from '@angular/forms/src/model';
 @Injectable()
 export class User {
   _user: any;
+  isLangSet: boolean;
 
   constructor(public api: Api, public storage: Storage) { }
 
@@ -68,7 +69,12 @@ export class User {
   }
 
   setLang(lang: string) {
-    this.storage.set('lang', lang);
+    if (lang == null) {
+      console.log('lang is null');
+    } else {
+      this.storage.set('lang', lang);
+    }
+    
   }
 
   getLang() {
@@ -87,12 +93,12 @@ export class User {
     
   }
 
-  isLangSet() {
-    this.storage.get('lang').then((val) => {
+  IsLangSet(success, Error) {
+    let ret = this.storage.get('lang').then((val) => {
       if (val == null) {
-        return false;
+        success(false);
       } else {
-        return true;
+        success(true);
       }
     })
   }

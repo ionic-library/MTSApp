@@ -33,6 +33,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
+  { title: 'Splash', component: SitePages.Splash },
   { title: 'Home', component: SitePages.Home },
   { title: 'Benefit Finder', component: SitePages.BenefitFinder },
   { title: 'EI Reporting', component: SitePages.EiReporting },
@@ -64,7 +65,7 @@ export class MyApp {
       this.splashScreen.hide();
       this.config.set("ios", "backButtonText",'');
       this.config.set('android', "backButtonText",'');
-      
+
     });
     this.initTranslate();
   }
@@ -73,7 +74,7 @@ export class MyApp {
     // Set the default language for translation strings, and the current language.
     this.translate.setDefaultLang("en");
     const browserLang = this.translate.getBrowserLang();
-    
+
     if (browserLang) {
       if (browserLang === "zh") {
         const browserCultureLang = this.translate.getBrowserCultureLang();
