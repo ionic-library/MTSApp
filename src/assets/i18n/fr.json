@@ -37,6 +37,12 @@
 
   "MAP_TITLE": "Carte",
 
+  "EI_REPORTING_HEADER": "(FR)EI Reporting",
+  "EI_REPORT_CARD_HEADER": "(FR)My EI Reports",
+  "START_REPORT_BUTTON_TEXT": "(FR)Start Report",
+  "SUBMITTED_STATUS_TEXT": "(FR)Submitted",
+  "APPROVED_STATUS_TEXT": "(FR)Approved",
+
   "ACCEPTANCE_STATEMENT_HEADER": "(FR)Acceptance Statement",
   "ACCEPTANCE_STATEMENT_CONTENT": "(FR)I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
   "ACCEPT_BUTTON": "(FR)I Accept",
