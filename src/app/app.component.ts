@@ -33,18 +33,19 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-  { title: 'Home', component: SitePages.Home },
-  { title: 'Benefit Finder', component: SitePages.BenefitFinder },
-  { title: 'EI Reporting', component: SitePages.EiReporting },
-  { title: 'Search', component: SitePages.JobSearch },
-  { title: 'Life Events', component: SitePages.LifeEvents },
-  { title: 'My Notifications', component: SitePages.MyNotifications },
-  { title: 'Service Canada Locations', component: SitePages.SCCLocations },
-  { title: 'Confirmation', component: SitePages.Confirmation },
-  { title: 'Questionaire', component: SitePages.Questionaire },
-  { title: 'Login', component: SitePages.EILogin },
-  { title: 'Settings', component: SitePages.Settings },
-  { title: 'Issue', component: SitePages.IssueWithReport }
+    { title: 'Splash', component: SitePages.Splash },
+    { title: 'Home', component: SitePages.Home },
+    { title: 'Benefit Finder', component: SitePages.BenefitFinder },
+    { title: 'EI Reporting', component: SitePages.EiReporting },
+    { title: 'Search', component: SitePages.JobSearch },
+    { title: 'Life Events', component: SitePages.LifeEvents },
+    { title: 'My Notifications', component: SitePages.MyNotifications },
+    { title: 'Service Canada Locations', component: SitePages.SCCLocations },
+    { title: 'Confirmation', component: SitePages.Confirmation },
+    { title: 'Questionaire', component: SitePages.Questionaire },
+    { title: 'Login', component: SitePages.EILogin },
+    { title: 'Settings', component: SitePages.Settings },
+    { title: 'Issue', component: SitePages.IssueWithReport }
   ]
 
   constructor(
