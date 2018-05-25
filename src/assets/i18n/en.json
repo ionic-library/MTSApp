@@ -157,5 +157,7 @@
 
   "SUBMISSION_TITLE": "Submit Your Report",
   "SUBMISSION_P1_TEXT": "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
-  "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the Confirmation Statement."
+  "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the Confirmation Statement.",
+  "SUBMISSION_ACCEPT_TEXT": "I accept",
+  "SUBMISSION_SUBTITLE1": "Address & Direct Deposit"
 }
