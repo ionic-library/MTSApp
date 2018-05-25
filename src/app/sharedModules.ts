@@ -1,3 +1,4 @@
+import { LangCodes } from './../providers/Lang/Lang';
 import { IonicModule, NavController, Platform } from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
 import { StatusBar } from "@ionic-native/status-bar";
@@ -22,13 +23,22 @@ import {
   SettingsMock,
   NavMock
 } from "../../test-config/mocks-ionic";
-import { Provider } from "@angular/compiler/src/core";
-import { ProvincesProvider } from "../providers";
+import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
+import { ProvincesProvider, User } from "../providers";
+import { Type } from "@angular/core";
+import { ineeda } from "ineeda";
 
 export class CommonTestModule {
-  public static getDeclarations = (arr?) => [MyApp].concat(arr || []);
+  /**
+   * Get the list of declarations for this test
+   */
+  public static getDeclarations = (arr?) : Array<Type<any> | any[]>  => [MyApp].concat(arr || []);
+  /*
 
-  public static getImports = (arr?) => [
+  /**
+   *
+   */
+  public static getImports = (arr?)  : Array<Type<any> | ModuleWithProviders | any[]> => [
       IonicModule.forRoot(MyApp),
       HttpClientTestingModule,
       TranslateModule.forRoot({
@@ -49,7 +59,12 @@ export class CommonTestModule {
       { provide: Platform, useClass: PlatformMock },
       { provide: TranslateService, useClass: TranslateService },
       { provide: Settings, useClass: SettingsMock },
-      { provide: ProvincesProvider, useClass: ProvincesProvider}
+      { provide: ProvincesProvider, useClass: ProvincesProvider},
+      //Create our default lang mock
+      { provide: User, useFactory: ineeda.factory<User>({
+        getLang : () => LangCodes.EN,
+        isLangSet: () => true,
+      })}
     ];
 
     if (overrides == null){
