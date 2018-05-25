@@ -33,7 +33,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: 'Home', component: SitePages.Home },
+  { title: 'Home', component: SitePages.Home },
   { title: 'Benefit Finder', component: SitePages.BenefitFinder },
   { title: 'EI Reporting', component: SitePages.EiReporting },
   { title: 'Search', component: SitePages.JobSearch },
