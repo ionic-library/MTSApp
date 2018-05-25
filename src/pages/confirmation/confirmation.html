@@ -13,9 +13,11 @@
   <ion-title>Report Submitted
   </ion-title>
 
-  <ion-buttons end>
-      <ion-icon class="help" name="help-circle"></ion-icon>
-  </ion-buttons>
+    <ion-buttons end>
+      <button ion-button clear (click)="this.presentHelpModal()">
+        <ion-icon class="help" name="help-circle"></ion-icon>
+      </button>
+    </ion-buttons>
 
   </ion-navbar>
 

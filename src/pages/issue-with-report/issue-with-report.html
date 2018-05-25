@@ -5,57 +5,59 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  
+
   <ion-navbar>
-      <ion-buttons class="start" start>
-        <ion-icon class="back" name="arrow-back"></ion-icon>
-      </ion-buttons> 
+    <ion-buttons class="start" start>
+      <ion-icon class="back" name="arrow-back"></ion-icon>
+    </ion-buttons>
 
-      <button ion-button menuToggle icon-only>
-        <ion-icon class="menu" name='menu'></ion-icon>
+    <button ion-button menuToggle icon-only>
+      <ion-icon class="menu" name='menu'></ion-icon>
+    </button>
+
+    <ion-title>Issue With Report
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button clear (click)="this.presentHelpModal()">
+        <ion-icon class="help" name="help-circle"></ion-icon>
       </button>
-    
-  <ion-title>Issue With Report
-  </ion-title>
-    
-  <ion-buttons end>
-      <ion-icon class="help" name="help-circle"></ion-icon>
-  </ion-buttons>
+    </ion-buttons>
 
-  </ion-navbar> 
+  </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
 
-    <ion-grid class="grid">
-        <ion-row justify-content-center align-items-center style="height:15%">            
-            <ion-icon class="ex" name="alert"></ion-icon>
-        </ion-row>
-        <ion-row justify-content-center align-items-start style="height:7%">   
-            <p class="p" > Unfortunately, at this time we are not able to complete your report online</p>
-        </ion-row>      
-    
-        <ion-row justify-content-center align-items-center align-self-end style="height: 15%; width: 75%; margin: 0 auto;">
-            <p class="p" >In order to continue: </p>
-        </ion-row>
-        <ion-row justify-content-center align-items-center style="height:10%; padding-top: 10px;">
-            <ion-icon class='call' name="call"></ion-icon>
-        </ion-row>
-        <ion-row justify-content-center align-items-start style="height: 10%; width: 60%; margin: 0 auto;">
-          <p class="p" style="padding-top: 10px;">Call Service Canada at 1-800-206-7218</p>
-        </ion-row> 
-   
-        <ion-row justify-content-center align-items-end style="height:10%">            
-            <p class="p" style="padding-bottom: 5px;">or</p>
-        </ion-row>  
-        <ion-row justify-content-center align-items-end style="height:17%">            
-            <ion-icon class="pin" name="pin"></ion-icon>
-          </ion-row> 
-          <ion-row justify-content-center align-items-start align-self-end style="padding-top: 10px; height:15%">
-              <p class="p">Find a Service Canada location</p>
-            </ion-row>     
-    </ion-grid>
+  <ion-grid class="grid">
+    <ion-row justify-content-center align-items-center style="height:15%">
+      <ion-icon class="ex" name="alert"></ion-icon>
+    </ion-row>
+    <ion-row justify-content-center align-items-start style="height:7%">
+      <p class="p"> Unfortunately, at this time we are not able to complete your report online</p>
+    </ion-row>
+
+    <ion-row justify-content-center align-items-center align-self-end style="height: 15%; width: 75%; margin: 0 auto;">
+      <p class="p">In order to continue: </p>
+    </ion-row>
+    <ion-row justify-content-center align-items-center style="height:10%; padding-top: 10px;">
+      <ion-icon class='call' name="call"></ion-icon>
+    </ion-row>
+    <ion-row justify-content-center align-items-start style="height: 10%; width: 60%; margin: 0 auto;">
+      <p class="p" style="padding-top: 10px;">Call Service Canada at 1-800-206-7218</p>
+    </ion-row>
+
+    <ion-row justify-content-center align-items-end style="height:10%">
+      <p class="p" style="padding-bottom: 5px;">or</p>
+    </ion-row>
+    <ion-row justify-content-center align-items-end style="height:17%">
+      <ion-icon class="pin" name="pin"></ion-icon>
+    </ion-row>
+    <ion-row justify-content-center align-items-start align-self-end style="padding-top: 10px; height:15%">
+      <p class="p">Find a Service Canada location</p>
+    </ion-row>
+  </ion-grid>
 
 </ion-content>

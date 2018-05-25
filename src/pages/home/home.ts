@@ -16,7 +16,8 @@ import { HelpModalPage } from "../help-modal/help-modal";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController, public modalCtrl: ModalController) {
+  constructor(private navCtrl: NavController,
+    public modalCtrl: ModalController) {
 
   }
 

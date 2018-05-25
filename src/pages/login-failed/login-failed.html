@@ -7,20 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-      <ion-buttons class="start" start>
-        <ion-icon class="back" name="arrow-back"></ion-icon>
-      </ion-buttons>
+    <ion-buttons class="start" start>
+      <ion-icon class="back" name="arrow-back"></ion-icon>
+    </ion-buttons>
 
-      <button ion-button menuToggle icon-only>
-        <ion-icon class="menu" name='menu'></ion-icon>
+    <button ion-button menuToggle icon-only>
+      <ion-icon class="menu" name='menu'></ion-icon>
+    </button>
+
+    <ion-title>Login Failed
+    </ion-title>
+
+    <ion-buttons end>
+      <button ion-button clear (click)="this.presentHelpModal()">
+        <ion-icon class="help" name="help-circle"></ion-icon>
       </button>
-
-  <ion-title>Login Failed
-  </ion-title>
-
-  <ion-buttons end>
-      <ion-icon class="help" name="help-circle"></ion-icon>
-  </ion-buttons>
+    </ion-buttons>
 
   </ion-navbar>
 

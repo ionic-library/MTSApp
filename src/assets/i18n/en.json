@@ -34,6 +34,16 @@
 
   "MAP_TITLE": "Map",
 
+  "APP_HOME_TITLE": "My Service Canada",
+  "SEARCHBAR_PLACEHOLDER": "How Can We Help?",
+  "SERVICE_ONE_TITLE": "My Notifications",
+  "SERVICE_TWO_TITLE": "Benefit Finder",
+  "SERVICE_THREE_TITLE": "Search",
+  "SERVICE_FOUR_TITLE": "My EI Report",
+  "SERVICE_FIVE_TITLE": "Service Canada Locations",
+  "SERVICE_SIX_TITLE": "Life Events",
+  "SHOW_MORE_BUTTON": "Show More",
+
   "EI_REPORTING_HEADER": "EI Reporting",
   "EI_REPORT_CARD_HEADER": "My EI Reports",
   "START_REPORT_BUTTON_TEXT": "Start Report",

@@ -10,11 +10,11 @@
 
     <ion-title class="page-title">{{ 'HELP_MODAL_TITLE' | translate }}
     </ion-title>
-
-    <button ion-button icon-only (click)="dismiss()" aria-label="Close Help">
-      <ion-icon name="close" aria-hidden="true"></ion-icon>
-    </button>
-
+    <ion-buttons end>
+      <button ion-button clear (click)="dismiss()" aria-label="Close Help">
+        <ion-icon name="close" aria-hidden="true"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-toolbar>
 
 </ion-header>

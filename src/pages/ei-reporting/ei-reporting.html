@@ -15,8 +15,10 @@
     <ion-title class="page-title">{{ 'EI_REPORTING_HEADER' | translate }}
     </ion-title>
 
-    <ion-buttons aria-label="Help" end>
-      <ion-icon class="help" name="help-circle" aria-hidden="true"></ion-icon>
+    <ion-buttons end>
+      <button ion-button clear (click)="this.presentHelpModal()">
+        <ion-icon class="help" name="help-circle"></ion-icon>
+      </button>
     </ion-buttons>
 
   </ion-navbar>

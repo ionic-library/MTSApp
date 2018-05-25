@@ -17,7 +17,8 @@ export enum SitePages {
   Questionaire2 = 'Questionaire_2Page',
   SCCLocations = 'SccLocationsPage' ,
   Settings = 'SettingsPage',
-  LoginFalied = 'LoginFailedPage'
+  LoginFalied = 'LoginFailedPage',
+  HelpModal = 'HelpModalPage'
 }
 
 // The page the user lands on after opening the app and without a session
