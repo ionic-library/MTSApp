@@ -41,7 +41,7 @@ describe("The Home Page", () => {
 
   it("Should navigate to the EI Reporting Login Page when navigateToEIReportingPage is called", () => {
     homePage.navigateToEIReportingPage();
-    expect(navSpy).to.have.been.calledWith(SitePages.EiReporting);
+    expect(navSpy).to.have.been.calledWith(SitePages.EILogin);
   });
 
   it("Should navigate to the Search Page when navigateToSearchPage is called", () => {
