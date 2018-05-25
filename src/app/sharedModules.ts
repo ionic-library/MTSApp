@@ -29,6 +29,7 @@ import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
 import { ProvincesProvider, User } from "../providers";
 import { Type } from "@angular/core";
 import { ineeda } from "ineeda";
+import { Reports } from '../mocks/providers/mock-ei-reports';
 
 export class CommonTestModule {
   /**
@@ -55,6 +56,7 @@ export class CommonTestModule {
   public static getProviders = (overrides? : Provider[]) : Provider[] => {
 
     let providers = [
+      { provide: Reports },
       { provide: ViewController },
       { provide: NavParams, useClass: NavParamsMock },
       { provide: NavController, useClass: NavMock },

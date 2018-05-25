@@ -22,7 +22,7 @@ export class EiReportingPage {
   public currentReports: Report[];
 
   constructor( private navCtrl: NavController,
-               private reports: Reports,
+               public reports: Reports,
                public modalCtrl: ModalController) {
     this.currentReports = this.reports.query();
   }
