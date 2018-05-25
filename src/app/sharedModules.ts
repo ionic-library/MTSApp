@@ -63,7 +63,7 @@ export class CommonTestModule {
       //Create our default lang mock
       { provide: User, useFactory: ineeda.factory<User>({
         getLang : () => LangCodes.EN,
-        isLangSet: () => true,
+        isLangSet: true,
       })}
     ];
 
