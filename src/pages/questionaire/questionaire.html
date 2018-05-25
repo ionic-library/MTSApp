@@ -16,6 +16,63 @@
 
 </ion-header>
 
-<ion-content padding>
-  <button ion-button [navPush]="pushPage" [navParams]="params">Go</button>
+<ion-content padding color="dark">
+
+    <h1 id="page-heading1" >
+        Heading
+      </h1>
+      <h5 id="page-heading2" >
+        Heading
+      </h5>
+      
+        <p color="dark">
+          Some friendly
+          <strong>
+            markdown
+          </strong>
+        </p>
+      
+      <form id="page-form2">
+        <ion-list radio-group >
+
+        
+          <ion-item>
+            <ion-label>Yes</ion-label>
+            <ion-radio value=true></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-radio value=false></ion-radio>
+            <ion-label>No</ion-label>
+            
+          </ion-item>
+        
+          
+        
+        </ion-list>
+      </form>
+     
+  
+  
 </ion-content>
+<ion-footer padding >
+  
+    
+
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <button id="previous" ion-button color="light" block   [navPush]="pushPage" >Previous question</button>
+          </ion-col>
+          <ion-col>
+              <button id="next" ion-button color="positive" block>Save and Continue</button>
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+ 
+      
+  </ion-footer>
+
+
+  
