@@ -69,7 +69,7 @@ describe("The Acceptance Statement Page", () => {
   });
 
   it("Should present user with Help Modal when Help button is clicked", () => {
-    acceptanceStatementPage.presentHelpModal();
+    acceptanceStatementPage.presentHelpModal;
     expect(modalSpy).to.not.throw();
   });
 });
