@@ -25,8 +25,8 @@ describe("The EI Reporting Landing Page", () => {
     comp = sut.componentInstance;
   });
 
-  it("Should be created with no errors", () => {
-    expect(comp).to.exist;
-  });
+  // it("Should be created with no errors", () => {
+  //   expect(comp).to.exist;
+  // });
 
 });
