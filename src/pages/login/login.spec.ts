@@ -40,6 +40,10 @@ describe("EI Reporting Login Page", () => {
 
   }
 
+  it("Should be created with no errors", () => {
+    expect(loginPage).to.exist;
+  });
+
   it ("Should report an error if no SIN is entered", () => {
     updateForm("", "1234", "on");
     expect(loginPage.login.controls.sin.valid).to.be.false;
