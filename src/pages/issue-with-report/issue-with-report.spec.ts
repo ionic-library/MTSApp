@@ -9,7 +9,7 @@ import { IssueWithReportPage } from "./issue-with-report";
 let { expect } = chai;
 chai.use(sinonChai);
 
-describe("The Issue With Login Page", () => {
+describe("The Issue With Report Page", () => {
   let sut: ComponentFixture<IssueWithReportPage>;
   let comp: IssueWithReportPage;
 
