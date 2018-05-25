@@ -2,7 +2,6 @@ import { User } from './../../providers/user/user';
 
 import { CommonTestModule } from "./../../app/sharedModules";
 import { LoginPage } from "./login";
-import { SitePages } from "..";
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
