@@ -139,6 +139,9 @@
   "ISSUE_PAGE_P2_TEXT": "In order to continue:",
   "ISSUE_PAGE_P3_TEXT": "Call Service Canada at 1-800-206-7218",
   "ISSUE_PAGE_P4_TEXT": "or",
-  "ISSUE_PAGE_P5_TEXT": "Find a Service Canada location"
+  "ISSUE_PAGE_P5_TEXT": "Find a Service Canada location",
 
+  "SUBMISSION_TITLE": "Submit Your Report",
+  "SUBMISSION_P1_TEXT": "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
+  "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the Confirmation Statement."
 }

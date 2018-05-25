@@ -47,7 +47,8 @@ export class MyApp {
   { title: 'Login', component: SitePages.EILogin },
   { title: 'Settings', component: SitePages.Settings },
   { title: 'Issue', component: SitePages.IssueWithReport },
-  { title: 'LoginFailed', component: SitePages.LoginFalied}
+  { title: 'LoginFailed', component: SitePages.LoginFalied},
+  { title: 'Submission', component: SitePages.Submission}
   ]
 
   constructor(
