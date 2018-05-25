@@ -17,4 +17,27 @@ page-help-modal {
       font-weight: 600;
       color: white;
   }
+
+  .help-modal-header {
+    font-size: 21px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .help-modal-header {
+    margin-top: 2vh !important;
+    padding: 0 3em 0 3em;
+    text-align: center;
+  }
+
+  .help-modal-content {
+    margin-top: 5vh;
+    padding: 0 2em 0 2em;
+  }
+
+  .help-modal-text {
+    font-size: 16px;
+    font-weight: normal;
+    line-height: normal;
+  }
 }
