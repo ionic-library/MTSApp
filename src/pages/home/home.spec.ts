@@ -34,6 +34,10 @@ describe("The Home Page", () => {
     navSpy = sinon.spy(fakeNavController, "push");
   });
 
+  it("Should be created with no errors", () => {
+    expect(homePage).to.exist;
+  });
+
   it("Should navigate to the Service Canada Location navigateToSCCLocationPage is called", () => {
     homePage.navigateToSCCLocationPage();
     expect(navSpy).to.have.been.calledWith(SitePages.SCCLocations);
