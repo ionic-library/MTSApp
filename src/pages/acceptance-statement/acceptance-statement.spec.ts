@@ -1,7 +1,7 @@
 import { CommonTestModule } from "./../../app/sharedModules";
 import { AcceptanceStatementPage } from "./acceptance-statement";
-import { NavController, NavParams } from "ionic-angular";
-import { NavMock, NavParamsMock } from "./../../../test-config/mocks-ionic";
+import { NavController, NavParams, ModalController } from "ionic-angular";
+import { NavMock, NavParamsMock, ModalCtrlMock } from "./../../../test-config/mocks-ionic";
 import { SitePages } from "..";
 import { Report } from "../../models/mockEiReport"
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
@@ -16,19 +16,23 @@ describe("The Acceptance Statement Page", () => {
   let sut: ComponentFixture<AcceptanceStatementPage>;
   let acceptanceStatementPage: AcceptanceStatementPage;
   let navSpy: sinon.SinonSpy;
+  let modalSpy: sinon.SinonSpy;
   let fakeNavController: NavMock;
   let fakeNavParams: NavParamsMock;
+  let fakeModalCtrl: ModalCtrlMock;
   
 
   beforeEach(async () => {
     fakeNavController = new NavMock();
     fakeNavParams = new NavParamsMock();
+    fakeModalCtrl = new ModalCtrlMock();
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([AcceptanceStatementPage]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
         { provide: NavController, useValue: fakeNavController },
-        { provide: NavParams, useValue: fakeNavParams }
+        { provide: NavParams, useValue: fakeNavParams },
+        { provide: ModalController, useValue: fakeModalCtrl }
       ])
     });
   });
@@ -37,6 +41,7 @@ describe("The Acceptance Statement Page", () => {
     sut = TestBed.createComponent(AcceptanceStatementPage);
     acceptanceStatementPage = sut.componentInstance;
     navSpy = sinon.spy(fakeNavController, "push");
+    modalSpy = sinon.spy(fakeModalCtrl, "create");
   });
 
   it("Should navigate to the Questionaire when acceptStatement is called", () => {
@@ -61,5 +66,10 @@ describe("The Acceptance Statement Page", () => {
   it("Should navigate to the Home Page when refuseStatement is called", () => {
     acceptanceStatementPage.refuseStatement(event);
     expect(navSpy).to.have.been.calledWith(SitePages.Home);
+  });
+
+  it("Should present user with Help Modal when Help button is clicked", () => {
+    acceptanceStatementPage.presentHelpModal();
+    expect(modalSpy).to.not.throw();
   });
 });
