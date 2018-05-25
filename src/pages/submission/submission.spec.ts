@@ -1,5 +1,4 @@
 import { CommonTestModule } from "./../../app/sharedModules";
-import { SitePages } from "..";
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
