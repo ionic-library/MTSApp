@@ -6,8 +6,10 @@
     <ion-title>
       My Service Canada
     </ion-title>
-    <ion-buttons (click)="presentHelpModal()" end>
-      <ion-icon class="help" name="help-circle"></ion-icon>
+    <ion-buttons end>
+      <button ion-button clear (click)="this.presentHelpModal()">
+        <ion-icon class="help" name="help-circle"></ion-icon>
+      </button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
