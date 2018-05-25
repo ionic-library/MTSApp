@@ -19,6 +19,11 @@ page-home {
       .toolbar-background-ios{
         display: none;
       }
+
+      .help {
+        color: #fff;
+        padding-right: 5vw;
+      }
     }
   }
 
@@ -72,6 +77,11 @@ page-home {
         
         .toolbar-background-ios{
           display: none;
+        }
+
+        .help {
+          color: black;
+          padding-right: 5vw;
         }
       }
     }
