@@ -54,6 +54,14 @@ $toolbar-order-ios: (
 );
 $toolbar-ios-title-font-size: 15px;
 
+$searchbar-ios-background-color: none;
+$searchbar-ios-border-color: none;
+$searchbar-ios-padding-horizontal: 2em;
+$searchbar-ios-input-height: 3em;
+$searchbar-ios-input-placeholder-color: black;
+$searchbar-ios-input-search-icon-color: black;
+$searchbar-ios-input-search-icon-size: 16px;
+
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
@@ -68,6 +76,10 @@ $toolbar-order-md: (
   menu-toggle-end: 7,
 );
 $toolbar-md-title-font-size: 15px;
+
+$searchbar-md-input-box-shadow: none;
+$searchbar-md-padding: 0 2em 0 2em;
+$searchbar-md-input-search-icon-color: black;
 
 // App Windows Variables
 // --------------------------------------------------

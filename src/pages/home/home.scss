@@ -31,6 +31,24 @@ page-home {
     width: 100%;
   }
 
+  .searchbar {
+    margin-top: 2vh;
+
+    .searchbar-input {
+      border-radius: 2.5px;
+      border: solid 0.5px #979797;
+    }
+  }
+
+// iOS Search Icon Custom CSS
+  .searchbar-ios {
+
+    .searchbar-search-icon {
+      margin-top: .3em;
+    }
+  }
+//////////////////////////////
+
   .scroll-content {
     margin-top: 0 !important;
     padding-top: 0 !important;
