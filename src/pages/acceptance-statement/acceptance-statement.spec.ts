@@ -44,6 +44,10 @@ describe("The Acceptance Statement Page", () => {
     modalSpy = sinon.spy(fakeModalCtrl, "create");
   });
 
+  it("Should be created with no errors", () => {
+    expect(acceptanceStatementPage).to.exist;
+  });
+
   it("Should navigate to the Questionaire when acceptStatement is called", () => {
     let report = fakeNavParams.get(0);
     acceptanceStatementPage.acceptStatement(report);
@@ -68,7 +72,7 @@ describe("The Acceptance Statement Page", () => {
     expect(navSpy).to.have.been.calledWith(SitePages.Home);
   });
 
-  it("Should present user with Help Modal when Help button is clicked", () => {
+  it("Should present user with Help Modal when presentHelpModal is called", () => {
     acceptanceStatementPage.presentHelpModal;
     expect(modalSpy).to.not.throw();
   });
