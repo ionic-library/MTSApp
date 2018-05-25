@@ -22,10 +22,68 @@ page-submission {
         }
 //*********************************************
 
+        .title{
+            color: #0a1a2b;
+            font-size: 21px;
+            font-weight: 600;
+            display: block;
+            margin-right: 20%;
+        }
+
         .line{
             width: 100%;
             height: 1px;
             border: solid .5px #d7d7d7;
             margin: 0 auto;
+            margin-bottom: 0;
+            margin-top: 32px;
+        }
+
+        .circle{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: #31485b;
+            box-shadow: 0.5px 1px 2px 0 rgba(0, 0, 0, 0.34);
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        .p{
+            text-align: left;
+            display: block;
+        }
+        .rectangle{
+            margin-top: 28px;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            width: 150px;
+            height: 40px;
+            border-radius: 2.5px;
+            background-color: #0f71c4;
+        }
+
+        .number{
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .subtitles{
+            margin: 0;
+            font-size: 15px;
+            padding-left: 10px;
+            font-weight: 600;
+            color: #0a1a2b;
+            margin-top: 20px;
+        }
+        .wrapper{
+            width: 90%;
+            margin: 0 auto;
+            text-justify: left;
         }
 }
