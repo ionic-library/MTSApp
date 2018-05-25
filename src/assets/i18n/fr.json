@@ -43,6 +43,10 @@
   "SUBMITTED_STATUS_TEXT": "(FR)Submitted",
   "APPROVED_STATUS_TEXT": "(FR)Approved",
 
+  "HELP_MODAL_TITLE": "(FR)Help",
+  "HELP_MODAL_HEADER": "(FR)When should you submit your report?",
+  "HELP_MODAL_CONTENT": "(FR)Once you have successfully completed your online reporting session, you will be advised when you should submit your next report. It is important to submit your reports as soon as they are due or your report may not be processed. If your report is incomplete it will not be accepted for processing. In a few circumstances you will need to speak with us to complete your report. If this is the case, you will be given instructions at the end of your online session on how to contact a representative.",
+
   "ACCEPTANCE_STATEMENT_HEADER": "(FR)Acceptance Statement",
   "ACCEPTANCE_STATEMENT_CONTENT": "(FR)I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
   "ACCEPT_BUTTON": "(FR)I Accept",

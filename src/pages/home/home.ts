@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController } from "ionic-angular";
+import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { SitePages } from "../index";
+import { HelpModalPage } from "../help-modal/help-modal";
 
 /**
  * Home page where user selects services from an
@@ -15,10 +16,14 @@ import { SitePages } from "../index";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController, public modalCtrl: ModalController) {
 
+  }
 
-
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
   }
 
   public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);
