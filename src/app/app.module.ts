@@ -11,6 +11,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
 import { Items } from '../mocks/providers/items';
 import { Reports } from '../mocks/providers/mock-ei-reports';
+import { HelpModalPage } from '../pages/help-modal/help-modal'
 import { Settings, User, Api, Lang, ProvincesProvider } from '../providers';
 import { MyApp } from './app.component';
 
@@ -38,7 +39,8 @@ export function provideSettings(storage: Storage) {
 
 @NgModule({
   declarations: [
-    MyApp
+    MyApp,
+    HelpModalPage
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,7 @@ export function provideSettings(storage: Storage) {
   ],
   bootstrap: [IonicApp],
   entryComponents: [
+    HelpModalPage,
     MyApp
   ],
   providers: [
