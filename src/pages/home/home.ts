@@ -21,7 +21,7 @@ export class HomePage {
 
   }
 
-  public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EiReporting);
+  public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EILogin);
   public navigateToSearchPage = () => this.navCtrl.push(SitePages.JobSearch);
   public navigateToMyNotificationsPage = () => this.navCtrl.push(SitePages.MyNotifications);
   public navigateToBenefitFinderPage = () => this.navCtrl.push(SitePages.BenefitFinder);
