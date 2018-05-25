@@ -16,9 +16,9 @@
   "LOGIN_PREAMBLE": "You have chosen to complete your report in English. Please note that you will not be able to change to French once you start your online session. If you wish to change language please do so before you begin.",
   "BACK_BUTTON_TEXT": "Back",
 
-  "SIN": "Social Insurance Number:",
-  "AC": "Access Code:",
-  "PROVINCE_RESIDENCE": "Province:",
+  "SIN": "Social Insurance Number",
+  "AC": "Access Code",
+  "PROVINCE_RESIDENCE": "Province",
   "CONTINUE_BUTTON": "Continue",
   "LOGIN_TITLE": "Login",
 
@@ -39,7 +39,7 @@
   "START_REPORT_BUTTON_TEXT": "Start Report",
   "SUBMITTED_STATUS_TEXT": "Submitted",
   "APPROVED_STATUS_TEXT": "Approved",
-  
+
 
   "ACCEPTANCE_STATEMENT_HEADER": "Acceptance Statement",
   "ACCEPTANCE_STATEMENT_CONTENT": "I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",

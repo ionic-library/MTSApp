@@ -15,9 +15,9 @@
 
   "LOGIN_PREAMBLE": "Vous avez choisi de remplir votre déclaration en français. Veuillez noter que vous ne pourrez pas changer vers l'anglais après que vous aurez débuté votre session en direct. Si vous désirez changer la langue, veuillez le faire maintenant.",
   "LOGIN": "Connexion",
-  "SIN": "Numéro d'assurance sociale (NAS) :",
-  "AC": "Code d'accès :",
-  "PROVINCE_RESIDENCE": "Province de résidence :",
+  "SIN": "Numéro d'assurance sociale (NAS)",
+  "AC": "Code d'accès",
+  "PROVINCE_RESIDENCE": "Province de résidence",
   "CONTINUE_BUTTON": "Poursuivre",
   "LOGIN_TITLE": "Ouverture de session",
 
@@ -111,7 +111,7 @@
   "CARDS_TITLE": "Social",
 
   "SEARCH_TITLE": "Recherche",
-  
+
   "CONFIRMATION_TITLE": "(FR)Report Submitted",
   "CONFIRMATION_P_TEXT": "(FR)Thanks for submitting your report.",
   "CONFIRMATION_HOME_BUTTON": "(FR)Return to my EI Reporting Dashboard",

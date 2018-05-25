@@ -11,10 +11,8 @@
       <button ion-button icon-only >
         <ion-icon name="help"></ion-icon>
       </button>
-
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -22,20 +20,22 @@
   <p>{{ 'LOGIN_PREAMBLE' | translate }}</p>
   <form [formGroup]="login" (submit)="doLogin()">
     <ion-list>
+
       <ion-item no-lines >
-        <ion-label text-wrap stacked>{{ 'SIN' | translate }}
+        <ion-label text-wrap stacked class="labelText" >{{ 'SIN' | translate }}
           <span class="errorText" *ngIf="this.showError('sin')">{{ 'SIN_ERROR' | translate }}</span></ion-label>
         <ion-input class="boxInput" [class.invalid]="this.showError('sin')"  formGroupName="sin" type="password" ></ion-input>
       </ion-item>
+
       <ion-item no-lines >
-        <ion-label stacked>{{ 'AC' | translate }}
+        <ion-label text-wrap stacked class="labelText" >{{ 'AC' | translate }}
           <span class="errorText" *ngIf="this.showError('accessCode')">{{'ACCESS_CODE_ERROR' | translate }}</span>
         </ion-label>
         <ion-input class="boxInput" [class.invalid]="this.showError('accessCode')" formGroupName="accessCode" type="password" ></ion-input>
       </ion-item>
 
       <ion-item no-lines >
-        <ion-label stacked>{{ 'PROVINCE_RESIDENCE' | translate }}
+        <ion-label text-wrap stacked class="labelText" >{{ 'PROVINCE_RESIDENCE' | translate }}
           <span class="errorText" *ngIf="this.showError('provinceOfResidence')">{{'PROVINCE_OF_RESIDENCE_ERROR' | translate }}</span>
         </ion-label>
         <ion-select class="boxInput" [class.invalid]="this.showError('provinceOfResidence')" formGroupName="provinceOfResidence" >
