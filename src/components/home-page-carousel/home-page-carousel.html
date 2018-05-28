@@ -1,0 +1,51 @@
+<!-- Generated template for the HomePageCarouselComponent component -->
+<ion-slides class="slides-container">
+  <ion-slide class="slide-page-one">
+    <ion-grid class="carousel-grid">
+      <ion-row class="carousel-row">
+        <ion-col class="carousel-column">
+          <div (click)="this.navigateToMyNotificationsPage()" class="carousel-service-select">
+            <ion-icon class="service-icon" name="notifications"></ion-icon>
+            <p class="service-title">{{'SERVICE_ONE_TITLE' | translate }}</p>
+          </div>
+        </ion-col>
+        <ion-col class="carousel-column">
+          <div (click)="this.navigateToBenefitFinderPage()" class="carousel-service-select">
+            <ion-icon class="service-icon" name="list-box"></ion-icon>
+            <p class="service-title">{{'SERVICE_TWO_TITLE' | translate }}</p>
+          </div>
+        </ion-col>
+        <ion-col class="carousel-column">
+          <div (click)="this.navigateToSearchPage()" class="carousel-service-select">
+            <ion-icon class="service-icon" name="search"></ion-icon>
+            <p class="service-title">{{ 'SERVICE_THREE_TITLE' | translate }}</p>
+          </div>
+        </ion-col>
+        <ion-col class="carousel-column">
+          <div (click)="this.navigateToEIReportingPage()" class="service-select" style="border-left: none; border-bottom: none;">
+            <ion-icon class="service-icon" name="paper-plane"></ion-icon>
+            <p class="service-title">{{ 'SERVICE_FOUR_TITLE' | translate }}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-slide>
+  <ion-slide class="slide-page-two">
+    <ion-grid class="carousel-grid">
+      <ion-row class="carousel-row">
+        <ion-col class="carousel-column">
+          <div (click)="this.navigateToSCCLocationPage()" class="service-select" style="border-bottom: none;">
+            <ion-icon class="service-icon" name="globe"></ion-icon>
+            <p class="service-title">{{ 'SERVICE_FIVE_TITLE' | translate }}</p>
+          </div>
+        </ion-col>
+        <ion-col class="carousel-column">
+          <div (click)="this.navigateToLifeEventsPage()" class="service-select" style="border-bottom: none; border-right: none;">
+            <ion-icon class="service-icon" name="people"></ion-icon>
+            <p class="service-title">{{ 'SERVICE_SIX_TITLE' | translate }}</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-slide>
+</ion-slides>

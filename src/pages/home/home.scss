@@ -79,6 +79,10 @@ page-home {
     margin: 0;
     font-size: .9em;
   }
+
+  .landscape-grid {
+    display: none;
+  }
 // Global Landscape Orientation CSS
   @media only screen and (orientation: landscape) {
     .page-header {
@@ -119,6 +123,14 @@ page-home {
     .searchbar {
       margin-top: 1em;
     }
+
+    .portrait-grid {
+      display: none;
+    }
+
+    .landscape-grid {
+      display: unset;
+    }
   }
 
 // iPad Pro Media Query
@@ -129,7 +141,7 @@ page-home {
       width: 100%;
     }
 
-    .grid {
+    .portrait-grid {
       height: 60em;
 
       .row {
@@ -157,7 +169,7 @@ page-home {
     width: 100%;
   }
 
-  .grid {
+  .portrait-grid {
     height: 50em;
 
     .row {

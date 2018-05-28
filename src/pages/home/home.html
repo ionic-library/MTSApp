@@ -8,7 +8,7 @@
     </ion-title>
     <ion-buttons end>
       <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle"></ion-icon>
+        <ion-icon class="help" name="help-circle" aria-label="Help Button"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -20,7 +20,7 @@
     <img class="curved-img-landscape" src="../../assets//img/flag_front_pageCROP_landscape.png" alt="Header image">
   </div>
   <ion-searchbar placeholder="{{'SEARCHBAR_PLACEHOLDER' | translate}}"></ion-searchbar>
-  <ion-grid class="grid" padding>
+  <ion-grid class="portrait-grid" padding>
     <ion-row class="row">
       <ion-col class="grid-column" style="padding-right: 0; padding-bottom: 0;">
         <div (click)="this.navigateToMyNotificationsPage()" class="service-select" style="border-left: none; border-top: none;">
@@ -62,6 +62,7 @@
       </ion-col>
     </ion-row>
   </ion-grid>
+  <home-page-carousel class="landscape-grid"></home-page-carousel>
   <div id="home-page-show-more-container">
     <button ion-button block>{{ 'SHOW_MORE_BUTTON' | translate }}</button>
   </div>
