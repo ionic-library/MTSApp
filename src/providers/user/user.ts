@@ -64,7 +64,7 @@ export class User {
   /**
    * Process a login/signup response to store user data
    */
-  _loggedIn(resp) {
+  private _loggedIn(resp) {
     this._user = resp.user;
   }
 
@@ -74,7 +74,11 @@ export class User {
     } else {
       this.storage.set('lang', lang);
     }
-    
+
+  }
+
+  isLoggedIn() : boolean {
+    return !(this._user === null || this._user === undefined);
   }
 
   getLang() {
@@ -90,7 +94,7 @@ export class User {
         }
       })
     //}
-    
+
   }
 
   IsLangSet(success, Error) {
