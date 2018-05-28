@@ -2,18 +2,16 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, NavParams, ModalController } from 'ionic-angular';
 import { Report } from '../../models/mockEiReport';
-import { QuestionairePage } from '../questionaire/questionaire';
-import { Questionaire_3Page } from '../questionaire-3/questionaire-3';
+import { Questionaire_5Page } from '../questionaire-5/questionaire-5';
+import { Questionaire_7Page } from '../questionaire-7/questionaire-7';
 import { HelpModalPage } from '../help-modal/help-modal';
-
-
 
 @IonicPage()
 @Component({
-  selector: 'page-questionaire-2',
-  templateUrl: 'questionaire-2.html',
+  selector: 'page-questionaire-6',
+  templateUrl: 'questionaire-6.html',
 })
-export class Questionaire_2Page {
+export class Questionaire_6Page {
   //report: Report;
   //params: Object;
   pushPagePrevious: any;
@@ -24,8 +22,8 @@ export class Questionaire_2Page {
     public modalCtrl: ModalController) {
     //this.report = navParams.get('report');
    // console.log(this.report);
-    this.pushPagePrevious = QuestionairePage;
-    this.pushPageNext = Questionaire_3Page;
+    this.pushPagePrevious = Questionaire_5Page;
+    this.pushPageNext = Questionaire_7Page;
     //this.params = { id: 42 };
   }
 
