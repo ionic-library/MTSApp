@@ -37,6 +37,21 @@ describe("The Home Page", () => {
     navSpy = sinon.spy(fakeNavController, "push");
   }
 
+  describe("itself", () => {
+    beforeEach(async () => {
+      setupTestBedConfig();
+    });
+
+    beforeEach(() => {
+      createTestObjects();
+    });
+
+    it("Should be created with no errors",() => {
+      expect(homePage).to.exist;
+    });
+
+  })
+
   describe("Login Button",() => {
     let fakeLoginCheck: boolean;
 

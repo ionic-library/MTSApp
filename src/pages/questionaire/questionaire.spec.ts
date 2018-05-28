@@ -3,25 +3,25 @@ import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
-import { IssueWithReportPage } from "./issue-with-report";
+import { QuestionairePage } from "./questionaire";
 
 let { expect } = chai;
 chai.use(sinonChai);
 
-describe("The Issue With Report Page", () => {
-  let sut: ComponentFixture<IssueWithReportPage>;
-  let comp: IssueWithReportPage;
+describe("The Questionaire Page", () => {
+  let sut: ComponentFixture<QuestionairePage>;
+  let comp: QuestionairePage;
 
   beforeEach(async () => {
     TestBed.configureTestingModule({
-      declarations: CommonTestModule.getDeclarations([IssueWithReportPage]),
+      declarations: CommonTestModule.getDeclarations([QuestionairePage]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders()
     });
   });
 
   beforeEach(() => {
-    sut = TestBed.createComponent(IssueWithReportPage);
+    sut = TestBed.createComponent(QuestionairePage);
     comp = sut.componentInstance;
   });
 

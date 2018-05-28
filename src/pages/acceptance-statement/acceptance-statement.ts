@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Report } from '../../models/mockEiReport';
 import { SitePages } from '..';
+import { HelpModalPage } from "../help-modal/help-modal";
 
 /**
  * Generated class for the AcceptanceStatementPage page.
@@ -21,8 +22,16 @@ export class AcceptanceStatementPage {
   report: Report;
 
   constructor(public translate: TranslateService,
-    public navParams: NavParams, public navCtrl: NavController) {
+    public navParams: NavParams,
+    public navCtrl: NavController,
+    public modalCtrl: ModalController) {
     this.report = navParams.get('report');
+  }
+
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
   }
 
   ionViewDidLoad() {

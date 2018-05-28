@@ -33,7 +33,6 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-  { title: 'Splash', component: SitePages.Splash },
   { title: 'Home', component: SitePages.Home },
   { title: 'Benefit Finder', component: SitePages.BenefitFinder },
   { title: 'EI Reporting', component: SitePages.EiReporting },
@@ -47,7 +46,9 @@ export class MyApp {
   { title: 'Login', component: SitePages.EILogin },
   { title: 'Settings', component: SitePages.Settings },
   { title: 'Issue', component: SitePages.IssueWithReport },
-  { title: 'LoginFailed', component: SitePages.LoginFalied}
+  { title: 'LoginFailed', component: SitePages.LoginFalied},
+  { title: 'Submission', component: SitePages.Submission },
+  { title: 'Splash', component: SitePages.Splash }
   ]
 
   constructor(

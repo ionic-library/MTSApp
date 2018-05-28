@@ -8,8 +8,8 @@
     </ion-buttons>
     <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only >
-        <ion-icon name="help"></ion-icon>
+      <button ion-button clear (click)="this.presentHelpModal()">
+        <ion-icon class="help" name="help-circle"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>

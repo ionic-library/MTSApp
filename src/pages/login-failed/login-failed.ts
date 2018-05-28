@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { HelpModalPage } from '../help-modal/help-modal';
 
 /**
  * Generated class for the LoginFailedPage page.
@@ -15,11 +16,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LoginFailedPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginFailedPage');
+  }
+
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
   }
 
 }

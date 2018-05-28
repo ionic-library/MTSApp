@@ -1,7 +1,8 @@
 import { User } from './../../providers/user/user';
 import { Component } from "@angular/core";
-import { IonicPage, NavController } from "ionic-angular";
+import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { SitePages } from "../index";
+import { HelpModalPage } from "../help-modal/help-modal";
 
 /**
  * Home page where user selects services from an
@@ -17,10 +18,15 @@ export class HomePage {
   logController;
 
   constructor(private navCtrl: NavController,
-              private user : User) {
+              private user : User,
+              public modalCtrl: ModalController) {
 
+  }
 
-
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
   }
 
   /**

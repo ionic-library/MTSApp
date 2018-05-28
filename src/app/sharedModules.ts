@@ -1,5 +1,5 @@
 import { LangCodes } from './../providers/Lang/Lang';
-import { IonicModule, NavController, Platform } from "ionic-angular";
+import { IonicModule, NavController, ViewController, Platform, ModalController, NavParams } from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -21,12 +21,15 @@ import {
   StatusBarMock,
   SplashScreenMock,
   SettingsMock,
-  NavMock
+  NavMock,
+  ModalCtrlMock,
+  NavParamsMock
 } from "../../test-config/mocks-ionic";
 import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
 import { ProvincesProvider, User } from "../providers";
 import { Type } from "@angular/core";
 import { ineeda } from "ineeda";
+import { Reports } from '../mocks/providers/mock-ei-reports';
 
 export class CommonTestModule {
   /**
@@ -53,7 +56,11 @@ export class CommonTestModule {
   public static getProviders = (overrides? : Provider[]) : Provider[] => {
 
     let providers = [
+      { provide: Reports },
+      { provide: ViewController },
+      { provide: NavParams, useClass: NavParamsMock },
       { provide: NavController, useClass: NavMock },
+      { provide: ModalController, useClass: ModalCtrlMock },
       { provide: StatusBar, useClass: StatusBarMock },
       { provide: SplashScreen, useClass: SplashScreenMock },
       { provide: Platform, useClass: PlatformMock },

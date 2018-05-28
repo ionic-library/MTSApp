@@ -132,6 +132,14 @@ export class NavParamsMock {
   }
 }
 
+export class ModalCtrlMock {
+  public create(): any {
+    return new Promise(function(resolve: Function): void {
+      resolve();
+    });
+  }
+}
+
 export class DeepLinkerMock {
 
 }
