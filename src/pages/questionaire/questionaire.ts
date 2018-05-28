@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, NavParams, ModalController } from 'ionic-angular';
 import { Report } from '../../models/mockEiReport';
 import { Questionaire_2Page } from '../questionaire-2/questionaire-2';
+import { HelpModalPage } from '../help-modal/help-modal';
 
 @IonicPage()
 @Component({
@@ -16,7 +17,9 @@ export class QuestionairePage {
   params: Object;
   pushPage: any;
   constructor(public translate: TranslateService,
-    public navParams: NavParams, public navCtrl: NavController) {
+    public navParams: NavParams, 
+    public navCtrl: NavController,
+    public modalCtrl: ModalController) {
     this.report = navParams.get('report');
     console.log(this.report);
     this.pushPage = Questionaire_2Page;
@@ -27,5 +30,9 @@ export class QuestionairePage {
     console.log('ionViewDidLoad QuestionairePage');
   }
 
- 
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
+  }
 }

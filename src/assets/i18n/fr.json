@@ -37,11 +37,25 @@
 
   "MAP_TITLE": "Carte",
 
+  "APP_HOME_TITLE": "(FR)My Service Canada",
+  "SEARCHBAR_PLACEHOLDER": "(FR)How Can We Help?",
+  "SERVICE_ONE_TITLE": "(FR)My Notifications",
+  "SERVICE_TWO_TITLE": "(FR)Benefit Finder",
+  "SERVICE_THREE_TITLE": "(FR)Search",
+  "SERVICE_FOUR_TITLE": "(FR)My EI Report",
+  "SERVICE_FIVE_TITLE": "(FR)Service Canada Locations",
+  "SERVICE_SIX_TITLE": "(FR)Life Events",
+  "SHOW_MORE_BUTTON": "Show More",
+
   "EI_REPORTING_HEADER": "(FR)EI Reporting",
   "EI_REPORT_CARD_HEADER": "(FR)My EI Reports",
   "START_REPORT_BUTTON_TEXT": "(FR)Start Report",
   "SUBMITTED_STATUS_TEXT": "(FR)Submitted",
   "APPROVED_STATUS_TEXT": "(FR)Approved",
+
+  "HELP_MODAL_TITLE": "(FR)Help",
+  "HELP_MODAL_HEADER": "(FR)When should you submit your report?",
+  "HELP_MODAL_CONTENT": "(FR)Once you have successfully completed your online reporting session, you will be advised when you should submit your next report. It is important to submit your reports as soon as they are due or your report may not be processed. If your report is incomplete it will not be accepted for processing. In a few circumstances you will need to speak with us to complete your report. If this is the case, you will be given instructions at the end of your online session on how to contact a representative.",
 
   "ACCEPTANCE_STATEMENT_HEADER": "(FR)Acceptance Statement",
   "ACCEPTANCE_STATEMENT_CONTENT": "(FR)I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
@@ -123,5 +137,11 @@
   "ISSUE_PAGE_P2_TEXT": "(FR)In order to continue:",
   "ISSUE_PAGE_P3_TEXT": "(FR)Call Service Canada at 1-800-206-7218",
   "ISSUE_PAGE_P4_TEXT": "(FR)or",
-  "ISSUE_PAGE_P5_TEXT": "(FR)Find a Service Canada location"
+  "ISSUE_PAGE_P5_TEXT": "(FR)Find a Service Canada location",
+
+  "SUBMISSION_TITLE": "(FR)Submit Your Report",
+  "SUBMISSION_P1_TEXT": "(FR)Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
+  "SUBMISSION_P2_TEXT": "(FR)By clicking I accept you are agreeing to the Confirmation Statement.",
+  "SUBMISSION_ACCEPT_TEXT": "(FR)I accept",
+  "SUBMISSION_SUBTITLE1": "(FR)Address & Direct Deposit"
 }

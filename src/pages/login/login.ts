@@ -2,10 +2,11 @@ import { SinValidator } from './../../validators/sin';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, ToastController, ModalController } from 'ionic-angular';
 
 import { User, ProvincesProvider} from '../../providers';
 import { MainPage } from '../';
+import { HelpModalPage } from '../help-modal/help-modal';
 
 @IonicPage()
 @Component({
@@ -32,6 +33,7 @@ export class LoginPage {
   submitAttempt : boolean;
 
   constructor( public navCtrl: NavController,
+               public modalCtrl: ModalController,
                public user: User,
                public toastCtrl: ToastController,
                public translateService: TranslateService,
@@ -82,5 +84,11 @@ export class LoginPage {
       toast.present();
     });
 
+  }
+
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
   }
 }

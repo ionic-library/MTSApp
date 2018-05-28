@@ -2,7 +2,6 @@ import { User } from './../../providers/user/user';
 
 import { CommonTestModule } from "./../../app/sharedModules";
 import { LoginPage } from "./login";
-import { SitePages } from "..";
 import { async, TestBed, ComponentFixture } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
@@ -39,6 +38,10 @@ describe("EI Reporting Login Page", () => {
     loginPage.login.controls["provinceOfResidence"].setValue(provinceCode);
 
   }
+
+  it("Should be created with no errors", () => {
+    expect(loginPage).to.exist;
+  });
 
   it ("Should report an error if no SIN is entered", () => {
     updateForm("", "1234", "on");
