@@ -16,9 +16,9 @@
   "LOGIN_PREAMBLE": "You have chosen to complete your report in English. Please note that you will not be able to change to French once you start your online session. If you wish to change language please do so before you begin.",
   "BACK_BUTTON_TEXT": "Back",
 
-  "SIN": "Social Insurance Number:",
-  "AC": "Access Code:",
-  "PROVINCE_RESIDENCE": "Province:",
+  "SIN": "Social Insurance Number",
+  "AC": "Access Code",
+  "PROVINCE_RESIDENCE": "Province",
   "CONTINUE_BUTTON": "Continue",
   "LOGIN_TITLE": "Login",
 

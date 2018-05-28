@@ -71,6 +71,7 @@ export class CommonTestModule {
       { provide: User, useFactory: ineeda.factory<User>({
         getLang : () => LangCodes.EN,
         isLangSet: true,
+        isLoggedIn : () => true,
       })}
     ];
 
