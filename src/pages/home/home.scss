@@ -27,8 +27,12 @@ page-home {
     }
   }
 
-  .curved-img {
+  .curved-img-portrait {
     width: 100%;
+  }
+
+  .curved-img-landscape {
+    display: none;
   }
 
   .searchbar {
@@ -79,7 +83,7 @@ page-home {
   @media only screen and (orientation: landscape) {
     .page-header {
       .button-inner {
-        color: black;
+        color: white;
       }
   
       .toolbar {
@@ -90,7 +94,7 @@ page-home {
         }
   
         .toolbar-title {
-          color: black;
+          color: white;
         }
         
         .toolbar-background-ios{
@@ -98,22 +102,33 @@ page-home {
         }
 
         .help {
-          color: black;
+          color: white;
           padding-right: 5vw;
         }
       }
     }
 
-    #header-image-container {
+    .curved-img-portrait {
       display: none;
     }
+    .curved-img-landscape {
+      display: flex;
+      margin-top: -2em;
+    }
+
     .searchbar {
-      margin-top: 3em;
+      margin-top: 1em;
     }
   }
 
 // iPad Pro Media Query
   @media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .curved-img-landscape {
+      display: flex;
+      margin-top: -2em;
+      width: 100%;
+    }
+
     .grid {
       height: 60em;
 
@@ -136,6 +151,12 @@ page-home {
   }
 // iPad Media Query
 @media only screen and (orientation: landscape) and (min-width: 1000px) {
+  .curved-img-landscape {
+    display: flex;
+    margin-top: -2em;
+    width: 100%;
+  }
+
   .grid {
     height: 50em;
 
