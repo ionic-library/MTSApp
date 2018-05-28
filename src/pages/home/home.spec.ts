@@ -1,3 +1,4 @@
+import { EiReportingPage } from './../ei-reporting/ei-reporting';
 import { CommonTestModule } from "./../../app/sharedModules";
 import { HomePage } from "./home";
 import { NavController } from "ionic-angular";
@@ -25,7 +26,7 @@ describe("The Home Page", () => {
       providers: CommonTestModule.getProviders([
         { provide: NavController, useValue: fakeNavController }
       ])
-    });
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -34,19 +35,14 @@ describe("The Home Page", () => {
     navSpy = sinon.spy(fakeNavController, "push");
   });
 
-  it("Should navigate to the Service Canada Location navigateToSCCLocationPage is called", () => {
-    homePage.navigateToSCCLocationPage();
-    expect(navSpy).to.have.been.calledWith(SitePages.SCCLocations);
-  });
-
-  it("Should navigate to the EI Reporting Login Page when navigateToEIReportingPage is called", () => {
-    homePage.navigateToEIReportingPage();
-    expect(navSpy).to.have.been.calledWith(SitePages.EILogin);
-  });
-
   it("Should navigate to the Search Page when navigateToSearchPage is called", () => {
     homePage.navigateToSearchPage();
     expect(navSpy).to.have.been.calledWith(SitePages.JobSearch);
+  });
+
+  it("Should navigate to the Service Canada Location navigateToSCCLocationPage is called", () => {
+    homePage.navigateToSCCLocationPage();
+    expect(navSpy).to.have.been.calledWith(SitePages.SCCLocations);
   });
 
   it("Should navigate to the My Notifications Page when navigateToMyNotificationsPage is called", () => {

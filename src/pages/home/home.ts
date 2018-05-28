@@ -1,3 +1,4 @@
+import { User } from './../../providers/user/user';
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
 import { SitePages } from "../index";
@@ -15,13 +16,26 @@ import { SitePages } from "../index";
 export class HomePage {
   logController;
 
-  constructor(private navCtrl: NavController) {
+  constructor(private navCtrl: NavController,
+              private user : User) {
 
 
 
   }
 
-  public navigateToEIReportingPage = () => this.navCtrl.push(SitePages.EILogin);
+  /**
+   * Navigate to the EI Reporting feature.
+   * Will send user to the login page if they aren't logged in
+   */
+  public navigateToEIReportingPage = () => {
+    //If the user is not logged in redirect to EILogin Page
+   if(this.user.isLoggedIn()){
+    this.navCtrl.push(SitePages.EiReporting);
+   }else{
+    this.navCtrl.push(SitePages.EILogin);
+   }
+  }
+
   public navigateToSearchPage = () => this.navCtrl.push(SitePages.JobSearch);
   public navigateToMyNotificationsPage = () => this.navCtrl.push(SitePages.MyNotifications);
   public navigateToBenefitFinderPage = () => this.navCtrl.push(SitePages.BenefitFinder);
