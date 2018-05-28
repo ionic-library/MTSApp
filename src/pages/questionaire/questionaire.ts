@@ -11,8 +11,6 @@ import { HelpModalPage } from '../help-modal/help-modal';
   templateUrl: 'questionaire.html',
 })
 export class QuestionairePage {
-
-
   //report: Report;
   //params: Object;
   pushPage: any;

@@ -20,7 +20,7 @@
       <h1 id="page-heading1" >
         {{ 'QUESTION_TWO_TITLE' | translate }}
         </h1>
-        <h5 id="page-heading2" class="questionNumber" >
+        <h5 id="page-number1" class="questionNumber" >
             {{ 'QUESTION_NUMBER_TWO' | translate }}
         </h5>
         
@@ -60,10 +60,10 @@
       <ion-grid>
           <ion-row>
             <ion-col>
-                <button id="previous" ion-button color="light" block   [navPush]="pushPage" >{{ 'QUESTION_PREVIOUS' | translate }}</button>
+                <button id="previous" ion-button color="light" block   [navPush]="pushPagePrevious" >{{ 'QUESTION_PREVIOUS' | translate }}</button>
             </ion-col>
             <ion-col>
-                <button id="next" ion-button color="positive" block [navPush]="pushPage" >{{ 'QUESTION_NEXT' | translate }}</button>
+                <button id="next" ion-button color="positive" block [navPush]="pushPageNext" >{{ 'QUESTION_NEXT' | translate }}</button>
             </ion-col>
           </ion-row>
           

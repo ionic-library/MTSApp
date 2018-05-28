@@ -1,0 +1,76 @@
+
+<ion-header >
+
+  <ion-navbar color="mainHeader" >
+    <button ion-button menuToggle left>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{ 'QUESTIONAIRE_TITLE' | translate }}</ion-title>
+    <ion-buttons end>
+      <button ion-button clear (click)="this.presentHelpModal()">
+        <ion-icon class="help" name="help-circle"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding color="dark">
+
+    <h1 id="page-heading1" >
+      {{ 'QUESTION_FIVE_TITLE' | translate }}
+      </h1>
+      <h5 id="page-number1" class="questionNumber" >
+          {{ 'QUESTION_NUMBER_FIVE' | translate }}
+      </h5>
+      
+        <p >
+            {{ 'QUESTION_FIVE_TEXT' | translate }}
+          
+          
+        </p>
+      
+      <form id="page-form2">
+        <ion-list radio-group >
+
+        
+          <ion-item>
+            <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
+            <ion-radio value=true></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
+            <ion-radio value=false></ion-radio>
+            
+          </ion-item>
+        
+          
+        
+        </ion-list>
+      </form>
+     
+  
+  
+</ion-content>
+<ion-footer padding >
+  
+    
+
+    <ion-grid>
+        <ion-row>
+          <ion-col>
+              <button id="previous" ion-button color="light" block   [navPush]="pushPagePrevious" >{{ 'QUESTION_PREVIOUS' | translate }}</button>
+          </ion-col>
+          <ion-col>
+              <button id="next" ion-button color="positive" block [navPush]="pushPageNext" >{{ 'QUESTION_NEXT' | translate }}</button>
+          </ion-col>
+        </ion-row>
+        
+      </ion-grid>
+ 
+      
+  </ion-footer>
+
+
+  
