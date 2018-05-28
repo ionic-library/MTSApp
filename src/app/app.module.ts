@@ -14,6 +14,12 @@ import { Reports } from '../mocks/providers/mock-ei-reports';
 import { HelpModalPage } from '../pages/help-modal/help-modal'
 import { Settings, User, Api, Lang, ProvincesProvider } from '../providers';
 import { MyApp } from './app.component';
+import { QuestionairePage } from '../pages/questionaire/questionaire';
+import { Questionaire_7Page } from '../pages/questionaire-7/questionaire-7';
+import { Questionaire_6Page } from '../pages/questionaire-6/questionaire-6';
+import { Questionaire_5Page } from '../pages/questionaire-5/questionaire-5';
+import { Questionaire_3Page } from '../pages/questionaire-3/questionaire-3';
+import { Questionaire_2Page } from '../pages/questionaire-2/questionaire-2';
 
 
 // The translate loader needs to know where to load i18n files
@@ -40,7 +46,14 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    HelpModalPage
+    HelpModalPage,
+    
+    Questionaire_2Page,
+    Questionaire_3Page,
+    Questionaire_5Page,
+    Questionaire_6Page,
+    Questionaire_7Page
+    
   ],
   imports: [
     BrowserModule,
@@ -58,7 +71,12 @@ export function provideSettings(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     HelpModalPage,
-    MyApp
+    MyApp,
+    Questionaire_2Page,
+    Questionaire_3Page,
+    Questionaire_5Page,
+    Questionaire_6Page,
+    Questionaire_7Page
   ],
   providers: [
     Api,
