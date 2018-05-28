@@ -1,7 +1,7 @@
 
 <ion-header >
 
-  <ion-navbar color="mainHeader" hideBackButton="true">
+  <ion-navbar color="mainHeader" >
     <button ion-button menuToggle left>
       <ion-icon name="menu"></ion-icon>
     </button>
@@ -18,14 +18,14 @@
 <ion-content padding color="dark">
 
     <h1 id="page-heading1" >
-      {{ 'QUESTION_ONE_TITLE' | translate }}
+      {{ 'QUESTION_FIVE_TITLE' | translate }}
       </h1>
-      <h5 id="page-heading2" class="questionNumber" >
-          {{ 'QUESTION_NUMBER_ONE' | translate }}
+      <h5 id="page-number1" class="questionNumber" >
+          {{ 'QUESTION_NUMBER_FIVE' | translate }}
       </h5>
       
         <p >
-            {{ 'QUESTION_ONE_TEXT' | translate }}
+            {{ 'QUESTION_FIVE_TEXT' | translate }}
           
           
         </p>
@@ -60,12 +60,10 @@
     <ion-grid>
         <ion-row>
           <ion-col>
-             <!--
-               <button id="previous" ion-button color="light" block   [navPush]="pushPage" >{{ 'QUESTION_PREVIOUS' | translate }}</button>
-              -->
-              </ion-col>
+              <button id="previous" ion-button color="light" block   [navPush]="pushPagePrevious" >{{ 'QUESTION_PREVIOUS' | translate }}</button>
+          </ion-col>
           <ion-col>
-              <button id="next" ion-button color="positive" block [navPush]="pushPage" >{{ 'QUESTION_NEXT' | translate }}</button>
+              <button id="next" ion-button color="positive" block [navPush]="pushPageNext" >{{ 'QUESTION_NEXT' | translate }}</button>
           </ion-col>
         </ion-row>
         

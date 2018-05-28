@@ -11,19 +11,17 @@ import { HelpModalPage } from '../help-modal/help-modal';
   templateUrl: 'questionaire.html',
 })
 export class QuestionairePage {
-
-
-  report: Report;
-  params: Object;
+  //report: Report;
+  //params: Object;
   pushPage: any;
   constructor(public translate: TranslateService,
     public navParams: NavParams, 
     public navCtrl: NavController,
     public modalCtrl: ModalController) {
-    this.report = navParams.get('report');
-    console.log(this.report);
+    //this.report = navParams.get('report');
+   // console.log(this.report);
     this.pushPage = Questionaire_2Page;
-    this.params = { id: 42 };
+    //this.params = { id: 42 };
   }
 
   ionViewDidLoad() {

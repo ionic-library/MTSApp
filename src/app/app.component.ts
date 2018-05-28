@@ -42,7 +42,7 @@ export class MyApp {
   { title: 'Service Canada Locations', component: SitePages.SCCLocations },
   { title: 'Confirmation', component: SitePages.Confirmation },
   { title: 'Questionaire', component: SitePages.Questionaire },
-  { title: 'Questionaire 2', component: SitePages.Questionaire2 },
+  
   { title: 'Login', component: SitePages.EILogin },
   { title: 'Settings', component: SitePages.Settings },
   { title: 'Issue', component: SitePages.IssueWithReport },
