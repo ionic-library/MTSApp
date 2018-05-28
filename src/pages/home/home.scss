@@ -119,6 +119,10 @@ page-home {
     .searchbar {
       margin-top: 1em;
     }
+
+    .portrait-grid {
+      display: none;
+    }
   }
 
 // iPad Pro Media Query
@@ -129,7 +133,7 @@ page-home {
       width: 100%;
     }
 
-    .grid {
+    .portrait-grid {
       height: 60em;
 
       .row {
@@ -157,7 +161,7 @@ page-home {
     width: 100%;
   }
 
-  .grid {
+  .portrait-grid {
     height: 50em;
 
     .row {
