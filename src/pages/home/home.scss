@@ -79,6 +79,10 @@ page-home {
     margin: 0;
     font-size: .9em;
   }
+
+  .landscape-grid {
+    display: none;
+  }
 // Global Landscape Orientation CSS
   @media only screen and (orientation: landscape) {
     .page-header {
@@ -122,6 +126,10 @@ page-home {
 
     .portrait-grid {
       display: none;
+    }
+
+    .landscape-grid {
+      display: unset;
     }
   }
 
