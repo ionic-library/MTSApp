@@ -1,14 +1,17 @@
 home-page-carousel {
     .slides-container {
         position: relative;
-        height: 30vh;
-        margin-bottom: 6vh;
+        margin: 4% 0 0 0;
 
         .swiper-container {
 
             .swiper-wrapper {
-                .service-icon {
-                    font-size: 3em;
+                .carousel-grid {
+                    padding: 0 10% 0 10%;
+
+                    .service-icon {
+                        font-size: 44.5px;
+                    }
                 }
             }
         }
