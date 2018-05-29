@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 import { JobSearchPage } from './job-search';
 
@@ -8,6 +9,7 @@ import { JobSearchPage } from './job-search';
   ],
   imports: [
     IonicPageModule.forChild(JobSearchPage),
+    TranslateModule.forChild()
   ],
 })
 export class JobSearchPageModule {}
