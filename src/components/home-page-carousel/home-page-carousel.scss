@@ -3,8 +3,21 @@ home-page-carousel {
         height: 30vh;
         margin-bottom: 6vh;
 
-        .service-icon {
-            font-size: 3em;
+        .swiper-container {
+
+            .swiper-wrapper {
+                .service-icon {
+                    font-size: 3em;
+                }
+            }
         }
+    }
+    .swiper-button-prev {
+        opacity: 0.2 !important;
+        box-shadow: none !important;
+    }
+    .swiper-button-next {
+        opacity: 0.2 !important;
+        box-shadow: none !important;
     }
 }

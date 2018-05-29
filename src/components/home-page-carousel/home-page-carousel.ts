@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { User } from './../../providers/user/user';
 import { SitePages } from "../../pages/index";
-import { NavController } from "ionic-angular";
+import { NavController, Slides } from "ionic-angular";
 
 /**
  * Generated class for the HomePageCarouselComponent component.
@@ -15,10 +15,20 @@ import { NavController } from "ionic-angular";
 })
 export class HomePageCarouselComponent {
 
-  text: string;
-
   constructor(private navCtrl: NavController,
               private user: User) { }
+
+  @ViewChild('slides') slides: Slides;
+
+  text: string;
+
+  prevSlide(){
+    this.slides.slidePrev();
+  }
+
+  nextSlide(){
+    this.slides.slideNext();
+  }
 
   public navigateToEIReportingPage = () => {
     //If the user is not logged in redirect to EILogin Page
