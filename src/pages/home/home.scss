@@ -162,32 +162,11 @@ page-home {
     }
   }
 // iPad Media Query
-@media only screen and (orientation: landscape) and (min-width: 1000px) {
-  .curved-img-landscape {
-    display: flex;
-    margin-top: -2em;
-    width: 100%;
-  }
-
-  .portrait-grid {
-    height: 50em;
-
-    .row {
-      height: 60em;
-
-      .grid-column .service-select {
-        height: 100%;
-        
-        .service-icon {
-          padding-top: 0;
-          font-size: 15em;
-        }
-
-        .service-title {
-          font-size: 2em;
-        }
-      }
+  @media only screen and (orientation: landscape) and (min-width: 1000px) {
+    .curved-img-landscape {
+      display: flex;
+      margin-top: -2em;
+      width: 100%;
     }
   }
-}
 }

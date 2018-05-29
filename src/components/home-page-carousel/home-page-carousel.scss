@@ -1,10 +1,31 @@
 home-page-carousel {
     .slides-container {
-        height: 30vh;
-        margin-bottom: 6vh;
+        position: relative;
+        margin: 4% 0 0 0;
 
-        .service-icon {
-            font-size: 3em;
+        .swiper-container {
+
+            .swiper-wrapper {
+                .carousel-grid {
+                    padding: 0 10% 0 10%;
+
+                    .service-icon {
+                        font-size: 44.5px;
+                    }
+                }
+            }
+        }
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            opacity: 0.2 !important;
+            box-shadow: none !important;
+        }
+        .swiper-button-next {
+            position: absolute;
+            top: 50%;
+            opacity: 0.2 !important;
+            box-shadow: none !important;
         }
     }
 }
