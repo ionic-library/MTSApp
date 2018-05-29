@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
+import { IonicPage, NavController, NavParams, ModalController  } from 'ionic-angular';
+import { HelpModalPage } from '../help-modal/help-modal';
 
 /**
  * Generated class for the LifeEventsPage page.
@@ -15,9 +17,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class LifeEventsPage {
 
-  constructor() {
+  constructor(public translate: TranslateService, public modalCtrl: ModalController) {
   }
 
   ionViewDidLoad = () => console.log('ionViewDidLoad LifeEventsPage');
+
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
+  }
 
 }
