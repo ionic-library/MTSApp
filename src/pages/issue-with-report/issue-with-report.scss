@@ -1,85 +1,75 @@
 page-issue-with-report {
-.menu {
-color: #FFF;
-}
-.toolbar-background {
-background-color: #31485B;
-}
-.toolbar-title {
-color: white;
-}
-.page-title {
-color: white;
-}
-.back-button {
-color: #FFF;
-}
-.back {
-color: #FFF;
-}
-.help {
-color: #FFF;
-}
-
-    .grid{
-        height: 100%;
+  // NAVBAR CSS STARTS HERE
+  .menu {
+    color: #fff;
+  }
+  .toolbar-title {
+    color: white;
+  }
+  .page-title {
+    color: white;
+  }
+  .back-button {
+    color: #fff;
+  }
+  .back {
+    color: #fff;
+  }
+  .help {
+    color: #fff;
+    padding-right: 5vw;
+  }
+  // NAVBAR CSS ENDS HERE
+  .grid {
+    height: 100%;
+  }
+  .ex {
+    color: black;
+    font-size: 5rem;
+  }
+  .p {
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 16px;
+    padding-top: 0px;
+  }
+  .call,
+  .pin {
+    color: #0f71c4;
+    font-size: 5rem;
+  }
+  @media only screen and (orientation: landscape) and (min-width: 568px) and (max-width: 823px) {
+    .grid {
+      height: 140%;
     }
-    
-    .ex{
-        color: black;
-        font-size: 5rem;
+  }
+  @media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
+    .p {
+      font-size: 3rem;
     }
-
-    .p{
-        text-align: center;
-        padding: 0;
-        margin: 0;
-        font-size: 16px;
-        padding-top: 0px;
+    .ex {
+      color: black;
+      font-size: 7rem;
     }
-    .call, .pin{
-        color: #0f71c4;
-        font-size: 5rem;
+    .call,
+    .pin {
+      color: #0f71c4;
+      font-size: 7rem;
     }
-
-
-
-
-@media only screen and (orientation: landscape) and (min-width: 568px) and (max-width: 823px) {
-        .grid{
-            height: 140%;
-        }
-    
-
+  }
+  @media only screen and (orientation: landscape) and (min-width: 1024px) {
+    .p {
+      font-size: 3rem;
     }
-@media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
-    .p{
-        font-size: 3rem;
+    .ex {
+      color: black;
+      font-size: 7rem;
     }
-    .ex{
-     color: black;
-     font-size: 7rem;
- }
- .call, .pin{
-     color: #0f71c4;
-     font-size: 7rem;
- }
-    
-
+    .call,
+    .pin {
+      color: #0f71c4;
+      font-size: 7rem;
     }
-
-@media only screen and (orientation: landscape) and (min-width: 1024px) {
-       .p{
-           font-size: 3rem;
-       }
-       .ex{
-        color: black;
-        font-size: 7rem;
-    }
-    .call, .pin{
-        color: #0f71c4;
-        font-size: 7rem;
-    }
-
-    }
+  }
 }

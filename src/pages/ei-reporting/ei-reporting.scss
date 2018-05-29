@@ -3,9 +3,6 @@ page-ei-reporting {
   .menu {
     color: #fff;
   }
-  .toolbar-background {
-    background-color: #31485b;
-  }
   .toolbar-title {
     color: white;
   }
@@ -23,9 +20,7 @@ page-ei-reporting {
     padding-right: 5vw;
   }
   /********* NAV BAR CSS ENDS HERE **********/
-
   /************* CARD CSS *******************/
-
   .item-block {
     border-bottom: 1px solid #BBBB
   }
@@ -39,13 +34,13 @@ page-ei-reporting {
       color: #0f71c4 !important;
     }
     .start-report-button {
-        height: 11vw !important;
-        width: 35vw;
+      height: 11vw !important;
+      width: 35vw;
     }
     .good-status {
-        font-size: 3vh;
-        color: #49a60e;
-        padding-top: .5vh;
+      font-size: 3vh;
+      color: #49a60e;
+      padding-top: .5vh;
     }
     .alert-due-date {
       color: #bb1328;
@@ -62,8 +57,8 @@ page-ei-reporting {
     font-weight: 400;
   }
   .item-inner {
-      padding-top: 1.5vh;
-      padding-bottom: 1.5vh;
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
   }
 }
 
@@ -81,9 +76,8 @@ page-ei-reporting {
         padding-top: 1vh;
       }
     }
-  }
-  // For small screens ie. iPhone 5/SE
-  @media screen and (max-width: 400px){
+  } // For small screens ie. iPhone 5/SE
+  @media screen and (max-width: 400px) {
     .ei-report-item {
       .ei-report-header {
         font-size: 1em;

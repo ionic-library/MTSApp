@@ -1,18 +1,16 @@
 <ion-header >
 
-  <ion-navbar color="mainHeader">
-    <ion-buttons start>
-      <button ion-button menuToggle icon-only>
-        <ion-icon name='menu'></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
-    <ion-buttons end>
-      <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+    <ion-navbar color="mainHeader">
+        <button ion-button menuToggle icon-only>
+          <ion-icon class="menu" name='menu'></ion-icon>
+        </button>
+        <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+        <ion-buttons end>
+          <button ion-button clear (click)="this.presentHelpModal()">
+            <ion-icon class="help" name="help-circle"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
 </ion-header>
 
 

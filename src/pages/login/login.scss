@@ -1,21 +1,22 @@
 page-login {
+  .help {
+    padding-right: 5vw;
+  }
   .invalid {
-      border: 1px solid color($colors, danger);
+    border: 1px solid color($colors, danger);
   }
   .errorText {
     color: color($colors, danger);
     display: block;
     padding-top: 8px;
   }
-
   .boxInput {
     border: 1px solid color($colors, dark);
   }
-
   .labelText {
     font-size: 14px !important;
     color: color($colors, dark) !important;
-    padding-top : 8px;
-    padding-bottom : 8px;
+    padding-top: 8px;
+    padding-bottom: 8px;
   }
 }

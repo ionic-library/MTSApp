@@ -13,6 +13,7 @@ $font-path: "../assets/fonts";
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 
 $text-color:        #0a1a2b;
+$toolbar-background: #31485b;
 
 // Searchbar placeholder text made darker for better legibility
 $searchbar-md-input-placeholder-color: #000;
@@ -97,6 +98,7 @@ $searchbar-md-input-search-icon-color: black;
 // default are overridden.
 
 @import "ionic.theme.default";
+
 
 
 // Ionicons

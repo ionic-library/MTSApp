@@ -1,95 +1,47 @@
-page-confirmation{
-   
-/********* NAV BAR CSS STARTS HERE **********/
-
-    .menu{
-        color: #fff;
-    }
-    
-    .start{
-        position: absolute;
-        left: 0;
-    }
-    
-    .toolbar-background{
-        background-color: #31485b; 
-    }
-
-    .toolbar-title-md {
-        padding: 0 6px;
-        margin-top: 0px;
-        font-size: 15rem;
-        font-weight: 600;
-       
-    }
-
-    .toolbar-title {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-       
-        min-height: 100%;
-        font-size: 15px;
-    }
-
-    .back{
-        //padding-left: 5rem;
-        margin-left: 5rem;
-        color: #fff;
-        font-size: 20px;
-        width: 14.5px;
-        margin-right: 10rem;
-        left: 0;
-    }
-
-    .help{
-        //padding-right: 3rem;
-        margin-right: 3rem;
-        color: #fff;
-        font-size: 22.5px;
-    }
-
-    /********* NAV BAR CSS ENDS HERE **********/
-    
-    
-    
-    
-    
-    .checkmark{
-        font-size: 8rem;
-        color: #0f71cf;
-        display: block;
-        
-    }
-
-    
-    .p{
-       
-        font-size: 21px;
-        font-weight: 600;
-        text-align: center;
-        margin-top: 0;
-        margin-bottom: 0;
-        color: #0a1a2b;
-    }
-  
-
-     
-  .button-inner{
-        
-        font-size: 12px;
-        font-weight: 600;
-    }
-
-    .Rectangle-3 {
-        width: 300px;
-        height: 40px;
-        border-radius: 2.5px;
-        background-color: #0f71c4;
-        box-shadow: 1px 1px 3.5px 0 rgba(0, 0, 0, 0.26);
-      }
-
-    
+page-confirmation {
+  /********* NAV BAR CSS STARTS HERE **********/
+  .menu {
+    color: #fff;
+  }
+  .toolbar-title {
+    color: white;
+  }
+  .page-title {
+    color: white;
+  }
+  .back-button {
+    color: #fff;
+  }
+  .back {
+    color: #fff;
+  }
+  .help {
+    color: #fff;
+    padding-right: 5vw;
+  }
+  /********* NAV BAR CSS ENDS HERE **********/
+  .checkmark {
+    font-size: 8rem;
+    color: #0f71cf;
+    display: block;
+  }
+  .p {
+    font-size: 21px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #0a1a2b;
+  }
+  .button-inner {
+    font-size: 12px;
+    font-weight: 600;
+  }
+  .Rectangle-3 {
+    width: 300px;
+    height: 40px;
+    border-radius: 2.5px;
+    background-color: #0f71c4;
+    box-shadow: 1px 1px 3.5px 0 rgba(0, 0, 0, 0.26);
+  }
 }
-
