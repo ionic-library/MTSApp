@@ -1,117 +1,93 @@
 page-home {
-
   .page-header {
     .button-inner {
       color: white;
     }
-
     .toolbar {
       position: absolute;
-
       .toolbar-background {
         display: none;
       }
-
       .toolbar-title {
         color: white;
       }
-      
-      .toolbar-background-ios{
+      .toolbar-background-ios {
         display: none;
       }
-
       .help {
         color: #fff;
         padding-right: 5vw;
       }
     }
   }
-
   .curved-img-portrait {
     width: 100%;
   }
-
   .curved-img-landscape {
     display: none;
   }
-
   .searchbar {
     margin-top: 2vh;
-
     .searchbar-input {
       border-radius: 2.5px;
       border: solid 0.5px #979797;
     }
   }
-
-// iOS Search Icon Custom CSS
+  // iOS Search Icon Custom CSS
   .searchbar-ios {
-
     .searchbar-search-icon {
       margin-top: .3em;
     }
   }
-//////////////////////////////
-
+  //////////////////////////////
   .scroll-content {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
-
   #home-page-show-more-container {
     padding: 0 1.5em 0 1.5em;
   }
-
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
     padding: .75em;
     text-align: center;
     height: 12em;
   }
-
   .service-icon {
     padding-top: .25em;
     font-size: 5em;
   }
-
   .service-title {
     padding: 10px 0 0 0 !important;
     margin: 0;
     font-size: .9em;
   }
-
   .landscape-grid {
     display: none;
   }
-// Global Landscape Orientation CSS
+  // Global Landscape Orientation CSS
   @media only screen and (orientation: landscape) {
     .page-header {
       .button-inner {
         color: white;
       }
-  
       .toolbar {
         position: absolute;
-  
         .toolbar-background {
           background: transparent;
         }
-  
         .toolbar-title {
           color: white;
         }
-        
-        .toolbar-background-ios{
+        .toolbar-background-ios {
           display: none;
         }
-
         .help {
           color: white;
           padding-right: 5vw;
         }
       }
     }
-
     .curved-img-portrait {
       display: none;
     }
@@ -119,41 +95,32 @@ page-home {
       display: flex;
       margin-top: -2em;
     }
-
     .searchbar {
       margin-top: 1em;
     }
-
     .portrait-grid {
       display: none;
     }
-
     .landscape-grid {
       display: unset;
     }
   }
-
-// iPad Pro Media Query
+  // iPad Pro Media Query
   @media only screen and (orientation: landscape) and (min-width: 1200px) {
     .curved-img-landscape {
       display: flex;
       margin-top: -2em;
       width: 100%;
     }
-
     .portrait-grid {
       height: 60em;
-
       .row {
         height: 60em;
-
         .grid-column .service-select {
           height: 100%;
-          
           .service-icon {
             font-size: 15em;
           }
-
           .service-title {
             font-size: 2em;
           }
@@ -161,7 +128,7 @@ page-home {
       }
     }
   }
-// iPad Media Query
+  // iPad Media Query
   @media only screen and (orientation: landscape) and (min-width: 1000px) {
     .curved-img-landscape {
       display: flex;
