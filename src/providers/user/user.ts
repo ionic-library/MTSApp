@@ -5,38 +5,61 @@ import { Api } from '../api/api';
 import { Lang, LangCodes } from "../../providers";
 import { VALID } from '@angular/forms/src/model';
 
-
-
-/**
- * Most apps have the concept of a User. This is a simple provider
- * with stubs for login/signup/etc.
- *
- * This User provider makes calls to our API at the `login` and `signup` endpoints.
- *
- * By default, it expects `login` and `signup` to return a JSON object of the shape:
- *
- * ```json
- * {
- *   status: 'success',
- *   user: {
- *     // User fields your app needs, like "id", "name", "email", etc.
- *   }
- * }Ø
- * ```
- *
- * If the `status` field is not `success`, then an error is detected and returned.
- */
 @Injectable()
 export class User {
   _user: any;
-  isLangSet: boolean;
 
-  constructor(public api: Api, public storage: Storage) { }
+  public isLangSet: boolean;
+  public Lang: LangCodes;
 
-  /**
-   * Send a POST request to our login endpoint with the data
-   * the user entered on the form.
-   */
+
+  constructor(public api: Api, public storage: Storage) {
+    console.log(1);
+    this.initializeLang();
+    setTimeout(function () { console.log('done timer') }, 1000);
+    console.log(4);
+  }
+
+  private async initializeLang() {
+    console.log(2);
+    let running = true;
+    this.storage.get('lang')
+      .then((val) => {
+        console.log(3);
+        console.log('Setting Lang: ' + val);
+        if (val == "fr") {
+          this.Lang = LangCodes.FR;
+          this.isLangSet = true;
+        } else if (val == "en") {
+          this.Lang = LangCodes.EN;
+          this.isLangSet = true;
+        } else {
+          this.isLangSet = false;
+        }
+        running = false;
+      })
+      .catch((val) => {
+        console.log("!! Retreiving lang from local storage failed. !!");
+        this.isLangSet = false;
+      });
+
+    }
+
+  public setLang(lang: LangCodes) {
+    this.storage.set('lang', lang);
+    this.initializeLang();
+  }
+
+
+
+  //############################### Below this line is standard functions we will redo later once API is ready or mapped out at least.
+
+  isLoggedIn(): boolean {
+    //### FOR TESTING
+    return true;
+    //return !(this._user === null || this._user === undefined);
+  }
+
   login(accountInfo: any) {
     let seq = this.api.post('login', accountInfo).share();
     console.log("UserLogged in with " + accountInfo);
@@ -53,59 +76,11 @@ export class User {
 
     return seq;
   }
-
-  /**
-   * Log the user out, which forgets the session
-   */
   logout() {
     this._user = null;
   }
-
-  /**
-   * Process a login/signup response to store user data
-   */
   private _loggedIn(resp) {
     this._user = resp.user;
   }
 
-  setLang(lang: string) {
-    if (lang == null) {
-      console.log('lang is null');
-    } else {
-      this.storage.set('lang', lang);
-    }
-
-  }
-
-  isLoggedIn(): boolean {
-    //### FOR TESTING
-    return true;
-    //return !(this._user === null || this._user === undefined);
-  }
-
-  getLang() {
-    //if (!this.isLangSet) {
-    //  //### We have to decide what to do here later
-    //  return false;
-    //} else {
-      this.storage.get('lang').then((val) => {
-        if (val == "fr") {
-          return "fr";// LangCodes.FR;
-        } else {
-          return "en";// LangCodes.EN;
-        }
-      })
-    //}
-
-  }
-
-  IsLangSet(success, Error) {
-    let ret = this.storage.get('lang').then((val) => {
-      if (val == null) {
-        success(false);
-      } else {
-        success(true);
-      }
-    })
-  }
 }
