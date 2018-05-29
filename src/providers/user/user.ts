@@ -77,8 +77,10 @@ export class User {
 
   }
 
-  isLoggedIn() : boolean {
-    return !(this._user === null || this._user === undefined);
+  isLoggedIn(): boolean {
+    //### FOR TESTING
+    return true;
+    //return !(this._user === null || this._user === undefined);
   }
 
   getLang() {

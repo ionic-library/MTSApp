@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the MynotificationsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TranslateService } from '@ngx-translate/core';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { HelpModalPage } from '../help-modal/help-modal';
 
 @IonicPage()
 @Component({
@@ -15,9 +10,16 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MyNotificationsPage {
 
-  constructor() {
+  constructor(public translate: TranslateService, public modalCtrl: ModalController) {
   }
 
-  ionViewDidLoad= () => console.log('Loaded MyNotificationsPage');
+  ionViewDidLoad = () => console.log('Loaded MyNotificationsPage');
+
+
+  presentHelpModal() {
+    console.log('Click Received');
+    let helpModal = this.modalCtrl.create(HelpModalPage);
+    helpModal.present();
+  }
 
 }
