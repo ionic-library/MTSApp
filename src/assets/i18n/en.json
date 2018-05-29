@@ -51,9 +51,9 @@
   "APPROVED_STATUS_TEXT": "Approved",
 
   "HELP_MODAL_TITLE": "Help",
-  "HELP_MODAL_HEADER": "When should you submit your report?",
-  "HELP_MODAL_CONTENT_PAR_1": "Once you have successfully completed your online reporting session, you will be advised when you should submit your next report. It is important to submit your reports as soon as they are due or your report may not be processed.",
-  "HELP_MODAL_CONTENT_PAR_2": "If your report is incomplete it will not be accepted for processing. In a few circumstances you will need to speak with us to complete your report. If this is the case, you will be given instructions at the end of your online session on how to contact a representative.",
+  "HELP_MODAL_HEADER": "Do you need help with this section?",
+  "HELP_MODAL_CONTENT_PAR_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "HELP_MODAL_CONTENT_PAR_2": "",
 
   "ACCEPTANCE_STATEMENT_HEADER": "Acceptance Statement",
   "ACCEPTANCE_STATEMENT_CONTENT": "I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
@@ -168,5 +168,10 @@
   "SUBMISSION_P1_TEXT": "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
   "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the Confirmation Statement.",
   "SUBMISSION_ACCEPT_TEXT": "I accept",
-  "SUBMISSION_SUBTITLE1": "Address & Direct Deposit"
+  "SUBMISSION_SUBTITLE1": "Address & Direct Deposit",
+  "SSC_LOCATION_TITLE": "Locate Service Canada Centre",
+  "BENEFIT_FINDER_TITLE": "Benefit Finder",
+  "LIFE_EVENTS_TITLE": "Life Events",
+  "MY_NOTIFICATIONS_TITLE": "My Notifications",
+  "JOB_SEARCH_TITLE": "Search"
 }

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 import { IonicPageModule } from 'ionic-angular';
 import { SccLocationsPage } from './scc-locations';
 
@@ -8,6 +9,7 @@ import { SccLocationsPage } from './scc-locations';
   ],
   imports: [
     IonicPageModule.forChild(SccLocationsPage),
+    TranslateModule.forChild()
   ],
 })
 export class SccLocationsPageModule {}
