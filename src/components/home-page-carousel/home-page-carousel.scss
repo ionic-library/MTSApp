@@ -1,5 +1,6 @@
 home-page-carousel {
     .slides-container {
+        position: relative;
         height: 30vh;
         margin-bottom: 6vh;
 
@@ -11,13 +12,17 @@ home-page-carousel {
                 }
             }
         }
-    }
-    .swiper-button-prev {
-        opacity: 0.2 !important;
-        box-shadow: none !important;
-    }
-    .swiper-button-next {
-        opacity: 0.2 !important;
-        box-shadow: none !important;
+        .swiper-button-prev {
+            position: absolute;
+            top: 50%;
+            opacity: 0.2 !important;
+            box-shadow: none !important;
+        }
+        .swiper-button-next {
+            position: absolute;
+            top: 50%;
+            opacity: 0.2 !important;
+            box-shadow: none !important;
+        }
     }
 }
