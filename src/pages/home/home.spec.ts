@@ -1,3 +1,4 @@
+import { HomePageCarouselComponent } from './../../components/home-page-carousel/home-page-carousel';
 import { EiReportingPage } from './../ei-reporting/ei-reporting';
 import { CommonTestModule } from "./../../app/sharedModules";
 import { HomePage } from "./home";
@@ -23,7 +24,7 @@ describe("The Home Page", () => {
   function setupTestBedConfig(){
     fakeNavController = new NavMock();
     TestBed.configureTestingModule({
-      declarations: CommonTestModule.getDeclarations([HomePage]),
+      declarations: CommonTestModule.getDeclarations([HomePage, HomePageCarouselComponent]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
         { provide: NavController, useValue: fakeNavController }
