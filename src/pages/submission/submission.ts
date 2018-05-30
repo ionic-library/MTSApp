@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController} from 'ionic-angular';
-
+import { ConfirmationPage } from '../confirmation/confirmation';
+import { SitePages } from "../index";
 /**
  * Generated class for the SubmissionPage page.
  *
@@ -16,6 +17,10 @@ import { IonicPage, NavController} from 'ionic-angular';
 export class SubmissionPage {
 
   constructor(public navCtrl: NavController) {
+  }
+
+  goToConfirmation(){
+    this.navCtrl.push(SitePages.Confirmation)
   }
 
   ionViewDidLoad() {
