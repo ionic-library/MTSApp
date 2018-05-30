@@ -1,3 +1,4 @@
+import { SitePages } from '..';
 import { SinValidator } from './../../validators/sin';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component } from '@angular/core';
@@ -61,16 +62,13 @@ export class LoginPage {
   doLogin() {
     this.submitAttempt = true;
     if (!this.login.valid){
-      let toast = this.toastCtrl.create({
-        message: 'You Suck',
-        duration: 3000,
-        position: 'top'
-      })
-      toast.present();
       return;
     }
 
 
+    this.user.login(this.account);
+    this.navCtrl.push(SitePages.EiReporting);
+    /*
     this.user.login(this.account).subscribe((resp) => {
       this.navCtrl.setRoot(MainPage)
       this.navCtrl.popToRoot();
@@ -83,6 +81,7 @@ export class LoginPage {
       });
       toast.present();
     });
+    */
 
   }
 
