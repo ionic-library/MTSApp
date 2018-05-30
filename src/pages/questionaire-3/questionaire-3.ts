@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, NavParams, ModalController } from 'ionic-angular';
 import { Report } from '../../models/mockEiReport';
@@ -19,6 +20,7 @@ export class Questionaire_3Page {
   constructor(public translate: TranslateService,
     public navParams: NavParams, 
     public navCtrl: NavController,
+    private formBuilder: FormBuilder,
     public modalCtrl: ModalController) {
     //this.report = navParams.get('report');
    // console.log(this.report);
