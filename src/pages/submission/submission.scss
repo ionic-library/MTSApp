@@ -22,14 +22,6 @@ page-submission {
         }
 //*********************************************
 
-        .title{
-            color: #0a1a2b;
-            font-size: 21px;
-            font-weight: 600;
-            display: block;
-            margin-right: 20%;
-        }
-
         .line{
             width: 100%;
             height: 1px;
@@ -55,17 +47,6 @@ page-submission {
         .p{
             text-align: left;
             display: block;
-        }
-        .rectangle{
-            margin-top: 28px;
-            display:flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            width: 150px;
-            height: 40px;
-            border-radius: 2.5px;
-            background-color: #0f71c4;
         }
 
         .number{

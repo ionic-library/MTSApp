@@ -3,7 +3,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, NavParams, ModalController } from 'ionic-angular';
 import { Report } from '../../models/mockEiReport';
 import { Questionaire_6Page } from '../questionaire-6/questionaire-6';
-import { ConfirmationPage } from '../confirmation/confirmation';
+import { SubmissionPage } from '../submission/submission';
 import { HelpModalPage } from '../help-modal/help-modal';
 
 @IonicPage()
@@ -23,7 +23,7 @@ export class Questionaire_7Page {
     //this.report = navParams.get('report');
    // console.log(this.report);
     this.pushPagePrevious = Questionaire_6Page;
-    this.pushPageNext = ConfirmationPage;
+    this.pushPageNext = SubmissionPage;
     //this.params = { id: 42 };
   }
 

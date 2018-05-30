@@ -22,7 +22,7 @@ export class ConfirmationPage {
     helpModal.present();
   }
 
-  navigateHome = () => this.navCtrl.push(SitePages.Home);
+  navigateEiDashboard = () => {this.navCtrl.setRoot(SitePages.EiReporting); this.navCtrl.popToRoot();}
 
   ionViewDidLoad = () => console.log("Loadded ConfirmationPage");
 

@@ -20,6 +20,7 @@ import { Questionaire_6Page } from '../pages/questionaire-6/questionaire-6';
 import { Questionaire_5Page } from '../pages/questionaire-5/questionaire-5';
 import { Questionaire_3Page } from '../pages/questionaire-3/questionaire-3';
 import { Questionaire_2Page } from '../pages/questionaire-2/questionaire-2';
+import { SubmissionPage } from '../pages/submission/submission';
 
 
 // The translate loader needs to know where to load i18n files
@@ -51,7 +52,8 @@ export function provideSettings(storage: Storage) {
     Questionaire_3Page,
     Questionaire_5Page,
     Questionaire_6Page,
-    Questionaire_7Page
+    Questionaire_7Page,
+    SubmissionPage
   ],
   imports: [
     BrowserModule,
@@ -74,7 +76,8 @@ export function provideSettings(storage: Storage) {
     Questionaire_3Page,
     Questionaire_5Page,
     Questionaire_6Page,
-    Questionaire_7Page
+    Questionaire_7Page,
+    SubmissionPage
   ],
   providers: [
     Api,
