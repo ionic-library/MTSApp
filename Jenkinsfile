@@ -7,5 +7,10 @@ pipeline {
                 checkout scm
             }
         }
+        stage("Prepare Environment"){
+            steps {
+                sh 'npm install'
+            }
+        }
     }
 }
