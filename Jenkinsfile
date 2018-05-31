@@ -3,11 +3,15 @@ pipeline {
 
     stages {
         stage("Checkout") {
-            checkout scm
+            steps{
+                checkout scm
+            }
         }
         stage("Prepare Environment"){
-            echo 'Installing Dependencies'
-            sh npm i
+            steps {
+                echo 'Installing Dependencies'
+                sh npm i
+            }
         }
         stage('Build') {
             steps {
