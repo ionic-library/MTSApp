@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { HelpModalPage } from '../help-modal/help-modal'; 
+import { HelpModalPage } from '../help-modal/help-modal';
 
 @IonicPage()
 @Component({
