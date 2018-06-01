@@ -16,7 +16,8 @@
     "e2e": "npm run e2e-update && npm run e2e-test",
     "e2e-test": "protractor ./test-config/protractor.conf.js",
     "e2e-update": "webdriver-manager update --standalone false --gecko false",
-    "prepush": "karma start ./test-config/karma.conf.js --single-run --browsers ChromeHeadless"
+    "prepush": "karma start ./test-config/karma.conf.js --single-run --browsers ChromeHeadless",
+    "precommit": "pretty-quick --staged"
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
@@ -69,6 +70,8 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.3",
     "null-loader": "^0.1.1",
+    "prettier": "^1.13.4",
+    "pretty-quick": "^1.6.0",
     "protractor": "^5.1.1",
     "sinon": "^5.0.7",
     "sinon-chai": "^3.0.0",
