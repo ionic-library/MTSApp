@@ -9,7 +9,6 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { IonicApp, IonicErrorHandler, IonicModule, Slides } from 'ionic-angular';
 
-import { Items } from '../mocks/providers/items';
 import { Reports } from '../mocks/providers/mock-ei-reports';
 import { HelpModalPage } from '../pages/help-modal/help-modal'
 import { Settings, User, Api, Lang, ProvincesProvider } from '../providers';
@@ -81,7 +80,6 @@ export function provideSettings(storage: Storage) {
   ],
   providers: [
     Api,
-    Items,
     Slides,
     User,
     Camera,
