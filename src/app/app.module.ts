@@ -51,8 +51,7 @@ export function provideSettings(storage: Storage) {
     Questionaire_3Page,
     Questionaire_5Page,
     Questionaire_6Page,
-    Questionaire_7Page,
-    SubmissionPage
+    Questionaire_7Page
   ],
   imports: [
     BrowserModule,
@@ -75,8 +74,7 @@ export function provideSettings(storage: Storage) {
     Questionaire_3Page,
     Questionaire_5Page,
     Questionaire_6Page,
-    Questionaire_7Page,
-    SubmissionPage
+    Questionaire_7Page
   ],
   providers: [
     Api,
