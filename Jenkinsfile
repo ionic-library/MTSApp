@@ -7,11 +7,6 @@ pipeline {
                 checkout scm
             }
         }
-        stage("Prepare Environment") {
-            steps {
-                sh 'npm install'
-            }
-        }
         stage("Unit Tests") {
             steps {
                 sh 'npm run test-ci'
