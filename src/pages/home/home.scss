@@ -26,6 +26,13 @@ page-home {
   .curved-img-landscape {
     display: none;
   }
+  .hello-text {
+    position: absolute;
+    top: 3em;
+    left: 2em;
+    z-index: 10;
+    color: white;
+  }
   .searchbar {
     margin-top: 2vh;
     .searchbar-input {
@@ -36,7 +43,7 @@ page-home {
   // iOS Search Icon Custom CSS
   .searchbar-ios {
     .searchbar-search-icon {
-      margin-top: .3em;
+      margin-top: 0.3em;
     }
   }
   //////////////////////////////
@@ -49,18 +56,18 @@ page-home {
   }
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
-    padding: .75em;
+    padding: 0.75em;
     text-align: center;
     height: 12em;
   }
   .service-icon {
-    padding-top: .25em;
+    padding-top: 0.25em;
     font-size: 5em;
   }
   .service-title {
     padding: 10px 0 0 0 !important;
     margin: 0;
-    font-size: .9em;
+    font-size: 0.9em;
   }
   .landscape-grid {
     display: none;
