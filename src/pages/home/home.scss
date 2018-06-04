@@ -112,6 +112,19 @@ page-home {
       display: flex;
       margin-top: -2em;
     }
+    .hello-text {
+      width: 100%;
+      .greeting {
+        font-size: 18px;
+      }
+      .locationInfo {
+        position: absolute;
+        right: 0;
+        margin-right: 4em;
+        top: 0;
+        margin-top: 1em;
+      }
+    }
     .searchbar {
       margin-top: 1em;
     }
