@@ -34,9 +34,13 @@ page-home {
     color: white;
     .greeting {
       font-size: 18px;
+      box-shadow: 3px 0 0 color($colors, dark), -3px 0 0 color($colors, dark);
+      background-color: color($colors, dark);
     }
     .locationInfo {
       font-size: 14px;
+      box-shadow: 3px 0 0 color($colors, dark), -3px 0 0 color($colors, dark);
+      background-color: color($colors, dark);
     }
   }
   .searchbar {
