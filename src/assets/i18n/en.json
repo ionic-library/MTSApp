@@ -13,7 +13,8 @@
   "NU": "Nunavut",
   "YT": "Yukon",
 
-  "LOGIN_PREAMBLE": "You have chosen to complete your report in English. Please note that you will not be able to change to French once you start your online session. If you wish to change language please do so before you begin.",
+  "LOGIN_PREAMBLE":
+    "You have chosen to complete your report in English. Please note that you will not be able to change to French once you start your online session. If you wish to change language please do so before you begin.",
   "BACK_BUTTON_TEXT": "Back",
 
   "SIN": "Social Insurance Number",
@@ -22,11 +23,16 @@
   "CONTINUE_BUTTON": "Continue",
   "LOGIN_TITLE": "Login",
 
-  "SIN_ERROR": "Error: You must enter your 9 digit numeric Social Insurance Number",
+  "SIN_ERROR":
+    "Error: You must enter your 9 digit numeric Social Insurance Number",
   "ACCESS_CODE_ERROR": "Error: You must enter a valid Access Code.",
   "PROVINCE_OF_RESIDENCE_ERROR": "Error: You must enter a valid Access Code.",
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
+
+  "GREETING_MORNING": "Good Morning,",
+  "GREETING_EVENING": "Good Evening,",
+  "GREETING_AFTERNOON": "Good Afternoon,",
 
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Search",
@@ -52,11 +58,13 @@
 
   "HELP_MODAL_TITLE": "Help",
   "HELP_MODAL_HEADER": "Do you need help with this section?",
-  "HELP_MODAL_CONTENT_PAR_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "HELP_MODAL_CONTENT_PAR_1":
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   "HELP_MODAL_CONTENT_PAR_2": "",
 
   "ACCEPTANCE_STATEMENT_HEADER": "Acceptance Statement",
-  "ACCEPTANCE_STATEMENT_CONTENT": "I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
+  "ACCEPTANCE_STATEMENT_CONTENT":
+    "I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
   "ACCEPT_BUTTON": "I Accept",
   "REFUSE_BUTTON": "I refuse",
   "FAQ_LINK_ONE": "When should you submit your information?",
@@ -78,25 +86,31 @@
   "QUESTION_PREVIOUS": "Previous question",
   "QUESTION_NEXT": "Save and Continue",
   "QUESTION_ONE_TITLE": "Address and Direct Deposit",
-  "QUESTION_ONE_TEXT": "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
+  "QUESTION_ONE_TEXT":
+    "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
   "QUESTION_ONE_HELP": "",
   "QUESTION_TWO_TITLE": "Outside Canada",
-  "QUESTION_TWO_TEXT": "Were you outside Canada between Monday and Friday during the period of this report?",
+  "QUESTION_TWO_TEXT":
+    "Were you outside Canada between Monday and Friday during the period of this report?",
   "QUESTION_TWO_HELP": "",
   "QUESTION_THREE_TITLE": "Work and Wages",
   "QUESTION_THREE_TEXT": "Are you self-employed?",
   "QUESTION_THREE_HELP": "",
   "QUESTION_FOUR_TITLE": "Work and Wages",
-  "QUESTION_FOUR_TEXT": "Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming.",
+  "QUESTION_FOUR_TEXT":
+    "Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming.",
   "QUESTION_FOUR_HELP": "",
   "QUESTION_FIVE_TITLE": "Training",
-  "QUESTION_FIVE_TEXT": "Did you attend school or a training course during the period of this report?",
+  "QUESTION_FIVE_TEXT":
+    "Did you attend school or a training course during the period of this report?",
   "QUESTION_FIVE_HELP": "",
   "QUESTION_SIX_TITLE": "Availability",
-  "QUESTION_SIX_TEXT": "Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
+  "QUESTION_SIX_TEXT":
+    "Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
   "QUESTION_SIX_HELP": "",
   "QUESTION_SEVEN_TITLE": "Other Money",
-  "QUESTION_SEVEN_TEXT": "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
+  "QUESTION_SEVEN_TEXT":
+    "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
   "QUESTION_SEVEN_HELP": "",
 
   "REPORT_SUBMITTED_TITLE": "Report Submitted",
@@ -105,13 +119,16 @@
   "TUTORIAL_CONTINUE_BUTTON": "Continue",
 
   "TUTORIAL_SLIDE1_TITLE": "Welcome to the Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "The <b>Ionic Super Starter</b> is a fully-featured Ionic starter with many pre-built pages and best practices.",
+  "TUTORIAL_SLIDE1_DESCRIPTION":
+    "The <b>Ionic Super Starter</b> is a fully-featured Ionic starter with many pre-built pages and best practices.",
 
   "TUTORIAL_SLIDE2_TITLE": "How to use the Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemble the various page types you want and remove the ones you don't. We've provided many common mobile app page layouts, like login and signup pages, tabs, and this tutorial page.",
+  "TUTORIAL_SLIDE2_DESCRIPTION":
+    "Assemble the various page types you want and remove the ones you don't. We've provided many common mobile app page layouts, like login and signup pages, tabs, and this tutorial page.",
 
   "TUTORIAL_SLIDE3_TITLE": "Getting Started",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "Need help? Check out the Super Starter README for a full tutorial",
+  "TUTORIAL_SLIDE3_DESCRIPTION":
+    "Need help? Check out the Super Starter README for a full tutorial",
 
   "TUTORIAL_SLIDE4_TITLE": "Ready to Play?",
 
@@ -129,10 +146,12 @@
 
   "WELCOME_TITLE": "Welcome",
 
-  "LOGIN_ERROR": "Unable to sign in. Please check your account information and try again.",
+  "LOGIN_ERROR":
+    "Unable to sign in. Please check your account information and try again.",
   "LOGIN_BUTTON": "Sign in",
   "SIGNUP_TITLE": "Sign up",
-  "SIGNUP_ERROR": "Unable to create account. Please check your account information and try again.",
+  "SIGNUP_ERROR":
+    "Unable to create account. Please check your account information and try again.",
   "SIGNUP_BUTTON": "Sign up",
 
   "LIST_MASTER_TITLE": "Items",
@@ -159,7 +178,8 @@
   "LOGIN_FAILED_TITLE": "Login Failed",
 
   "ISSUE_PAGE_TITLE": "Issue With Report",
-  "ISSUE_PAGE_P1_TEXT": "Unfortunately, at this time we are not able to complete your report online",
+  "ISSUE_PAGE_P1_TEXT":
+    "Unfortunately, at this time we are not able to complete your report online",
   "ISSUE_PAGE_P2_TEXT": "In order to continue:",
   "ISSUE_PAGE_P3_TEXT": "Call Service Canada at 1-800-206-7218",
   "ISSUE_PAGE_P4_TEXT": "or",
@@ -167,11 +187,14 @@
 
   "SUBMISSION_TITLE_ONE": "Week 21/22 Report",
   "SUBMISSION_TITLE_TWO": "Submit Your Report",
-  "SUBMISSION_P1_TEXT": "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
-  "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the Confirmation Statement.",
+  "SUBMISSION_P1_TEXT":
+    "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
+  "SUBMISSION_P2_TEXT":
+    "By clicking I accept you are agreeing to the Confirmation Statement.",
   "SUBMISSION_ACCEPT_TEXT": "I accept",
   "SUBMISSION_SUBTITLE1": "Address & Direct Deposit",
-  "SUBMISSION_P3_TEXT": "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
+  "SUBMISSION_P3_TEXT":
+    "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
   "SSC_LOCATION_TITLE": "Locate Service Canada Centre",
   "BENEFIT_FINDER_TITLE": "Benefit Finder",
   "LIFE_EVENTS_TITLE": "Life Events",
