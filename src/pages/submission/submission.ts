@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController} from 'ionic-angular';
 import { ConfirmationPage } from '../confirmation/confirmation';
 import { SitePages } from "../index";
+import { TranslateService } from '@ngx-translate/core';
 /**
  * Generated class for the SubmissionPage page.
  *
@@ -16,7 +17,7 @@ import { SitePages } from "../index";
 })
 export class SubmissionPage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public translateService: TranslateService) {
   }
 
   goToConfirmation(){
