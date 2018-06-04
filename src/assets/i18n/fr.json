@@ -13,7 +13,8 @@
   "NU": "Nunavut",
   "YT": "Yukon",
 
-  "LOGIN_PREAMBLE": "Vous avez choisi de remplir votre déclaration en français. Veuillez noter que vous ne pourrez pas changer vers l'anglais après que vous aurez débuté votre session en direct. Si vous désirez changer la langue, veuillez le faire maintenant.",
+  "LOGIN_PREAMBLE":
+    "Vous avez choisi de remplir votre déclaration en français. Veuillez noter que vous ne pourrez pas changer vers l'anglais après que vous aurez débuté votre session en direct. Si vous désirez changer la langue, veuillez le faire maintenant.",
   "LOGIN": "Connexion",
   "SIN": "Numéro d'assurance sociale (NAS)",
   "AC": "Code d'accès",
@@ -21,10 +22,11 @@
   "CONTINUE_BUTTON": "Poursuivre",
   "LOGIN_TITLE": "Ouverture de session",
 
-
-  "SIN_ERROR": "(FR)Error: You must enter your 9 digit numeric Social Insurance Number",
+  "SIN_ERROR":
+    "(FR)Error: You must enter your 9 digit numeric Social Insurance Number",
   "ACCESS_CODE_ERROR": "(FR)Error: You must enter a valid Access Code.",
-  "PROVINCE_OF_RESIDENCE_ERROR": "(FR)Error: You must enter a valid Access Code.",
+  "PROVINCE_OF_RESIDENCE_ERROR":
+    "(FR)Error: You must enter a valid Access Code.",
 
   "NAME": "Nom",
   "PASSWORD": "Mot de passe",
@@ -55,11 +57,13 @@
 
   "HELP_MODAL_TITLE": "(FR)Help",
   "HELP_MODAL_HEADER": "(FR)Do you need help with this section?",
-  "HELP_MODAL_CONTENT_PAR_1": "(FR)Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+  "HELP_MODAL_CONTENT_PAR_1":
+    "(FR)Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
   "HELP_MODAL_CONTENT_PAR_2": "",
 
   "ACCEPTANCE_STATEMENT_HEADER": "(FR)Acceptance Statement",
-  "ACCEPTANCE_STATEMENT_CONTENT": "(FR)I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
+  "ACCEPTANCE_STATEMENT_CONTENT":
+    "(FR)I acknowledge that it is my responsibility to read and understand the information contained within each heading presented on this page.",
   "ACCEPT_BUTTON": "(FR)I Accept",
   "REFUSE_BUTTON": "(FR)I refuse",
   "FAQ_LINK_ONE": "(FR)When should you submit your information?",
@@ -71,6 +75,8 @@
   "QUESTIONAIRE_TITLE": "Mobile Reporting Service",
   "RESPONSE_YES": "Oui",
   "RESPONSE_NO": "Non",
+  "QUESTION_REPORT_PERIOD_TEXT": "(This report covers the period from)FR",
+  "Question_REPORT_PERIOD_TEXT_TO": " au ",
   "QUESTION_NUMBER_ONE": "Question  1/7",
   "QUESTION_NUMBER_TWO": "Question  2/7",
   "QUESTION_NUMBER_THREE": "Question  3/7",
@@ -78,40 +84,50 @@
   "QUESTION_NUMBER_FIVE": "Question  5/7",
   "QUESTION_NUMBER_SIX": "Question  6/7",
   "QUESTION_NUMBER_SEVEN": "Question  7/7",
-  "QUESTION_PREVIOUS": "Previous question",
-  "QUESTION_NEXT": "Save and Continue",
+  "QUESTION_PREVIOUS": "(Previous question)FR",
+  "QUESTION_NEXT": "(Save and Continue)FR",
   "QUESTION_ONE_TITLE": "Adresse et dépôt direct",
-  "QUESTION_ONE_TEXT": "Avez-vous déménagé, changé d'adresse postale ou modifié l'information bancaire fournie pour le dépôt direct ?",
+  "QUESTION_ONE_TEXT":
+    "Avez-vous déménagé, changé d'adresse postale ou modifié l'information bancaire fournie pour le dépôt direct ?",
   "QUESTION_ONE_HELP": "",
   "QUESTION_TWO_TITLE": "Hors Canada",
-  "QUESTION_TWO_TEXT": "Étiez-vous à l'extérieur du Canada entre le lundi et le vendredi pendant la période visée par cette déclaration ?",
+  "QUESTION_TWO_TEXT":
+    "Étiez-vous à l'extérieur du Canada entre le lundi et le vendredi pendant la période visée par cette déclaration ?",
   "QUESTION_TWO_HELP": "",
   "QUESTION_THREE_TITLE": "Travail-Gains",
   "QUESTION_THREE_TEXT": "Travaillez-vous à votre compte ?",
   "QUESTION_THREE_HELP": "",
   "QUESTION_FOUR_TITLE": "Travail-Gains",
-  "QUESTION_FOUR_TEXT": "Avez-vous travaillé ou reçu une rémunération pendant la période visée par cette déclaration ? Ceci inclut un travail pour lequel vous ne serez pas payé ou serez payé plus tard ou un travail autonome y compris un revenu agricole.",
+  "QUESTION_FOUR_TEXT":
+    "Avez-vous travaillé ou reçu une rémunération pendant la période visée par cette déclaration ? Ceci inclut un travail pour lequel vous ne serez pas payé ou serez payé plus tard ou un travail autonome y compris un revenu agricole.",
   "QUESTION_FOUR_HELP": "",
   "QUESTION_FIVE_TITLE": "Formation",
-  "QUESTION_FIVE_TEXT": "Étiez-vous aux études ou en formation pendant la période visée par cette déclaration ?",
+  "QUESTION_FIVE_TEXT":
+    "Étiez-vous aux études ou en formation pendant la période visée par cette déclaration ?",
   "QUESTION_FIVE_HELP": "",
   "QUESTION_SIX_TITLE": "Disponibilité",
-  "QUESTION_SIX_TEXT": "Étiez-vous prêt et disposé à travailler, et capable de le faire chaque jour, du lundi au vendredi, pendant chaque semaine de la période visée par cette déclaration ?",
+  "QUESTION_SIX_TEXT":
+    "Étiez-vous prêt et disposé à travailler, et capable de le faire chaque jour, du lundi au vendredi, pendant chaque semaine de la période visée par cette déclaration ?",
   "QUESTION_SIX_HELP": "",
   "QUESTION_SEVEN_TITLE": "Autres sommes d'argent",
-  "QUESTION_SEVEN_TEXT": "Avez-vous reçu ou recevrez-vous d'autres sommes d'argent que celles déjà mentionnées pour la période visée par cette déclaration ?",
+  "QUESTION_SEVEN_TEXT":
+    "Avez-vous reçu ou recevrez-vous d'autres sommes d'argent que celles déjà mentionnées pour la période visée par cette déclaration ?",
   "QUESTION_SEVEN_HELP": "",
 
   "REPORT_SUBMITTED_TITLE": "(FR)Report Submitted",
 
-  "TUTORIAL_SLIDE1_TITLE": "Bienvenue dans le kit de démarrage Ionic Super Starter",
-  "TUTORIAL_SLIDE1_DESCRIPTION": "<b>Ionic Super Starter</b> est un kit complet pour démarrer sur Ionic. Il repose sur les meilleures pratiques et implémente de nombreux types de pages.",
+  "TUTORIAL_SLIDE1_TITLE":
+    "Bienvenue dans le kit de démarrage Ionic Super Starter",
+  "TUTORIAL_SLIDE1_DESCRIPTION":
+    "<b>Ionic Super Starter</b> est un kit complet pour démarrer sur Ionic. Il repose sur les meilleures pratiques et implémente de nombreux types de pages.",
 
   "TUTORIAL_SLIDE2_TITLE": "Comment utiliser le Super Starter",
-  "TUTORIAL_SLIDE2_DESCRIPTION": "Assemblez les types de pages désirés et supprimez les autres. Le kit inclut plusieurs mises en page courantes d’applications mobiles, comme les pages de connexion et d’inscription, les onglets et cette page de tutoriel.",
+  "TUTORIAL_SLIDE2_DESCRIPTION":
+    "Assemblez les types de pages désirés et supprimez les autres. Le kit inclut plusieurs mises en page courantes d’applications mobiles, comme les pages de connexion et d’inscription, les onglets et cette page de tutoriel.",
 
   "TUTORIAL_SLIDE3_TITLE": "Pour commencer",
-  "TUTORIAL_SLIDE3_DESCRIPTION": "Si vous avez besoin d’aide, consultez le README du Super Starter pour un tutoriel complet.",
+  "TUTORIAL_SLIDE3_DESCRIPTION":
+    "Si vous avez besoin d’aide, consultez le README du Super Starter pour un tutoriel complet.",
 
   "SETTINGS_TITLE": "Paramètres",
   "SETTINGS_OPTION1": "Option 1",
@@ -123,10 +139,12 @@
 
   "WELCOME_TITLE": "Bienvenue",
 
-  "LOGIN_ERROR": "Connexion impossible. Veuillez vérifier les informations de votre compte et réessayer.",
+  "LOGIN_ERROR":
+    "Connexion impossible. Veuillez vérifier les informations de votre compte et réessayer.",
   "LOGIN_BUTTON": "Connexion",
   "SIGNUP_TITLE": "Inscription",
-  "SIGNUP_ERROR": "Inscription impossible. Veuillez vérifier les informations de votre compte et réessayer.",
+  "SIGNUP_ERROR":
+    "Inscription impossible. Veuillez vérifier les informations de votre compte et réessayer.",
   "SIGNUP_BUTTON": "Inscription",
 
   "LIST_MASTER_TITLE": "Items",
@@ -145,15 +163,18 @@
   "LOGIN_FAILED_TITLE": "(FR)Login Failed",
 
   "ISSUE_PAGE_TITLE": "(FR)Issue With Report",
-  "ISSUE_PAGE_P1_TEXT": "(FR)Unfortunately, at this time we are not able to complete your report online",
+  "ISSUE_PAGE_P1_TEXT":
+    "(FR)Unfortunately, at this time we are not able to complete your report online",
   "ISSUE_PAGE_P2_TEXT": "(FR)In order to continue:",
   "ISSUE_PAGE_P3_TEXT": "(FR)Call Service Canada at 1-800-206-7218",
   "ISSUE_PAGE_P4_TEXT": "(FR)or",
   "ISSUE_PAGE_P5_TEXT": "(FR)Find a Service Canada location",
 
   "SUBMISSION_TITLE": "(FR)Submit Your Report",
-  "SUBMISSION_P1_TEXT": "(FR)Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
-  "SUBMISSION_P2_TEXT": "(FR)By clicking I accept you are agreeing to the Confirmation Statement.",
+  "SUBMISSION_P1_TEXT":
+    "(FR)Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
+  "SUBMISSION_P2_TEXT":
+    "(FR)By clicking I accept you are agreeing to the Confirmation Statement.",
   "SUBMISSION_ACCEPT_TEXT": "(FR)I accept",
   "SUBMISSION_SUBTITLE1": "(FR)Address & Direct Deposit",
   "SSC_LOCATION_TITLE": "(FR)Locate Service Canada Centre",
