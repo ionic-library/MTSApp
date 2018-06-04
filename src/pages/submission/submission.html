@@ -10,7 +10,7 @@
       <button ion-button menuToggle left>
         <ion-icon name="menu"></ion-icon>
       </button>
-      <ion-title>Week 21/22 Report</ion-title>
+      <ion-title>{{ 'SUBMISSION_TITLE_ONE' | translate }}</ion-title>
       <ion-buttons end>
         <button ion-button clear (click)="this.presentHelpModal()">
           <ion-icon class="help" name="help-circle"></ion-icon>
@@ -25,16 +25,16 @@
   
   <ion-grid style="margin-top: 2%;">
     <ion-row class= "wrapper">
-    <h2 class="title">Submit Your Report</h2>
-      <p class="p" style="margin:0">Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.</p> 
+    <h2 class="title">{{ 'SUBMISSION_TITLE_TWO' | translate }}</h2>
+      <p class="p" style="margin:0">{{ 'SUBMISSION_P1_TEXT' | translate }}</p> 
 
-     <p class="p" style="width: 90%;">By clicking I accept you are agreeing to the
-      Confirmation Statement.</p>
-      <button ion-button (click)="this.goToConfirmation()">I accept</button>
+     <p class="p" style="width: 90%;">{{ 'SUBMISSION_P2_TEXT' | translate }}</p>
+      <button ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
     </ion-row>
     <div class="line"></div>
     <ion-row class="wrapper">
-<span class="circle"><p class="number">1</p></span><span style="display:flex; align-items: center"><p class="subtitles">Address & Direct Deposit</p></span>
+<span class="circle"><p class="number">1</p></span><span style="display:flex; align-items: center"><p class="subtitles">{{ 'SUBMISSION_SUBTITLE1' | translate }}</p></span>
+ <p>{{ 'SUBMISSION_P3_TEXT' | translate }}</p>
     </ion-row>
     </ion-grid>
 </ion-content>
