@@ -1,5 +1,4 @@
 import { IssueWithReportPage } from "./issue-with-report/issue-with-report";
-import { BenefitFinderPage } from "./benefit-finder/benefit-finder";
 
 export enum SitePages {
   Splash = "SplashPage",
