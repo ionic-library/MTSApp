@@ -196,25 +196,25 @@
 
   "SUBMISSION_ACCEPT_TEXT": "I accept",
   "SUBMISSION_REFUSE_TEXT": "I refuse",
-  "SUBMISSION_SUBTITLE1": "Address & Direct Deposit",
-  "SUBMISSION_P3_TEXT":
+  "SUBMISSION_ADDRESS": "Address & Direct Deposit",
+  "SUBMISSION_QUESTION_1":
     "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
+  "SUBMISSION_OUTSIDE_CAN": "Outside Canada",
+  "SUBMISSION_QUESTION_2":
 
-  "SUBMISSION_SUBTITLE2": "Outside Canada",
-  "SUBMISSION_P4_TEXT":
     "Were you outside Canada between Monday and Friday during the period of this report?",
-  "SUBMISSION_SUBTITLE3": "Work and Wages",
-  "SUBMISSION_P5_TEXT": "Are you self-employed",
-  "SUBMISSION_P6_TEXT":
+  "SUBMISSION_WORK_WAGES": "Work and Wages",
+  "SUBMISSION_QUESTION_3": "Are you self-employed",
+  "SUBMISSION_QUESTION_4":
     "Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming",
-  "SUBMISSION_SUBTITLE4": "Training",
-  "SUBMISSION_P7_TEXT":
+  "SUBMISSION_TRAINING": "Training",
+  "SUBMISSION_QUESTION_5":
     "Did you attend school or a training course during the period of this report?",
-  "SUBMISSION_SUBTITLE5": "Availability",
-  "SUBMISSION_P8_TEXT":
+  "SUBMISSION_AVAILABILITY": "Availability",
+  "SUBMISSION_QUESTION_6":
     "Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
-  "SUBMISSION_SUBTITLE6": "Other Money",
-  "SUBMISSION_P9_TEXT":
+  "SUBMISSION_OTHER": "Other Money",
+  "SUBMISSION_QUESTION_7":
     "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
   "SUBMISSION_NO": "NO",
   "SUBMISSION_YES": "YES",
