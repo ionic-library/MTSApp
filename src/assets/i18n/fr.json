@@ -170,16 +170,37 @@
   "ISSUE_PAGE_P4_TEXT": "(FR)or",
   "ISSUE_PAGE_P5_TEXT": "(FR)Find a Service Canada location",
 
-  "SUBMISSION_TITLE_ONE": "(FR)Week 21/22 Report",
-  "SUBMISSION_TITLE_TWO": "(FR)Submit Your Report",
+  "SUBMISSION_TITLE_ONE": "Week 21/22 Report",
+  "SUBMISSION_TITLE_TWO": "Submit your report",
   "SUBMISSION_P1_TEXT":
     "(FR)Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
-  "SUBMISSION_P2_TEXT":
-    "(FR)By clicking I accept you are agreeing to the Confirmation Statement.",
+  "SUBMISSION_P2_TEXT": "(FR)By clicking I accept you are agreeing to the",
+  "SUBMISSION_CONFIRMATION": "(FR)Confirmation Statement.",
   "SUBMISSION_ACCEPT_TEXT": "(FR)I accept",
+  "SUBMISSION_REFUSE_TEXT": "(FR)I refuse",
   "SUBMISSION_SUBTITLE1": "(FR)Address & Direct Deposit",
   "SUBMISSION_P3_TEXT":
     "(FR)Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
+  "SUBMISSION_SUBTITLE2": "(FR)Outside Canada",
+  "SUBMISSION_P4_TEXT":
+    "(FR)Were you outside Canada between Monday and Friday during the period of this report?",
+  "SUBMISSION_SUBTITLE3": "(FR)Work and Wages",
+  "SUBMISSION_P5_TEXT": "(FR)Are you self-employed",
+  "SUBMISSION_P6_TEXT":
+    "(FR)Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming",
+  "SUBMISSION_SUBTITLE4": "(FR)Training",
+  "SUBMISSION_P7_TEXT":
+    "(FR)Did you attend school or a training course during the period of this report?",
+  "SUBMISSION_SUBTITLE5": "(FR)Availability",
+  "SUBMISSION_P8_TEXT":
+    "(FR)Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
+  "SUBMISSION_SUBTITLE6": "(FR)Other Money",
+  "SUBMISSION_P9_TEXT":
+    "(FR)Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
+  "SUBMISSION_NO": "(FR)NO",
+  "SUBMISSION_YES": "(FR)YES",
+  "SUBMISSION_EDIT": "(FR)EDIT",
+
   "SSC_LOCATION_TITLE": "(FR)Locate Service Canada Centre",
   "BENEFIT_FINDER_TITLE": "(FR)Benefit Finder",
   "LIFE_EVENTS_TITLE": "(FR)Life Events",

@@ -184,15 +184,36 @@
   "ISSUE_PAGE_P5_TEXT": "Find a Service Canada location",
 
   "SUBMISSION_TITLE_ONE": "Week 21/22 Report",
-  "SUBMISSION_TITLE_TWO": "Submit Your Report",
+  "SUBMISSION_TITLE_TWO": "Submit your report",
   "SUBMISSION_P1_TEXT":
     "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
-  "SUBMISSION_P2_TEXT":
-    "By clicking I accept you are agreeing to the Confirmation Statement.",
+  "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the",
+  "SUBMISSION_CONFIRMATION": "Confirmation Statement.",
   "SUBMISSION_ACCEPT_TEXT": "I accept",
+  "SUBMISSION_REFUSE_TEXT": "I refuse",
   "SUBMISSION_SUBTITLE1": "Address & Direct Deposit",
   "SUBMISSION_P3_TEXT":
     "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
+  "SUBMISSION_SUBTITLE2": "Outside Canada",
+  "SUBMISSION_P4_TEXT":
+    "Were you outside Canada between Monday and Friday during the period of this report?",
+  "SUBMISSION_SUBTITLE3": "Work and Wages",
+  "SUBMISSION_P5_TEXT": "Are you self-employed",
+  "SUBMISSION_P6_TEXT":
+    "Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming",
+  "SUBMISSION_SUBTITLE4": "Training",
+  "SUBMISSION_P7_TEXT":
+    "Did you attend school or a training course during the period of this report?",
+  "SUBMISSION_SUBTITLE5": "Availability",
+  "SUBMISSION_P8_TEXT":
+    "Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
+  "SUBMISSION_SUBTITLE6": "Other Money",
+  "SUBMISSION_P9_TEXT":
+    "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
+  "SUBMISSION_NO": "NO",
+  "SUBMISSION_YES": "YES",
+  "SUBMISSION_EDIT": "Edit",
+
   "SSC_LOCATION_TITLE": "Locate Service Canada Centre",
   "BENEFIT_FINDER_TITLE": "Benefit Finder",
   "LIFE_EVENTS_TITLE": "Life Events",
