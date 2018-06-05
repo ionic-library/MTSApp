@@ -41,12 +41,12 @@
 
   "APP_HOME_TITLE": "(FR)My Service Canada",
   "SEARCHBAR_PLACEHOLDER": "(FR)How Can We Help?",
-  "SERVICE_ONE_TITLE": "(FR)My Notifications",
-  "SERVICE_TWO_TITLE": "(FR)Benefit Finder",
-  "SERVICE_THREE_TITLE": "(FR)Search",
+  "SERVICE_ONE_TITLE": "Fonction avenir",
+  "SERVICE_TWO_TITLE": "Fonction avenir",
+  "SERVICE_THREE_TITLE": "Recherche d'emploi",
   "SERVICE_FOUR_TITLE": "(FR)My EI Report",
-  "SERVICE_FIVE_TITLE": "(FR)Service Canada Locations",
-  "SERVICE_SIX_TITLE": "(FR)Life Events",
+  "SERVICE_FIVE_TITLE": "Fonction avenir",
+  "SERVICE_SIX_TITLE": "Fonction avenir",
   "SHOW_MORE_BUTTON": "Show More",
 
   "GREETING_MORNING": "(FR)Good Morning,",
@@ -187,7 +187,6 @@
     "(FR)Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
   "SUBMISSION_OUTSIDE_CAN": "(FR)Outside Canada",
   "SUBMISSION_QUESTION_2":
-
     "(FR)Were you outside Canada between Monday and Friday during the period of this report?",
   "SUBMISSION_WORK_WAGES": "(FR)Work and Wages",
   "SUBMISSION_QUESTION_3": "(FR)Are you self-employed",

@@ -71,15 +71,15 @@ export class HomePage {
     }
   };
 
-  public navigateToSearchPage = () => this.navCtrl.push(SitePages.JobSearch);
+  public navigateToSearchPage = () => this.navCtrl.push(SitePages.BlankPage);
   public navigateToMyNotificationsPage = () =>
-    this.navCtrl.push(SitePages.MyNotifications);
+    this.navCtrl.push(SitePages.BlankPage);
   public navigateToBenefitFinderPage = () =>
-    this.navCtrl.push(SitePages.BenefitFinder);
+    this.navCtrl.push(SitePages.BlankPage);
   public navigateToSCCLocationPage = () =>
-    this.navCtrl.push(SitePages.SCCLocations);
+    this.navCtrl.push(SitePages.BlankPage);
   public navigateToLifeEventsPage = () =>
-    this.navCtrl.push(SitePages.LifeEvents);
+    this.navCtrl.push(SitePages.BlankPage);
 
   public ionViewDidLoad = () => console.log("Loading Home Page");
 }

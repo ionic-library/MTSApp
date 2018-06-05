@@ -33,12 +33,9 @@ export class MyApp {
 
   pages: any[] = [
     { title: "Home", component: SitePages.Home },
-    { title: "Benefit Finder", component: SitePages.BenefitFinder },
+    { title: "Blank Page", component: SitePages.BlankPage },
     { title: "EI Reporting", component: SitePages.EiReporting },
-    { title: "Search", component: SitePages.JobSearch },
-    { title: "Life Events", component: SitePages.LifeEvents },
-    { title: "My Notifications", component: SitePages.MyNotifications },
-    { title: "Service Canada Locations", component: SitePages.SCCLocations },
+    { title: "Search", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionaire", component: SitePages.Questionaire },
     { title: "Login", component: SitePages.EILogin },
