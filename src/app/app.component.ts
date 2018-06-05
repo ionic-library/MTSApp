@@ -4,7 +4,6 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
-
 import { FirstRunPage } from "../pages";
 import { Settings } from "../providers";
 
@@ -42,11 +41,11 @@ export class MyApp {
     { title: "Service Canada Locations", component: SitePages.SCCLocations },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionaire", component: SitePages.Questionaire },
-
     { title: "Login", component: SitePages.EILogin },
     { title: "Settings", component: SitePages.Settings },
     { title: "Issue", component: SitePages.IssueWithReport },
     { title: "LoginFailed", component: SitePages.LoginFalied },
+    { title: "Submission", component: SitePages.Submission },
     { title: "Splash", component: SitePages.Splash }
   ];
 
