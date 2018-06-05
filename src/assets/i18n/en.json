@@ -30,6 +30,10 @@
   "LOGIN": "Sign in",
   "SIGNUP": "Sign up",
 
+  "GREETING_MORNING": "Good Morning,",
+  "GREETING_EVENING": "Good Evening,",
+  "GREETING_AFTERNOON": "Good Afternoon,",
+
   "TAB1_TITLE": "Items",
   "TAB2_TITLE": "Search",
   "TAB3_TITLE": "Settings",
@@ -189,6 +193,7 @@
     "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
   "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the",
   "SUBMISSION_CONFIRMATION": "Confirmation Statement.",
+
   "SUBMISSION_ACCEPT_TEXT": "I accept",
   "SUBMISSION_REFUSE_TEXT": "I refuse",
   "SUBMISSION_ADDRESS": "Address & Direct Deposit",
@@ -196,6 +201,7 @@
     "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
   "SUBMISSION_OUTSIDE_CAN": "Outside Canada",
   "SUBMISSION_QUESTION_2":
+
     "Were you outside Canada between Monday and Friday during the period of this report?",
   "SUBMISSION_WORK_WAGES": "Work and Wages",
   "SUBMISSION_QUESTION_3": "Are you self-employed",

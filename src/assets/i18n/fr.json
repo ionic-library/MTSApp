@@ -49,6 +49,10 @@
   "SERVICE_SIX_TITLE": "(FR)Life Events",
   "SHOW_MORE_BUTTON": "Show More",
 
+  "GREETING_MORNING": "(FR)Good Morning,",
+  "GREETING_EVENING": "(FR)Good Evening,",
+  "GREETING_AFTERNOON": "(FR)Good Afternoon,",
+
   "EI_REPORTING_HEADER": "(FR)EI Reporting",
   "EI_REPORT_CARD_HEADER": "(FR)My EI Reports",
   "START_REPORT_BUTTON_TEXT": "(FR)Start Report",
@@ -183,6 +187,7 @@
     "(FR)Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
   "SUBMISSION_OUTSIDE_CAN": "(FR)Outside Canada",
   "SUBMISSION_QUESTION_2":
+
     "(FR)Were you outside Canada between Monday and Friday during the period of this report?",
   "SUBMISSION_WORK_WAGES": "(FR)Work and Wages",
   "SUBMISSION_QUESTION_3": "(FR)Are you self-employed",
