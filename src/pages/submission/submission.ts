@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController} from 'ionic-angular';
-import { ConfirmationPage } from '../confirmation/confirmation';
+import { Component } from "@angular/core";
+import { IonicPage, NavController } from "ionic-angular";
+import { ConfirmationPage } from "../confirmation/confirmation";
 import { SitePages } from "../index";
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from "@ngx-translate/core";
 /**
  * Generated class for the SubmissionPage page.
  *
@@ -12,20 +12,20 @@ import { TranslateService } from '@ngx-translate/core';
 
 @IonicPage()
 @Component({
-  selector: 'page-submission',
-  templateUrl: 'submission.html',
+  selector: "page-submission",
+  templateUrl: "submission.html"
 })
 export class SubmissionPage {
+  constructor(
+    public navCtrl: NavController,
+    public translateService: TranslateService
+  ) {}
 
-  constructor(public navCtrl: NavController, public translateService: TranslateService) {
-  }
-
-  goToConfirmation(){
-    this.navCtrl.push(SitePages.Confirmation)
+  goToConfirmation() {
+    this.navCtrl.push(SitePages.Confirmation);
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SubmissionPage');
+    console.log("ionViewDidLoad SubmissionPage");
   }
-
 }

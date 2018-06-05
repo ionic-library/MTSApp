@@ -20,21 +20,104 @@
   
   </ion-header>
 
-<ion-content padding>
+  <ion-content padding>
 
+
+    <ion-grid style="margin-top: 2%;">
+      <ion-row class="wrapper">
+        <h2 class="title">{{ 'SUBMISSION_TITLE_TWO' | translate }}</h2>
+        <p class="first-paragraph" style="margin:0">{{ 'SUBMISSION_P1_TEXT' | translate }}</p>
   
-  <ion-grid style="margin-top: 2%;">
-    <ion-row class= "wrapper">
-    <h2 class="title">{{ 'SUBMISSION_TITLE_TWO' | translate }}</h2>
-      <p class="p" style="margin:0">{{ 'SUBMISSION_P1_TEXT' | translate }}</p> 
-
-     <p class="p" style="width: 90%;">{{ 'SUBMISSION_P2_TEXT' | translate }}</p>
-      <button ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
-    </ion-row>
-    <div class="line"></div>
-    <ion-row class="wrapper">
-<span class="circle"><p class="number">1</p></span><span style="display:flex; align-items: center"><p class="subtitles">{{ 'SUBMISSION_SUBTITLE1' | translate }}</p></span>
- <p>{{ 'SUBMISSION_P3_TEXT' | translate }}</p>
-    </ion-row>
+        <p class="first-paragraph" id="accept-statement">{{ 'SUBMISSION_P2_TEXT' | translate }} <a style="font-weight: 600">{{ 'SUBMISSION_CONFIRMATION' | translate }}</a></p>
+      </ion-row>
+        <ion-row class="wrapper" align-items-center>
+        <button class="accept" ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
+        <span class="refuse">{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</span>
+      </ion-row>
+      
+      <div class="line"></div>
+      <ion-row class="wrapper">
+        <span class="circle">
+          <p class="number">1</p>
+        </span>
+        <span style="display:flex; align-items: center;width: 80%">
+          <p class="subtitles">{{ 'SUBMISSION_SUBTITLE1' | translate }}</p>
+        </span>
+        <p class="question">{{ 'SUBMISSION_P3_TEXT' | translate }}</p>
+      </ion-row>
+      <ion-row class="wrapper answer-icon" align-items-center>
+        <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      </ion-row>
+  
+      <ion-row class="wrapper">
+        <span class="circle">
+          <p class="number">2</p>
+        </span>
+        <span style="display:flex; align-items: center; width: 80%;">
+          <p class="subtitles">{{ 'SUBMISSION_SUBTITLE2' | translate }}</p>
+        </span>
+        <p class="question">{{ 'SUBMISSION_P4_TEXT' | translate }}</p>
+      </ion-row>
+      <ion-row class="wrapper answer-icon" align-items-center>
+        <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      </ion-row>
+  
+      <ion-row class="wrapper">
+        <span class="circle">
+          <p class="number">3</p>
+        </span>
+        <span style="display:flex; align-items: center; flex-wrap: wrap; width: 80%">
+          <p class="subtitles">{{ 'SUBMISSION_SUBTITLE3' | translate }}</p>
+        </span>
+        <p class="question">{{ 'SUBMISSION_P5_TEXT' | translate }}</p>
+      </ion-row>
+     <ion-row class="wrapper answer-icon" align-items-center>
+        <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      </ion-row>
+  
+      <ion-row class="wrapper">
+        <span class="circle">
+          <p class="number">4</p>
+        </span>
+        <span style="display:flex; align-items: center; width: 80%">
+          <p class="subtitles">{{ 'SUBMISSION_SUBTITLE4' | translate }}</p>
+        </span>
+        <p class="question">{{ 'SUBMISSION_P7_TEXT' | translate }}</p>
+      </ion-row>
+      <ion-row class="wrapper answer-icon" align-items-center>
+        <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      </ion-row>
+  
+      <ion-row class="wrapper">
+        <span class="circle">
+          <p class="number">5</p>
+        </span>
+        <span style="display:flex; align-items: center; width: 80%">
+          <p class="subtitles">{{ 'SUBMISSION_SUBTITLE5' | translate }}</p>
+        </span>
+        <p class="question">{{ 'SUBMISSION_P8_TEXT' | translate }}</p>
+      </ion-row>
+      <ion-row class="wrapper answer-icon" align-items-center>
+        <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      </ion-row>
+  
+      <ion-row class="wrapper">
+        <span class="circle">
+          <p class="number">6</p>
+        </span>
+        <span style="display:flex; align-items: center; width: 80%">
+          <p class="subtitles">{{ 'SUBMISSION_SUBTITLE6' | translate }}</p>
+        </span>
+        <p class="question">{{ 'SUBMISSION_P9_TEXT' | translate }}</p>
+      </ion-row>
+      <ion-row class="wrapper answer-icon" align-items-center>
+        <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      </ion-row>
+  
+    <ion-row class="wrapper" align-items-center>
+    <button class="accept" ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
+    <span class="refuse">{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</span>
+  </ion-row>
+  
     </ion-grid>
-</ion-content>
+  </ion-content>
