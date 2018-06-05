@@ -1,14 +1,14 @@
 <ion-header class="page-header">
   <ion-toolbar>
     <button ion-button menuToggle icon-only>
-      <ion-icon name='menu'></ion-icon>
+      <ion-icon name='MTSApp-HamburgMenu'></ion-icon>
     </button>
     <ion-title>
       {{ 'APP_HOME_TITLE' | translate }}
     </ion-title>
     <ion-buttons end>
       <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle" aria-label="Help Button"></ion-icon>
+          <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
     </ion-buttons>
   </ion-toolbar>
@@ -28,19 +28,19 @@
     <ion-row class="row">
       <ion-col class="grid-column" style="padding-right: 0; padding-bottom: 0;">
         <div (click)="this.navigateToMyNotificationsPage()" class="service-select" style="border-left: none; border-top: none;">
-          <ion-icon class="service-icon" name="notifications"></ion-icon>
+          <ion-icon class="service-icon" name="MTSApp-Notification"></ion-icon>
           <p class="service-title">{{'SERVICE_ONE_TITLE' | translate }}</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0; padding-right: 0;">
         <div (click)="this.navigateToBenefitFinderPage()" class="service-select" style="border-top: none;">
-          <ion-icon class="service-icon" name="list-box"></ion-icon>
+          <ion-icon class="service-icon" name="MTSApp-Finder"></ion-icon>
           <p class="service-title">{{'SERVICE_TWO_TITLE' | translate }}</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0;">
         <div (click)="this.navigateToSearchPage()" class="service-select" style="border-top: none; border-right: none;">
-            <ion-icon class="service-icon" name="search"></ion-icon>
+            <ion-icon class="service-icon" name="MTSApp-JobSearch"></ion-icon>
             <p class="service-title">{{ 'SERVICE_THREE_TITLE' | translate }}</p>
         </div>
       </ion-col>
@@ -48,19 +48,19 @@
     <ion-row class="row">
       <ion-col class="grid-column" style="padding-top: 0; padding-right: 0;">
         <div (click)="this.navigateToEIReportingPage()" class="service-select" style="border-left: none; border-bottom: none;">
-          <ion-icon class="service-icon" name="paper-plane"></ion-icon>
+          <ion-icon class="service-icon" name="MTSApp-EIReporting"></ion-icon>
           <p class="service-title">{{ 'SERVICE_FOUR_TITLE' | translate }}</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-top: 0; padding-right: 0;">
         <div (click)="this.navigateToSCCLocationPage()" class="service-select" style="border-bottom: none;">
-          <ion-icon class="service-icon" name="globe"></ion-icon>
+          <ion-icon class="service-icon" name="MTSApp-SCCLocations"></ion-icon>
           <p class="service-title">{{ 'SERVICE_FIVE_TITLE' | translate }}</p>
         </div>
       </ion-col>
       <ion-col class="grid-column" style="padding-left: 0; padding-top: 0;">
         <div (click)="this.navigateToLifeEventsPage()" class="service-select" style="border-bottom: none; border-right: none;">
-          <ion-icon class="service-icon" name="people"></ion-icon>
+          <ion-icon class="service-icon" name="MTSApp-LifeEvents"></ion-icon>
           <p class="service-title">{{ 'SERVICE_SIX_TITLE' | translate }}</p>
         </div>
       </ion-col>
