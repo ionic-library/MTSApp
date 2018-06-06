@@ -1,32 +1,35 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { ErrorHandler, NgModule } from '@angular/core';
-import { BrowserModule} from '@angular/platform-browser';
-import { Camera } from '@ionic-native/camera';
-import { SplashScreen } from '@ionic-native/splash-screen';
-import { StatusBar } from '@ionic-native/status-bar';
-import { IonicStorageModule, Storage } from '@ionic/storage';
-import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { IonicApp, IonicErrorHandler, IonicModule, Slides } from 'ionic-angular';
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { ErrorHandler, NgModule } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { Camera } from "@ionic-native/camera";
+import { SplashScreen } from "@ionic-native/splash-screen";
+import { StatusBar } from "@ionic-native/status-bar";
+import { IonicStorageModule, Storage } from "@ionic/storage";
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import {
+  IonicApp,
+  IonicErrorHandler,
+  IonicModule,
+  Slides
+} from "ionic-angular";
 
-import { Items } from '../mocks/providers/items';
-import { Reports } from '../mocks/providers/mock-ei-reports';
-import { HelpModalPage } from '../pages/help-modal/help-modal'
-import { Settings, User, Api, Lang, ProvincesProvider } from '../providers';
-import { MyApp } from './app.component';
-import { QuestionairePage } from '../pages/questionaire/questionaire';
-import { Questionaire_7Page } from '../pages/questionaire-7/questionaire-7';
-import { Questionaire_6Page } from '../pages/questionaire-6/questionaire-6';
-import { Questionaire_5Page } from '../pages/questionaire-5/questionaire-5';
-import { Questionaire_3Page } from '../pages/questionaire-3/questionaire-3';
-import { Questionaire_2Page } from '../pages/questionaire-2/questionaire-2';
-import { SubmissionPage } from '../pages/submission/submission';
-
+import { Reports } from "../mocks/providers/mock-ei-reports";
+import { HelpModalPage } from "../pages/help-modal/help-modal";
+import { Settings, User, Api, Lang, ProvincesProvider } from "../providers";
+import { MyApp } from "./app.component";
+import { QuestionairePage } from "../pages/questionaire/questionaire";
+import { Questionaire_7Page } from "../pages/questionaire-7/questionaire-7";
+import { Questionaire_6Page } from "../pages/questionaire-6/questionaire-6";
+import { Questionaire_5Page } from "../pages/questionaire-5/questionaire-5";
+import { Questionaire_3Page } from "../pages/questionaire-3/questionaire-3";
+import { Questionaire_2Page } from "../pages/questionaire-2/questionaire-2";
+import { SubmissionPage } from "../pages/submission/submission";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
 export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
+  return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
 }
 
 export function provideSettings(storage: Storage) {
@@ -38,9 +41,9 @@ export function provideSettings(storage: Storage) {
    */
   return new Settings(storage, {
     option1: true,
-    option2: 'Ionitron J. Framework',
-    option3: '3',
-    option4: 'Hello'
+    option2: "Ionitron J. Framework",
+    option3: "3",
+    option4: "Hello"
   });
 }
 
@@ -61,7 +64,7 @@ export function provideSettings(storage: Storage) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: createTranslateLoader,
         deps: [HttpClient]
       }
     }),
@@ -81,7 +84,6 @@ export function provideSettings(storage: Storage) {
   ],
   providers: [
     Api,
-    Items,
     Slides,
     User,
     Camera,
@@ -95,4 +97,4 @@ export function provideSettings(storage: Storage) {
     Lang
   ]
 })
-export class AppModule { }
+export class AppModule {}

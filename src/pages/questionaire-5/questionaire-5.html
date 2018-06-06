@@ -3,12 +3,12 @@
 
   <ion-navbar color="mainHeader" >
     <button ion-button menuToggle left>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon name="MTSApp-HamburgMenu"></ion-icon>
     </button>
     <ion-title>{{ 'QUESTIONAIRE_TITLE' | translate }}</ion-title>
     <ion-buttons end>
       <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle"></ion-icon>
+        <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -23,39 +23,39 @@
       <h5 id="page-number1" class="questionNumber" >
           {{ 'QUESTION_NUMBER_FIVE' | translate }}
       </h5>
-      
+
         <p >
             {{ 'QUESTION_FIVE_TEXT' | translate }}
-          
-          
+
+
         </p>
-      
+
       <form id="page-form2">
         <ion-list radio-group >
 
-        
+
           <ion-item>
             <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
             <ion-radio value=true></ion-radio>
           </ion-item>
-        
+
           <ion-item>
             <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
             <ion-radio value=false></ion-radio>
-            
+
           </ion-item>
-        
-          
-        
+
+
+
         </ion-list>
       </form>
-     
-  
-  
+
+
+
 </ion-content>
 <ion-footer padding >
-  
-    
+
+
 
     <ion-grid>
         <ion-row>
@@ -66,11 +66,10 @@
               <button id="next" ion-button color="positive" block [navPush]="pushPageNext" >{{ 'QUESTION_NEXT' | translate }}</button>
           </ion-col>
         </ion-row>
-        
+
       </ion-grid>
- 
-      
+
+
   </ion-footer>
 
 
-  
