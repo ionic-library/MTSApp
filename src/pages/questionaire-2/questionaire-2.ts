@@ -31,7 +31,6 @@ export class Questionaire_2Page {
     public modalCtrl: ModalController
   ) {
     //this.report = navParams.get('report');
-    // console.log(this.report);
     this.startDate = "March 28, 2010";
     this.endDate = "April 10, 2010";
     this.pushPagePrevious = QuestionairePage;
