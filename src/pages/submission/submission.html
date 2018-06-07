@@ -7,7 +7,7 @@
 <ion-header >
 
     <ion-navbar color="mainHeader" >
-      <button ion-button menuToggle left>
+      <button ion-button menuToggle >
         <ion-icon name="MTSApp-HamburgMenu"></ion-icon>
       </button>
       <ion-title>{{ 'SUBMISSION_TITLE_ONE' | translate }}</ion-title>
@@ -32,7 +32,7 @@
       </ion-row>
         <ion-row class="wrapper" align-items-center>
         <button class="accept" ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
-        <span class="refuse">{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</span>
+        <span (click)="this.backToEIReporting()" class="refuse"><a>{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</a></span>
       </ion-row>
 
       <div class="line"></div>
@@ -66,7 +66,7 @@
         <span class="circle">
           <p class="number">3</p>
         </span>
-        <span style="display:flex; align-items: center; flex-wrap: wrap; width: 80%">
+        <span style="display:flex; align-items: center; flex-wrap: wrap; width: 90%">
           <p class="subtitles">{{ 'SUBMISSION_WORK_WAGES' | translate }}</p>
         </span>
         <p class="question">{{ 'SUBMISSION_QUESTION_3' | translate }}</p>
@@ -122,7 +122,7 @@
 
     <ion-row class="wrapper" align-items-center>
     <button class="accept" ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
-    <span class="refuse">{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</span>
+    <span (click)="this.backToEIReporting()" class="refuse"><a>{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</a></span>
   </ion-row>
 
     </ion-grid>

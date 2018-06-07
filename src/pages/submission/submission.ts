@@ -49,6 +49,10 @@ export class SubmissionPage {
     this.navCtrl.push(Questionaire_7Page);
   }
 
+  public backToEIReporting() {
+    this.navCtrl.push(SitePages.EiReporting);
+  }
+
   ionViewDidLoad() {
     console.log("ionViewDidLoad SubmissionPage");
   }

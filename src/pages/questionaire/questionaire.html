@@ -1,8 +1,8 @@
 
 <ion-header >
 
-  <ion-navbar color="mainHeader">
-    <button ion-button menuToggle left>
+  <ion-navbar color="mainHeader" >
+    <button ion-button menuToggle icon-only>
       <ion-icon name="MTSApp-HamburgMenu"></ion-icon>
     </button>
     <ion-title>{{ 'QUESTIONAIRE_TITLE' | translate }}</ion-title>
@@ -33,20 +33,19 @@
       <form id="page-form2">
         <ion-list radio-group >
 
-
-          <ion-item>
-            <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
-            <ion-radio value=true></ion-radio>
-          </ion-item>
-
-          <ion-item>
-            <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
-            <ion-radio value=false></ion-radio>
-
-          </ion-item>
-
-
-
+        
+            <ion-item>
+                <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
+                <ion-radio value=true ></ion-radio>
+              </ion-item>
+            
+              <ion-item>
+                <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
+                <ion-radio value=false ></ion-radio>
+                
+              </ion-item>
+          
+        
         </ion-list>
       </form>
 

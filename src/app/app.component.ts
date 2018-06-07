@@ -37,7 +37,7 @@ export class MyApp {
     { title: "EI Reporting", component: SitePages.EiReporting },
     { title: "Search", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
-    { title: "Questionaire", component: SitePages.Questionaire },
+    { title: "Questionnaire", component: SitePages.Questionaire },
     { title: "Login", component: SitePages.EILogin },
     { title: "Settings", component: SitePages.Settings },
     { title: "Issue", component: SitePages.IssueWithReport },
@@ -86,7 +86,7 @@ export class MyApp {
     }
 
     this.translate.get(["BACK_BUTTON_TEXT"]).subscribe(values => {
-      this.config.set("ios", "backButtonText", values.BACK_BUTTON_TEXT);
+      // this.config.set("ios", "backButtonText", values.BACK_BUTTON_TEXT);
     });
   }
 
