@@ -6,25 +6,33 @@
         <ion-row class="carousel-row">
           <ion-col class="carousel-column">
             <div (click)="navigateToMyNotificationsPage()" class="carousel-service-select">
-              <ion-icon class="service-icon" name="MTSApp-Notification"></ion-icon>
+              <button class="service-button" ion-button clear color="dark">
+                <ion-icon class="service-icon" name="MTSApp-Notification"></ion-icon>
+              </button>
               <p class="service-title">{{'SERVICE_ONE_TITLE' | translate }}</p>
             </div>
           </ion-col>
           <ion-col class="carousel-column">
             <div (click)="navigateToBenefitFinderPage()" class="carousel-service-select">
-              <ion-icon class="service-icon" name="MTSApp-Finder"></ion-icon>
-              <p class="service-title">{{'SERVICE_TWO_TITLE' | translate }}</p>
+              <button class="service-button" ion-button clear color="dark">
+                <ion-icon class="service-icon" name="MTSApp-Finder"></ion-icon>
+              </button>
+                <p class="service-title">{{'SERVICE_TWO_TITLE' | translate }}</p>
             </div>
           </ion-col>
           <ion-col class="carousel-column">
             <div (click)="navigateToSearchPage()" class="carousel-service-select">
-              <ion-icon class="service-icon" name="MTSApp-JobSearch"></ion-icon>
-              <p class="service-title">{{ 'SERVICE_THREE_TITLE' | translate }}</p>
+              <button class="service-button" ion-button clear color="dark">
+                <ion-icon class="service-icon" name="MTSApp-JobSearch"></ion-icon>
+              </button>
+                <p class="service-title">{{ 'SERVICE_THREE_TITLE' | translate }}</p>
             </div>
           </ion-col>
           <ion-col class="carousel-column">
             <div (click)="navigateToEIReportingPage()" class="service-select" style="border-left: none; border-bottom: none;">
-              <ion-icon class="service-icon" name="MTSApp-EIReporting"></ion-icon>
+              <button class="service-button" ion-button clear color="dark">
+                <ion-icon class="service-icon" name="MTSApp-EIReporting"></ion-icon>
+              </button>
               <p class="service-title">{{ 'SERVICE_FOUR_TITLE' | translate }}</p>
             </div>
           </ion-col>
@@ -36,13 +44,17 @@
         <ion-row class="carousel-row">
           <ion-col class="carousel-column">
             <div (click)="navigateToSCCLocationPage()" class="service-select" style="border-bottom: none;">
-              <ion-icon class="service-icon" name="MTSApp-SCCLocations"></ion-icon>
+              <button class="service-button" ion-button clear color="dark">
+                <ion-icon class="service-icon" name="MTSApp-SCCLocations"></ion-icon>
+              </button>
               <p class="service-title">{{ 'SERVICE_FIVE_TITLE' | translate }}</p>
             </div>
           </ion-col>
           <ion-col class="carousel-column">
             <div (click)="navigateToLifeEventsPage()" class="service-select" style="border-bottom: none; border-right: none;">
-              <ion-icon class="service-icon" name="MTSApp-LifeEvents"></ion-icon>
+              <button class="service-button" ion-button clear color="dark">
+                <ion-icon class="service-icon" name="MTSApp-LifeEvents"></ion-icon>
+              </button>
               <p class="service-title">{{ 'SERVICE_SIX_TITLE' | translate }}</p>
             </div>
           </ion-col>
