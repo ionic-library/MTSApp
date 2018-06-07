@@ -174,8 +174,8 @@
   "SEARCH_PLACEHOLDER": "Search the items list, e.g. \"Donald Duck\"",
 
   "CONFIRMATION_TITLE": "Report Submitted",
-  "CONFIRMATION_P_TEXT": "Thanks for submitting your report.",
-  "CONFIRMATION_HOME_BUTTON": "Return to my EI Reporting Dashboard",
+  "CONFIRMATION_P_TEXT": "Thank you for submitting your report.",
+  "CONFIRMATION_HOME_BUTTON": "Return to EI Reporting Dashboard",
 
   "LOGIN_FAILED_TITLE": "Login Failed",
 
