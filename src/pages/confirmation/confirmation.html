@@ -32,12 +32,12 @@
               </ion-grid>
               <ion-grid style="height:30%">
                   <ion-row justify-content-center align-items-start style="height:100%;">
-                      <p class="p" style="display: block" > Thanks for submitting your report.</p>
+                      <p class="p" style="display: block" > {{ 'CONFIRMATION_P_TEXT' | translate }}</p>
                   </ion-row>
               </ion-grid>
               <ion-grid style="height:20%">
                 <ion-row justify-content-center align-items-end style="height:100%;">
-                  <button class="Rectangle-3" ion-button block (click)="this.navigateEiDashboard()">Return to my EI Reporting Dashboard</button>
+                  <button class="Rectangle-3" ion-button block (click)="this.navigateEiDashboard()">{{'CONFIRMATION_HOME_BUTTON' | translate }}</button>
                 </ion-row>
             </ion-grid>
 </ion-content>
