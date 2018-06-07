@@ -37,7 +37,7 @@ export class MyApp {
     { title: "EI Reporting", component: SitePages.EiReporting },
     { title: "Search", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
-    { title: "Questionaire", component: SitePages.Questionaire },
+    { title: "Questionnaire", component: SitePages.Questionaire },
     { title: "Login", component: SitePages.EILogin },
     { title: "Settings", component: SitePages.Settings },
     { title: "Issue", component: SitePages.IssueWithReport },
