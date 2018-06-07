@@ -42,7 +42,6 @@ export class MyApp {
     { title: "Settings", component: SitePages.Settings },
     { title: "Issue", component: SitePages.IssueWithReport },
     { title: "LoginFailed", component: SitePages.LoginFalied },
-    { title: "Submission", component: SitePages.Submission },
     { title: "Splash", component: SitePages.Splash }
   ];
 
