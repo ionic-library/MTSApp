@@ -176,6 +176,7 @@
   "CONFIRMATION_TITLE": "Report Submitted",
   "CONFIRMATION_P_TEXT": "Thank you for submitting your report.",
   "CONFIRMATION_HOME_BUTTON": "Return to EI Reporting Dashboard",
+  "CONFIRMATION_TRANSACTION_NUMBER": "Your transaction record number is",
 
   "LOGIN_FAILED_TITLE": "Login Failed",
 
