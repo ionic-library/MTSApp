@@ -65,16 +65,17 @@ page-home {
     border: 1px solid #e6e9ee;
     padding: 0.75em;
     text-align: center;
-    height: 12em;
+  }
+  .service-button {
+    margin: 0;
+    padding: 0;
+    height: 70%;
+    width: 100%;
   }
   .service-icon {
-    padding-top: 0.25em;
-    font-size: 5em;
-  }
-  .service-title {
-    padding: 10px 0 0 0 !important;
-    margin: 0;
-    font-size: 0.9em;
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
+    font-size: 15vw;
   }
   .landscape-grid {
     display: none;
@@ -141,19 +142,25 @@ page-home {
       width: 100%;
     }
     .portrait-grid {
-      height: 60em;
-      .row {
-        height: 60em;
-        .grid-column .service-select {
-          height: 100%;
-          .service-icon {
-            font-size: 15em;
-          }
-          .service-title {
-            font-size: 2em;
-          }
-        }
+      display: unset;
+      .row .grid-column .service-select {
+        border: 1px solid #e6e9ee;
+        padding: 0.75em;
+        text-align: center;
+        height: 25vh;
       }
+      .service-button {
+        margin: 0;
+        padding: 0;
+        height: 80%;
+        width: 100%;
+      }
+      .service-icon {
+        font-size: 10vw;
+      }
+    }
+    .landscape-grid {
+      display: none;
     }
   }
   // iPad Media Query
@@ -162,6 +169,26 @@ page-home {
       display: flex;
       margin-top: -2em;
       width: 100%;
+    }
+    .portrait-grid {
+      display: unset;
+      .row .grid-column .service-select {
+        border: 1px solid #e6e9ee;
+        padding: 0.75em;
+        text-align: center;
+      }
+      .service-button {
+        margin: 0;
+        padding: 0;
+        height: 80%;
+        width: 100%;
+      }
+      .service-icon {
+        font-size: 10vw;
+      }
+    }
+    .landscape-grid {
+      display: none;
     }
   }
 }
