@@ -3,11 +3,6 @@ import { IonicPage, NavController } from "ionic-angular";
 import { ConfirmationPage } from "../confirmation/confirmation";
 import { SitePages } from "../index";
 import { TranslateService } from "@ngx-translate/core";
-import { Questionaire_2Page } from "../questionaire-2/questionaire-2";
-import { Questionaire_3Page } from "../questionaire-3/questionaire-3";
-import { Questionaire_5Page } from "../questionaire-5/questionaire-5";
-import { Questionaire_6Page } from "../questionaire-6/questionaire-6";
-import { Questionaire_7Page } from "../questionaire-7/questionaire-7";
 /**
  * Generated class for the SubmissionPage page.
  *
@@ -34,19 +29,19 @@ export class SubmissionPage {
     this.navCtrl.push(SitePages.Questionaire);
   }
   public editQuestion2() {
-    this.navCtrl.push(Questionaire_2Page);
+    this.navCtrl.push(SitePages.Questionaire2);
   }
   public editQuestion3() {
-    this.navCtrl.push(Questionaire_3Page);
+    this.navCtrl.push(SitePages.Questionaire3);
   }
   public editQuestion5() {
-    this.navCtrl.push(Questionaire_5Page);
+    this.navCtrl.push(SitePages.Questionaire5);
   }
   public editQuestion6() {
-    this.navCtrl.push(Questionaire_6Page);
+    this.navCtrl.push(SitePages.Questionaire6);
   }
   public editQuestion7() {
-    this.navCtrl.push(Questionaire_7Page);
+    this.navCtrl.push(SitePages.Questionaire7);
   }
 
   public backToEIReporting() {
