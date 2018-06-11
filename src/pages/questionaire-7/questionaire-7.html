@@ -5,7 +5,7 @@
     <button ion-button menuToggle icon-only>
       <ion-icon name="MTSApp-HamburgMenu"></ion-icon>
     </button>
-    <ion-title>{{ 'QUESTIONAIRE_TITLE' | translate }}</ion-title>
+    <ion-title>{{ 'SUBMISSION_TITLE_ONE' | translate }}</ion-title>
     <ion-buttons end>
       <button ion-button clear (click)="this.presentHelpModal()">
         <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
@@ -16,7 +16,7 @@
 </ion-header>
 
 <ion-content padding color="dark">
-    <ion-card> 
+    <ion-card  > 
         <ion-card-content padding-none>
             <ion-grid>
                 <ion-row>
@@ -33,14 +33,14 @@
         </ion-card-content>
     </ion-card>
 
-    <h1 id="page-heading1" >
+    <h1 id="page-heading1" ionic-text padding-horizontal>
       {{ 'QUESTION_SEVEN_TITLE' | translate }}
       </h1>
-      <h5 id="page-number1" class="questionNumber" >
+      <h5 id="page-number1" class="questionNumber" ionic-text padding-horizontal>
           {{ 'QUESTION_NUMBER_SEVEN' | translate }}
       </h5>
 
-        <p >
+        <p ionic-text padding-horizontal>
             {{ 'QUESTION_SEVEN_TEXT' | translate }}
 
 
@@ -69,7 +69,7 @@
 
 
 </ion-content>
-<ion-footer padding >
+<ion-footer padding  no-border >
 
 
 
