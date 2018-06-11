@@ -9,45 +9,61 @@ import { VALID } from '@angular/forms/src/model';
 export class User {
   _user: any;
 
-  public isLangSet: boolean;
-  public Lang: LangCodes;
+  private isLangSet:boolean = false;
+  public Lang:LangCodes;
+  private LangReady:boolean = false;
 
 
   constructor(public api: Api, public storage: Storage) {
-    console.log(1);
-    this.initializeLang();
-    setTimeout(function () { console.log('done timer') }, 1000);
-    console.log(4);
+   
   }
 
-  private async initializeLang() {
-    console.log(2);
-    let running = true;
+
+  public GetLang(success: Function, error: Function) {
+    if (this.LangReady) {
+      success(this.Lang);
+    } else {
+      this.initializeLang(() => {
+        success(this.Lang);
+      }, (val) => {
+        error(val);
+      });
+    }
+  }
+
+  private initializeLang(success: Function, error: Function) {
     this.storage.get('lang')
       .then((val) => {
-        console.log(3);
-        console.log('Setting Lang: ' + val);
         if (val == "fr") {
           this.Lang = LangCodes.FR;
           this.isLangSet = true;
+          this.LangReady = true;
         } else if (val == "en") {
           this.Lang = LangCodes.EN;
           this.isLangSet = true;
+          this.LangReady = true;
         } else {
           this.isLangSet = false;
         }
-        running = false;
+        success();
       })
       .catch((val) => {
-        console.log("!! Retreiving lang from local storage failed. !!");
         this.isLangSet = false;
+        error(val);
       });
 
-    }
+  }
 
-  public setLang(lang: LangCodes) {
-    this.storage.set('lang', lang);
-    this.initializeLang();
+ 
+  public setLang(lang: LangCodes, success: Function, error: Function) {
+    this.LangReady = false;
+    this.storage.set('lang', lang)
+      .then(() => {
+        success();
+      })
+      .catch((val) => {
+        error(val);
+      });
   }
 
 
