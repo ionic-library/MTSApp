@@ -9,7 +9,7 @@ import { Settings } from "../providers";
 
 @Component({
   template: `<ion-menu class="nav-menu" [content]="content" persistent="true">
-    <ion-header no-border>
+    <ion-header>
       <ion-toolbar>
         <ion-title>Pages</ion-title>
       </ion-toolbar>
@@ -17,8 +17,7 @@ import { Settings } from "../providers";
 
     <ion-content>
       <ion-list class="nav-menu-list">
-        <button menuClose ion-item *ngFor="let p of pages; let first = first; let last = last"
-        [class.first-item]="first"
+        <button menuClose ion-item *ngFor="let p of pages; let last = last"
         [class.last-item]="last"
         (click)="openPage(p)">
           {{p.title}}

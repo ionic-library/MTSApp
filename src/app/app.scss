@@ -58,20 +58,25 @@ ion-icon {
   }
 }
 
-// Global Nav Menu CSS
+// Nav Menu CSS
 .nav-menu {
+  // Toolbar CSS
   .toolbar {
     border-bottom: 1px solid white;
+    height: 10vh;
 
     .toolbar-background-md {
       background-color: #013d57;
+      border: none;
     }
     .toolbar-background-ios {
       background-color: #013d57;
+      border: none;
     }
   }
   .content {
     background-color: #013d57;
+    // margin-top: 5vh;
 
     .nav-menu-list {
       // Android Nav Menu List Item CSS
@@ -91,9 +96,6 @@ ion-icon {
         }
       }
       // General List Item CSS
-      .first-tem {
-        border-top: 1px solid white;
-      }
       .last-item {
         border-bottom: 1px solid white;
       }
