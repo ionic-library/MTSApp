@@ -1,27 +1,19 @@
 
 <ion-header>
 
-  <ion-navbar>
-      <ion-buttons class="start" start>
-        <ion-icon class="back" name="arrow-back"></ion-icon>
-      </ion-buttons>
-
+    <ion-navbar color="mainHeader" hideBackButton="true">
       <button ion-button menuToggle icon-only>
-        <ion-icon class="menu" name='menu'></ion-icon>
+        <ion-icon class="menu" name='MTSApp-HamburgMenu'></ion-icon>
       </button>
+      <ion-title>{{ 'REPORT_SUBMITTED_TITLE' | translate }}</ion-title>
+      <ion-buttons end>
+        <button ion-button clear (click)="this.presentHelpModal()">
+          <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
+        </button>
+      </ion-buttons>
+    </ion-navbar>
 
-  <ion-title>Report Submitted
-  </ion-title>
-
-    <ion-buttons end>
-      <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle"></ion-icon>
-      </button>
-    </ion-buttons>
-
-  </ion-navbar>
-
-</ion-header>
+  </ion-header>
 
 
 <ion-content padding>
@@ -39,13 +31,16 @@
                     </ion-row>
               </ion-grid>
               <ion-grid style="height:30%">
-                  <ion-row justify-content-center align-items-start style="height:100%;">
-                      <p class="p" style="display: block" > Thanks for submitting your report.</p>
+                  <ion-row justify-content-center align-items-center style="height:40%;">
+                      <p class="p" style=" text-align: center; font-size: 21px; display: block" > {{ 'CONFIRMATION_P_TEXT' | translate }}</p>
                   </ion-row>
+                  <ion-row justify-content-center align-items-start style="height:50%;">
+                    <p class="p" style="display: block; font-size: 14px; text-align: center" > {{ 'CONFIRMATION_TRANSACTION_NUMBER' | translate }} <br><a style="font-weight: bold;">23432423-2R2</a></p>
+                </ion-row>
               </ion-grid>
               <ion-grid style="height:20%">
                 <ion-row justify-content-center align-items-end style="height:100%;">
-                  <button class="Rectangle-3" ion-button block (click)="this.navigateHome()">Return to my EI Reporting Dashboard</button>
+                  <button class="Rectangle-3" ion-button block (click)="this.navigateEiDashboard()">{{'CONFIRMATION_HOME_BUTTON' | translate }}</button>
                 </ion-row>
             </ion-grid>
 </ion-content>

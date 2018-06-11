@@ -79,7 +79,12 @@ export class User {
   login(accountInfo: any) {
     let seq = this.api.post('login', accountInfo).share();
     console.log("UserLogged in with " + accountInfo);
-
+    this._loggedIn({
+      "user" : {
+        "Name": "First Last"
+      }
+    });
+/*
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
@@ -89,7 +94,7 @@ export class User {
     }, err => {
       console.error('ERROR', err);
     });
-
+*/
     return seq;
   }
   logout() {
@@ -98,5 +103,4 @@ export class User {
   private _loggedIn(resp) {
     this._user = resp.user;
   }
-
 }

@@ -1,43 +1,19 @@
 page-help-modal {
-  .toolbar-background {
-    background-color: #31485b;
+  /********* NAV BAR CSS STARTS HERE **********/
+  .menu {
+    color: #fff;
   }
   .toolbar-title {
     color: white;
-    font-weight: bold;
   }
   .page-title {
-    text-align: center;
-    padding-left: 10vw;
     color: white;
   }
-  .close-help {
-      padding-right: 3vw;
-      font-size: 30px;
-      font-weight: 600;
-      color: white;
+  .back-button {
+    color: #fff;
   }
-
-  .help-modal-header {
-    font-size: 21px;
-    font-weight: 600;
-    line-height: normal;
+  .back {
+    color: #fff;
   }
-
-  .help-modal-header {
-    margin-top: 2vh !important;
-    padding: 0 3em 0 3em;
-    text-align: center;
-  }
-
-  .help-modal-content {
-    margin-top: 5vh;
-    padding: 0 2em 0 2em;
-  }
-
-  .help-modal-text {
-    font-size: 16px;
-    font-weight: normal;
-    line-height: normal;
-  }
+  /********* NAV BAR CSS ENDS HERE **********/
 }

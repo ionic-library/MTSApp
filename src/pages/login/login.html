@@ -1,18 +1,16 @@
 <ion-header >
 
-  <ion-navbar color="mainHeader">
-    <ion-buttons start>
-      <button ion-button menuToggle icon-only>
-        <ion-icon name='menu'></ion-icon>
-      </button>
-    </ion-buttons>
-    <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
-    <ion-buttons end>
-      <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+    <ion-navbar color="mainHeader">
+        <button ion-button menuToggle icon-only>
+          <ion-icon class="menu" name='MTSApp-HamburgMenu'></ion-icon>
+        </button>
+        <ion-title>{{ 'LOGIN_TITLE' | translate }}</ion-title>
+        <ion-buttons end>
+          <button ion-button clear (click)="this.presentHelpModal()">
+            <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
+          </button>
+        </ion-buttons>
+      </ion-navbar>
 </ion-header>
 
 
@@ -24,21 +22,21 @@
       <ion-item no-lines >
         <ion-label text-wrap stacked class="labelText" >{{ 'SIN' | translate }}
           <span class="errorText" *ngIf="this.showError('sin')">{{ 'SIN_ERROR' | translate }}</span></ion-label>
-        <ion-input class="boxInput" [class.invalid]="this.showError('sin')"  formGroupName="sin" type="password" ></ion-input>
+        <ion-input class="boxInput" [class.invalid]="this.showError('sin')"  formControlName="sin" type="password" ></ion-input>
       </ion-item>
 
       <ion-item no-lines >
         <ion-label text-wrap stacked class="labelText" >{{ 'AC' | translate }}
           <span class="errorText" *ngIf="this.showError('accessCode')">{{'ACCESS_CODE_ERROR' | translate }}</span>
         </ion-label>
-        <ion-input class="boxInput" [class.invalid]="this.showError('accessCode')" formGroupName="accessCode" type="password" ></ion-input>
+        <ion-input class="boxInput" [class.invalid]="this.showError('accessCode')" formControlName="accessCode" type="password" ></ion-input>
       </ion-item>
 
       <ion-item no-lines >
         <ion-label text-wrap stacked class="labelText" >{{ 'PROVINCE_RESIDENCE' | translate }}
           <span class="errorText" *ngIf="this.showError('provinceOfResidence')">{{'PROVINCE_OF_RESIDENCE_ERROR' | translate }}</span>
         </ion-label>
-        <ion-select class="boxInput" [class.invalid]="this.showError('provinceOfResidence')" formGroupName="provinceOfResidence" >
+        <ion-select class="boxInput" [class.invalid]="this.showError('provinceOfResidence')" formControlName="provinceOfResidence" >
           <ion-option *ngFor="let provinceCode of provinces.provinceCodes" value="{{provinceCode}}">{{  provinceCode | translate }}</ion-option>
         </ion-select>
       </ion-item>

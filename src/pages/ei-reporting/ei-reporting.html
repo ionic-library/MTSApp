@@ -6,10 +6,10 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar hideBackButton="true">
 
     <button ion-button menuToggle icon-only>
-      <ion-icon class="menu" name='menu'></ion-icon>
+      <ion-icon class="menu" name='MTSApp-HamburgMenu'></ion-icon>
     </button>
 
     <ion-title class="page-title">{{ 'EI_REPORTING_HEADER' | translate }}
@@ -17,7 +17,7 @@
 
     <ion-buttons end>
       <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle"></ion-icon>
+        <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
     </ion-buttons>
 

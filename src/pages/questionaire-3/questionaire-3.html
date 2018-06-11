@@ -2,13 +2,13 @@
 <ion-header >
 
   <ion-navbar color="mainHeader" >
-    <button ion-button menuToggle left>
-      <ion-icon name="menu"></ion-icon>
+    <button ion-button menuToggle icon-only>
+      <ion-icon name="MTSApp-HamburgMenu"></ion-icon>
     </button>
     <ion-title>{{ 'QUESTIONAIRE_TITLE' | translate }}</ion-title>
     <ion-buttons end>
       <button ion-button clear (click)="this.presentHelpModal()">
-        <ion-icon class="help" name="help-circle"></ion-icon>
+        <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -16,6 +16,22 @@
 </ion-header>
 
 <ion-content padding color="dark">
+    <ion-card> 
+        <ion-card-content padding-none>
+            <ion-grid>
+                <ion-row>
+                  <ion-col col-2 text-center>
+                      <ion-icon ios="ios-calendar-outline" md="ios-calendar-outline" class="dateIcon" ></ion-icon>
+                  </ion-col>
+                  <ion-col col-10  >
+                      {{ 'QUESTION_REPORT_PERIOD_TEXT' | translate }} <br/><strong>{{this.startDate}} {{ 'Question_REPORT_PERIOD_TEXT_TO' | translate }} {{this.endDate}}</strong>
+                  </ion-col>
+                </ion-row>
+                
+              </ion-grid>
+          
+        </ion-card-content>
+      </ion-card>
 
     <h1 id="page-heading1" >
       {{ 'QUESTION_THREE_TITLE' | translate }}
@@ -26,69 +42,69 @@
       <form id="page-form3">
         <p >
             {{ 'QUESTION_THREE_TEXT' | translate }}
-          
-          
+
+
         </p>
-      
-      
+
+
         <ion-list radio-group >
 
-        
+
           <ion-item>
             <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
-            <ion-radio value=true></ion-radio>
+            <ion-radio value=true ></ion-radio>
           </ion-item>
-        
+
           <ion-item>
             <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
-            <ion-radio value=false></ion-radio>
+            <ion-radio value=false ></ion-radio>
             
           </ion-item>
-        
-          
-        
+
+
+
         </ion-list>
-      
-     
+
+
       <h5 id="page-number2" class="questionNumber" >
         {{ 'QUESTION_NUMBER_FOUR' | translate }}
     </h5>
-    
+
       <p >
           {{ 'QUESTION_FOUR_TEXT' | translate }}
-        
-        
+
+
       </p>
-    
-    
+
+
       <ion-list radio-group >
 
       
-        <ion-item>
-          <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
-          <ion-radio value=true></ion-radio>
-        </ion-item>
-      
-        <ion-item>
-          <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
-          <ion-radio value=false></ion-radio>
+          <ion-item>
+              <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
+              <ion-radio value=true ></ion-radio>
+            </ion-item>
           
-        </ion-item>
+            <ion-item>
+              <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
+              <ion-radio value=false ></ion-radio>
+              
+            </ion-item>
       
         
       
       </ion-list>
     </form>
-   
 
 
 
-  
+
+
 </ion-content>
 
 <ion-footer padding >
-  
-    
+
+
 
     <ion-grid>
         <ion-row>
@@ -99,11 +115,10 @@
               <button id="next" ion-button color="positive" block [navPush]="pushPageNext" >{{ 'QUESTION_NEXT' | translate }}</button>
           </ion-col>
         </ion-row>
-        
+
       </ion-grid>
- 
-      
+
+
   </ion-footer>
 
 
-  

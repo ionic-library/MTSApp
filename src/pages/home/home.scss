@@ -1,193 +1,189 @@
 page-home {
-
-  .page-header {
-    .button-inner {
+  .toolbar {
+    .toolbar-background {
+      display: none;
+    }
+    .toolbar-title {
       color: white;
     }
-
-    .toolbar {
-      position: absolute;
-
-      .toolbar-background {
-        display: none;
-      }
-
-      .toolbar-title {
-        color: white;
-      }
-      
-      .toolbar-background-ios{
-        display: none;
-      }
-
-      .help {
-        color: #fff;
-        padding-right: 5vw;
-      }
+    .toolbar-background-ios {
+      display: none;
+    }
+    .help {
+      color: #fff;
+      padding-right: 5vw;
     }
   }
-
   .curved-img-portrait {
     width: 100%;
+    margin-top: -3.2em;
   }
-
   .curved-img-landscape {
     display: none;
   }
-
+  .hello-text {
+    position: absolute;
+    top: 6vh;
+    left: 2em;
+    z-index: 10;
+    color: white;
+    .greeting {
+      font-size: 18px;
+    }
+    .locationInfo {
+      font-size: 14px;
+    }
+  }
   .searchbar {
     margin-top: 2vh;
-
     .searchbar-input {
       border-radius: 2.5px;
       border: solid 0.5px #979797;
     }
   }
-
-// iOS Search Icon Custom CSS
+  // iOS Search Icon Custom CSS
   .searchbar-ios {
-
     .searchbar-search-icon {
-      margin-top: .3em;
+      margin-top: 0.3em;
     }
   }
-//////////////////////////////
-
+  //////////////////////////////
   .scroll-content {
     margin-top: 0 !important;
     padding-top: 0 !important;
   }
-
   #home-page-show-more-container {
     padding: 0 1.5em 0 1.5em;
   }
-
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
-    padding: .75em;
+    padding: 1vh;
     text-align: center;
-    height: 12em;
   }
-
-  .service-icon {
-    padding-top: .25em;
-    font-size: 5em;
-  }
-
-  .service-title {
-    padding: 10px 0 0 0 !important;
+  .service-button {
     margin: 0;
-    font-size: .9em;
+    padding: 0;
+    height: 70%;
+    width: 100%;
   }
-
+  .service-icon {
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
+    font-size: 15vw;
+  }
+  .service-title {
+    height: 7vw;
+  }
   .landscape-grid {
     display: none;
   }
-// Global Landscape Orientation CSS
+  // Global Landscape Orientation CSS
   @media only screen and (orientation: landscape) {
     .page-header {
       .button-inner {
         color: white;
       }
-  
       .toolbar {
         position: absolute;
-  
         .toolbar-background {
           background: transparent;
         }
-  
         .toolbar-title {
           color: white;
         }
-        
-        .toolbar-background-ios{
+        .toolbar-background-ios {
           display: none;
         }
-
         .help {
           color: white;
           padding-right: 5vw;
         }
       }
     }
-
     .curved-img-portrait {
       display: none;
     }
     .curved-img-landscape {
       display: flex;
-      margin-top: -2em;
+      margin-top: -3.2em;
     }
-
+    .hello-text {
+      width: 100%;
+      top: 10vh;
+      .greeting {
+        font-size: 18px;
+      }
+      .locationInfo {
+        position: absolute;
+        right: 0;
+        margin-right: 4em;
+        top: 0;
+        margin-top: 1em;
+      }
+    }
     .searchbar {
       margin-top: 1em;
     }
-
     .portrait-grid {
       display: none;
     }
-
     .landscape-grid {
       display: unset;
     }
   }
-
-// iPad Pro Media Query
+  // iPad Pro Media Query
   @media only screen and (orientation: landscape) and (min-width: 1200px) {
     .curved-img-landscape {
       display: flex;
-      margin-top: -2em;
       width: 100%;
     }
-
     .portrait-grid {
-      height: 60em;
-
-      .row {
-        height: 60em;
-
-        .grid-column .service-select {
-          height: 100%;
-          
-          .service-icon {
-            font-size: 15em;
-          }
-
-          .service-title {
-            font-size: 2em;
-          }
-        }
+      display: unset;
+      .row .grid-column .service-select {
+        border: 1px solid #e6e9ee;
+        padding: 0.75em;
+        text-align: center;
+        height: 25vh;
+      }
+      .service-button {
+        margin: 0;
+        padding: 0;
+        height: 80%;
+        width: 100%;
+      }
+      .service-icon {
+        font-size: 10vw;
       }
     }
-  }
-// iPad Media Query
-@media only screen and (orientation: landscape) and (min-width: 1000px) {
-  .curved-img-landscape {
-    display: flex;
-    margin-top: -2em;
-    width: 100%;
-  }
-
-  .portrait-grid {
-    height: 50em;
-
-    .row {
-      height: 60em;
-
-      .grid-column .service-select {
-        height: 100%;
-        
-        .service-icon {
-          padding-top: 0;
-          font-size: 15em;
-        }
-
-        .service-title {
-          font-size: 2em;
-        }
-      }
+    .landscape-grid {
+      display: none;
     }
   }
-}
+  // iPad Media Query
+  @media only screen and (orientation: landscape) and (min-width: 1000px) {
+    .curved-img-landscape {
+      display: flex;
+      width: 100%;
+    }
+    .portrait-grid {
+      display: unset;
+      .row .grid-column .service-select {
+        border: 1px solid #e6e9ee;
+        padding: 0.75em;
+        text-align: center;
+      }
+      .service-button {
+        margin: 0;
+        padding: 0;
+        height: 80%;
+        width: 100%;
+      }
+      .service-icon {
+        font-size: 10vw;
+      }
+    }
+    .landscape-grid {
+      display: none;
+    }
+  }
 }
