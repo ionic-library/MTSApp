@@ -5,38 +5,77 @@ import { Api } from '../api/api';
 import { Lang, LangCodes } from "../../providers";
 import { VALID } from '@angular/forms/src/model';
 
-
-
-/**
- * Most apps have the concept of a User. This is a simple provider
- * with stubs for login/signup/etc.
- *
- * This User provider makes calls to our API at the `login` and `signup` endpoints.
- *
- * By default, it expects `login` and `signup` to return a JSON object of the shape:
- *
- * ```json
- * {
- *   status: 'success',
- *   user: {
- *     // User fields your app needs, like "id", "name", "email", etc.
- *   }
- * }Ø
- * ```
- *
- * If the `status` field is not `success`, then an error is detected and returned.
- */
 @Injectable()
 export class User {
   _user: any;
-  isLangSet: boolean;
 
-  constructor(public api: Api, public storage: Storage) { }
+  private isLangSet:boolean = false;
+  public Lang:LangCodes;
+  private LangReady:boolean = false;
 
-  /**
-   * Send a POST request to our login endpoint with the data
-   * the user entered on the form.
-   */
+
+  constructor(public api: Api, public storage: Storage) {
+   
+  }
+
+
+  public GetLang(success: Function, error: Function) {
+    if (this.LangReady) {
+      success(this.Lang);
+    } else {
+      this.initializeLang(() => {
+        success(this.Lang);
+      }, (val) => {
+        error(val);
+      });
+    }
+  }
+
+  private initializeLang(success: Function, error: Function) {
+    this.storage.get('lang')
+      .then((val) => {
+        if (val == "fr") {
+          this.Lang = LangCodes.FR;
+          this.isLangSet = true;
+          this.LangReady = true;
+        } else if (val == "en") {
+          this.Lang = LangCodes.EN;
+          this.isLangSet = true;
+          this.LangReady = true;
+        } else {
+          this.isLangSet = false;
+        }
+        success();
+      })
+      .catch((val) => {
+        this.isLangSet = false;
+        error(val);
+      });
+
+  }
+
+ 
+  public setLang(lang: LangCodes, success: Function, error: Function) {
+    this.LangReady = false;
+    this.storage.set('lang', lang)
+      .then(() => {
+        success();
+      })
+      .catch((val) => {
+        error(val);
+      });
+  }
+
+
+
+  //############################### Below this line is standard functions we will redo later once API is ready or mapped out at least.
+
+  isLoggedIn(): boolean {
+    //### FOR TESTING
+    return true;
+    //return !(this._user === null || this._user === undefined);
+  }
+
   login(accountInfo: any) {
     let seq = this.api.post('login', accountInfo).share();
     console.log("UserLogged in with " + accountInfo);
@@ -58,59 +97,10 @@ export class User {
 */
     return seq;
   }
-
-  /**
-   * Log the user out, which forgets the session
-   */
   logout() {
     this._user = null;
   }
-
-  /**
-   * Process a login/signup response to store user data
-   */
   private _loggedIn(resp) {
     this._user = resp.user;
-  }
-
-  setLang(lang: string) {
-    if (lang == null) {
-      console.log('lang is null');
-    } else {
-      this.storage.set('lang', lang);
-    }
-
-  }
-
-  isLoggedIn(): boolean {
-    //### FOR TESTING
-    //return true;
-    return !(this._user === null || this._user === undefined);
-  }
-
-  getLang() {
-    //if (!this.isLangSet) {
-    //  //### We have to decide what to do here later
-    //  return false;
-    //} else {
-      this.storage.get('lang').then((val) => {
-        if (val == "fr") {
-          return "fr";// LangCodes.FR;
-        } else {
-          return "en";// LangCodes.EN;
-        }
-      })
-    //}
-
-  }
-
-  IsLangSet(success, Error) {
-    let ret = this.storage.get('lang').then((val) => {
-      if (val == null) {
-        success(false);
-      } else {
-        success(true);
-      }
-    })
   }
 }

@@ -44,7 +44,6 @@ $colors: (
     contrast: #fff
   )
 );
-
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -65,6 +64,7 @@ $toolbar-ios-title-text-align: center;
 
 $menu-ios-background: #013d57;
 
+
 $searchbar-ios-background-color: none;
 $searchbar-ios-border-color: none;
 $searchbar-ios-padding-horizontal: 2em;
@@ -72,10 +72,10 @@ $searchbar-ios-input-height: 3em;
 $searchbar-ios-input-placeholder-color: black;
 $searchbar-ios-input-search-icon-color: black;
 $searchbar-ios-input-search-icon-size: 16px;
-
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
+$button-md-text-transform: none;
 $toolbar-order-md: (
   back-button: 1,
   menu-toggle-start: 0,
@@ -89,35 +89,31 @@ $toolbar-order-md: (
 $toolbar-md-title-font-size: 15px;
 $toolbar-md-title-font-weight: 700;
 $toolbar-md-title-text-align: center;
-
 $menu-md-background: #013d57;
+
+$toolbar-ios-title-font-size: 15px;
+$toolbar-ios-title-font-weight: 700;
+$toolbar-ios-title-text-align: center;
 
 $searchbar-md-input-box-shadow: none;
 $searchbar-md-padding: 0 2em 0 2em;
 $searchbar-md-input-search-icon-color: black;
-
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
-
 // App Theme
 // --------------------------------------------------
 // Ionic apps can have different themes applied, which can
 // then be future customized. This import comes last
 // so that the above variables are used and Ionic's
 // default are overridden.
-
 @import "ionic.theme.default";
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/v2/ionicons/
-
 @import "ionic.ionicons";
-
 // Fonts
 // --------------------------------------------------
-
 @import "roboto";
 @import "noto-sans";
