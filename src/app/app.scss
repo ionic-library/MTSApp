@@ -97,8 +97,10 @@ ion-icon {
           .nav-option-text {
             // Required positioning CSS as Ionic does not automatically vertically center button text in this case
             position: absolute;
-            left: 20%;
-            top: 35%;
+            left: 23%;
+            top: 31%;
+            // Override Ionic list-item font-size
+            font-size: inherit;
           }
         }
       }
@@ -117,8 +119,10 @@ ion-icon {
           .nav-option-text {
             // Required positioning CSS as Ionic does not automatically vertically center button text in this case
             position: absolute;
-            left: 20%;
-            top: 35%;
+            left: 23%;
+            top: 33%;
+            // Override Ionic list-item font-size
+            font-size: inherit;
           }
         }
       }
