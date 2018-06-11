@@ -16,7 +16,6 @@ $toolbar-background: #31485b;
 
 // Searchbar placeholder text made darker for better legibility
 $searchbar-md-input-placeholder-color: #000;
-$background-color: #fff;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -38,6 +37,11 @@ $colors: (
   secondaryButton: (
     base: #fff,
     contrast: #60605e
+  ),
+  navMenuBackground: #013d57,
+  navMenuButton: (
+    base: #013d57,
+    contrast: #fff
   )
 );
 

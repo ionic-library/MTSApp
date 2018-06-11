@@ -66,31 +66,24 @@ ion-icon {
     height: 10vh;
 
     .toolbar-background-md {
-      background-color: #013d57;
       border: none;
     }
     .toolbar-background-ios {
-      background-color: #013d57;
       border: none;
     }
   }
   .content {
-    background-color: #013d57;
-    // margin-top: 5vh;
+    background-color: transparent;
 
     .nav-menu-list {
       // Android Nav Menu List Item CSS
       .item-md {
-        color: white;
-        background-color: #013d57;
         .item-inner {
           border: none;
         }
       }
       // iOS Nav Menu List Item CSS
       .item-ios {
-        color: white;
-        background-color: #013d57;
         .item-inner {
           border: none;
         }

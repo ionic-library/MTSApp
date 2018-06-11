@@ -10,14 +10,21 @@ import { Settings } from "../providers";
 @Component({
   template: `<ion-menu class="nav-menu" [content]="content" persistent="true">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="navMenuBackground">
         <ion-title>Pages</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content>
+    <ion-content color="navMenuBackground">
+      <ion-list class="nav-menu-list" color="navMenuBackground">
+        <button menuClose ion-item *ngFor="let p of pages; let last = last" color="navMenuButton"
+        [class.last-item]="last"
+        (click)="openPage(p)">
+          {{p.title}}
+        </button>
+      </ion-list>
       <ion-list class="nav-menu-list">
-        <button menuClose ion-item *ngFor="let p of pages; let last = last"
+        <button menuClose ion-item *ngFor="let p of pagesInProgress; let last = last" color="navMenuButton"
         [class.last-item]="last"
         (click)="openPage(p)">
           {{p.title}}
@@ -35,9 +42,12 @@ export class MyApp {
 
   pages: any[] = [
     { title: "Home", component: SitePages.Home },
-    { title: "Blank Page", component: SitePages.BlankPage },
     { title: "EI Reporting", component: SitePages.EiReporting },
-    { title: "Search", component: SitePages.BlankPage },
+    { title: "Future Feature: Job Search", component: SitePages.BlankPage }
+  ];
+
+  pagesInProgress: any[] = [
+    { title: "Blank Page", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionnaire", component: SitePages.Questionaire },
     { title: "Login", component: SitePages.EILogin },
