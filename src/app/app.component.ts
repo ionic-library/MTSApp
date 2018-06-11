@@ -8,16 +8,26 @@ import { FirstRunPage } from "../pages";
 import { Settings } from "../providers";
 
 @Component({
-  template: `<ion-menu [content]="content" persistent="true">
+  template: `<ion-menu class="nav-menu" [content]="content" persistent="true">
     <ion-header>
-      <ion-toolbar>
+      <ion-toolbar color="navMenuBackground">
         <ion-title>Pages</ion-title>
       </ion-toolbar>
     </ion-header>
 
-    <ion-content>
-      <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+    <ion-content color="navMenuBackground">
+      <ion-list class="nav-menu-list" color="navMenuBackground">
+        <button menuClose ion-item icon-left icon-only *ngFor="let p of pages; let last = last" color="navMenuButton"
+        [class.last-item]="last"
+        (click)="openPage(p)">
+          <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
+          <p class="nav-option-text">{{p.title}}</p>
+        </button>
+      </ion-list>
+      <ion-list class="nav-menu-list">
+        <button menuClose ion-item *ngFor="let p of pagesInProgress; let last = last" color="navMenuButton"
+        [class.last-item]="last"
+        (click)="openPage(p)">
           {{p.title}}
         </button>
       </ion-list>
@@ -32,10 +42,41 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: "Home", component: SitePages.Home },
+    { title: "Home", component: SitePages.Home, iconName: "MTSApp-Home" },
+    {
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-Notification"
+    },
+    {
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-Finder"
+    },
+    {
+      title: "Job Search",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-JobSearch"
+    },
+    {
+      title: "EI Reporting",
+      component: SitePages.EiReporting,
+      iconName: "MTSApp-EIReporting"
+    },
+    {
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-SCCLocations"
+    },
+    {
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-LifeEvents"
+    }
+  ];
+
+  pagesInProgress: any[] = [
     { title: "Blank Page", component: SitePages.BlankPage },
-    { title: "EI Reporting", component: SitePages.EiReporting },
-    { title: "Search", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionnaire", component: SitePages.Questionaire },
     { title: "Login", component: SitePages.EILogin },
