@@ -8,15 +8,15 @@ import { FirstRunPage } from "../pages";
 import { Settings } from "../providers";
 
 @Component({
-  template: `<ion-menu [content]="content" persistent="true">
-    <ion-header>
+  template: `<ion-menu class="nav-menu" [content]="content" persistent="true">
+    <ion-header no-border>
       <ion-toolbar>
         <ion-title>Pages</ion-title>
       </ion-toolbar>
     </ion-header>
 
     <ion-content>
-      <ion-list>
+      <ion-list class="nav-menu-list">
         <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
           {{p.title}}
         </button>

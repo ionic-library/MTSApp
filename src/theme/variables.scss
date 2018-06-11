@@ -54,7 +54,12 @@ $toolbar-order-ios: (
   buttons-right: 6,
   menu-toggle-end: 7
 );
+
 $toolbar-ios-title-font-size: 15px;
+$toolbar-ios-title-font-weight: 700;
+$toolbar-ios-title-text-align: center;
+
+$menu-ios-background: #013d57;
 
 $searchbar-ios-background-color: none;
 $searchbar-ios-border-color: none;
@@ -81,9 +86,7 @@ $toolbar-md-title-font-size: 15px;
 $toolbar-md-title-font-weight: 700;
 $toolbar-md-title-text-align: center;
 
-$toolbar-ios-title-font-size: 15px;
-$toolbar-ios-title-font-weight: 700;
-$toolbar-ios-title-text-align: center;
+$menu-md-background: #013d57;
 
 $searchbar-md-input-box-shadow: none;
 $searchbar-md-padding: 0 2em 0 2em;

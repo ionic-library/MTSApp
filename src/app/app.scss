@@ -57,3 +57,35 @@ ion-icon {
     mask-image: url(../assets/icon/noun_1058889.svg);
   }
 }
+
+// Global Nav Menu CSS
+.nav-menu {
+  .toolbar {
+    .toolbar-background-md {
+      background-color: #013d57;
+    }
+    .toolbar-background-ios {
+      background-color: #013d57;
+    }
+  }
+  .content {
+    background-color: #013d57;
+
+    .nav-menu-list {
+      .item-md {
+        color: white;
+        background-color: #013d57;
+        .item-inner {
+          border: none;
+        }
+      }
+      .item-ios {
+        color: white;
+        background-color: #013d57;
+        .item-inner {
+          border: none;
+        }
+      }
+    }
+  }
+}
