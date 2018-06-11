@@ -61,6 +61,8 @@ ion-icon {
 // Global Nav Menu CSS
 .nav-menu {
   .toolbar {
+    border-bottom: 1px solid white;
+
     .toolbar-background-md {
       background-color: #013d57;
     }
@@ -72,6 +74,7 @@ ion-icon {
     background-color: #013d57;
 
     .nav-menu-list {
+      // Android Nav Menu List Item CSS
       .item-md {
         color: white;
         background-color: #013d57;
@@ -79,12 +82,20 @@ ion-icon {
           border: none;
         }
       }
+      // iOS Nav Menu List Item CSS
       .item-ios {
         color: white;
         background-color: #013d57;
         .item-inner {
           border: none;
         }
+      }
+      // General List Item CSS
+      .first-tem {
+        border-top: 1px solid white;
+      }
+      .last-item {
+        border-bottom: 1px solid white;
       }
     }
   }

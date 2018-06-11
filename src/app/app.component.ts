@@ -17,7 +17,10 @@ import { Settings } from "../providers";
 
     <ion-content>
       <ion-list class="nav-menu-list">
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        <button menuClose ion-item *ngFor="let p of pages; let first = first; let last = last"
+        [class.first-item]="first"
+        [class.last-item]="last"
+        (click)="openPage(p)">
           {{p.title}}
         </button>
       </ion-list>
