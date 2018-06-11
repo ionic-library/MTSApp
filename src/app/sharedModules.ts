@@ -1,5 +1,12 @@
-import { LangCodes } from './../providers/Lang/Lang';
-import { IonicModule, NavController, ViewController, Platform, ModalController, NavParams } from "ionic-angular";
+import { LangCodes } from "./../providers/Lang/Lang";
+import {
+  IonicModule,
+  NavController,
+  ViewController,
+  Platform,
+  ModalController,
+  NavParams
+} from "ionic-angular";
 import { HttpClient } from "@angular/common/http";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
@@ -29,19 +36,23 @@ import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
 import { ProvincesProvider, User } from "../providers";
 import { Type } from "@angular/core";
 import { ineeda } from "ineeda";
-import { Reports } from '../mocks/providers/mock-ei-reports';
+import { Reports } from "../mocks/providers/mock-ei-reports";
 
 export class CommonTestModule {
   /**
    * Get the list of declarations for this test
    */
-  public static getDeclarations = (arr?) : Array<Type<any> | any[]>  => [MyApp].concat(arr || []);
+  public static getDeclarations = (arr?): Array<Type<any> | any[]> =>
+    [MyApp].concat(arr || []);
   /*
 
   /**
    *
    */
-  public static getImports = (arr?)  : Array<Type<any> | ModuleWithProviders | any[]> => [
+  public static getImports = (
+    arr?
+  ): Array<Type<any> | ModuleWithProviders | any[]> =>
+    [
       IonicModule.forRoot(MyApp),
       HttpClientTestingModule,
       TranslateModule.forRoot({
@@ -53,8 +64,7 @@ export class CommonTestModule {
       })
     ].concat(arr || []);
 
-  public static getProviders = (overrides? : Provider[]) : Provider[] => {
-
+  public static getProviders = (overrides?: Provider[]): Provider[] => {
     let providers = [
       { provide: Reports },
       { provide: ViewController },
@@ -66,32 +76,35 @@ export class CommonTestModule {
       { provide: Platform, useClass: PlatformMock },
       { provide: TranslateService, useClass: TranslateService },
       { provide: Settings, useClass: SettingsMock },
-      { provide: ProvincesProvider, useClass: ProvincesProvider},
+      { provide: ProvincesProvider, useClass: ProvincesProvider },
       //Create our default lang mock
-      { provide: User, useFactory: ineeda.factory<User>({
-        getLang : () => LangCodes.EN,
-        isLangSet: true,
-        isLoggedIn : () => true,
-      })}
+      {
+        provide: User,
+        useFactory: ineeda.factory<User>({
+          isLoggedIn: () => true
+        })
+      }
     ];
 
-    if (overrides == null){
+    if (overrides == null) {
       return providers;
     }
     var retVal = CommonTestModule.overrideProviders(overrides, providers);
     return retVal;
-  }
+  };
 
-  private static overrideProviders(overrides : Provider[], providers: Provider[]) : Provider[]{
-   overrides.forEach((ele : Provider) => {
-    let i = _.findIndex(providers, {provide: ele.Provide})
-    if (i === -1){
-      providers.push(ele);
-    }else{
-      providers.splice(i,1, ele);
-    }
-   });
-   return providers;
+  private static overrideProviders(
+    overrides: Provider[],
+    providers: Provider[]
+  ): Provider[] {
+    overrides.forEach((ele: Provider) => {
+      let i = _.findIndex(providers, { provide: ele.Provide });
+      if (i === -1) {
+        providers.push(ele);
+      } else {
+        providers.splice(i, 1, ele);
+      }
+    });
+    return providers;
   }
-
 }

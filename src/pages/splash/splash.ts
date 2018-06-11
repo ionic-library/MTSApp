@@ -1,40 +1,57 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { Lang, User, LangCodes } from '../../providers';
-
-/**
- * Generated class for the SplashPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { Component } from "@angular/core";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { Lang, User, LangCodes } from "../../providers";
+import { SitePages } from "../../pages";
 
 @IonicPage()
 @Component({
-  selector: 'page-splash',
-  templateUrl: 'splash.html',
+  selector: "page-splash",
+  templateUrl: "splash.html"
 })
 export class SplashPage {
-
   constructor(public navCtrl: NavController, public user: User) {
-    user.IsLangSet(function success(val) {
-      if (val) {
-        // User has selected lang. Do lang stuffs.
-      } else {
-        // Brand new user. Do a pile of new user stuff (register with MTS API) and let user select language.
+    this.user.GetLang(
+      val => {
+        if (typeof val == "undefined") {
+          // User lang is not set
+          console.log("Lang undefined");
+        } else {
+          // user lang is set
+          console.log("Lang Defined " + val);
+        }
+      },
+      val => {
+        // NOT GOOD
+        console.log("Error getting language: " + val);
       }
-      console.log(val);
-
-    }, function error() {
-      // Error handler. Deal with later, likely do nothing but theoretically this should never happen with an HTML based app since we're in the web view
-      console.log('error balls');
-    });
+    );
   }
 
+  public setEnglish() {
+    this.user.setLang(
+      LangCodes.EN,
+      () => {
+        this.navCtrl.push(SitePages.Home);
+      },
+      val => {
+        console.log("Could not set as English: " + val);
+      }
+    );
+  }
 
+  public setFrench() {
+    this.user.setLang(
+      LangCodes.FR,
+      () => {
+        this.navCtrl.push(SitePages.Home);
+      },
+      val => {
+        console.log("Could not set as French: " + val);
+      }
+    );
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad SplashPage');
+    //console.log('ionViewDidLoad SplashPage');
   }
-
 }
