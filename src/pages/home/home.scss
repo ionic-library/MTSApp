@@ -1,27 +1,22 @@
 page-home {
-  .page-header {
-    .button-inner {
+  .toolbar {
+    .toolbar-background {
+      display: none;
+    }
+    .toolbar-title {
       color: white;
     }
-    .toolbar {
-      position: absolute;
-      .toolbar-background {
-        display: none;
-      }
-      .toolbar-title {
-        color: white;
-      }
-      .toolbar-background-ios {
-        display: none;
-      }
-      .help {
-        color: #fff;
-        padding-right: 5vw;
-      }
+    .toolbar-background-ios {
+      display: none;
+    }
+    .help {
+      color: #fff;
+      padding-right: 5vw;
     }
   }
   .curved-img-portrait {
     width: 100%;
+    margin-top: -3.2em;
   }
   .curved-img-landscape {
     display: none;
@@ -110,10 +105,11 @@ page-home {
     }
     .curved-img-landscape {
       display: flex;
-      margin-top: -2em;
+      margin-top: -3.2em;
     }
     .hello-text {
       width: 100%;
+      top: 10vh;
       .greeting {
         font-size: 18px;
       }
@@ -139,7 +135,6 @@ page-home {
   @media only screen and (orientation: landscape) and (min-width: 1200px) {
     .curved-img-landscape {
       display: flex;
-      margin-top: -2em;
       width: 100%;
     }
     .portrait-grid {
@@ -168,7 +163,6 @@ page-home {
   @media only screen and (orientation: landscape) and (min-width: 1000px) {
     .curved-img-landscape {
       display: flex;
-      margin-top: -2em;
       width: 100%;
     }
     .portrait-grid {

@@ -8,8 +8,7 @@ import {
   ModalController
 } from "ionic-angular";
 import { Report } from "../../models/mockEiReport";
-import { Questionaire_6Page } from "../questionaire-6/questionaire-6";
-import { SubmissionPage } from "../submission/submission";
+import { SitePages } from "../index";
 import { HelpModalPage } from "../help-modal/help-modal";
 
 @IonicPage()
@@ -33,8 +32,8 @@ export class Questionaire_7Page {
     //this.report = navParams.get('report');
     this.startDate = "March 28, 2010";
     this.endDate = "April 10, 2010";
-    this.pushPagePrevious = Questionaire_6Page;
-    this.pushPageNext = SubmissionPage;
+    this.pushPagePrevious = SitePages.Questionaire6;
+    this.pushPageNext = SitePages.Submission;
     //this.params = { id: 42 };
   }
 

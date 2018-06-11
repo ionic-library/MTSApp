@@ -18,13 +18,7 @@ import { Reports } from "../mocks/providers/mock-ei-reports";
 import { HelpModalPage } from "../pages/help-modal/help-modal";
 import { Settings, User, Api, Lang, ProvincesProvider } from "../providers";
 import { MyApp } from "./app.component";
-import { QuestionairePage } from "../pages/questionaire/questionaire";
-import { Questionaire_7Page } from "../pages/questionaire-7/questionaire-7";
-import { Questionaire_6Page } from "../pages/questionaire-6/questionaire-6";
-import { Questionaire_5Page } from "../pages/questionaire-5/questionaire-5";
-import { Questionaire_3Page } from "../pages/questionaire-3/questionaire-3";
-import { Questionaire_2Page } from "../pages/questionaire-2/questionaire-2";
-import { SubmissionPage } from "../pages/submission/submission";
+
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -50,13 +44,7 @@ export function provideSettings(storage: Storage) {
 @NgModule({
   declarations: [
     MyApp,
-    HelpModalPage,
-    Questionaire_2Page,
-    Questionaire_3Page,
-    Questionaire_5Page,
-    Questionaire_6Page,
-    Questionaire_7Page,
-    SubmissionPage
+    HelpModalPage
   ],
   imports: [
     BrowserModule,
@@ -74,13 +62,7 @@ export function provideSettings(storage: Storage) {
   bootstrap: [IonicApp],
   entryComponents: [
     HelpModalPage,
-    MyApp,
-    Questionaire_2Page,
-    Questionaire_3Page,
-    Questionaire_5Page,
-    Questionaire_6Page,
-    Questionaire_7Page,
-    SubmissionPage
+    MyApp
   ],
   providers: [
     Api,

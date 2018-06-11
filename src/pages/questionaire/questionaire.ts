@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController, NavParams, ModalController } from 'ionic-angular';
 import { Report } from '../../models/mockEiReport';
-import { Questionaire_2Page } from '../questionaire-2/questionaire-2';
 import { HelpModalPage } from '../help-modal/help-modal';
+import { SitePages } from "../index";
 
 @IonicPage()
 @Component({
@@ -20,7 +20,7 @@ export class QuestionairePage {
     public modalCtrl: ModalController) {
     //this.report = navParams.get('report');
    // console.log(this.report);
-    this.pushPage = Questionaire_2Page;
+    this.pushPage = SitePages.Questionaire2;
     //this.params = { id: 42 };
   }
 
