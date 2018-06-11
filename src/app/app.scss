@@ -32,6 +32,9 @@ ion-icon {
   }
 
   // custom icons
+  &[class*="MTSApp-Home"] {
+    mask-image: url(../assets/icon/noun_864476_cc.svg);
+  }
   &[class*="MTSApp-Notification"] {
     mask-image: url(../assets/icon/noun_641800.svg);
   }
@@ -76,16 +79,37 @@ ion-icon {
     background-color: transparent;
 
     .nav-menu-list {
+      margin-bottom: 1px;
       // Android Nav Menu List Item CSS
       .item-md {
         .item-inner {
           border: none;
+          height: 6.5vh;
+
+          .nav-menu-icon {
+            margin: 1px;
+          }
+          .nav-option-text {
+            position: absolute;
+            left: 20%;
+            top: 35%;
+          }
         }
       }
       // iOS Nav Menu List Item CSS
       .item-ios {
         .item-inner {
           border: none;
+          height: 6.5vh;
+
+          .nav-menu-icon {
+            margin: 1px;
+          }
+          .nav-option-text {
+            position: absolute;
+            left: 20%;
+            top: 35%;
+          }
         }
       }
       // General List Item CSS

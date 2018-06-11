@@ -17,10 +17,11 @@ import { Settings } from "../providers";
 
     <ion-content color="navMenuBackground">
       <ion-list class="nav-menu-list" color="navMenuBackground">
-        <button menuClose ion-item *ngFor="let p of pages; let last = last" color="navMenuButton"
+        <button menuClose ion-item icon-left icon-only *ngFor="let p of pages; let last = last" color="navMenuButton"
         [class.last-item]="last"
         (click)="openPage(p)">
-          {{p.title}}
+          <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
+          <p class="nav-option-text">{{p.title}}</p>
         </button>
       </ion-list>
       <ion-list class="nav-menu-list">
@@ -41,9 +42,17 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   pages: any[] = [
-    { title: "Home", component: SitePages.Home },
-    { title: "EI Reporting", component: SitePages.EiReporting },
-    { title: "Future Feature: Job Search", component: SitePages.BlankPage }
+    { title: "Home", component: SitePages.Home, iconName: "MTSApp-Home" },
+    {
+      title: "EI Reporting",
+      component: SitePages.EiReporting,
+      iconName: "MTSApp-EIReporting"
+    },
+    {
+      title: "Job Search",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-JobSearch"
+    }
   ];
 
   pagesInProgress: any[] = [
