@@ -18,7 +18,8 @@ import { Reports } from "../mocks/providers/mock-ei-reports";
 import { HelpModalPage } from "../pages/help-modal/help-modal";
 import { Settings, User, Api, Lang, ProvincesProvider } from "../providers";
 import { MyApp } from "./app.component";
-
+import { ReportCardStorageProvider } from "../providers/report-card-storage/report-card-storage";
+import { AppStorageProvider } from "../providers/app-storage/app-storage";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -42,10 +43,7 @@ export function provideSettings(storage: Storage) {
 }
 
 @NgModule({
-  declarations: [
-    MyApp,
-    HelpModalPage
-  ],
+  declarations: [MyApp, HelpModalPage],
   imports: [
     BrowserModule,
     HttpClientModule,
@@ -60,10 +58,7 @@ export function provideSettings(storage: Storage) {
     IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
-  entryComponents: [
-    HelpModalPage,
-    MyApp
-  ],
+  entryComponents: [HelpModalPage, MyApp],
   providers: [
     Api,
     Slides,
@@ -76,7 +71,9 @@ export function provideSettings(storage: Storage) {
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProvincesProvider,
-    Lang
+    Lang,
+    ReportCardStorageProvider,
+    AppStorageProvider
   ]
 })
 export class AppModule {}
