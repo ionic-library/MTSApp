@@ -44,14 +44,34 @@ export class MyApp {
   pages: any[] = [
     { title: "Home", component: SitePages.Home, iconName: "MTSApp-Home" },
     {
-      title: "EI Reporting",
-      component: SitePages.EiReporting,
-      iconName: "MTSApp-EIReporting"
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-Notification"
+    },
+    {
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-Finder"
     },
     {
       title: "Job Search",
       component: SitePages.BlankPage,
       iconName: "MTSApp-JobSearch"
+    },
+    {
+      title: "EI Reporting",
+      component: SitePages.EiReporting,
+      iconName: "MTSApp-EIReporting"
+    },
+    {
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-SCCLocations"
+    },
+    {
+      title: "Future Feature",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-LifeEvents"
     }
   ];
 
