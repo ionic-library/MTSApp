@@ -76,20 +76,26 @@ ion-icon {
     }
   }
   .content {
+    // Render automatically generated menu content-area background color transparent so that menu content-area background color global variable actually works
     background-color: transparent;
 
     .nav-menu-list {
+      // Required line to maintain bottom border style of list
       margin-bottom: 1px;
       // Android Nav Menu List Item CSS
       .item-md {
         .item-inner {
+          // Removes built-in border for list items
           border: none;
+          // Match list item height to design
           height: 6.5vh;
 
           .nav-menu-icon {
+            // Prevents display issues where container clips icon mask
             margin: 1px;
           }
           .nav-option-text {
+            // Required positioning CSS as Ionic does not automatically vertically center button text in this case
             position: absolute;
             left: 20%;
             top: 35%;
@@ -99,13 +105,17 @@ ion-icon {
       // iOS Nav Menu List Item CSS
       .item-ios {
         .item-inner {
+          // Removes built-in border for list items
           border: none;
+          // Match list item height to design
           height: 6.5vh;
 
           .nav-menu-icon {
+            // Prevents display issues where container clips icon mask
             margin: 1px;
           }
           .nav-option-text {
+            // Required positioning CSS as Ionic does not automatically vertically center button text in this case
             position: absolute;
             left: 20%;
             top: 35%;
