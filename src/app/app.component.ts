@@ -17,7 +17,8 @@ import { Settings } from "../providers";
 
     <ion-content color="navMenuBackground">
       <ion-list class="nav-menu-list" color="navMenuBackground">
-        <button menuClose ion-item icon-left icon-only *ngFor="let p of pages; let last = last" color="navMenuButton"
+        <button menuClose ion-item icon-left icon-only *ngFor="let p of pages; let first = first; let last = last;" color="navMenuButton"
+        [class.first-item]="first"
         [class.last-item]="last"
         (click)="openPage(p)">
           <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
