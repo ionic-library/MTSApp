@@ -104,6 +104,9 @@ ion-icon {
           }
         }
       }
+      .last-item {
+        border-bottom: 1px solid white;
+      }
       // iOS Nav Menu List Item CSS
       .item-ios {
         .item-inner {
@@ -125,10 +128,6 @@ ion-icon {
             font-size: inherit;
           }
         }
-      }
-      // General List Item CSS
-      .last-item {
-        border: none;
       }
     }
   }
