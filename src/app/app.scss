@@ -88,7 +88,7 @@ ion-icon {
           // Removes built-in border for list items
           border: none;
           // Match list item height to design
-          height: 6.5vh;
+          height: 5.5rem;
 
           .nav-menu-icon {
             // Prevents display issues where container clips icon mask
@@ -97,8 +97,8 @@ ion-icon {
           .nav-option-text {
             // Required positioning CSS as Ionic does not automatically vertically center button text in this case
             position: absolute;
-            left: 23%;
-            top: 31%;
+            left: 7rem;
+            top: 1.5rem;
             // Override Ionic list-item font-size
             font-size: inherit;
           }
@@ -110,7 +110,7 @@ ion-icon {
           // Removes built-in border for list items
           border: none;
           // Match list item height to design
-          height: 6.5vh;
+          height: 5.5rem;
 
           .nav-menu-icon {
             // Prevents display issues where container clips icon mask
@@ -119,8 +119,8 @@ ion-icon {
           .nav-option-text {
             // Required positioning CSS as Ionic does not automatically vertically center button text in this case
             position: absolute;
-            left: 23%;
-            top: 33%;
+            left: 7rem;
+            top: 1.5rem;
             // Override Ionic list-item font-size
             font-size: inherit;
           }
@@ -128,7 +128,7 @@ ion-icon {
       }
       // General List Item CSS
       .last-item {
-        border-bottom: 1px solid white;
+        border: none;
       }
     }
   }
