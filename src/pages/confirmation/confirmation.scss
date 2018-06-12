@@ -1,36 +1,57 @@
 page-confirmation {
-  /********* NAV BAR CSS STARTS HERE **********/
-  .menu {
-    color: #fff;
-  }
-  .toolbar-title {
-    color: white;
-  }
-  .page-title {
-    color: white;
-  }
-  .back-button {
-    color: #fff;
-  }
-  .back {
-    color: #fff;
-  }
-  .help {
-    color: #fff;
-    padding-right: 5vw;
-  }
-  /********* NAV BAR CSS ENDS HERE **********/
   .checkmark {
     font-size: 8rem;
     color: #0f71cf;
     display: block;
+    margin-top: 5%;
   }
 
-  .Rectangle-3 {
+  .home {
     width: 300px;
     height: 40px;
     border-radius: 2.5px;
     background-color: #0f71c4;
     box-shadow: 1px 1px 3.5px 0 rgba(0, 0, 0, 0.26);
+  }
+  .number {
+    font-weight: bold;
+  }
+  .grid {
+    height: 40%;
+  }
+
+  .grid2 {
+    height: 30%;
+  }
+
+  .grid3 {
+    height: 25%;
+  }
+
+  .row1 {
+    height: 100%;
+  }
+
+  .row2 {
+    height: 40%;
+  }
+
+  .row3 {
+    height: 50%;
+  }
+
+  .row4 {
+    height: 100%;
+  }
+
+  .thankYou {
+    text-align: center;
+    font-size: 21px;
+    display: block;
+  }
+  .transaction {
+    display: block;
+    font-size: 14px;
+    text-align: center;
   }
 }
