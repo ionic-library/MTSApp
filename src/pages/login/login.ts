@@ -12,7 +12,6 @@ import {
 
 import { User, ProvincesProvider } from "../../providers";
 import { MainPage } from "../";
-import { HelpModalPage } from "../help-modal/help-modal";
 
 @IonicPage()
 @Component({
@@ -102,7 +101,7 @@ export class LoginPage {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(HelpModalPage);
+    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal.present();
   }
 }

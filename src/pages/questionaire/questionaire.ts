@@ -1,36 +1,43 @@
-import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
-import { IonicPage, NavController, ToastController, NavParams, ModalController } from 'ionic-angular';
-import { Report } from '../../models/mockEiReport';
-import { HelpModalPage } from '../help-modal/help-modal';
+import { Component } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
+import {
+  IonicPage,
+  NavController,
+  ToastController,
+  NavParams,
+  ModalController
+} from "ionic-angular";
+import { Report } from "../../models/mockEiReport";
 import { SitePages } from "../index";
 
 @IonicPage()
 @Component({
-  selector: 'page-questionaire',
-  templateUrl: 'questionaire.html',
+  selector: "page-questionaire",
+  templateUrl: "questionaire.html"
 })
 export class QuestionairePage {
   //report: Report;
   //params: Object;
   pushPage: any;
-  constructor(public translate: TranslateService,
-    public navParams: NavParams, 
+  constructor(
+    public translate: TranslateService,
+    public navParams: NavParams,
     public navCtrl: NavController,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController
+  ) {
     //this.report = navParams.get('report');
-   // console.log(this.report);
+    // console.log(this.report);
     this.pushPage = SitePages.Questionaire2;
     //this.params = { id: 42 };
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad QuestionairePage');
+    console.log("ionViewDidLoad QuestionairePage");
   }
 
   presentHelpModal() {
-    console.log('Click Received');
-    let helpModal = this.modalCtrl.create(HelpModalPage);
+    console.log("Click Received");
+    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal.present();
   }
 }

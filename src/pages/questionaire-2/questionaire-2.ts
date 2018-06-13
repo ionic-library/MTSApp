@@ -9,7 +9,6 @@ import {
 } from "ionic-angular";
 import { Report } from "../../models/mockEiReport";
 import { SitePages } from "../index";
-import { HelpModalPage } from "../help-modal/help-modal";
 
 @IonicPage()
 @Component({
@@ -32,7 +31,7 @@ export class Questionaire_2Page {
     //this.report = navParams.get('report');
     this.startDate = "March 28, 2010";
     this.endDate = "April 10, 2010";
-    this.pushPagePrevious = SitePages.Questionaire ;
+    this.pushPagePrevious = SitePages.Questionaire;
     this.pushPageNext = SitePages.Questionaire3;
     //this.params = { id: 42 };
   }
@@ -43,7 +42,7 @@ export class Questionaire_2Page {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(HelpModalPage);
+    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal.present();
   }
 }

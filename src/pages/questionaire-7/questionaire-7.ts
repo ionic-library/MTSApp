@@ -9,7 +9,6 @@ import {
 } from "ionic-angular";
 import { Report } from "../../models/mockEiReport";
 import { SitePages } from "../index";
-import { HelpModalPage } from "../help-modal/help-modal";
 
 @IonicPage()
 @Component({
@@ -43,7 +42,7 @@ export class Questionaire_7Page {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(HelpModalPage);
+    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal.present();
   }
 }

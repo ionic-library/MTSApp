@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
-import { Reports } from '../../mocks/providers/mock-ei-reports';
-import { Report } from '../../models/mockEiReport';
-import { SitePages } from '..';
-import { HelpModalPage } from "../help-modal/help-modal";
+import { Component } from "@angular/core";
+import {
+  IonicPage,
+  NavController,
+  NavParams,
+  ModalController
+} from "ionic-angular";
+import { Reports } from "../../mocks/providers/mock-ei-reports";
+import { Report } from "../../models/mockEiReport";
+import { SitePages } from "..";
 
 /**
  * Generated class for the EiReportingPage page.
@@ -14,28 +18,30 @@ import { HelpModalPage } from "../help-modal/help-modal";
 
 @IonicPage()
 @Component({
-  selector: 'page-ei-reporting',
-  templateUrl: 'ei-reporting.html',
+  selector: "page-ei-reporting",
+  templateUrl: "ei-reporting.html"
 })
 export class EiReportingPage {
-
   public currentReports: Report[];
 
-  constructor( private navCtrl: NavController,
-               public reports: Reports,
-               public modalCtrl: ModalController) {
+  constructor(
+    private navCtrl: NavController,
+    public reports: Reports,
+    public modalCtrl: ModalController
+  ) {
     this.currentReports = this.reports.query();
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EiReportingPage');
+    console.log("ionViewDidLoad EiReportingPage");
   }
 
   presentHelpModal() {
-    console.log('Click Received');
-    let helpModal = this.modalCtrl.create(HelpModalPage);
+    console.log("Click Received");
+    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal.present();
   }
 
-  startReport = (report) => this.navCtrl.push(SitePages.AcceptanceStatement, {report});
+  startReport = report =>
+    this.navCtrl.push(SitePages.AcceptanceStatement, { report });
 }

@@ -2,7 +2,6 @@ import { User } from "./../../providers/user/user";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { SitePages } from "../index";
-import { HelpModalPage } from "../help-modal/help-modal";
 import { TranslateService } from "@ngx-translate/core";
 
 /**
@@ -54,7 +53,7 @@ export class HomePage {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(HelpModalPage);
+    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal.present();
   }
 

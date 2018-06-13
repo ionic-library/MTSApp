@@ -5,8 +5,8 @@ import {
   NavParams,
   ModalController
 } from "ionic-angular";
-import { HelpModalPage } from "../help-modal/help-modal";
 import { TranslateService } from "@ngx-translate/core";
+import { SitePages } from "..";
 
 /**
  * Generated class for the IssueWithReportPage page.
@@ -28,7 +28,7 @@ export class IssueWithReportPage {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(HelpModalPage);
+    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal.present();
   }
 
