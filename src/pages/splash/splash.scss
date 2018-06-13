@@ -22,11 +22,6 @@ page-splash {
     margin-bottom: 10px;
   }
 
-  @media only screen and (orientation: portrait) {
-    .buttons {
-      padding-top: 10%;
-    }
-  }
   @media only screen and (orientation: landscape) {
     .serviceRow {
       height: 60%;
