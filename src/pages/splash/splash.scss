@@ -4,16 +4,14 @@ page-splash {
     height: 20px;
   }
 
-  .images {
-    padding-top: 10px;
-    height: 10%;
-    width: 90%;
-    margin: 0 auto;
+  .fip {
+    width: 200px;
+    height: 25px;
   }
 
-  #buttonDiv {
-    width: 90%;
-    margin: 0 auto;
+  .serviceCan {
+    width: 225px;
+    height: 150px;
   }
 
   .serviceRow {
@@ -22,20 +20,6 @@ page-splash {
 
   #english {
     margin-bottom: 10px;
-  }
-
-  .french {
-    margin: 0 auto;
-    width: 90%;
-  }
-
-  .fip {
-    width: 200px;
-    height: 25px;
-  }
-  .serviceCan {
-    width: 225px;
-    height: 150px;
   }
 
   @media only screen and (orientation: portrait) {
