@@ -9,15 +9,16 @@ import { SitePages } from "../../pages";
   templateUrl: "splash.html"
 })
 export class SplashPage {
+  public show: boolean;
   constructor(public navCtrl: NavController, public user: User) {
     this.user.GetLang(
       val => {
         if (typeof val == "undefined") {
           // User lang is not set
-          console.log("Lang undefined");
+          this.show = true;
         } else {
           // user lang is set
-          console.log("Lang Defined " + val);
+          this.navCtrl.push(SitePages.Home);
         }
       },
       val => {
@@ -31,7 +32,7 @@ export class SplashPage {
     this.user.setLang(
       LangCodes.EN,
       () => {
-        this.navCtrl.push(SitePages.Home);
+        location.reload();
       },
       val => {
         console.log("Could not set as English: " + val);
@@ -43,15 +44,11 @@ export class SplashPage {
     this.user.setLang(
       LangCodes.FR,
       () => {
-        this.navCtrl.push(SitePages.Home);
+        location.reload();
       },
       val => {
         console.log("Could not set as French: " + val);
       }
     );
-  }
-
-  ionViewDidLoad() {
-    //console.log('ionViewDidLoad SplashPage');
   }
 }
