@@ -76,14 +76,7 @@ export class CommonTestModule {
       { provide: Platform, useClass: PlatformMock },
       { provide: TranslateService, useClass: TranslateService },
       { provide: Settings, useClass: SettingsMock },
-      { provide: ProvincesProvider, useClass: ProvincesProvider },
-      //Create our default lang mock
-      {
-        provide: User,
-        useFactory: ineeda.factory<User>({
-          isLoggedIn: () => true
-        })
-      }
+      { provide: ProvincesProvider, useClass: ProvincesProvider }
     ];
 
     if (overrides == null) {
