@@ -26,6 +26,9 @@ import { Lang, User, LangCodes } from "../providers";
           <p class="nav-option-text">{{p.title}}</p>
         </button>
       </ion-list>
+    <button menuClose ion-item icon-left icon-only color="navMenuButton">
+       {{"ALT_LANG"| translate}}
+    </button>
       <ion-list class="nav-menu-list">
         <button menuClose ion-item *ngFor="let p of pagesInProgress; let last = last" color="navMenuButton"
         [class.last-item]="last"
@@ -34,7 +37,6 @@ import { Lang, User, LangCodes } from "../providers";
         </button>
       </ion-list>
     </ion-content>
-
   </ion-menu>
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })

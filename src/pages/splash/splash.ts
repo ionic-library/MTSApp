@@ -15,9 +15,11 @@ export class SplashPage {
       val => {
         if (typeof val == "undefined") {
           // User lang is not set
+          console.log("Lang is not set: " + val);
           this.show = true;
         } else {
           // user lang is set
+          console.log("lang is set: " + val);
           this.navCtrl.push(SitePages.Home);
         }
       },
