@@ -1,16 +1,27 @@
 
+<ion-header padding>
+    <div class="bar bar-header bar-light">
+      <ion-row justify-content-between>
+        <img class="fip" src="assets/img/gov-can-fip.png">
+      <img class="wordmark" src="assets/img/canada_col.jpg">
+    </ion-row>
+    </div>
+</ion-header>
+
 <ion-content padding>
-  <ion-row align-items-start class="images" justify-content-between>
-      <img class="fip" src="assets/img/gov-can-fip.png">
-    <img class="wordmark" src="assets/img/canada_col.jpg">
-  </ion-row>
+
   <ion-row class="serviceRow" justify-content-center align-items-center>
     <img class="serviceCan" src="assets/img/ServiceCanada.jpg">
   </ion-row>
-
-  
-  <div id="buttonDiv"> 
+  <ion-footer padding>
     <button id="english" ion-button block (click)="this.setEnglish()">English</button>
     <button ion-button block  (click)="this.setFrench()">Français</button>
-  </div>
+  </ion-footer>
 </ion-content>
+
+ 
+  
+  
+
+         
+
