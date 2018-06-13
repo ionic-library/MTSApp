@@ -6,6 +6,7 @@ import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
 import { FirstRunPage } from "../pages";
 import { Settings } from "../providers";
+import { Lang, User, LangCodes } from "../providers";
 
 @Component({
   template: `<ion-menu class="nav-menu" [content]="content" persistent="true">
@@ -93,7 +94,8 @@ export class MyApp {
     settings: Settings,
     private config: Config,
     private statusBar: StatusBar,
-    private splashScreen: SplashScreen
+    private splashScreen: SplashScreen,
+    private user: User
   ) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
@@ -106,26 +108,19 @@ export class MyApp {
     this.initTranslate();
   }
 
-  initTranslate() {
-    // Set the default language for translation strings, and the current language.
+  public initTranslate() {
+    // Set the default language for translation strings, and the current language selected if aavailable
     this.translate.setDefaultLang("en");
-    const browserLang = this.translate.getBrowserLang();
-
-    if (browserLang) {
-      if (browserLang === "zh") {
-        const browserCultureLang = this.translate.getBrowserCultureLang();
-
-        if (browserCultureLang.match(/-CN|CHS|Hans/i)) {
-          this.translate.use("zh-cmn-Hans");
-        } else if (browserCultureLang.match(/-TW|CHT|Hant/i)) {
-          this.translate.use("zh-cmn-Hant");
+    this.user.GetLang(
+      val => {
+        if (val == "en" || val == "fr") {
+          this.translate.use(val);
         }
-      } else {
-        this.translate.use(this.translate.getBrowserLang());
+      },
+      () => {
+        console.log("lang set error error");
       }
-    } else {
-      this.translate.use("en"); // Set your language here
-    }
+    );
 
     this.translate.get(["BACK_BUTTON_TEXT"]).subscribe(values => {
       // this.config.set("ios", "backButtonText", values.BACK_BUTTON_TEXT);
