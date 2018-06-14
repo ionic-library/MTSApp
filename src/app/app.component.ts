@@ -26,7 +26,15 @@ import { Lang, User, LangCodes } from "../providers";
           <p class="nav-option-text">{{p.title}}</p>
         </button>
       </ion-list>
-    
+
+      <ion-list class="nav-menu-list">
+        <button menuClose ion-item *ngFor="let p of userOptions; let last = last" color="navMenuButton"
+        [class.last-item]="last"
+        (click)="openSettings(p)">
+          {{p.title}}
+        </button>
+      </ion-list>
+
       <ion-list class="nav-menu-list">
         <button menuClose ion-item color="navMenuButton" (click)="changeLang()">
           {{"ALT_LANG"| translate}}
@@ -80,12 +88,13 @@ export class MyApp {
     }
   ];
 
+  userOptions: any[] = [{ title: "Settings", component: SitePages.Settings }];
+
   pagesInProgress: any[] = [
     { title: "Blank Page", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionnaire", component: SitePages.Questionaire },
     { title: "Login", component: SitePages.EILogin },
-    { title: "Settings", component: SitePages.Settings },
     { title: "Issue", component: SitePages.IssueWithReport },
     { title: "LoginFailed", component: SitePages.LoginFalied },
     { title: "Splash", component: SitePages.Splash }
@@ -134,6 +143,10 @@ export class MyApp {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav.setRoot(page.component);
+  }
+
+  openSettings(page) {
+    this.nav.push(SitePages.Settings);
   }
 
   changeLang() {
