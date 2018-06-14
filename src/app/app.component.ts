@@ -28,7 +28,7 @@ import { Lang, User, LangCodes } from "../providers";
       </ion-list>
 
       <ion-list class="nav-menu-list">
-        <button menuClose ion-item *ngFor="let p of userOptions; let last = last" color="navMenuButton"
+        <button menuClose ion-item *ngFor="let p of userSelections; let last = last" color="navMenuButton"
         [class.last-item]="last"
         (click)="openSettings(p)">
           {{p.title}}
@@ -88,7 +88,9 @@ export class MyApp {
     }
   ];
 
-  userOptions: any[] = [{ title: "Settings", component: SitePages.Settings }];
+  userSelections: any[] = [
+    { title: "Settings", component: SitePages.Settings }
+  ];
 
   pagesInProgress: any[] = [
     { title: "Blank Page", component: SitePages.BlankPage },
