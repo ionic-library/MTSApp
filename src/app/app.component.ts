@@ -25,13 +25,12 @@ import { Lang, User, LangCodes } from "../providers";
           <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
           <p class="nav-option-text">{{p.title}}</p>
         </button>
-        <button menuClose ion-item icon-left icon-only color="navMenuButton" (click)="changeLang()">
-          <ion-icon class="nav-menu-icon" name="refresh-circle"></ion-icon>
-          <p class="nav-option-text">{{"ALT_LANG"| translate}}</p>
-        </button>
       </ion-list>
     
       <ion-list class="nav-menu-list">
+        <button menuClose ion-item color="navMenuButton" (click)="changeLang()">
+          {{"ALT_LANG"| translate}}
+        </button>
         <button menuClose ion-item *ngFor="let p of pagesInProgress; let last = last" color="navMenuButton"
         [class.last-item]="last"
         (click)="openPage(p)">
