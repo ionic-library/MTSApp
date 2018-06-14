@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-
+import { User } from "../../providers/user/user";
 import { Settings } from "../../providers";
 
 /**
@@ -44,7 +44,8 @@ export class SettingsPage {
     public settings: Settings,
     public formBuilder: FormBuilder,
     public navParams: NavParams,
-    public translate: TranslateService
+    public translate: TranslateService,
+    public user: User
   ) {}
 
   _buildForm() {
@@ -69,6 +70,16 @@ export class SettingsPage {
     this.form.valueChanges.subscribe(v => {
       this.settings.merge(this.form.value);
     });
+  }
+
+  changeLang(selection) {
+    console.log(selection);
+    console.log(this.user.Lang);
+    if (selection === this.user.Lang) {
+      console.log("Selected Language is already active!");
+    } else {
+      this.user.alternateLang();
+    }
   }
 
   ionViewDidLoad() {

@@ -22,13 +22,19 @@
       </button>
     </ion-list>
 
-    <ion-list *ngIf="page == 'language'">
-      <button ion-item>
-        {{ 'LANGUAGE_BUTTON_FRENCH' | translate }}
-      </button>
-      <button ion-item>
-        {{ 'LANGUAGE_BUTTON_ENGLISH' | translate }}
-      </button>
+    <ion-list radio-group *ngIf="page == 'language'">
+      <ion-item>
+        <ion-label>
+          {{ 'LANGUAGE_BUTTON_FRENCH' | translate }}
+        </ion-label>
+        <ion-radio (ionSelect)='changeLang("fr")'></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          {{ 'LANGUAGE_BUTTON_ENGLISH' | translate }}
+        </ion-label>
+        <ion-radio (ionSelect)='changeLang("en")'></ion-radio>
+      </ion-item>
     </ion-list>
 
     <ion-list *ngIf="page == 'notifications'">
