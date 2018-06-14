@@ -1,39 +1,39 @@
-import 'rxjs/add/operator/toPromise';
-import { Injectable } from '@angular/core';
-import { Storage } from '@ionic/storage';
-import { Api } from '../api/api';
+import "rxjs/add/operator/toPromise";
+import { Injectable } from "@angular/core";
+import { Storage } from "@ionic/storage";
+import { Api } from "../api/api";
 import { Lang, LangCodes } from "../../providers";
-import { VALID } from '@angular/forms/src/model';
+import { VALID } from "@angular/forms/src/model";
 
 @Injectable()
 export class User {
   _user: any;
 
-  private isLangSet:boolean = false;
-  public Lang:LangCodes;
-  private LangReady:boolean = false;
+  private isLangSet: boolean = false;
+  public Lang: LangCodes;
+  private LangReady: boolean = false;
 
-
-  constructor(public api: Api, public storage: Storage) {
-   
-  }
-
+  constructor(public api: Api, public storage: Storage) {}
 
   public GetLang(success: Function, error: Function) {
     if (this.LangReady) {
       success(this.Lang);
     } else {
-      this.initializeLang(() => {
-        success(this.Lang);
-      }, (val) => {
-        error(val);
-      });
+      this.initializeLang(
+        () => {
+          success(this.Lang);
+        },
+        val => {
+          error(val);
+        }
+      );
     }
   }
 
   private initializeLang(success: Function, error: Function) {
-    this.storage.get('lang')
-      .then((val) => {
+    this.storage
+      .get("lang")
+      .then(val => {
         if (val == "fr") {
           this.Lang = LangCodes.FR;
           this.isLangSet = true;
@@ -47,26 +47,47 @@ export class User {
         }
         success();
       })
-      .catch((val) => {
+      .catch(val => {
         this.isLangSet = false;
         error(val);
       });
-
   }
 
- 
   public setLang(lang: LangCodes, success: Function, error: Function) {
     this.LangReady = false;
-    this.storage.set('lang', lang)
+    this.storage
+      .set("lang", lang)
       .then(() => {
         success();
       })
-      .catch((val) => {
+      .catch(val => {
         error(val);
       });
   }
 
+  public alternateLang() {
+    this.GetLang(
+      val => {
+        let lc = LangCodes.EN;
+        if (val == "en") {
+          lc = LangCodes.FR;
+        }
 
+        this.setLang(
+          lc,
+          () => {
+            window.location.reload();
+          },
+          val => {
+            console.log("Could not change lang: " + val);
+          }
+        );
+      },
+      val => {
+        console.log("Could not get lang: " + val);
+      }
+    );
+  }
 
   //############################### Below this line is standard functions we will redo later once API is ready or mapped out at least.
 
@@ -77,14 +98,14 @@ export class User {
   }
 
   login(accountInfo: any) {
-    let seq = this.api.post('login', accountInfo).share();
+    let seq = this.api.post("login", accountInfo).share();
     console.log("UserLogged in with " + accountInfo);
     this._loggedIn({
-      "user" : {
-        "Name": "First Last"
+      user: {
+        Name: "First Last"
       }
     });
-/*
+    /*
     seq.subscribe((res: any) => {
       // If the API returned a successful response, mark the user as logged in
       if (res.status == 'success') {
