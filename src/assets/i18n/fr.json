@@ -139,7 +139,14 @@
   "SETTINGS_OPTION3": "Option 3",
   "SETTINGS_OPTION4": "Option 4",
 
-  "SETTINGS_PAGE_PROFILE": "Modifier le profil",
+  "SETTINGS_LANGUAGE_BUTTON": "(FR)Language",
+  "LANGUAGE_BUTTON_FRENCH": "(FR)French",
+  "LANGUAGE_BUTTON_ENGLISH": "(FR)English",
+
+  "SETTINGS_NOTIFICATION_BUTTON": "(FR)Notifications",
+
+  "SETTINGS_PAGE_LANGUAGE": "(FR)Language",
+  "SETTINGS_PAGE_NOTIFICATIONS": "(FR)Notifications",
 
   "WELCOME_TITLE": "Bienvenue",
 
