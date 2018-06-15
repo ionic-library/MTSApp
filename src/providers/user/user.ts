@@ -4,6 +4,7 @@ import { Storage } from "@ionic/storage";
 import { Api } from "../api/api";
 import { Lang, LangCodes } from "../../providers";
 import { VALID } from "@angular/forms/src/model";
+import { TranslateService } from "@ngx-translate/core";
 
 @Injectable()
 export class User {
@@ -13,7 +14,11 @@ export class User {
   public Lang: LangCodes;
   private LangReady: boolean = false;
 
-  constructor(public api: Api, public storage: Storage) {}
+  constructor(
+    public api: Api,
+    public storage: Storage,
+    public translate: TranslateService
+  ) {}
 
   public GetLang(success: Function, error: Function) {
     if (this.LangReady) {
@@ -76,7 +81,8 @@ export class User {
         this.setLang(
           lc,
           () => {
-            window.location.reload();
+            this.Lang = lc;
+            this.translate.use(lc);
           },
           val => {
             console.log("Could not change lang: " + val);
