@@ -11,7 +11,7 @@ export class User {
   _user: any;
 
   private isLangSet: boolean = false;
-  public Lang: LangCodes;
+  private Lang: LangCodes;
   private LangReady: boolean = false;
 
   constructor(
@@ -63,6 +63,7 @@ export class User {
     this.storage
       .set("lang", lang)
       .then(() => {
+        this.translate.use(lang);
         success();
       })
       .catch(val => {
@@ -82,7 +83,6 @@ export class User {
           lc,
           () => {
             this.Lang = lc;
-            this.translate.use(lc);
           },
           val => {
             console.log("Could not change lang: " + val);
