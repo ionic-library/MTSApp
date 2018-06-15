@@ -22,7 +22,7 @@ describe("The Home Page", () => {
 
   function setupTestBedConfig() {
     fakeNavController = new NavMock();
-    fakeUser = new User(null, null);
+    fakeUser = new User(null, null, null);
 
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([

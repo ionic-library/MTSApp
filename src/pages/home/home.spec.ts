@@ -22,7 +22,7 @@ describe("The Home Page", () => {
 
   function setupTestBedConfig() {
     fakeNavController = new NavMock();
-    fakeUser = new User(null, null);
+    fakeUser = new User(null, null, null);
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([
         HomePage,
@@ -94,7 +94,7 @@ describe("The Home Page", () => {
 
     it("Should navigate to the Service Canada Location navigateToSCCLocationPage is called", () => {
       homePage.navigateToSCCLocationPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
+      expect(navSpy).to.have.been.calledWith(SitePages.Locations);
     });
 
     it("Should navigate to the My Notifications Page when navigateToMyNotificationsPage is called", () => {
