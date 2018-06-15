@@ -3,9 +3,9 @@ import { CommonTestModule } from "./../../app/sharedModules";
 import { NavController } from "ionic-angular";
 import { NavMock } from "./../../../test-config/mocks-ionic";
 import { SitePages } from "../../pages";
-import { async, TestBed, ComponentFixture } from "@angular/core/testing";
-import { ineeda } from "ineeda";
+import { TestBed, ComponentFixture } from "@angular/core/testing";
 import { User } from "../../providers";
+
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
@@ -18,16 +18,20 @@ describe("The Home Page", () => {
   let homePageCarousel: HomePageCarouselComponent;
   let navSpy: sinon.SinonSpy;
   let fakeNavController: NavMock;
+  let fakeUser: User;
 
   function setupTestBedConfig() {
     fakeNavController = new NavMock();
+    fakeUser = new User(null, null);
+
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([
         HomePageCarouselComponent
       ]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
-        { provide: NavController, useValue: fakeNavController }
+        { provide: NavController, useValue: fakeNavController },
+        { provide: User, useValue: fakeUser }
       ])
     }).compileComponents();
   }
@@ -53,12 +57,7 @@ describe("The Home Page", () => {
   });
 
   describe("Login Button", () => {
-    let fakeLoginCheck: boolean;
-
     beforeEach(async () => {
-      ineeda.intercept<User>({
-        isLoggedIn: () => fakeLoginCheck
-      });
       setupTestBedConfig();
     });
 
@@ -67,13 +66,13 @@ describe("The Home Page", () => {
     });
 
     it("Should navigate to the EI Reporting Login Page when user is not logged in", () => {
-      fakeLoginCheck = false;
+      sinon.stub(fakeUser, "isLoggedIn").returns(false);
       homePageCarousel.navigateToEIReportingPage();
       expect(navSpy).to.have.been.calledWith(SitePages.EILogin);
     });
 
     it("Should navigate to the EI Reporting Page when user is logged in", () => {
-      fakeLoginCheck = true;
+      sinon.stub(fakeUser, "isLoggedIn").returns(true);
       homePageCarousel.navigateToEIReportingPage();
       expect(navSpy).to.have.been.calledWith(SitePages.EiReporting);
     });
