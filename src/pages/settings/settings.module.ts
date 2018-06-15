@@ -1,19 +1,23 @@
-import { NgModule } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
-import { IonicPageModule } from 'ionic-angular';
+import { NgModule } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { TranslateModule, TranslateLoader } from "@ngx-translate/core";
+import { createTranslateLoader } from "../../app/app.module";
+import { IonicPageModule } from "ionic-angular";
 
-import { SettingsPage } from './settings';
+import { SettingsPage } from "./settings";
 
 @NgModule({
-  declarations: [
-    SettingsPage,
-  ],
+  declarations: [SettingsPage],
   imports: [
     IonicPageModule.forChild(SettingsPage),
-    TranslateModule.forChild()
+    TranslateModule.forChild({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: createTranslateLoader,
+        deps: [HttpClient]
+      }
+    })
   ],
-  exports: [
-    SettingsPage
-  ]
+  exports: [SettingsPage]
 })
-export class SettingsPageModule { }
+export class SettingsPageModule {}
