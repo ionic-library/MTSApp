@@ -16,7 +16,7 @@ describe("EI Reporting Login Page", () => {
   let fakeUser: User;
 
   beforeEach(async () => {
-    fakeUser = new User(null, null);
+    fakeUser = new User(null, null, null);
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([LoginPage]),
       imports: CommonTestModule.getImports(),

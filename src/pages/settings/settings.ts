@@ -98,8 +98,9 @@ export class SettingsPage {
   ionViewWillEnter() {
     // Build an empty form for the template to render
     this.form = this.formBuilder.group({});
-
+    // Change page attribute to newly pushed page
     this.page = this.navParams.get("page") || this.page;
+    // If page is language page, change the selected language to the active language
     if (this.page === "language") {
       this.user.GetLang(
         val => {
@@ -110,7 +111,7 @@ export class SettingsPage {
         }
       );
     }
-
+    // Change page title to the passed title on navigation
     this.pageTitleKey = this.navParams.get("pageTitleKey") || this.pageTitleKey;
 
     this.translate.get(this.pageTitleKey).subscribe(res => {
