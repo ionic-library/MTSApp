@@ -76,7 +76,7 @@ export class HomePage {
   public navigateToBenefitFinderPage = () =>
     this.navCtrl.push(SitePages.BlankPage);
   public navigateToSCCLocationPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navCtrl.push(SitePages.Locations);
   public navigateToLifeEventsPage = () =>
     this.navCtrl.push(SitePages.BlankPage);
 

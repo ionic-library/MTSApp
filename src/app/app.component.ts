@@ -77,8 +77,8 @@ export class MyApp {
       iconName: "MTSApp-EIReporting"
     },
     {
-      title: "Future Feature",
-      component: SitePages.BlankPage,
+      title: "Locations",
+      component: SitePages.Locations,
       iconName: "MTSApp-SCCLocations"
     },
     {
