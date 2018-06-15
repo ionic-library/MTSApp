@@ -3,16 +3,20 @@ import { Storage } from "@ionic/storage";
 import "rxjs/add/operator/toPromise";
 import { LangCodes } from "../../providers";
 import { Api } from "../api/api";
-
+import { TranslateService } from "@ngx-translate/core";
 
 @Injectable()
 export class User {
   _user: any;
 
-  public Lang: LangCodes;
+  private Lang: LangCodes;
   private LangReady: boolean = false;
 
-  constructor(public api: Api, public storage: Storage) {}
+  constructor(
+    public api: Api,
+    public storage: Storage,
+    public translate: TranslateService
+  ) {}
 
   public GetLang(success: Function, error: Function) {
     if (this.LangReady) {
@@ -22,7 +26,7 @@ export class User {
         () => {
           success(this.Lang);
         },
-        val => {
+        (val: any) => {
           error(val);
         }
       );
@@ -53,6 +57,7 @@ export class User {
     this.storage
       .set("lang", lang)
       .then(() => {
+        this.translate.use(lang);
         success();
       })
       .catch(val => {
@@ -62,7 +67,7 @@ export class User {
 
   public alternateLang() {
     this.GetLang(
-      (val : string) => {
+      (val: string) => {
         let lc = LangCodes.EN;
         if (val == "en") {
           lc = LangCodes.FR;
@@ -71,14 +76,14 @@ export class User {
         this.setLang(
           lc,
           () => {
-            window.location.reload();
+            this.Lang = lc;
           },
-          (val : string) => {
+          (val: string) => {
             console.log("Could not change lang: " + val);
           }
         );
       },
-      (val : string) => {
+      (val: string) => {
         console.log("Could not get lang: " + val);
       }
     );
@@ -116,7 +121,7 @@ export class User {
   logout() {
     this._user = null;
   }
-  private _loggedIn(resp) {
+  private _loggedIn(resp: any) {
     this._user = resp.user;
   }
 }

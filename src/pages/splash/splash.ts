@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController  } from "ionic-angular";
-import {  User, LangCodes } from "../../providers";
+import { IonicPage, NavController } from "ionic-angular";
+import { User, LangCodes } from "../../providers";
 import { SitePages } from "../../pages";
 
 @IonicPage()
@@ -9,7 +9,6 @@ import { SitePages } from "../../pages";
   templateUrl: "splash.html"
 })
 export class SplashPage {
-
   public show: boolean = false;
 
   constructor(public navCtrl: NavController, public user: User) {
@@ -19,36 +18,30 @@ export class SplashPage {
           console.log("Lang is not set");
           this.show = true;
         } else {
-          console.log("lang is set: " + val);
-          this.navCtrl.push(SitePages.Home)
-                      .then(() => console.log("navigating home"))
-                      .catch((reason : any) => console.error(reason));
+          console.log("lang is set: " + val.toString());
+          this.navCtrl
+            .push(SitePages.Home)
+            .then(() => console.log("navigating home"))
+            .catch((reason: any) => console.error(reason));
         }
       },
-      (val : string) => { console.log("Error getting language: " + val); }
-    );
-  }
-
-  public setEnglish() {
-    this.user.setLang(
-      LangCodes.EN,
-      () => {
-        location.reload();
-      },
-      (val : any) => {
-        console.error("Could not set as English: " + JSON.stringify(val));
+      (val: string) => {
+        console.log("Error getting language: " + val);
       }
     );
   }
 
-  public setFrench() {
+  public setLang(lang: LangCodes) {
     this.user.setLang(
-      LangCodes.FR,
+      lang,
       () => {
-        location.reload();
+        this.navCtrl
+          .push(SitePages.Home)
+          .then(() => console.log("Navigating to " + SitePages.Home))
+          .catch((reason: any) => console.error(reason));
       },
-      (val : any) => {
-        console.error("Could not set as French: " + JSON.stringify(val));
+      (reason: any) => {
+        console.error("Could not set lang: " + JSON.stringify(reason));
       }
     );
   }

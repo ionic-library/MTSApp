@@ -22,7 +22,7 @@ import { User } from "../providers";
         [class.last-item]="last"
         (click)="openPage(p)">
           <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
-          <p class="nav-option-text">{{p.title}}</p>
+          <p class="nav-option-text">{{p.title | translate}}</p>
         </button>
       </ion-list>
 
@@ -76,8 +76,8 @@ export class MyApp {
       iconName: "MTSApp-EIReporting"
     },
     {
-      title: "Future Feature",
-      component: SitePages.BlankPage,
+      title: "SC_LOCATIONS",
+      component: SitePages.Locations,
       iconName: "MTSApp-SCCLocations"
     },
     {

@@ -24,6 +24,8 @@ export class SettingsPage {
 
   form: FormGroup;
 
+  selectedLanguage: any;
+
   languageSettings = {
     page: "language",
     pageTitleKey: "SETTINGS_PAGE_LANGUAGE"
@@ -36,7 +38,6 @@ export class SettingsPage {
 
   page: string = "main";
   pageTitleKey: string = "SETTINGS_TITLE";
-  pageTitle: string;
 
   subSettings: any = SettingsPage;
 
@@ -76,12 +77,18 @@ export class SettingsPage {
 
   changeLang(selection: LangCodes) {
     console.log(selection);
-    if (selection === this.user.Lang) {
-      console.log("Selected Language is already active!");
-    } else {
-      this.translate.use(selection);
-      this.user.Lang = selection;
-    }
+    this.user.GetLang(
+      (val: any) => {
+        if (selection === val) {
+          console.log("Selected Language is already active!");
+        } else {
+          this.user.setLang(selection, () => {}, () => {});
+        }
+      },
+      () => {
+        console.log("unable to get lang");
+      }
+    );
   }
 
   ionViewDidLoad() {
@@ -92,8 +99,20 @@ export class SettingsPage {
   ionViewWillEnter() {
     // Build an empty form for the template to render
     this.form = this.formBuilder.group({});
-
+    // Change page attribute to newly pushed page
     this.page = this.navParams.get("page") || this.page;
+    // If page is language page, change the selected language to the active language
+    if (this.page === "language") {
+      this.user.GetLang(
+        (val: any) => {
+          this.selectedLanguage = val;
+        },
+        (reason: any) => {
+          console.error("unable to change lang:" + JSON.stringify(reason));
+        }
+      );
+    }
+    // Change page title to the passed title on navigation
     this.pageTitleKey = this.navParams.get("pageTitleKey") || this.pageTitleKey;
 
     this.translate.get(this.pageTitleKey).subscribe(res => {
