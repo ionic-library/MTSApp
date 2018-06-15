@@ -23,7 +23,6 @@ export class SettingsPage {
 
   form: FormGroup;
 
-  activeLang: string = this.user.Lang;
   selectedLanguage: any;
 
   languageSettings = {
@@ -77,12 +76,18 @@ export class SettingsPage {
 
   changeLang(selection) {
     console.log(selection);
-    if (selection === this.user.Lang) {
-      console.log("Selected Language is already active!");
-    } else {
-      this.translate.use(selection);
-      this.user.Lang = selection;
-    }
+    this.user.GetLang(
+      val => {
+        if (selection === val) {
+          console.log("Selected Language is already active!");
+        } else {
+          this.user.setLang(selection, () => {}, () => {});
+        }
+      },
+      () => {
+        console.log("unable to get lang");
+      }
+    );
   }
 
   ionViewDidLoad() {
@@ -96,7 +101,14 @@ export class SettingsPage {
 
     this.page = this.navParams.get("page") || this.page;
     if (this.page === "language") {
-      this.selectedLanguage = this.activeLang;
+      this.user.GetLang(
+        val => {
+          this.selectedLanguage = val;
+        },
+        val => {
+          console.log("unable to change lang:" + val);
+        }
+      );
     }
 
     this.pageTitleKey = this.navParams.get("pageTitleKey") || this.pageTitleKey;

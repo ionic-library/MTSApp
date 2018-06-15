@@ -25,13 +25,13 @@
     <ion-list radio-group [(ngModel)]='selectedLanguage' *ngIf="page == 'language'">
       <ion-item>
         <ion-label>
-          {{ 'LANGUAGE_BUTTON_FRENCH' | translate }}
+          Français
         </ion-label>
         <ion-radio id="fr" value="fr" (ionSelect)='changeLang("fr")'></ion-radio>
       </ion-item>
       <ion-item>
         <ion-label>
-          {{ 'LANGUAGE_BUTTON_ENGLISH' | translate }}
+          English
         </ion-label>
         <ion-radio id="en" value="en" (ionSelect)='changeLang("en")'></ion-radio>
       </ion-item>
