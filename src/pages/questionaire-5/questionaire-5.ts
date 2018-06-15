@@ -3,11 +3,9 @@ import { TranslateService } from "@ngx-translate/core";
 import {
   IonicPage,
   NavController,
-  ToastController,
   NavParams,
   ModalController
 } from "ionic-angular";
-import { Report } from "../../models/mockEiReport";
 import { SitePages } from "../index";
 
 @IonicPage()
@@ -42,7 +40,10 @@ export class Questionaire_5Page {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
-    helpModal.present();
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
   }
 }

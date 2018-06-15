@@ -1,10 +1,5 @@
 import { Component } from "@angular/core";
-import {
-  IonicPage,
-  NavController,
-  NavParams,
-  ModalController
-} from "ionic-angular";
+import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { Reports } from "../../mocks/providers/mock-ei-reports";
 import { Report } from "../../models/mockEiReport";
 import { SitePages } from "..";
@@ -25,7 +20,7 @@ export class EiReportingPage {
   public currentReports: Report[];
 
   constructor(
-    private navCtrl: NavController,
+    private readonly navCtrl: NavController,
     public reports: Reports,
     public modalCtrl: ModalController
   ) {
@@ -38,10 +33,13 @@ export class EiReportingPage {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
-    helpModal.present();
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
   }
 
-  startReport = report =>
+  startReport = (report: any) =>
     this.navCtrl.push(SitePages.AcceptanceStatement, { report });
 }

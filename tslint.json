@@ -1,14 +1,9 @@
 {
-  "extends": [
-    "typestrict",
-    "tslint-config-prettier"
-  ],
+  "extends": ["typestrict", "tslint-config-prettier"],
   "rules": {
-    "prefer-const" : true,
-    "prefer-readonly" : true,
-    "class-name": true,
+    "prefer-const": true,
+    "prefer-readonly": true,
     "no-debugger": true,
     "no-magic-numbers": true
   }
-
 }

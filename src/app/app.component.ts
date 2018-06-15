@@ -29,7 +29,7 @@ import { User } from "../providers";
       <ion-list class="nav-menu-list">
         <button menuClose ion-item *ngFor="let p of userSelections; let last = last" color="navMenuButton"
         [class.last-item]="last"
-        (click)="openSettings(p)">
+        (click)="openSettings()">
           {{p.title}}
         </button>
       </ion-list>
@@ -53,7 +53,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  pages: any[] = [
+  readonly pages: any[] = [
     { title: "Home", component: SitePages.Home, iconName: "MTSApp-Home" },
     {
       title: "Future Feature",
@@ -87,11 +87,11 @@ export class MyApp {
     }
   ];
 
-  userSelections: any[] = [
+  readonly userSelections: any[] = [
     { title: "Settings", component: SitePages.Settings }
   ];
 
-  pagesInProgress: any[] = [
+  readonly pagesInProgress: any[] = [
     { title: "Blank Page", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionnaire", component: SitePages.Questionaire },
@@ -140,20 +140,22 @@ export class MyApp {
         console.log("lang set error error");
       }
     );
-
-    this.translate.get(["BACK_BUTTON_TEXT"]).subscribe(values => {
-      // this.config.set("ios", "backButtonText", values.BACK_BUTTON_TEXT);
-    });
   }
 
   openPage(page: any) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav
+      .setRoot(page.component)
+      .then(() => console.log("Opening a page as root " + JSON.stringify(page)))
+      .catch((reason: any) => console.error(reason));
   }
 
-  openSettings(page: any) {
-    this.nav.push(SitePages.Settings);
+  openSettings() {
+    this.nav
+      .push(SitePages.Settings)
+      .then(() => console.log("Opening Settings"))
+      .catch((reason: any) => console.error(reason));
   }
 
   changeLang() {

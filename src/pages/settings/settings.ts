@@ -1,3 +1,4 @@
+import { LangCodes } from "./../../providers/Lang/Lang";
 import { Component } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
@@ -67,12 +68,13 @@ export class SettingsPage {
     this.form = this.formBuilder.group(group);
 
     // Watch the form for changes, and
-    this.form.valueChanges.subscribe(v => {
+    this.form.valueChanges.subscribe((v: any) => {
+      console.log("Form changed " + JSON.stringify(v));
       this.settings.merge(this.form.value);
     });
   }
 
-  changeLang(selection) {
+  changeLang(selection: LangCodes) {
     console.log(selection);
     if (selection === this.user.Lang) {
       console.log("Selected Language is already active!");

@@ -14,9 +14,11 @@ import { NavController, Slides } from "ionic-angular";
   templateUrl: "home-page-carousel.html"
 })
 export class HomePageCarouselComponent {
-  constructor(private navCtrl: NavController, private user: User) {}
+  constructor(
+    private readonly navCtrl: NavController,
+    private readonly user: User
+  ) {}
 
-  :/* tslint:disable:no-initializer */
   @ViewChild("slides") slides: Slides;
 
   prevSlide() {
@@ -30,19 +32,26 @@ export class HomePageCarouselComponent {
   public navigateToEIReportingPage = () => {
     //If the user is not logged in redirect to EILogin Page
     if (this.user.isLoggedIn()) {
-      this.navCtrl.push(SitePages.EiReporting);
+      this.navigateToPage(SitePages.EiReporting);
     } else {
-      this.navCtrl.push(SitePages.EILogin);
+      this.navigateToPage(SitePages.EILogin);
     }
   };
 
-  public navigateToSearchPage = () => this.navCtrl.push(SitePages.BlankPage);
+  public navigateToSearchPage = () => this.navigateToPage(SitePages.BlankPage);
   public navigateToMyNotificationsPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navigateToPage(SitePages.BlankPage);
   public navigateToBenefitFinderPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navigateToPage(SitePages.BlankPage);
   public navigateToSCCLocationPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navigateToPage(SitePages.BlankPage);
   public navigateToLifeEventsPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navigateToPage(SitePages.BlankPage);
+
+  private readonly navigateToPage = (page: SitePages) => {
+    this.navCtrl
+      .push(page)
+      .then(() => console.log("Navigating to : " + page.toString()))
+      .catch((reason: any) => console.error(reason));
+  };
 }
