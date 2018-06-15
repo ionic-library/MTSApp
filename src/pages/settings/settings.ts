@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { User } from "../../providers/user/user";
@@ -22,6 +22,8 @@ export class SettingsPage {
   settingsReady = false;
 
   form: FormGroup;
+
+  selectedLanguage: any;
 
   languageSettings = {
     page: "language",
@@ -74,12 +76,18 @@ export class SettingsPage {
 
   changeLang(selection) {
     console.log(selection);
-    if (selection === this.user.Lang) {
-      console.log("Selected Language is already active!");
-    } else {
-      this.translate.use(selection);
-      this.user.Lang = selection;
-    }
+    this.user.GetLang(
+      val => {
+        if (selection === val) {
+          console.log("Selected Language is already active!");
+        } else {
+          this.user.setLang(selection, () => {}, () => {});
+        }
+      },
+      () => {
+        console.log("unable to get lang");
+      }
+    );
   }
 
   ionViewDidLoad() {
@@ -90,8 +98,20 @@ export class SettingsPage {
   ionViewWillEnter() {
     // Build an empty form for the template to render
     this.form = this.formBuilder.group({});
-
+    // Change page attribute to newly pushed page
     this.page = this.navParams.get("page") || this.page;
+    // If page is language page, change the selected language to the active language
+    if (this.page === "language") {
+      this.user.GetLang(
+        val => {
+          this.selectedLanguage = val;
+        },
+        val => {
+          console.log("unable to change lang:" + val);
+        }
+      );
+    }
+    // Change page title to the passed title on navigation
     this.pageTitleKey = this.navParams.get("pageTitleKey") || this.pageTitleKey;
 
     this.translate.get(this.pageTitleKey).subscribe(res => {

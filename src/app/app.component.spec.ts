@@ -19,7 +19,7 @@ describe("MyApp Component", () => {
   let fakeUser: User;
 
   beforeEach(() => {
-    fakeUser = new User(null, null);
+    fakeUser = new User(null, null, null);
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations(),
       imports: CommonTestModule.getImports(),

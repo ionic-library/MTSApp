@@ -15,11 +15,9 @@ export class SplashPage {
       val => {
         if (typeof val == "undefined") {
           // User lang is not set
-          console.log("Lang is not set: " + val);
           this.show = true;
         } else {
           // user lang is set
-          console.log("lang is set: " + val);
           this.navCtrl.push(SitePages.Home);
         }
       },
@@ -30,26 +28,14 @@ export class SplashPage {
     );
   }
 
-  public setEnglish() {
+  public setLang(lang) {
     this.user.setLang(
-      LangCodes.EN,
+      lang,
       () => {
-        location.reload();
+        this.navCtrl.push(SitePages.Home);
       },
       val => {
-        console.log("Could not set as English: " + val);
-      }
-    );
-  }
-
-  public setFrench() {
-    this.user.setLang(
-      LangCodes.FR,
-      () => {
-        location.reload();
-      },
-      val => {
-        console.log("Could not set as French: " + val);
+        console.log("Could not set lang: " + val);
       }
     );
   }
