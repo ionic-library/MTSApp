@@ -40,6 +40,7 @@ export class SettingsPage {
   pageTitleKey: string = "SETTINGS_TITLE";
 
   subSettings: any = SettingsPage;
+  pageTitle: string = "";
 
   constructor(
     public navCtrl: NavController,
