@@ -1,4 +1,3 @@
-import { LangCodes } from "./../providers/Lang/Lang";
 import {
   IonicModule,
   NavController,
@@ -7,16 +6,14 @@ import {
   ModalController,
   NavParams
 } from "ionic-angular";
+import { Storage } from "@ionic/storage";
 import { HttpClient } from "@angular/common/http";
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { Settings } from "../providers/settings/settings";
 import { createTranslateLoader } from "./app.module";
 import * as _ from "lodash";
-import {
-  HttpClientTestingModule,
-  HttpTestingController
-} from "@angular/common/http/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 import {
   TranslateLoader,
   TranslateModule,
@@ -30,12 +27,12 @@ import {
   SettingsMock,
   NavMock,
   ModalCtrlMock,
-  NavParamsMock
+  NavParamsMock,
+  StorageMock
 } from "../../test-config/mocks-ionic";
 import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
-import { ProvincesProvider, User } from "../providers";
+import { ProvincesProvider, User, Api } from "../providers";
 import { Type } from "@angular/core";
-import { ineeda } from "ineeda";
 import { Reports } from "../mocks/providers/mock-ei-reports";
 
 export class CommonTestModule {
@@ -78,12 +75,9 @@ export class CommonTestModule {
       { provide: Settings, useClass: SettingsMock },
       { provide: ProvincesProvider, useClass: ProvincesProvider },
       //Create our default lang mock
-      {
-        provide: User,
-        useFactory: ineeda.factory<User>({
-          GetLang: () => LangCodes.EN
-        })
-      }
+      { provide: User, useClass: User },
+      { provide: Api, useClass: Api },
+      { provide: Storage, useClass: StorageMock }
     ];
 
     if (overrides == null) {
