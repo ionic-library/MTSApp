@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { User } from "../../providers/user/user";
@@ -22,6 +22,9 @@ export class SettingsPage {
   settingsReady = false;
 
   form: FormGroup;
+
+  activeLang: string = this.user.Lang;
+  selectedLanguage: any;
 
   languageSettings = {
     page: "language",
@@ -92,6 +95,10 @@ export class SettingsPage {
     this.form = this.formBuilder.group({});
 
     this.page = this.navParams.get("page") || this.page;
+    if (this.page === "language") {
+      this.selectedLanguage = this.activeLang;
+    }
+
     this.pageTitleKey = this.navParams.get("pageTitleKey") || this.pageTitleKey;
 
     this.translate.get(this.pageTitleKey).subscribe(res => {
