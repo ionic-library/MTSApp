@@ -8,7 +8,7 @@ export class SinValidator {
    * @param control The Control to be validated
    */
   static isValid(control: FormControl) : ValidationErrors | null{
-    let input :string = control.value;
+    const input : string = control.value;
 
     if(!luhn.validate(input)){
       //TODO: Figure out what to return

@@ -1,3 +1,14 @@
 {
-  "extends": "typestrict"
+  "extends": [
+    "typestrict",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "prefer-const" : true,
+    "prefer-readonly" : true,
+    "class-name": true,
+    "no-debugger": true,
+    "no-magic-numbers": true
+  }
+
 }

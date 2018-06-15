@@ -1,3 +1,5 @@
+/* tslint:disable */
+//We don't need to lint this page right now as its purely for mock objects for tests
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
@@ -143,3 +145,5 @@ export class ModalCtrlMock {
 export class DeepLinkerMock {
 
 }
+
+/* tslint:enable*/

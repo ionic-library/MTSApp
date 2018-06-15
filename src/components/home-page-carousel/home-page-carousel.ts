@@ -16,9 +16,8 @@ import { NavController, Slides } from "ionic-angular";
 export class HomePageCarouselComponent {
   constructor(private navCtrl: NavController, private user: User) {}
 
+  :/* tslint:disable:no-initializer */
   @ViewChild("slides") slides: Slides;
-
-  text: string;
 
   prevSlide() {
     this.slides.slidePrev();

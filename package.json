@@ -20,7 +20,7 @@
     "e2e-test": "protractor ./test-config/protractor.conf.js",
     "e2e-update": "webdriver-manager update --standalone false --gecko false",
     "prepush": "karma start ./test-config/karma.conf.js --single-run --browsers ChromeHeadless",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged && tslint -c ./tslint.json --project ./tsconfig.json --format stylish"
   },
   "dependencies": {
     "@angular/animations": "5.2.10",
@@ -62,6 +62,7 @@
     "@types/sinon-chai": "^2.7.31",
     "angular2-template-loader": "^0.6.2",
     "chai": "^4.1.2",
+    "eslint-plugin-typescript": "^0.12.0",
     "html-loader": "^0.5.1",
     "husky": "^0.14.3",
     "ineeda": "^0.12.0-alpha.0",
@@ -84,7 +85,9 @@
     "speed-measure-webpack-plugin": "^1.2.2",
     "ts-loader": "^3.0.3",
     "ts-node": "^3.0.2",
+    "tslint-config-prettier": "^1.13.0",
     "typescript": "~2.6.2",
+    "typescript-eslint-parser": "^16.0.0",
     "typestrict": "0.0.9"
   },
   "description": "An Ionic project"

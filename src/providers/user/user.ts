@@ -1,15 +1,14 @@
-import "rxjs/add/operator/toPromise";
 import { Injectable } from "@angular/core";
 import { Storage } from "@ionic/storage";
+import "rxjs/add/operator/toPromise";
+import { LangCodes } from "../../providers";
 import { Api } from "../api/api";
-import { Lang, LangCodes } from "../../providers";
-import { VALID } from "@angular/forms/src/model";
+
 
 @Injectable()
 export class User {
   _user: any;
 
-  private isLangSet: boolean = false;
   public Lang: LangCodes;
   private LangReady: boolean = false;
 
@@ -36,19 +35,15 @@ export class User {
       .then(val => {
         if (val == "fr") {
           this.Lang = LangCodes.FR;
-          this.isLangSet = true;
           this.LangReady = true;
         } else if (val == "en") {
           this.Lang = LangCodes.EN;
-          this.isLangSet = true;
           this.LangReady = true;
         } else {
-          this.isLangSet = false;
         }
         success();
       })
       .catch(val => {
-        this.isLangSet = false;
         error(val);
       });
   }
@@ -67,7 +62,7 @@ export class User {
 
   public alternateLang() {
     this.GetLang(
-      val => {
+      (val : string) => {
         let lc = LangCodes.EN;
         if (val == "en") {
           lc = LangCodes.FR;
@@ -78,12 +73,12 @@ export class User {
           () => {
             window.location.reload();
           },
-          val => {
+          (val : string) => {
             console.log("Could not change lang: " + val);
           }
         );
       },
-      val => {
+      (val : string) => {
         console.log("Could not get lang: " + val);
       }
     );
@@ -98,8 +93,8 @@ export class User {
   }
 
   login(accountInfo: any) {
-    let seq = this.api.post("login", accountInfo).share();
-    console.log("UserLogged in with " + accountInfo);
+    const seq = this.api.post("login", accountInfo).share();
+    console.log("UserLogged in with " + JSON.stringify(accountInfo));
     this._loggedIn({
       user: {
         Name: "First Last"

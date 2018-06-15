@@ -2,8 +2,8 @@ import { Component } from "@angular/core";
 import { FormBuilder, FormGroup } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { User } from "../../providers/user/user";
 import { Settings } from "../../providers";
+import { User } from "../../providers/user/user";
 
 /**
  * The Settings page is a simple form that syncs with a Settings provider

@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { Lang, User, LangCodes } from "../../providers";
+import { IonicPage, NavController  } from "ionic-angular";
+import {  User, LangCodes } from "../../providers";
 import { SitePages } from "../../pages";
 
 @IonicPage()
@@ -9,24 +9,23 @@ import { SitePages } from "../../pages";
   templateUrl: "splash.html"
 })
 export class SplashPage {
-  public show: boolean;
+
+  public show: boolean = false;
+
   constructor(public navCtrl: NavController, public user: User) {
     this.user.GetLang(
-      val => {
+      (val: string) => {
         if (typeof val == "undefined") {
-          // User lang is not set
-          console.log("Lang is not set: " + val);
+          console.log("Lang is not set");
           this.show = true;
         } else {
-          // user lang is set
           console.log("lang is set: " + val);
-          this.navCtrl.push(SitePages.Home);
+          this.navCtrl.push(SitePages.Home)
+                      .then(() => console.log("navigating home"))
+                      .catch((reason : any) => console.error(reason));
         }
       },
-      val => {
-        // NOT GOOD
-        console.log("Error getting language: " + val);
-      }
+      (val : string) => { console.log("Error getting language: " + val); }
     );
   }
 
@@ -36,8 +35,8 @@ export class SplashPage {
       () => {
         location.reload();
       },
-      val => {
-        console.log("Could not set as English: " + val);
+      (val : any) => {
+        console.error("Could not set as English: " + JSON.stringify(val));
       }
     );
   }
@@ -48,8 +47,8 @@ export class SplashPage {
       () => {
         location.reload();
       },
-      val => {
-        console.log("Could not set as French: " + val);
+      (val : any) => {
+        console.error("Could not set as French: " + JSON.stringify(val));
       }
     );
   }

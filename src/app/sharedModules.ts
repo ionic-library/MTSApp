@@ -13,10 +13,7 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { Settings } from "../providers/settings/settings";
 import { createTranslateLoader } from "./app.module";
 import * as _ from "lodash";
-import {
-  HttpClientTestingModule,
-  HttpTestingController
-} from "@angular/common/http/testing";
+import { HttpClientTestingModule } from "@angular/common/http/testing";
 import {
   TranslateLoader,
   TranslateModule,
@@ -42,7 +39,7 @@ export class CommonTestModule {
   /**
    * Get the list of declarations for this test
    */
-  public static getDeclarations = (arr?): Array<Type<any> | any[]> =>
+  public static getDeclarations = (arr?: any): Array<Type<any> | any[]> =>
     [MyApp].concat(arr || []);
   /*
 
@@ -50,7 +47,7 @@ export class CommonTestModule {
    *
    */
   public static getImports = (
-    arr?
+    arr?: any
   ): Array<Type<any> | ModuleWithProviders | any[]> =>
     [
       IonicModule.forRoot(MyApp),
@@ -65,7 +62,7 @@ export class CommonTestModule {
     ].concat(arr || []);
 
   public static getProviders = (overrides?: Provider[]): Provider[] => {
-    let providers = [
+    const providers = [
       { provide: Reports },
       { provide: ViewController },
       { provide: NavParams, useClass: NavParamsMock },
@@ -89,8 +86,7 @@ export class CommonTestModule {
     if (overrides == null) {
       return providers;
     }
-    var retVal = CommonTestModule.overrideProviders(overrides, providers);
-    return retVal;
+    return CommonTestModule.overrideProviders(overrides, providers);
   };
 
   private static overrideProviders(
@@ -98,11 +94,11 @@ export class CommonTestModule {
     providers: Provider[]
   ): Provider[] {
     overrides.forEach((ele: Provider) => {
-      let i = _.findIndex(providers, { provide: ele.Provide });
-      if (i === -1) {
+      const foundItemIndex = _.findIndex(providers, { provide: ele.Provide });
+      if (foundItemIndex === -1) {
         providers.push(ele);
       } else {
-        providers.splice(i, 1, ele);
+        providers.splice(foundItemIndex, 1, ele);
       }
     });
     return providers;

@@ -14,7 +14,6 @@ import { TranslateService } from "@ngx-translate/core";
   templateUrl: "home.html"
 })
 export class HomePage {
-  logController;
 
   greeting: string;
   location: string;
@@ -22,8 +21,8 @@ export class HomePage {
   userName: string;
 
   constructor(
-    private navCtrl: NavController,
-    private user: User,
+    private readonly navCtrl: NavController,
+    private readonly user: User,
     public modalCtrl: ModalController,
     public translate: TranslateService
   ) {
@@ -45,7 +44,7 @@ export class HomePage {
     this.userName = "Firstname Lastname";
   }
 
-  private getGreeting(key) {
+  private getGreeting(key : string) {
     this.translate.get(key).subscribe((res: string) => {
       this.greeting = res;
     });
