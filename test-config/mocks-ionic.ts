@@ -3,13 +3,11 @@
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 
-export class TranslateMock{
-  public setDefaultLang(){ }
+export class TranslateMock {
+  public setDefaultLang() {}
   public getBrowserLang = () => "en";
-};
-export class SettingsMock {
-
 }
+export class SettingsMock {}
 export class PlatformMock {
   public ready(): Promise<string> {
     return new Promise(resolve => {
@@ -125,11 +123,11 @@ export class NavParamsMock {
   static returnParam = null;
   public get(key): any {
     if (NavParamsMock.returnParam) {
-       return NavParamsMock.returnParam
+      return NavParamsMock.returnParam;
     }
-    return 'default';
+    return "default";
   }
-  public setParams(value){
+  public setParams(value) {
     NavParamsMock.returnParam = value;
   }
 }
@@ -142,8 +140,12 @@ export class ModalCtrlMock {
   }
 }
 
-export class DeepLinkerMock {
+export class DeepLinkerMock {}
 
+export class StorageMock {
+  get() {
+    throw Error("StorageMock.Get not Mocked");
+  }
 }
 
 /* tslint:enable*/

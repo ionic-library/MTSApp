@@ -74,11 +74,11 @@ export class SettingsPage {
 
   changeLang(selection) {
     console.log(selection);
-    console.log(this.user.Lang);
     if (selection === this.user.Lang) {
       console.log("Selected Language is already active!");
     } else {
-      this.user.alternateLang();
+      this.translate.use(selection);
+      this.user.Lang = selection;
     }
   }
 

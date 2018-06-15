@@ -1,37 +1,39 @@
+import { StorageMock } from "./../../test-config/mocks-ionic";
 import { async, TestBed } from "@angular/core/testing";
-import { IonicModule, Platform } from "ionic-angular";
-import { HttpClient } from "@angular/common/http";
-import { HttpTestingController } from "@angular/common/http/testing";
-import { TranslateService } from "@ngx-translate/core";
 import { MyApp } from "./app.component";
 import { CommonTestModule } from "./sharedModules";
+import { User } from "../providers";
 
-const TRANSLATIONS_EN = require('../assets/i18n/en.json');
-const TRANSLATIONS_FR = require('../assets/i18n/fr.json');
+import * as chai from "chai";
+import * as sinon from "sinon";
+import * as sinonChai from "sinon-chai";
+
+let { expect } = chai;
+chai.use(sinonChai);
+
+let NOOP = () => {};
 
 describe("MyApp Component", () => {
   let fixture;
-  let component;
-  let translate: TranslateService;
-  let http: HttpTestingController;
+  let sut;
+  let fakeUser: User;
 
-  beforeEach(async(() => {
+  beforeEach(() => {
+    fakeUser = new User(null, null);
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations(),
       imports: CommonTestModule.getImports(),
-      providers: CommonTestModule.getProviders()
+      providers: CommonTestModule.getProviders([
+        { provide: User, useValue: fakeUser }
+      ])
     });
-    translate = TestBed.get(TranslateService);
-    http = TestBed.get(HttpTestingController);
-  }));
 
-  beforeEach(() => {
+    sinon.stub(fakeUser, "GetLang").returns(NOOP);
     fixture = TestBed.createComponent(MyApp);
-    component = fixture.componentInstance;
+    sut = fixture.componentInstance;
   });
 
   it("should be created", () => {
-    expect(component instanceof MyApp).toBe(true);
+    expect(sut instanceof MyApp).to.be.true;
   });
-
 });
