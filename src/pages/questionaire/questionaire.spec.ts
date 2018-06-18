@@ -1,6 +1,10 @@
 import { BooleanQuestionComponent } from "./../../components/boolean-question/boolean-question";
 import { CommonTestModule } from "./../../app/sharedModules";
+<<<<<<< HEAD
 import { async, TestBed, inject } from "@angular/core/testing";
+=======
+import { TestBed, ComponentFixture } from "@angular/core/testing";
+>>>>>>> Adding component to the test
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
