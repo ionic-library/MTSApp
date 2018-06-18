@@ -1,3 +1,4 @@
+import { BooleanQuestionComponent } from "./../../components/boolean-question/boolean-question";
 import { CommonTestModule } from "./../../app/sharedModules";
 import { async, TestBed, inject } from "@angular/core/testing";
 import * as chai from "chai";
@@ -11,7 +12,10 @@ chai.use(sinonChai);
 describe("The Questionaire Page", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: CommonTestModule.getDeclarations([QuestionairePage]),
+      declarations: CommonTestModule.getDeclarations([
+        QuestionairePage,
+        BooleanQuestionComponent
+      ]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
         { provide: QuestionairePage, useClass: QuestionairePage }
