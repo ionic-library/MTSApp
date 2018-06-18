@@ -17,40 +17,7 @@
 
 <ion-content padding color="dark" >
 
-    <h1  ionic-text padding-horizontal  class="questionHeading" >
-      {{ 'QUESTION_ONE_TITLE' | translate }}
-      </h1>
-      
-
-      <form id="page-form2">
-        <ion-list radio-group no-lines  >
-          <ion-list-header  text-wrap   no-lines>
-            <p ion-text color="primary" padding-bottom  class="questionNumber" >
-              {{ 'QUESTION_NUMBER_ONE' | translate }}
-            </p>
-            <p  class="questionText">
-                {{ 'QUESTION_ONE_TEXT' | translate }}
-    
-            </p>
-
-          </ion-list-header>
-        
-            <ion-item>
-                <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
-                <ion-radio value=true ></ion-radio>
-              </ion-item>
-            
-              <ion-item>
-                <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
-                <ion-radio value=false ></ion-radio>
-                
-              </ion-item>
-          
-        
-        </ion-list>
-      </form>
-
-
+<boolean-question></boolean-question>
 
 </ion-content>
 <ion-footer padding  no-border >

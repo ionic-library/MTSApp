@@ -110,7 +110,6 @@
   "RESPONSE_NO": "Non",
   "QUESTION_REPORT_PERIOD_TEXT": "(This report covers the period from)FR",
   "Question_REPORT_PERIOD_TEXT_TO": " au ",
-  "QUESTION_NUMBER_ONE": "Question  1/7",
   "QUESTION_NUMBER_TWO": "Question  2/7",
   "QUESTION_NUMBER_THREE": "Question  3/7",
   "QUESTION_NUMBER_FOUR": "Question  4/7",
@@ -119,10 +118,6 @@
   "QUESTION_NUMBER_SEVEN": "Question  7/7",
   "QUESTION_PREVIOUS": "(Previous question)FR",
   "QUESTION_NEXT": "(Save and Continue)FR",
-  "QUESTION_ONE_TITLE": "Adresse et dépôt direct",
-  "QUESTION_ONE_TEXT":
-    "Avez-vous déménagé, changé d'adresse postale ou modifié l'information bancaire fournie pour le dépôt direct ?",
-  "QUESTION_ONE_HELP": "",
   "QUESTION_TWO_TITLE": "Hors Canada",
   "QUESTION_TWO_TEXT":
     "Étiez-vous à l'extérieur du Canada entre le lundi et le vendredi pendant la période visée par cette déclaration ?",

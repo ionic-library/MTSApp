@@ -107,7 +107,6 @@
   "RESPONSE_NO": "No",
   "QUESTION_REPORT_PERIOD_TEXT": "This report covers the period from",
   "Question_REPORT_PERIOD_TEXT_TO": " to ",
-  "QUESTION_NUMBER_ONE": "Question  1/7",
   "QUESTION_NUMBER_TWO": "Question  2/7",
   "QUESTION_NUMBER_THREE": "Question  3/7",
   "QUESTION_NUMBER_FOUR": "Question  4/7",
@@ -116,10 +115,6 @@
   "QUESTION_NUMBER_SEVEN": "Question  7/7",
   "QUESTION_PREVIOUS": "Previous question",
   "QUESTION_NEXT": "Save and Continue",
-  "QUESTION_ONE_TITLE": "Address and Direct Deposit",
-  "QUESTION_ONE_TEXT":
-    "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
-  "QUESTION_ONE_HELP": "",
   "QUESTION_TWO_TITLE": "Outside Canada",
   "QUESTION_TWO_TEXT":
     "Were you outside Canada between Monday and Friday during the period of this report?",
