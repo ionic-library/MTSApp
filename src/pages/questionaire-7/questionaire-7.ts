@@ -3,11 +3,9 @@ import { TranslateService } from "@ngx-translate/core";
 import {
   IonicPage,
   NavController,
-  ToastController,
   NavParams,
   ModalController
 } from "ionic-angular";
-import { Report } from "../../models/mockEiReport";
 import { SitePages } from "../index";
 
 @IonicPage()
@@ -16,8 +14,6 @@ import { SitePages } from "../index";
   templateUrl: "questionaire-7.html"
 })
 export class Questionaire_7Page {
-  //report: Report;
-  //params: Object;
   pushPagePrevious: any;
   pushPageNext: any;
   startDate: any;
@@ -28,12 +24,10 @@ export class Questionaire_7Page {
     public navCtrl: NavController,
     public modalCtrl: ModalController
   ) {
-    //this.report = navParams.get('report');
     this.startDate = "March 28, 2010";
     this.endDate = "April 10, 2010";
     this.pushPagePrevious = SitePages.Questionaire6;
     this.pushPageNext = SitePages.Submission;
-    //this.params = { id: 42 };
   }
 
   ionViewDidLoad() {
@@ -42,7 +36,10 @@ export class Questionaire_7Page {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
-    helpModal.present();
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
   }
 }

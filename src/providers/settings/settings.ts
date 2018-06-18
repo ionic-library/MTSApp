@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage';
  */
 @Injectable()
 export class Settings {
-  private SETTINGS_KEY: string = '_settings';
+  private readonly SETTINGS_KEY: string = '_settings';
 
   settings: any;
 
@@ -31,7 +31,7 @@ export class Settings {
   }
 
   _mergeDefaults(defaults: any) {
-    for (let k in defaults) {
+    for (const k in defaults) {
       if (!(k in this.settings)) {
         this.settings[k] = defaults[k];
       }
@@ -40,7 +40,7 @@ export class Settings {
   }
 
   merge(settings: any) {
-    for (let k in settings) {
+    for (const k in settings) {
       this.settings[k] = settings[k];
     }
     return this.save();

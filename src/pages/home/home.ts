@@ -14,16 +14,14 @@ import { TranslateService } from "@ngx-translate/core";
   templateUrl: "home.html"
 })
 export class HomePage {
-  logController;
-
-  greeting: string;
-  location: string;
-  temperature: string;
-  userName: string;
+  greeting: string = "";
+  location: string = "";
+  temperature: string = "";
+  userName: string = "";
 
   constructor(
-    private navCtrl: NavController,
-    private user: User,
+    private readonly navCtrl: NavController,
+    private readonly user: User,
     public modalCtrl: ModalController,
     public translate: TranslateService
   ) {
@@ -45,7 +43,7 @@ export class HomePage {
     this.userName = "Firstname Lastname";
   }
 
-  private getGreeting(key) {
+  private getGreeting(key: string) {
     this.translate.get(key).subscribe((res: string) => {
       this.greeting = res;
     });
@@ -53,8 +51,11 @@ export class HomePage {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
-    helpModal.present();
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
   }
 
   /**
@@ -64,21 +65,28 @@ export class HomePage {
   public navigateToEIReportingPage = () => {
     //If the user is not logged in redirect to EILogin Page
     if (this.user.isLoggedIn()) {
-      this.navCtrl.push(SitePages.EiReporting);
+      this.navigateToPage(SitePages.EiReporting);
     } else {
-      this.navCtrl.push(SitePages.EILogin);
+      this.navigateToPage(SitePages.EILogin);
     }
   };
 
-  public navigateToSearchPage = () => this.navCtrl.push(SitePages.BlankPage);
+  public navigateToSearchPage = () => this.navigateToPage(SitePages.BlankPage);
   public navigateToMyNotificationsPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navigateToPage(SitePages.BlankPage);
   public navigateToBenefitFinderPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navigateToPage(SitePages.BlankPage);
   public navigateToSCCLocationPage = () =>
-    this.navCtrl.push(SitePages.Locations);
+    this.navigateToPage(SitePages.Locations);
   public navigateToLifeEventsPage = () =>
-    this.navCtrl.push(SitePages.BlankPage);
+    this.navigateToPage(SitePages.BlankPage);
+
+  private readonly navigateToPage = (page: SitePages) => {
+    this.navCtrl
+      .push(page)
+      .then(() => console.log("Navigating to : " + page.toString()))
+      .catch((reason: any) => console.error(reason));
+  };
 
   public ionViewDidLoad = () => console.log("Loading Home Page");
 }

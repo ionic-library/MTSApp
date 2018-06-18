@@ -35,19 +35,29 @@ export class AcceptanceStatementPage {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
-    helpModal.present();
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
   }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad AcceptanceStatementPage");
   }
 
-  acceptStatement = report =>
-    this.navCtrl.push(SitePages.Questionaire, { report });
+  acceptStatement = (report: any) => {
+    this.navCtrl
+      .push(SitePages.Questionaire, { report })
+      .then(() => console.log("accepting statement"))
+      .catch((reason: any) => console.error(reason));
+  };
 
   refuseStatement = (event: Event) => {
     event.preventDefault();
-    this.navCtrl.push(SitePages.Home);
+    this.navCtrl
+      .push(SitePages.Home)
+      .then(() => console.log("refusing statement"))
+      .catch((reason: any) => console.error(reason));
   };
 }

@@ -1,10 +1,5 @@
 import { Component } from "@angular/core";
-import {
-  IonicPage,
-  NavController,
-  NavParams,
-  ModalController
-} from "ionic-angular";
+import { IonicPage, ModalController } from "ionic-angular";
 import { TranslateService } from "@ngx-translate/core";
 import { SitePages } from "..";
 
@@ -28,8 +23,11 @@ export class IssueWithReportPage {
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
-    helpModal.present();
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
   }
 
   ionViewDidLoad = () => console.log("ionViewDidLoad IssueWithReportPage");

@@ -1,11 +1,9 @@
 {
+  "extends": ["typestrict", "tslint-config-prettier"],
   "rules": {
-    "no-duplicate-variable": true,
-    "no-unused-variable": [
-      true
-    ]
-  },
-  "rulesDirectory": [
-    "node_modules/tslint-eslint-rules/dist/rules"
-  ]
+    "prefer-const": true,
+    "prefer-readonly": true,
+    "no-debugger": true,
+    "no-magic-numbers": true
+  }
 }

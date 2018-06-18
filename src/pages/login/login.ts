@@ -11,7 +11,6 @@ import {
 } from "ionic-angular";
 
 import { User, ProvincesProvider } from "../../providers";
-import { MainPage } from "../";
 
 @IonicPage()
 @Component({
@@ -35,24 +34,25 @@ export class LoginPage {
   };
 
   // Our translated text strings
-  private loginErrorString: string;
+  private loginErrorString: string = "";
   submitAttempt: boolean;
 
   constructor(
-    public navCtrl: NavController,
-    public modalCtrl: ModalController,
-    public user: User,
-    public toastCtrl: ToastController,
-    public translateService: TranslateService,
-    public provinces: ProvincesProvider,
-    private formBuilder: FormBuilder
+    public readonly navCtrl: NavController,
+    public readonly modalCtrl: ModalController,
+    public readonly user: User,
+    public readonly toastCtrl: ToastController,
+    public readonly translateService: TranslateService,
+    public readonly provinces: ProvincesProvider,
+    private readonly formBuilder: FormBuilder
   ) {
     this.login = this.formBuilder.group({
       sin: [
         "",
         Validators.compose([
           Validators.required,
-          Validators.minLength(9),
+          Validators.minLength(SinValidator.Length),
+          Validators.maxLength(SinValidator.Length),
           SinValidator.isValid
         ])
       ],
@@ -81,27 +81,40 @@ export class LoginPage {
       return;
     }
 
-    this.user.login(this.account);
-    this.navCtrl.push(SitePages.EiReporting);
-    /*
-    this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.setRoot(MainPage)
-      this.navCtrl.popToRoot();
-    }, (err) => {
-      // Unable to log in
-      let toast = this.toastCtrl.create({
-        message: this.loginErrorString,
-        duration: 3000,
-        position: 'top'
-      });
-      toast.present();
-    });
-    */
+    this.user.login(this.account).subscribe(
+      () => {
+        this.navCtrl
+          .push(SitePages.EiReporting)
+          .then(() => console.log("Login Successfull"))
+          .catch((reason: any) => console.error(reason));
+      },
+      (error: any) => {
+        console.error(
+          "An error occured when logging in: " + JSON.stringify(error)
+        );
+
+        const toast = this.toastCtrl.create({
+          message: this.loginErrorString,
+          duration: 3000,
+          position: "top"
+        });
+
+        toast
+          .present()
+          .then(() =>
+            console.log("toast displayed with " + this.loginErrorString)
+          )
+          .catch((reason: any) => console.error(reason));
+      }
+    );
   }
 
   presentHelpModal() {
     console.log("Click Received");
-    let helpModal = this.modalCtrl.create(SitePages.HelpModal);
-    helpModal.present();
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
   }
 }

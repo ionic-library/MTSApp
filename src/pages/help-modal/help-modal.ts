@@ -5,7 +5,6 @@ import {
   NavController,
   NavParams
 } from "ionic-angular";
-import { SitePages } from "../index";
 
 /**
  * Generated class for the HelpModalPage page.
@@ -31,6 +30,9 @@ export class HelpModalPage {
   }
 
   dismiss() {
-    this.viewCtrl.dismiss();
+    this.viewCtrl
+      .dismiss()
+      .then(() => console.log("Help modal dismissed"))
+      .catch((reason: any) => console.error(reason));
   }
 }

@@ -1,8 +1,7 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController } from "ionic-angular";
-import { ConfirmationPage } from "../confirmation/confirmation";
-import { SitePages } from "../index";
 import { TranslateService } from "@ngx-translate/core";
+import { IonicPage, NavController } from "ionic-angular";
+import { SitePages } from "../index";
 /**
  * Generated class for the SubmissionPage page.
  *
@@ -21,31 +20,19 @@ export class SubmissionPage {
     public translateService: TranslateService
   ) {}
 
-  goToConfirmation() {
-    this.navCtrl.push(SitePages.Confirmation);
-  }
+  goToConfirmation = () =>  this.navigateToPage(SitePages.Confirmation);
+  editQuestion1 = () => this.navigateToPage(SitePages.Questionaire);
+  editQuestion2 = () => this.navigateToPage(SitePages.Questionaire2);
+  editQuestion3 = () => this.navigateToPage(SitePages.Questionaire3);
+  editQuestion5 = () => this.navigateToPage(SitePages.Questionaire5);
+  editQuestion6 = () => this.navigateToPage(SitePages.Questionaire6);
+  editQuestion7 = () => this.navigateToPage(SitePages.Questionaire7);
+  backToEIReporting = () => this.navigateToPage(SitePages.EiReporting);
 
-  public editQuestion1() {
-    this.navCtrl.push(SitePages.Questionaire);
-  }
-  public editQuestion2() {
-    this.navCtrl.push(SitePages.Questionaire2);
-  }
-  public editQuestion3() {
-    this.navCtrl.push(SitePages.Questionaire3);
-  }
-  public editQuestion5() {
-    this.navCtrl.push(SitePages.Questionaire5);
-  }
-  public editQuestion6() {
-    this.navCtrl.push(SitePages.Questionaire6);
-  }
-  public editQuestion7() {
-    this.navCtrl.push(SitePages.Questionaire7);
-  }
-
-  public backToEIReporting() {
-    this.navCtrl.push(SitePages.EiReporting);
+  private navigateToPage(page : SitePages){
+    this.navCtrl.push(page)
+                .then(() => console.log("Navigating to page : " + page.toString()))
+                .catch((reason: string) => console.log(reason))
   }
 
   ionViewDidLoad() {

@@ -5,8 +5,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
 import { FirstRunPage } from "../pages";
-import { Settings } from "../providers";
-import { Lang, User, LangCodes } from "../providers";
+import { User } from "../providers";
 
 @Component({
   template: `<ion-menu class="nav-menu" [content]="content" persistent="true">
@@ -30,7 +29,7 @@ import { Lang, User, LangCodes } from "../providers";
       <ion-list class="nav-menu-list">
         <button menuClose ion-item *ngFor="let p of userSelections; let last = last" color="navMenuButton"
         [class.last-item]="last"
-        (click)="openSettings(p)">
+        (click)="openSettings()">
           {{p.title}}
         </button>
       </ion-list>
@@ -54,7 +53,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  pages: any[] = [
+  readonly pages: any[] = [
     { title: "Home", component: SitePages.Home, iconName: "MTSApp-Home" },
     {
       title: "Future Feature",
@@ -88,11 +87,11 @@ export class MyApp {
     }
   ];
 
-  userSelections: any[] = [
+  readonly userSelections: any[] = [
     { title: "Settings", component: SitePages.Settings }
   ];
 
-  pagesInProgress: any[] = [
+  readonly pagesInProgress: any[] = [
     { title: "Blank Page", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionnaire", component: SitePages.Questionaire },
@@ -103,22 +102,27 @@ export class MyApp {
   ];
 
   constructor(
-    private translate: TranslateService,
-    platform: Platform,
-    settings: Settings,
-    private config: Config,
-    private statusBar: StatusBar,
-    private splashScreen: SplashScreen,
-    private user: User
+    private readonly translate: TranslateService,
+    readonly platform: Platform,
+    private readonly config: Config,
+    private readonly statusBar: StatusBar,
+    private readonly splashScreen: SplashScreen,
+    private readonly user: User
   ) {
-    platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-      this.config.set("ios", "backButtonText", "");
-      this.config.set("android", "backButtonText", "");
-    });
+    platform
+      .ready()
+      .then(() => {
+        // Okay, so the platform is ready and our plugins are available.
+        // Here you can do any higher level native things you might need.
+        this.statusBar.styleDefault();
+        this.splashScreen.hide();
+        this.config.set("ios", "backButtonText", "");
+        this.config.set("android", "backButtonText", "");
+      })
+      .catch((reason: any) => {
+        console.error(reason);
+      });
+
     this.initTranslate();
   }
 
@@ -126,7 +130,7 @@ export class MyApp {
     // Set the default language for translation strings, and the current language selected if aavailable
     this.translate.setDefaultLang("en");
     this.user.GetLang(
-      val => {
+      (val: string) => {
         if (val == "en" || val == "fr") {
           this.translate.use(val);
           console.log("initTranslate translate.use() succesful");
@@ -136,20 +140,22 @@ export class MyApp {
         console.log("lang set error error");
       }
     );
-
-    this.translate.get(["BACK_BUTTON_TEXT"]).subscribe(values => {
-      // this.config.set("ios", "backButtonText", values.BACK_BUTTON_TEXT);
-    });
   }
 
-  openPage(page) {
+  openPage(page: any) {
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav
+      .setRoot(page.component)
+      .then(() => console.log("Opening a page as root " + JSON.stringify(page)))
+      .catch((reason: any) => console.error(reason));
   }
 
-  openSettings(page) {
-    this.nav.push(SitePages.Settings);
+  openSettings() {
+    this.nav
+      .push(SitePages.Settings)
+      .then(() => console.log("Opening Settings"))
+      .catch((reason: any) => console.error(reason));
   }
 
   changeLang() {

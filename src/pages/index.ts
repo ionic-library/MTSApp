@@ -1,5 +1,3 @@
-import { IssueWithReportPage } from "./issue-with-report/issue-with-report";
-
 export enum SitePages {
   Splash = "SplashPage",
   AcceptanceStatement = "AcceptanceStatementPage",

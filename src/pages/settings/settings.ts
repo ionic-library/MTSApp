@@ -1,9 +1,10 @@
+import { LangCodes } from "./../../providers/Lang/Lang";
 import { Component } from "@angular/core";
-import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { TranslateService } from "@ngx-translate/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { User } from "../../providers/user/user";
 import { Settings } from "../../providers";
+import { User } from "../../providers/user/user";
 
 /**
  * The Settings page is a simple form that syncs with a Settings provider
@@ -37,9 +38,9 @@ export class SettingsPage {
 
   page: string = "main";
   pageTitleKey: string = "SETTINGS_TITLE";
-  pageTitle: string;
 
   subSettings: any = SettingsPage;
+  pageTitle: string = "";
 
   constructor(
     public navCtrl: NavController,
@@ -69,15 +70,16 @@ export class SettingsPage {
     this.form = this.formBuilder.group(group);
 
     // Watch the form for changes, and
-    this.form.valueChanges.subscribe(v => {
+    this.form.valueChanges.subscribe((v: any) => {
+      console.log("Form changed " + JSON.stringify(v));
       this.settings.merge(this.form.value);
     });
   }
 
-  changeLang(selection) {
+  changeLang(selection: LangCodes) {
     console.log(selection);
     this.user.GetLang(
-      val => {
+      (val: any) => {
         if (selection === val) {
           console.log("Selected Language is already active!");
         } else {
@@ -103,11 +105,11 @@ export class SettingsPage {
     // If page is language page, change the selected language to the active language
     if (this.page === "language") {
       this.user.GetLang(
-        val => {
+        (val: any) => {
           this.selectedLanguage = val;
         },
-        val => {
-          console.log("unable to change lang:" + val);
+        (reason: any) => {
+          console.error("unable to change lang:" + JSON.stringify(reason));
         }
       );
     }

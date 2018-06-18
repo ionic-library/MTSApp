@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
+import { TranslateModule } from "@ngx-translate/core";
 import { IonicPageModule } from "ionic-angular";
 import { SubmissionPage } from "./submission";
-import { TranslateModule } from "@ngx-translate/core";
 
 @NgModule({
   declarations: [SubmissionPage],
