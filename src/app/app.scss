@@ -137,9 +137,9 @@ ion-icon {
 $font-family-base: "OpenSans", sans-serif !default;
 
 @font-face {
-  font-family: "Humanst";
-  src: url("../assets/open-sans/OpenSans-Regular.ttf") format("ttf"),
-    url("../assets/open-sans/OpenSans-Light.ttf") format("ttf");
+  font-family: "OpenSans";
+  src: url("../assets/fonts/open-sans/OpenSans-Regular.ttf") format("truetype"),
+    url("../assets/fonts/open-sans/OpenSans-Light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }

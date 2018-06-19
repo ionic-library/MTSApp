@@ -64,7 +64,6 @@ $toolbar-ios-title-text-align: center;
 
 $menu-ios-background: #013d57;
 
-
 $searchbar-ios-background-color: none;
 $searchbar-ios-border-color: none;
 $searchbar-ios-padding-horizontal: 2em;
@@ -117,3 +116,7 @@ $searchbar-md-input-search-icon-color: black;
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
+
+$font-family-md-base: "OpenSans";
+$font-family-ios-base: "OpenSans";
+$font-family-wp-base: "OpenSans";
