@@ -12,7 +12,8 @@
 //
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+// automatically applied to the <body> element in the app.let
+
 .questionNumber {
   color: #0f71c4;
   font-size: 12px;
@@ -131,4 +132,18 @@ ion-icon {
       }
     }
   }
+}
+@import url(../assets/open-sans/);
+$font-family-base: "OpenSans", sans-serif !default;
+
+@font-face {
+  font-family: "Humanst";
+  src: url("../assets/open-sans/OpenSans-Regular.ttf") format("ttf"),
+    url("../assets/open-sans/OpenSans-Light.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: "OpenSans";
 }
