@@ -6,6 +6,7 @@ import * as sinonChai from "sinon-chai";
 import { SplashPage } from "./splash";
 import { User, LangCodes } from "../../providers";
 import { provideSettings } from "../../app/app.module";
+import { StorageMock } from "../../../test-config/mocks-ionic";
 
 let { expect } = chai;
 chai.use(sinonChai);
@@ -16,9 +17,15 @@ describe("The Splash Page", () => {
   let sut: ComponentFixture<SplashPage>;
   let comp: SplashPage;
   let user: User;
+  let fakeStorage: StorageMock;
+  let spy: any;
 
   beforeEach(() => {
-    user = new User(null, null, null);
+    fakeStorage = new StorageMock();
+    spy = sinon.stub(fakeStorage, "set").resolves(NOOP);
+    sinon.stub(fakeStorage, "get").resolves(NOOP);
+
+    user = new User(null, fakeStorage, null);
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([SplashPage]),
       imports: CommonTestModule.getImports(),
@@ -35,10 +42,10 @@ describe("The Splash Page", () => {
   });
 
   it("setLang is called on the user object.", () => {
-    const splashSpy = sinon.stub(user, "setLang").returns(NOOP);
+   
 
-    comp.setLang(LangCodes.EN);
+    user.setLang(LangCodes.EN);
 
-    expect(splashSpy).to.have.been.calledOnce;
+    expect(spy).to.have.been.calledOnce;
   });
 });
