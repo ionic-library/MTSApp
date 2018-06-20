@@ -13,20 +13,42 @@ export class SplashPage {
 
   constructor(public navCtrl: NavController, public user: User) {
     this.user.GetLang(
-      (val: string) => {
-        if (typeof val == "undefined") {
-          console.log("Lang is not set");
+      (_Lang: string) => {
+        if (typeof _Lang == "undefined") {
           this.show = true;
         } else {
-          console.log("lang is set: " + val.toString());
-          this.navCtrl
-            .push(SitePages.Home)
-            .then(() => console.log("navigating home"))
-            .catch((reason: any) => console.error(reason));
+          this.user.isEulaAgreed(
+            isAgreed => {
+              if (isAgreed) {
+                this.navCtrl
+                  .push(SitePages.Home)
+                  .then(() => console.log("EULA set. Navigating home"))
+                  .catch((reason: any) =>
+                    console.error(
+                      "Could not navigate home: " + JSON.stringify(reason)
+                    )
+                  );
+              } else {
+                this.navCtrl
+                  .push(SitePages.eula)
+                  .then(() =>
+                    console.log("EULA not set. Navigating to EULA page.")
+                  )
+                  .catch((reason: any) =>
+                    console.error(
+                      "Could not navigate to EULA: " + JSON.stringify(reason)
+                    )
+                  );
+              }
+            },
+            (Error: any) => {
+              console.error("Could not get EULA val: " + JSON.stringify(Error));
+            }
+          );
         }
       },
-      (val: string) => {
-        console.log("Error getting language: " + val);
+      (Error: string) => {
+        console.error("Error getting language: " + JSON.stringify(Error));
       }
     );
   }
@@ -36,8 +58,8 @@ export class SplashPage {
       lang,
       () => {
         this.navCtrl
-          .push(SitePages.Home)
-          .then(() => console.log("Navigating to " + SitePages.Home))
+          .push(SitePages.eula)
+          .then(() => console.log("Navigating to " + SitePages.eula))
           .catch((reason: any) => console.error(reason));
       },
       (reason: any) => {

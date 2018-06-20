@@ -17,7 +17,8 @@ export enum SitePages {
   LoginFalied = "LoginFailedPage",
   HelpModal = "HelpModalPage",
   Submission = "SubmissionPage",
-  Locations = "LocationsPage"
+  Locations = "LocationsPage",
+  eula = "EulaPage"
 }
 
 // The page the user lands on after opening the app and without a session

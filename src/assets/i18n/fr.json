@@ -219,5 +219,9 @@
   "MY_NOTIFICATIONS_TITLE": "(FR)My Notifications",
   "JOB_SEARCH_TITLE": "(FR)Search",
   "ALT_LANG": "English",
-  "SC_LOCATIONS": "(FR)Service Canada Locations"
+  "SC_LOCATIONS": "(FR)Service Canada Locations",
+  "END_USER_AGREEMENT": "(FR)End-User Licence Agreement",
+  "BY_TAPPING_ACCEPT":
+    "(FR)By tapping I Accept, you accept the End-User Licence Agreement",
+  "I_ACCEPT": "(FR)I Accept"
 }

@@ -146,6 +146,10 @@ export class StorageMock {
   get() {
     throw Error("StorageMock.Get not Mocked");
   }
+
+  set() {
+    throw Error("StorageMock.Set not Mocked");
+  }
 }
 
 /* tslint:enable*/

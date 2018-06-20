@@ -112,7 +112,8 @@ export class MyApp {
     { title: "Login", component: SitePages.EILogin },
     { title: "Issue", component: SitePages.IssueWithReport },
     { title: "LoginFailed", component: SitePages.LoginFalied },
-    { title: "Splash", component: SitePages.Splash }
+    { title: "Splash", component: SitePages.Splash },
+    { title: "EULA", component: SitePages.eula }
   ];
 
   constructor(

@@ -26,8 +26,8 @@ export class User {
         () => {
           success(this.Lang);
         },
-        (val: any) => {
-          error(val);
+        (Error: any) => {
+          error(Error);
         }
       );
     }
@@ -36,19 +36,18 @@ export class User {
   private initializeLang(success: Function, error: Function) {
     this.storage
       .get("lang")
-      .then(val => {
-        if (val == "fr") {
+      .then((_Lang: string) => {
+        if (_Lang == "fr") {
           this.Lang = LangCodes.FR;
           this.LangReady = true;
-        } else if (val == "en") {
+        } else if (_Lang == "en") {
           this.Lang = LangCodes.EN;
           this.LangReady = true;
-        } else {
         }
         success();
       })
-      .catch(val => {
-        error(val);
+      .catch((Error: any) => {
+        error(Error);
       });
   }
 
@@ -60,16 +59,16 @@ export class User {
         this.translate.use(lang);
         success();
       })
-      .catch(val => {
-        error(val);
+      .catch((Error: any) => {
+        error(Error);
       });
   }
 
   public alternateLang() {
     this.GetLang(
-      (val: string) => {
+      (_Lang: string) => {
         let lc = LangCodes.EN;
-        if (val == "en") {
+        if (_Lang == "en") {
           lc = LangCodes.FR;
         }
 
@@ -78,15 +77,42 @@ export class User {
           () => {
             this.Lang = lc;
           },
-          (val: string) => {
-            console.log("Could not change lang: " + val);
+          (Error: any) => {
+            console.log("Could not change lang: " + JSON.stringify(Error));
           }
         );
       },
-      (val: string) => {
-        console.log("Could not get lang: " + val);
+      (Error: any) => {
+        console.log("Could not get lang: " + JSON.stringify(Error));
       }
     );
+  }
+
+  public isEulaAgreed(success: Function, error: Function) {
+    this.storage
+      .get("eula")
+      .then((YesNo: string) => {
+        //### Decided to string this as in my experience storage does better with strings than bools but we can always easily change it here.
+        if (YesNo === "Yes") {
+          success(true);
+        } else {
+          success(false);
+        }
+      })
+      .catch((Error: any) => {
+        error(Error);
+      });
+  }
+
+  public setEulaAgreed(success: Function, error: Function) {
+    this.storage
+      .set("eula", "Yes")
+      .then(() => {
+        success();
+      })
+      .catch((Error: any) => {
+        error(Error);
+      });
   }
 
   //############################### Below this line is standard functions we will redo later once API is ready or mapped out at least.
