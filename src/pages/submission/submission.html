@@ -28,7 +28,7 @@
       <h2 class="title">{{ 'SUBMISSION_TITLE_TWO' | translate }}</h2>
       <p class="sentences" id="review-statement">{{ 'SUBMISSION_P1_TEXT' | translate }}</p>
 
-      <p class="sentences">{{ 'SUBMISSION_P2_TEXT' | translate }} <a id="confirmation">{{ 'SUBMISSION_CONFIRMATION' | translate }}</a></p>
+      <p class="sentences">{{ 'SUBMISSION_P2_TEXT' | translate }} <a id="confirmation" (click)="this.presentHelpModal(helpSelectionOptions.confirmationStatement)">{{ 'SUBMISSION_CONFIRMATION' | translate }}</a></p>
     </ion-row>
       <ion-row class="wrapper" align-items-center>
       <button class="accept" ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>

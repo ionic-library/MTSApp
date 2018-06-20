@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
-import { IonicPage, NavController } from "ionic-angular";
+import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { SitePages } from "../index";
 /**
  * Generated class for the SubmissionPage page.
@@ -15,12 +15,24 @@ import { SitePages } from "../index";
   templateUrl: "submission.html"
 })
 export class SubmissionPage {
+  readonly helpSelectionOptions = {
+    confirmationStatement: {
+      modalTitle: "CONFIRMATION_STATEMENT_MODAL_TITLE",
+      sections: [
+        {
+          content: "CONFIRMATION_STATEMENT"
+        }
+      ]
+    }
+  };
+
   constructor(
     public navCtrl: NavController,
-    public translateService: TranslateService
+    public translateService: TranslateService,
+    public modalCtrl: ModalController
   ) {}
 
-  goToConfirmation = () =>  this.navigateToPage(SitePages.Confirmation);
+  goToConfirmation = () => this.navigateToPage(SitePages.Confirmation);
   editQuestion1 = () => this.navigateToPage(SitePages.Questionaire);
   editQuestion2 = () => this.navigateToPage(SitePages.Questionaire2);
   editQuestion3 = () => this.navigateToPage(SitePages.Questionaire3);
@@ -29,10 +41,20 @@ export class SubmissionPage {
   editQuestion7 = () => this.navigateToPage(SitePages.Questionaire7);
   backToEIReporting = () => this.navigateToPage(SitePages.EiReporting);
 
-  private navigateToPage(page : SitePages){
-    this.navCtrl.push(page)
-                .then(() => console.log("Navigating to page : " + page.toString()))
-                .catch((reason: string) => console.log(reason))
+  presentHelpModal(helpSelection) {
+    console.log("Click Received");
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal, helpSelection);
+    helpModal
+      .present()
+      .then(() => console.log("Help Modal Displayed"))
+      .catch((reason: any) => console.error(reason));
+  }
+
+  private navigateToPage(page: SitePages) {
+    this.navCtrl
+      .push(page)
+      .then(() => console.log("Navigating to page : " + page.toString()))
+      .catch((reason: string) => console.log(reason));
   }
 
   ionViewDidLoad() {

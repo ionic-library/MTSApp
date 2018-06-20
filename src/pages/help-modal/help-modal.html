@@ -8,7 +8,7 @@
 
   <ion-navbar>
 
-    <ion-title class="page-title">{{ 'HELP_MODAL_TITLE' | translate }}
+    <ion-title class="page-title">{{ this.modalTitle || 'HELP_MODAL_TITLE' | translate }}
     </ion-title>
     <ion-buttons end>
       <button ion-button clear (click)="dismiss()" aria-label="Close Help">
@@ -21,9 +21,9 @@
 
 
 <ion-content padding>
-  <h1 class="help-modal-header">{{ 'HELP_MODAL_HEADER' | translate }}</h1>
-  <div class="help-modal-content">
-    <p class="help-modal-text">{{ 'HELP_MODAL_CONTENT_PAR_1' | translate }}</p>
-    <p class="help-modal-text">{{ 'HELP_MODAL_CONTENT_PAR_2' | translate }}</p>
+  <div *ngFor="let section of helpSections" class="help-modal-content">
+    <h1 *ngIf="section.title" class="help-modal-header">{{ section.title | translate }}</h1>
+    <h2 *ngIf="section.subheader" class="help-modal-subheader">{{ section.subheader | translate }}</h2>
+    <p *ngIf="section.content" class="help-modal-text">{{ section.content | translate }}</p>
   </div>
 </ion-content>

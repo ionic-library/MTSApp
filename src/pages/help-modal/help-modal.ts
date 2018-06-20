@@ -19,11 +19,19 @@ import {
   templateUrl: "help-modal.html"
 })
 export class HelpModalPage {
+  public modalTitle: string;
+  public helpSections: any;
+
   constructor(
     public viewCtrl: ViewController,
     public navCtrl: NavController,
     public navParams: NavParams
-  ) {}
+  ) {
+    this.modalTitle = navParams.get("modalTitle");
+    console.log(this.modalTitle);
+    this.helpSections = navParams.get("sections");
+    console.log(this.helpSections);
+  }
 
   ionViewDidLoad() {
     console.log("ionViewDidLoad HelpModalPage");
