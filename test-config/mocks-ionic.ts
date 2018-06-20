@@ -155,6 +155,7 @@ export class StorageMock {
   public _driver = "";
   public driver = "";
   public ready = "";
+  public _getDriverOrder = "";
 }
 
 /* tslint:enable*/
