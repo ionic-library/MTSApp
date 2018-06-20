@@ -150,6 +150,9 @@ export class StorageMock {
   set() {
     throw Error("StorageMock.Set not Mocked");
   }
+
+  public _dbPromise = "";
+  public _driver = "";
 }
 
 /* tslint:enable*/
