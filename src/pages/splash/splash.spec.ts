@@ -44,7 +44,7 @@ describe("The Splash Page", () => {
   it("setLang is called on the user object.", () => {
    
 
-    user.setLang(LangCodes.EN);
+    user.setLang(LangCodes.EN, NOOP, NOOP);
 
     expect(spy).to.have.been.calledOnce;
   });
