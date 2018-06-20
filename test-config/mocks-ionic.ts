@@ -153,6 +153,8 @@ export class StorageMock {
 
   public _dbPromise = "";
   public _driver = "";
+  public driver = "";
+  public ready = "";
 }
 
 /* tslint:enable*/
