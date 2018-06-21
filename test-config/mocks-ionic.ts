@@ -143,7 +143,7 @@ export class ModalCtrlMock {
 
 export class DeepLinkerMock {}
 
-export class StorageMock extends Storage {
+export class StorageMock  {
   get() {
     throw Error("StorageMock.Get not Mocked");
   }
@@ -152,12 +152,7 @@ export class StorageMock extends Storage {
     throw Error("StorageMock.Set not Mocked");
   }
 
-  public _dbPromise = "";
-  public _driver = "";
-  public driver = "";
-  public ready = "";
-  public _getDriverOrder = "";
-  public remove = "";
+
 }
 
 /* tslint:enable*/
