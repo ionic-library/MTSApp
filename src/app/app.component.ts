@@ -210,13 +210,13 @@ export class MyApp {
 
   openSettings(selection) {
     switch (selection) {
-      case "Support":
+      case "SUPPORT_NAV_MENU_TITLE":
         this.nav
           .push(SitePages.Support)
           .then(() => console.log("Opening Support"))
           .catch((reason: any) => console.error(reason));
         break;
-      case "Settings":
+      case "SETTINGS_NAV_MENU_TITLE":
         this.nav
           .push(SitePages.Settings)
           .then(() => console.log("Opening Settings"))
