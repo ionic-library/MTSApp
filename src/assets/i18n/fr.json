@@ -76,6 +76,33 @@
   "FAQ_LINK_FOUR": "(FR)Next steps after completing your report",
   "FAQ_LINK_FIVE": "(FR)New address and direct deposit information",
 
+  "FAQ_LINK_ONE_TITLE": "(FR)When should you submit your report?",
+  "FAQ_LINK_ONE_CONTENT":
+    "(FR)Once you have successfully completed your online reporting session, you will be advised when you should submit your next report. It is important to submit your reports as soon as they are due or your report may not be processed.\n\nIf your report is incomplete it will not be accepted for processing. In a few circumstances you will need to speak with us to complete your report. If this is the case, you will be given instructions at the end of your online session on how to contact a representative.",
+
+  "FAQ_LINK_TWO_TITLE": "(FR)When your payment is issued",
+  "FAQ_LINK_TWO_CONTENT":
+    "(FR)We recommend you file your report on Friday, anytime on Saturday or early on Sunday for weekend processing. Reports are processed for payment by our computer on Sunday, normally after 3 PM.\n\nIf you file your reports between Monday and Thursday, they are processed normally after 6 PM.\n\nIf you file your reports after the processing time, your report will process on the next business day.\n\nIf you are entitled to benefits, your payment is deposited directly to your bank account 2 business days later. If you are unable to use Direct Deposit your payment will be mailed to you.",
+
+  "FAQ_LINK_THREE_TITLE": "(FR)What you need to know to file your report",
+  "FAQ_LINK_THREE_SUBHEADER_ONE": "(FR)Work and Wages",
+  "FAQ_LINK_THREE_CONTENT_ONE":
+    "(FR)If you worked during the period covered, you must provide the dates and the number of hours that you have worked, the telephone number of all employers for whom you worked and your total earnings before deductions (including tips and commissions) earned for each calendar week of the period.\n\nYou need to report your actual earnings to avoid repayment situations. Remember, you must always declare your earnings before deductions in the week(s) in which they are earned. For example:\n\n* If you have worked in a particular week and will be paid later, you must declare the number of hours worked and earnings before deductions in the week that you actually worked.\n\n* If you have worked in a particular week and will not be paid for it, you must declare the number of hours worked in the week that you actually worked.\n\nWhen reporting your earnings for each calendar week (Sunday to Saturday) round to the nearest dollar.\n\n* For example if your earnings were $125.49 then enter $125. If your earnings were $125.50 then enter $126.\n\nReport only full hours worked for each calendar week (Sunday to Saturday).\n\n* For example if you worked 38 hours and 15 minutes in a week then enter 38 hours. If you work 38 hours and 45 minutes enter 38 hours.\n\nIf you started full time work, you must provide the exact date that you started. You need to report all employment, whether you work for someone else or for yourself. You also need to notify us of any separation from employment and the reason for separation.",
+  "FAQ_LINK_THREE_SUBHEADER_TWO": "(FR)Training",
+  "FAQ_LINK_THREE_CONTENT_TWO":
+    "(FR)If you attended school or training, you must provide us with the number of hours that you were in training and the amount of any training allowance received. Do not include allowances for living away from home, commuting, travel or dependent care.",
+  "FAQ_LINK_THREE_SUBHEADER_THREE": "(FR)Availability",
+  "FAQ_LINK_THREE_CONTENT_THREE":
+    "(FR)If you were unavailable for work (for example, out of the country, on vacation or not looking for work for any reason) or you were incapable of working (illness or injury), you will need to provide the dates. You must also report any absence from your area of residence or any absence from Canada.\n\nYou must answer all the questions presented truthfully. Remember that providing false information is considered fraud and is punishable by law. If you make a mistake during your on-line session, you will be able to make corrections before submitting your report. If you discover that you made a mistake after you have submitted your report, it is important that you let us know as soon as possible; otherwise you may have to pay back the benefits you received.\n\nYou can contact us:\n\n1. at 1-800-531-7555 during business hours and press 0 to speak to a representative; 2.\nin writing to your Service Canada Centre; or\n3. in person at your Service Canada Centre.",
+
+  "FAQ_LINK_FOUR_TITLE": "(FR)Next steps after completing your report",
+  "FAQ_LINK_FOUR_CONTENT":
+    "(FR)The successful submission of your report will be confirmed. At the same time you will also be given the date that your next report is due. Write this date on a calendar as you will not be able to submit your online report before this date.\n\nIf you need information about your payment, including deducted amounts and the date of your deposit, visit My Service Canada Account or call the Telephone Information Service, 24 hours a day, 7 days a week, at 1-800-206-7218.",
+
+  "FAQ_LINK_FIVE_TITLE": "(FR)New Address and/or Direct Deposit Information",
+  "FAQ_LINK_FIVE_CONTENT":
+    "(FR)If your mailing address or Direct Deposit banking information has changed, login to My Service Canada Account and provide us with this information BEFORE completing your EI report.",
+
   "QUESTIONAIRE_TITLE": "Mobile Reporting Service",
   "RESPONSE_YES": "Oui",
   "RESPONSE_NO": "Non",
@@ -212,6 +239,10 @@
   "SUBMISSION_NO": "(FR)NO",
   "SUBMISSION_YES": "(FR)YES",
   "SUBMISSION_EDIT": "(FR)Edit",
+
+  "CONFIRMATION_STATEMENT_MODAL_TITLE": "(FR)Confirmation Statement",
+  "CONFIRMATION_STATEMENT":
+    "(FR)I declare that the answers provided to the questions on the Employment Insurance online report are true to the best of my knowledge.\n\nI understand this information will be used to determine my eligibility for employment insurance benefits.\n\nI understand the information I have provided is subject to verification and that giving false information for myself or someone other than myself constitutes fraud. I also understand there are penalties for knowingly making false statements.\n\nAt the end of your successful online reporting session, you will be advised of the earliest date you can submit your next report. It is important to file your next report within three weeks of the due date; otherwise a loss of benefits may occur.\n\nThe information you provide in your report is being collected under the authority of, and will be used for the purpose of administering the Employment Insurance Act.\n\nPlease note that by providing and submitting your SIN and Access Code, you will be deemed to have signed your online report.",
 
   "SSC_LOCATION_TITLE": "(FR)Locate Service Canada Centre",
   "BENEFIT_FINDER_TITLE": "(FR)Benefit Finder",
