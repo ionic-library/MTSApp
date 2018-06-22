@@ -23,24 +23,24 @@
   <ion-searchbar placeholder="{{'SEARCHBAR_PLACEHOLDER' | translate}}"></ion-searchbar>
   <ion-grid class="portrait-grid" padding>
     <ion-row class="grid-row">
-      <ion-col class="grid-column" style="padding-right: 0; padding-bottom: 0;">
-        <div (click)="this.navigateToMyNotificationsPage()" class="service-select" style="border-left: none; border-top: none;">
+      <ion-col id="col-1-row-1" class="grid-column">
+        <div id="col-1-row-1-div" (click)="this.navigateToMyNotificationsPage()" class="service-select">
           <button class="service-button" ion-button clear color="dark">
             <ion-icon class="service-icon" name="MTSApp-Notification"></ion-icon>
           </button>
           <p class="service-title">{{'SERVICE_ONE_TITLE' | translate }}</p>
         </div>
       </ion-col>
-      <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0; padding-right: 0;">
-        <div (click)="this.navigateToBenefitFinderPage()" class="service-select" style="border-top: none; border-right: none; border-left: none;">
+      <ion-col id="col-2-row-1" class="grid-column">
+        <div id="col-2-row-1-div" (click)="this.navigateToBenefitFinderPage()" class="service-select">
           <button class="service-button" ion-button clear color="dark">
             <ion-icon class="service-icon" name="MTSApp-Finder"></ion-icon>
           </button>
           <p class="service-title">{{'SERVICE_TWO_TITLE' | translate }}</p>
         </div>
       </ion-col>
-      <ion-col class="grid-column" style="padding-left: 0; padding-bottom: 0;">
-        <div (click)="this.navigateToSearchPage()" class="service-select" style="border-top: none; border-right: none;">
+      <ion-col id="col-3-row-1" class="grid-column">
+        <div id="col-3-row-1-div" (click)="this.navigateToSearchPage()" class="service-select">
           <button class="service-button" ion-button clear color="dark">
             <ion-icon class="service-icon" name="MTSApp-JobSearch"></ion-icon>
           </button>
@@ -49,24 +49,24 @@
       </ion-col>
     </ion-row>
     <ion-row class="row">
-      <ion-col class="grid-column" style="padding-top: 0; padding-right: 0;">
-        <div (click)="this.navigateToEIReportingPage()" class="service-select" style="border-left: none; border-top: none; border-bottom: none;">
+      <ion-col id="col-1-row-2" class="grid-column">
+        <div id="col-1-row-2-div" (click)="this.navigateToEIReportingPage()" class="service-select">
           <button class="service-button" ion-button clear color="dark">
             <ion-icon class="service-icon" name="MTSApp-EIReporting"></ion-icon>
           </button>
           <p class="service-title">{{ 'SERVICE_FOUR_TITLE' | translate }}</p>
         </div>
       </ion-col>
-      <ion-col class="grid-column" style="padding-left: 0; padding-top: 0; padding-right: 0;">
-        <div (click)="this.navigateToSCCLocationPage()" class="service-select" style="border: none;">
+      <ion-col id="col-2-row-2" class="grid-column">
+        <div id="col-2-row-2-div" (click)="this.navigateToSCCLocationPage()" class="service-select">
           <button class="service-button" ion-button clear color="dark">
             <ion-icon class="service-icon" name="MTSApp-SCCLocations"></ion-icon>
           </button>
           <p class="service-title">{{"SC_LOCATIONS" | translate }}</p>
         </div>
       </ion-col>
-      <ion-col class="grid-column" style="padding-left: 0; padding-top: 0;">
-        <div (click)="this.navigateToLifeEventsPage()" class="service-select" style="border-bottom: none; border-top: none; border-right: none;">
+      <ion-col id="col-3-row-2" class="grid-column">
+        <div id="col-3-row-2-div" (click)="this.navigateToLifeEventsPage()" class="service-select">
           <button class="service-button" ion-button clear color="dark">
             <ion-icon class="service-icon" name="MTSApp-LifeEvents"></ion-icon>
           </button>
