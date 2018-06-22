@@ -24,6 +24,58 @@ import { SitePages } from "..";
 export class AcceptanceStatementPage {
   report: Report;
 
+  readonly helpSelectionOptions = {
+    faqLinkOne: {
+      sections: [
+        {
+          title: "FAQ_LINK_ONE_TITLE",
+          content: "FAQ_LINK_ONE_CONTENT"
+        }
+      ]
+    },
+    faqLinkTwo: {
+      sections: [
+        {
+          title: "FAQ_LINK_TWO_TITLE",
+          content: "FAQ_LINK_TWO_CONTENT"
+        }
+      ]
+    },
+    faqLinkThree: {
+      sections: [
+        {
+          title: "FAQ_LINK_THREE_TITLE",
+          subheader: "FAQ_LINK_THREE_SUBHEADER_ONE",
+          content: "FAQ_LINK_THREE_CONTENT_ONE"
+        },
+        {
+          subheader: "FAQ_LINK_THREE_SUBHEADER_TWO",
+          content: "FAQ_LINK_THREE_CONTENT_TWO"
+        },
+        {
+          subheader: "FAQ_LINK_THREE_SUBHEADER_THREE",
+          content: "FAQ_LINK_THREE_CONTENT_THREE"
+        }
+      ]
+    },
+    faqLinkFour: {
+      sections: [
+        {
+          title: "FAQ_LINK_FOUR_TITLE",
+          content: "FAQ_LINK_FOUR_CONTENT"
+        }
+      ]
+    },
+    faqLinkFive: {
+      sections: [
+        {
+          title: "FAQ_LINK_FIVE_TITLE",
+          content: "FAQ_LINK_FIVE_CONTENT"
+        }
+      ]
+    }
+  };
+
   constructor(
     public translate: TranslateService,
     public navParams: NavParams,
@@ -33,9 +85,9 @@ export class AcceptanceStatementPage {
     this.report = navParams.get("report");
   }
 
-  presentHelpModal() {
+  presentHelpModal(helpSelection) {
     console.log("Click Received");
-    const helpModal = this.modalCtrl.create(SitePages.HelpModal);
+    const helpModal = this.modalCtrl.create(SitePages.HelpModal, helpSelection);
     helpModal
       .present()
       .then(() => console.log("Help Modal Displayed"))

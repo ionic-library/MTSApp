@@ -8,7 +8,7 @@
 
   <ion-navbar>
 
-    <button ion-button menuToggle icon-only>
+    <button id="nav-menu-button" aria-label="Navigation menu" ion-button menuToggle icon-only>
       <ion-icon class="menu" name='MTSApp-HamburgMenu'></ion-icon>
     </button>
 
@@ -16,8 +16,8 @@
     </ion-title>
 
     <ion-buttons end>
-      <button ion-button clear (click)="this.presentHelpModal()">
-        <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
+      <button id="help-button" aria-label="Help button" ion-button clear (click)="presentHelpModal()">
+        <i class="help" class="fa fa-question-circle"></i>
       </button>
     </ion-buttons>
 
@@ -32,21 +32,21 @@
     <h1 class="statement-header">{{ 'ACCEPTANCE_STATEMENT_HEADER' | translate }}</h1>
     <p class="statement-content">{{ 'ACCEPTANCE_STATEMENT_CONTENT' | translate }}</p>
     <ion-buttons>
-      <button class="accept-button" ion-button (click)="acceptStatement(report)">{{ 'ACCEPT_BUTTON' | translate }}</button>
-      <a class="refuse-button" (click)="refuseStatement($event)" href="">{{ 'REFUSE_BUTTON' | translate }}</a>
+      <button id="accept-statement-button" class="accept-button" aria-label="Accept button" ion-button (click)="acceptStatement(report)">{{ 'ACCEPT_BUTTON' | translate }}</button>
+      <a id="refuse-statement-button" class="refuse-button" (click)="refuseStatement($event)" href="">{{ 'REFUSE_BUTTON' | translate }}</a>
     </ion-buttons>
   </div>
   <div class="section-seperator" row-no-padding></div>
   <div class="faq-section">
-    <a class="faq-link" href="">{{ 'FAQ_LINK_ONE' | translate }}</a>
+    <a class="faq-link" (click)="presentHelpModal(helpSelectionOptions.faqLinkOne)">{{ 'FAQ_LINK_ONE' | translate }}</a>
     <br>
-    <a class="faq-link" href="">{{ 'FAQ_LINK_TWO' | translate}}</a>
+    <a class="faq-link" (click)="presentHelpModal(helpSelectionOptions.faqLinkTwo)">{{ 'FAQ_LINK_TWO' | translate}}</a>
     <br>
-    <a class="faq-link" href="">{{ 'FAQ_LINK_THREE' | translate }}</a>
+    <a class="faq-link" (click)="presentHelpModal(helpSelectionOptions.faqLinkThree)">{{ 'FAQ_LINK_THREE' | translate }}</a>
     <br>
-    <a class="faq-link" href="">{{ 'FAQ_LINK_FOUR' | translate }}</a>
+    <a class="faq-link" (click)="presentHelpModal(this.helpSelectionOptions.faqLinkFour)">{{ 'FAQ_LINK_FOUR' | translate }}</a>
     <br>
-    <a class="faq-link" href="">{{ 'FAQ_LINK_FIVE' | translate }}</a>
+    <a class="faq-link" (click)="presentHelpModal(this.helpSelectionOptions.faqLinkFive)">{{ 'FAQ_LINK_FIVE' | translate }}</a>
   </div>
 
 </ion-content>

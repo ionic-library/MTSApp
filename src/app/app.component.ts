@@ -4,11 +4,12 @@ import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
+import { MenuController } from "ionic-angular";
 import { FirstRunPage } from "../pages";
 import { User } from "../providers";
 
 @Component({
-  template: `<ion-menu class="nav-menu" [content]="content" persistent="true">
+  template: `<ion-menu id="main-nav-menu" class="nav-menu" [content]="content" persistent="true">
     <ion-header>
       <ion-toolbar color="navMenuBackground">
         <ion-title>Pages</ion-title>
@@ -32,6 +33,12 @@ import { User } from "../providers";
           <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
           <p class="nav-option-text">{{p.title | translate}}</p>
         </button>
+        <button id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
+          {{"ALT_LANG"| translate}}
+        </button>
+        <button id="nav-menu-dev-pages" ion-item color="navMenuButton" (click)="openDevPages()">
+          Dev Pages
+        </button>
       </ion-list>
 
       <ion-list class="nav-menu-list">
@@ -45,10 +52,23 @@ import { User } from "../providers";
         </button>
       </ion-list>
 
+    </ion-content>
+  </ion-menu>
+  
+  <ion-menu id="dev-pages" [content]="content" class="nav-menu">
+    <ion-header>
+      <ion-toolbar color="navMenuBackground">
+        <ion-title>Pages</ion-title>
+        <ion-buttons end>
+          <button id="close-nav-menu" ion-button clear menuClose (click)="makeMainNavActive()">
+            <ion-icon name="close" aria-label="Close"></ion-icon>
+          </button>
+        </ion-buttons>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content color="navMenuBackground">
       <ion-list class="nav-menu-list">
-        <button id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
-          {{"ALT_LANG"| translate}}
-        </button>
         <button menuClose ion-item *ngFor="let p of pagesInProgress; let i = index; let last = last"
         [attr.id]="'nav-menu-button-pagesInProgress-' + i"
         [attr.aria-label]="p.title"
@@ -60,6 +80,7 @@ import { User } from "../providers";
       </ion-list>
     </ion-content>
   </ion-menu>
+  
   <ion-nav #content [root]="rootPage"></ion-nav>`
 })
 export class MyApp {
@@ -122,7 +143,8 @@ export class MyApp {
     private readonly config: Config,
     private readonly statusBar: StatusBar,
     private readonly splashScreen: SplashScreen,
-    private readonly user: User
+    private readonly user: User,
+    private readonly menuCtrl: MenuController
   ) {
     platform
       .ready()
@@ -164,6 +186,25 @@ export class MyApp {
       .setRoot(page.component)
       .then(() => console.log("Opening a page as root " + JSON.stringify(page)))
       .catch((reason: any) => console.error(reason));
+  }
+
+  openDevPages() {
+    console.log("click received");
+    this.menuCtrl
+      .toggle()
+      .then(() => console.log("Toggling main nav menu"))
+      .catch((reason: any) => console.error(reason));
+    this.menuCtrl.enable(true, "dev-pages");
+    this.menuCtrl.enable(false, "main-nav-menu");
+    this.menuCtrl
+      .toggle()
+      .then(() => console.log("Toggling dev page menu"))
+      .catch((reason: any) => console.error(reason));
+  }
+
+  makeMainNavActive() {
+    this.menuCtrl.enable(true, "main-nav-menu");
+    this.menuCtrl.enable(false, "dev-pages");
   }
 
   openSettings() {
