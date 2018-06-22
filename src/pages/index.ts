@@ -14,6 +14,7 @@ export enum SitePages {
   Questionaire6 = "Questionaire_6Page",
   Questionaire7 = "Questionaire_7Page",
   Settings = "SettingsPage",
+  Support = "SupportPage",
   LoginFalied = "LoginFailedPage",
   HelpModal = "HelpModalPage",
   Submission = "SubmissionPage",

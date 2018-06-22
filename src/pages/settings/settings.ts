@@ -37,7 +37,7 @@ export class SettingsPage {
   };
 
   page: string = "main";
-  pageTitleKey: string = "SETTINGS_TITLE";
+  pageTitleKey: string = "SETTINGS_PAGE_MAIN_TITLE";
 
   subSettings: any = SettingsPage;
   pageTitle: string = "";

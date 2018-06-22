@@ -47,8 +47,8 @@ import { User } from "../providers";
         [attr.aria-label]="p.title"
         color="navMenuButton"
         [class.last-item]="last"
-        (click)="openSettings()">
-          {{p.title}}
+        (click)="openSettings(p.title)">
+          {{p.title | translate}}
         </button>
       </ion-list>
 
@@ -101,12 +101,12 @@ export class MyApp {
       iconName: "MTSApp-Finder"
     },
     {
-      title: "Job Search",
+      title: "JOB_SEARCH_TITLE",
       component: SitePages.BlankPage,
       iconName: "MTSApp-JobSearch"
     },
     {
-      title: "EI Reporting",
+      title: "EI_REPORTING_TITLE",
       component: SitePages.EiReporting,
       iconName: "MTSApp-EIReporting"
     },
@@ -123,7 +123,8 @@ export class MyApp {
   ];
 
   readonly userSelections: any[] = [
-    { title: "Settings", component: SitePages.Settings }
+    { title: "SETTINGS_NAV_MENU_TITLE", component: SitePages.Settings },
+    { title: "SUPPORT_NAV_MENU_TITLE", component: SitePages.Support }
   ];
 
   readonly pagesInProgress: any[] = [
@@ -207,11 +208,20 @@ export class MyApp {
     this.menuCtrl.enable(false, "dev-pages");
   }
 
-  openSettings() {
-    this.nav
-      .push(SitePages.Settings)
-      .then(() => console.log("Opening Settings"))
-      .catch((reason: any) => console.error(reason));
+  openSettings(selection) {
+    switch (selection) {
+      case "Support":
+        this.nav
+          .push(SitePages.Support)
+          .then(() => console.log("Opening Support"))
+          .catch((reason: any) => console.error(reason));
+        break;
+      case "Settings":
+        this.nav
+          .push(SitePages.Settings)
+          .then(() => console.log("Opening Settings"))
+          .catch((reason: any) => console.error(reason));
+    }
   }
 
   changeLang() {
