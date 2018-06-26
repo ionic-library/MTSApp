@@ -88,7 +88,7 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  readonly pages: any[] = [
+  readonly pages = [
     { title: "Home", component: SitePages.Home, iconName: "MTSApp-Home" },
     {
       title: "Future Feature",
@@ -122,12 +122,12 @@ export class MyApp {
     }
   ];
 
-  readonly userSelections: any[] = [
+  readonly userSelections = [
     { title: "SETTINGS_NAV_MENU_TITLE", component: SitePages.Settings },
     { title: "SUPPORT_NAV_MENU_TITLE", component: SitePages.Support }
   ];
 
-  readonly pagesInProgress: any[] = [
+  readonly pagesInProgress = [
     { title: "Blank Page", component: SitePages.BlankPage },
     { title: "Confirmation", component: SitePages.Confirmation },
     { title: "Questionnaire", component: SitePages.Questionaire },
