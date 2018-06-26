@@ -10,7 +10,7 @@
     <button ion-button menuToggle icon-only>
       <ion-icon name='MTSApp-HamburgMenu'></ion-icon>
     </button>
-    <ion-title>{{ 'SUPPORT_PAGE_TITLE' | translate }}</ion-title>
+    <ion-title>{{ pageTitleKey | translate }}</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -18,8 +18,8 @@
 <ion-content>
 
   <section>
-    <ion-list>
-      <button ion-item [navPush]="subSupport">
+    <ion-list *ngIf="page == 'supportMain'">
+      <button ion-item [navPush]="subSupport" >
         {{ 'SUPPORT_OPTION_ONE' | translate }}
       </button>
       <button ion-item [navPush]="subSupport">
@@ -28,17 +28,15 @@
       <button ion-item [navPush]="subSupport">
         {{ 'SUPPORT_OPTION_THREE' | translate }}
       </button>
-      <button ion-item [navPush]="subSupport">
+      <button ion-item [navPush]="subSupport" [navParams]="aboutSupport">
         {{ 'SUPPORT_OPTION_FOUR' | translate }}
       </button>
     </ion-list>
 
-    <ion-list *ngIf="page == 'aboutPage'">
-      <ion-item>
-        <button ion-item [navPush]="SitePages.eula">
-          {{ 'SUPPORT_OPTION_FOUR' | translate }}
-        </button>
-      </ion-item>
+    <ion-list *ngIf="page == 'about'">
+      <button ion-item [navPush]="sitePages.eula">
+        {{ 'ABOUT_OPTION_ONE' | translate }}
+      </button>
     </ion-list>
   </section>
 
