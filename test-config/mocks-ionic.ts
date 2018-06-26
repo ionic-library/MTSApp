@@ -2,6 +2,7 @@
 //We don't need to lint this page right now as its purely for mock objects for tests
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
+import { Storage } from "@ionic/storage";
 
 export class TranslateMock {
   public setDefaultLang() {}
@@ -142,7 +143,7 @@ export class ModalCtrlMock {
 
 export class DeepLinkerMock {}
 
-export class StorageMock {
+export class StorageMock  {
   get() {
     throw Error("StorageMock.Get not Mocked");
   }
@@ -150,6 +151,8 @@ export class StorageMock {
   set() {
     throw Error("StorageMock.Set not Mocked");
   }
+
+
 }
 
 /* tslint:enable*/

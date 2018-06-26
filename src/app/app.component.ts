@@ -23,7 +23,7 @@ import { User } from "../providers";
 
     <ion-content color="navMenuBackground">
       <ion-list class="nav-menu-list" color="navMenuBackground">
-        <button menuClose ion-item icon-left icon-only *ngFor="let p of pages; let i = index; let first = first; let last = last;"
+        <button text-wrap menuClose ion-item icon-left icon-only *ngFor="let p of pages; let i = index; let first = first; let last = last;"
         [attr.id]="'nav-menu-button-pages-' + i"
         [attr.aria-label]="p.title"
         color="navMenuButton"
