@@ -8,10 +8,10 @@ import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
 
-let { expect } = chai;
+const { expect } = chai;
 chai.use(sinonChai);
 
-let NOOP = () => {};
+const NOOP = () => {};
 
 describe("MyApp Component", () => {
   let fixture;

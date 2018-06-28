@@ -10,79 +10,7 @@ import { FirstRunPage } from "../pages";
 import { User } from "../providers";
 
 @Component({
-  template: `<ion-menu id="main-nav-menu" class="nav-menu" [content]="content" persistent="true">
-    <ion-header>
-      <ion-toolbar color="navMenuBackground">
-        <ion-title>Pages</ion-title>
-        <ion-buttons end>
-          <button id="close-nav-menu" ion-button clear menuClose>
-            <ion-icon name="close" aria-label="Close"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content color="navMenuBackground">
-      <ion-list class="nav-menu-list" color="navMenuBackground">
-        <button text-wrap menuClose ion-item icon-left icon-only *ngFor="let p of pages; let i = index; let first = first; let last = last;"
-        [attr.id]="'nav-menu-button-pages-' + i"
-        [attr.aria-label]="p.title"
-        color="navMenuButton"
-        [class.first-item]="first"
-        [class.last-item]="last"
-        (click)="openPage(p)">
-          <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
-          <p class="nav-option-text">{{p.title | translate}}</p>
-        </button>
-        <button *ngIf="isDevMode" id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
-          {{"ALT_LANG"| translate}}
-        </button>
-        <button *ngIf="isDevMode" id="nav-menu-dev-pages" ion-item color="navMenuButton" (click)="openDevPages()">
-          Dev Pages
-        </button>
-      </ion-list>
-
-      <ion-list id="user-selection-options" class="nav-menu-list">
-        <button menuClose ion-item *ngFor="let p of userSelections; let i = index; let last = last;"
-        [attr.id]="'nav-menu-button-options-' + i"
-        [attr.aria-label]="p.title"
-        color="navMenuButton"
-        [class.last-item]="last"
-        (click)="openSettings(p.title)">
-          {{p.title | translate}}
-        </button>
-      </ion-list>
-
-    </ion-content>
-  </ion-menu>
-  
-  <ion-menu id="dev-pages" [content]="content" class="nav-menu">
-    <ion-header>
-      <ion-toolbar color="navMenuBackground">
-        <ion-title>Pages</ion-title>
-        <ion-buttons end>
-          <button id="close-nav-menu" ion-button clear menuClose (click)="makeMainNavActive()">
-            <ion-icon name="close" aria-label="Close"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-toolbar>
-    </ion-header>
-
-    <ion-content color="navMenuBackground">
-      <ion-list class="nav-menu-list">
-        <button menuClose ion-item *ngFor="let p of pagesInProgress; let i = index; let last = last"
-        [attr.id]="'nav-menu-button-pagesInProgress-' + i"
-        [attr.aria-label]="p.title"
-        color="navMenuButton"
-        [class.last-item]="last"
-        (click)="openPage(p)">
-          {{p.title}}
-        </button>
-      </ion-list>
-    </ion-content>
-  </ion-menu>
-  
-  <ion-nav #content [root]="rootPage"></ion-nav>`
+  templateUrl: "app.html"
 })
 export class MyApp {
   rootPage = FirstRunPage;
@@ -124,8 +52,21 @@ export class MyApp {
   ];
 
   readonly userSelections = [
-    { title: "SETTINGS_NAV_MENU_TITLE", component: SitePages.Settings },
-    { title: "SUPPORT_NAV_MENU_TITLE", component: SitePages.Support }
+    {
+      title: "SETTINGS_NAV_MENU_TITLE",
+      component: SitePages.Settings,
+      iconName: "MTSApp-Settings"
+    },
+    {
+      title: "SUPPORT_NAV_MENU_TITLE",
+      component: SitePages.Support,
+      iconName: "MTSApp-Support"
+    },
+    {
+      title: "LOGOUT_NAV_MENU_TITLE",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-Logout"
+    }
   ];
 
   readonly pagesInProgress = [

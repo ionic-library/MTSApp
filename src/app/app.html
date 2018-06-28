@@ -1,0 +1,62 @@
+<ion-menu id="main-nav-menu" class="nav-menu" [content]="content" persistent="true">
+    <ion-header>
+        <ion-toolbar color="navMenuBackground">
+            <ion-title>Pages</ion-title>
+            <ion-buttons end>
+                <button id="close-nav-menu" ion-button clear menuClose>
+                    <ion-icon name="close" aria-label="Close"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content color="navMenuBackground">
+        <ion-list class="nav-menu-list" color="navMenuBackground">
+            <button text-wrap menuClose ion-item icon-left icon-only *ngFor="let p of pages; let i = index; let first = first; let last = last;"
+                [attr.id]="'nav-menu-button-pages-' + i" color="navMenuButton" [class.first-item]="first" [class.last-item]="last"
+                (click)="openPage(p)">
+                <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
+                <p class="nav-option-text">{{p.title | translate}}</p>
+            </button>
+            <button id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
+                {{"ALT_LANG"| translate}}
+            </button>
+            <button id="nav-menu-dev-pages" ion-item color="navMenuButton" (click)="openDevPages()">
+                Dev Pages
+            </button>
+        </ion-list>
+
+        <ion-list class="nav-menu-list">
+            <button menuClose ion-item icon-left icon-only *ngFor="let p of userSelections; let i = index; let last = last;" [attr.id]="'nav-menu-button-options-' + i"
+                [attr.aria-label]="p.title" color="navMenuButton" [class.last-item]="last" (click)="openSettings(p.title)">
+                <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
+                <p class="nav-option-text">{{p.title | translate}}</p>
+            </button>
+        </ion-list>
+
+    </ion-content>
+</ion-menu>
+
+<ion-menu id="dev-pages" [content]="content" class="nav-menu">
+    <ion-header>
+        <ion-toolbar color="navMenuBackground">
+            <ion-title>Pages</ion-title>
+            <ion-buttons end>
+                <button id="close-nav-menu" ion-button clear menuClose (click)="makeMainNavActive()">
+                    <ion-icon name="close" aria-label="Close"></ion-icon>
+                </button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content color="navMenuBackground">
+        <ion-list class="nav-menu-list">
+            <button menuClose ion-item *ngFor="let p of pagesInProgress; let i = index; let last = last" [attr.id]="'nav-menu-button-pagesInProgress-' + i"
+                [attr.aria-label]="p.title" color="navMenuButton" [class.last-item]="last" (click)="openPage(p)">
+                {{p.title}}
+            </button>
+        </ion-list>
+    </ion-content>
+</ion-menu>
+
+<ion-nav #content [root]="rootPage"></ion-nav>`
