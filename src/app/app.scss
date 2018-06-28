@@ -122,7 +122,7 @@ ion-icon {
           .item-icon {
             height: 1.1em;
             width: 1.1em;
-            margin-left: -0.05em;
+            margin-left: -0.05em !important;
           }
         }
       }
@@ -146,8 +146,6 @@ ion-icon {
             position: absolute;
             left: 7rem;
             top: 1.5rem;
-            // Override Ionic list-item font-size
-            font-size: inherit;
           }
         }
       }
