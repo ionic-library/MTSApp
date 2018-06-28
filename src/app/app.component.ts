@@ -48,7 +48,8 @@ import { User } from "../providers";
         color="navMenuButton"
         [class.last-item]="last"
         (click)="openSettings(p.title)">
-          {{p.title | translate}}
+          <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
+          <p class="nav-option-text">{{p.title | translate}}</p>
         </button>
       </ion-list>
 
@@ -123,8 +124,21 @@ export class MyApp {
   ];
 
   readonly userSelections = [
-    { title: "SETTINGS_NAV_MENU_TITLE", component: SitePages.Settings },
-    { title: "SUPPORT_NAV_MENU_TITLE", component: SitePages.Support }
+    {
+      title: "SETTINGS_NAV_MENU_TITLE",
+      component: SitePages.Settings,
+      iconName: "MTSApp-Settings"
+    },
+    {
+      title: "SUPPORT_NAV_MENU_TITLE",
+      component: SitePages.Support,
+      iconName: "MTSApp-Support"
+    },
+    {
+      title: "LOGOUT_NAV_MENU_TITLE",
+      component: SitePages.BlankPage,
+      iconName: "MTSApp-Logout"
+    }
   ];
 
   readonly pagesInProgress = [
