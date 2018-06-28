@@ -2,6 +2,7 @@ import { SitePages } from "../pages";
 import { Component, ViewChild } from "@angular/core";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
+import { isDevMode } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
 import { MenuController } from "ionic-angular";
@@ -33,15 +34,15 @@ import { User } from "../providers";
           <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
           <p class="nav-option-text">{{p.title | translate}}</p>
         </button>
-        <button id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
+        <button *ngIf="isDevMode" id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
           {{"ALT_LANG"| translate}}
         </button>
-        <button id="nav-menu-dev-pages" ion-item color="navMenuButton" (click)="openDevPages()">
+        <button *ngIf="isDevMode" id="nav-menu-dev-pages" ion-item color="navMenuButton" (click)="openDevPages()">
           Dev Pages
         </button>
       </ion-list>
 
-      <ion-list class="nav-menu-list">
+      <ion-list id="user-selection-options" class="nav-menu-list">
         <button menuClose ion-item *ngFor="let p of userSelections; let i = index; let last = last;"
         [attr.id]="'nav-menu-button-options-' + i"
         [attr.aria-label]="p.title"
@@ -138,6 +139,8 @@ export class MyApp {
     { title: "EULA", component: SitePages.eula }
   ];
 
+  isDevMode = isDevMode();
+
   constructor(
     private readonly translate: TranslateService,
     readonly platform: Platform,
@@ -162,6 +165,7 @@ export class MyApp {
       });
 
     this.initTranslate();
+    console.log(isDevMode());
   }
 
   public initTranslate() {
