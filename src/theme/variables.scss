@@ -57,20 +57,20 @@ $toolbar-order-ios: (
   buttons-right: 6,
   menu-toggle-end: 7
 );
-
 $toolbar-ios-title-font-size: 15px;
 $toolbar-ios-title-font-weight: 700;
 $toolbar-ios-title-text-align: center;
-
 $menu-ios-background: #013d57;
-
 $searchbar-ios-background-color: none;
 $searchbar-ios-border-color: none;
 $searchbar-ios-padding-horizontal: 2em;
 $searchbar-ios-input-height: 3em;
 $searchbar-ios-input-placeholder-color: black;
 $searchbar-ios-input-search-icon-color: black;
+
 $searchbar-ios-input-search-icon-size: 16px;
+$button-ios-border-radius: 5px;
+$button-ios-font-size: 14px;
 // App Material Design Variables
 // --------------------------------------------------
 // Material Design only Sass variables can go here
@@ -89,14 +89,14 @@ $toolbar-md-title-font-size: 15px;
 $toolbar-md-title-font-weight: 700;
 $toolbar-md-title-text-align: center;
 $menu-md-background: #013d57;
-
 $toolbar-ios-title-font-size: 15px;
 $toolbar-ios-title-font-weight: 700;
 $toolbar-ios-title-text-align: center;
-
 $searchbar-md-input-box-shadow: none;
 $searchbar-md-padding: 0 2em 0 2em;
 $searchbar-md-input-search-icon-color: black;
+$button-md-border-radius: 5px;
+$button-md-font-size: 14px;
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
@@ -116,7 +116,6 @@ $searchbar-md-input-search-icon-color: black;
 // --------------------------------------------------
 @import "roboto";
 @import "noto-sans";
-
 $font-family-md-base: "OpenSans";
 $font-family-ios-base: "OpenSans";
 $font-family-wp-base: "OpenSans";
