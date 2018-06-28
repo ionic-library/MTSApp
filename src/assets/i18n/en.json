@@ -163,12 +163,16 @@
 
   "WELCOME_INTRO": "MTS - we put the mmmmmmm in mobile.",
 
-  "SETTINGS_TITLE": "Settings",
-  "SETTINGS_OPTION1": "Option 1",
-  "SETTINGS_OPTION2": "Option 2",
-  "SETTINGS_OPTION3": "Option 3",
-  "SETTINGS_OPTION4": "Option 4",
+  "SUPPORT_PAGE_TITLE": "Support",
+  "SUPPORT_OPTION_ONE": "Walkthrough",
+  "SUPPORT_OPTION_TWO": "FAQs",
+  "SUPPORT_OPTION_THREE": "Contact Us",
+  "SUPPORT_OPTION_FOUR": "About",
 
+  "ABOUT_PAGE_TITLE": "About",
+  "ABOUT_OPTION_ONE": "End-User License Agreement",
+
+  "SETTINGS_PAGE_MAIN_TITLE": "Settings",
   "SETTINGS_LANGUAGE_BUTTON": "Language",
   "SETTINGS_NOTIFICATION_BUTTON": "Notifications",
 
@@ -256,13 +260,18 @@
   "CONFIRMATION_STATEMENT":
     "I declare that the answers provided to the questions on the Employment Insurance online report are true to the best of my knowledge.\n\nI understand this information will be used to determine my eligibility for employment insurance benefits.\n\nI understand the information I have provided is subject to verification and that giving false information for myself or someone other than myself constitutes fraud. I also understand there are penalties for knowingly making false statements.\n\nAt the end of your successful online reporting session, you will be advised of the earliest date you can submit your next report. It is important to file your next report within three weeks of the due date; otherwise a loss of benefits may occur.\n\nThe information you provide in your report is being collected under the authority of, and will be used for the purpose of administering the Employment Insurance Act.\n\nPlease note that by providing and submitting your SIN and Access Code, you will be deemed to have signed your online report.",
 
+  "HOME_PAGE_TITLE": "Home",
   "SSC_LOCATION_TITLE": "Locate Service Canada Centre",
   "BENEFIT_FINDER_TITLE": "Benefit Finder",
   "LIFE_EVENTS_TITLE": "Life Events",
+  "EI_REPORTING_TITLE": "EI Reporting",
   "MY_NOTIFICATIONS_TITLE": "My Notifications",
   "JOB_SEARCH_TITLE": "Search",
   "ALT_LANG": "Français",
   "SC_LOCATIONS": "Service Canada Locations",
+  "SETTINGS_NAV_MENU_TITLE": "Settings",
+  "SUPPORT_NAV_MENU_TITLE": "Support",
+  "LOGOUT_NAV_MENU_TITLE": "Logout",
   "END_USER_AGREEMENT": "End-User Licence Agreement",
   "BY_TAPPING_ACCEPT":
     "By tapping I Accept, you accept the End-User Licence Agreement",
