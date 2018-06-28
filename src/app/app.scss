@@ -91,10 +91,10 @@ ion-icon {
   .content {
     // Render automatically generated menu content-area background color transparent so that menu content-area background color global variable actually works
     background-color: transparent;
-
+    // General css for lists in the navigation menu
     .nav-menu-list {
       // Required line to maintain bottom border style of list
-      margin-bottom: 1px;
+      margin-bottom: 0;
       // Android Nav Menu List Item CSS
       .item-md {
         .item-inner {
@@ -122,12 +122,9 @@ ion-icon {
           .item-icon {
             height: 1.1em;
             width: 1.1em;
-            margin-left: -0.05em;
+            margin-left: -0.05em !important;
           }
         }
-      }
-      .last-item {
-        border-bottom: 1px solid white;
       }
       // iOS Nav Menu List Item CSS
       .item-ios {
@@ -146,10 +143,17 @@ ion-icon {
             position: absolute;
             left: 7rem;
             top: 1.5rem;
-            // Override Ionic list-item font-size
-            font-size: inherit;
           }
         }
+      }
+    }
+    // Settings, Support and Logout List
+    #user-selection-options {
+      .first-item {
+        border: none;
+      }
+      .last-item {
+        border: none;
       }
     }
   }

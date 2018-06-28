@@ -2,6 +2,7 @@ import { SitePages } from "../pages";
 import { Component, ViewChild } from "@angular/core";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
+import { isDevMode } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
 import { MenuController } from "ionic-angular";
@@ -79,6 +80,8 @@ export class MyApp {
     { title: "EULA", component: SitePages.eula }
   ];
 
+  isDevMode = isDevMode();
+
   constructor(
     private readonly translate: TranslateService,
     readonly platform: Platform,
@@ -103,6 +106,7 @@ export class MyApp {
       });
 
     this.initTranslate();
+    console.log(isDevMode());
   }
 
   public initTranslate() {
