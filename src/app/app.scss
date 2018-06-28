@@ -37,28 +37,37 @@ ion-icon {
     mask-image: url(../assets/icon/noun_864476.svg);
   }
   &[class*="MTSApp-Notification"] {
-    mask-image: url(../assets/icon/noun_641800.svg);
+    mask-image: url(../assets/cs-icons/Icon-Black-Home-01-Notifications.svg);
   }
   &[class*="MTSApp-Finder"] {
-    mask-image: url(../assets/icon/noun_1676798.svg);
+    mask-image: url(../assets/cs-icons/Icon-Black-Home-02-Benefits-Finder.svg);
   }
   &[class*="MTSApp-JobSearch"] {
-    mask-image: url(../assets/icon/noun_1220588.svg);
+    mask-image: url(../assets/cs-icons/Icon-Black-Home-03-Search.svg);
   }
   &[class*="MTSApp-EIReporting"] {
-    mask-image: url(../assets/icon/noun_1381859.svg);
+    mask-image: url(../assets/cs-icons/Icon-Black-Home-04-EI-Report.svg);
   }
   &[class*="MTSApp-SCCLocations"] {
-    mask-image: url(../assets/icon/noun_661747.svg);
+    mask-image: url(../assets/cs-icons/Icon-Black-Home-05-Locations.svg);
   }
   &[class*="MTSApp-LifeEvents"] {
-    mask-image: url(../assets/icon/noun_1491773.svg);
+    mask-image: url(../assets/cs-icons/Icon-Black-Home-06-Life-Events.svg);
   }
   &[class*="MTSApp-HamburgMenu"] {
     mask-image: url(../assets/icon/noun_1320815.svg);
   }
   &[class*="MTSApp-Calendar"] {
     mask-image: url(../assets/icon/noun_1058889.svg);
+  }
+  &[class*="MTSApp-Settings"] {
+    mask-image: url(../assets/cs-icons/Icon-White-Menu-Settings.svg);
+  }
+  &[class*="MTSApp-Support"] {
+    mask-image: url(../assets/cs-icons/Icon-White-Menu-Support.svg);
+  }
+  &[class*="MTSApp-Logout"] {
+    mask-image: url(../assets/cs-icons/Icon-White-Menu-Logout.svg);
   }
 }
 
@@ -105,6 +114,15 @@ ion-icon {
             top: 1.5rem;
             // Override Ionic list-item font-size
             font-size: inherit;
+          }
+        }
+      }
+      .first-item {
+        .label {
+          .item-icon {
+            height: 1.1em;
+            width: 1.1em;
+            margin-left: -0.05em;
           }
         }
       }
