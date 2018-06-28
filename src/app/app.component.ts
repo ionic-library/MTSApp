@@ -171,7 +171,6 @@ export class MyApp {
       (val: string) => {
         if (val == "en" || val == "fr") {
           this.translate.use(val);
-          console.log("initTranslate translate.use() succesful");
         }
       },
       () => {
