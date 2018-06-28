@@ -42,7 +42,7 @@ import { User } from "../providers";
       </ion-list>
 
       <ion-list class="nav-menu-list">
-        <button menuClose ion-item *ngFor="let p of userSelections; let i = index; let last = last;"
+        <button menuClose ion-item icon-left icon-only *ngFor="let p of userSelections; let i = index; let last = last;"
         [attr.id]="'nav-menu-button-options-' + i"
         [attr.aria-label]="p.title"
         color="navMenuButton"
