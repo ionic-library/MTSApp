@@ -8,7 +8,13 @@ export class TranslateMock {
   public setDefaultLang() {}
   public getBrowserLang = () => "en";
 }
-export class SettingsMock {}
+export class SettingsMock {
+  load() {
+    return new Promise(function(resolve: Function): void {
+      resolve();
+    });
+  }
+}
 export class PlatformMock {
   public ready(): Promise<string> {
     return new Promise(resolve => {
@@ -98,6 +104,12 @@ export class NavMock {
   }
 
   public push(): any {
+    return new Promise(function(resolve: Function): void {
+      resolve();
+    });
+  }
+
+  public get(): any {
     return new Promise(function(resolve: Function): void {
       resolve();
     });
