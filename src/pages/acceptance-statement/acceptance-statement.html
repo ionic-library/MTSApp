@@ -32,8 +32,8 @@
     <h1 class="statement-header">{{ 'ACCEPTANCE_STATEMENT_HEADER' | translate }}</h1>
     <p class="statement-content">{{ 'ACCEPTANCE_STATEMENT_CONTENT' | translate }}</p>
     <ion-buttons>
-      <button id="accept-statement-button" class="accept-button" aria-label="Accept button" ion-button (click)="acceptStatement(report)">{{ 'ACCEPT_BUTTON' | translate }}</button>
-      <a id="refuse-statement-button" class="refuse-button" (click)="refuseStatement($event)" href="">{{ 'REFUSE_BUTTON' | translate }}</a>
+      <button id="accept-statement-button" class="accept-button" ion-button (click)="acceptStatement(report)">{{ 'ACCEPT_BUTTON' | translate }}</button>
+      <button id="refuse-statement-button" class="refuse-button" ion-button color="light" (click)="refuseStatement($event)">{{ 'REFUSE_BUTTON' | translate }}</button>
     </ion-buttons>
   </div>
   <div class="section-seperator" row-no-padding></div>
