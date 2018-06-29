@@ -13,11 +13,25 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.let
-
+.questionHeading {
+  font-weight: 400;
+  font-size: 24px;
+}
 .questionNumber {
-  color: #0f71c4;
-  font-size: 12px;
-  font-weight: 700;
+  color: color($colors, primary, base) !important;
+  font-weight: 700 !important;
+  text-transform: none !important;
+}
+.questionText {
+  text-transform: none !important;
+  color: color($colors, dark, base) !important;
+}
+.questionDate {
+  padding: 2px !important;
+}
+.questionDateIcon {
+  position: relative;
+  top: calc(50% - 10px);
 }
 // Custom icons
 // Overriding the ion-icon behavior
