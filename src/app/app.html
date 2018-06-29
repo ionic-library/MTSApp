@@ -12,7 +12,7 @@
 
     <ion-content color="navMenuBackground">
         <ion-list class="nav-menu-list" color="navMenuBackground">
-            <button text-wrap menuClose ion-item icon-left icon-only *ngFor="let p of pages; let i = index; let first = first; let last = last;"
+            <button text-wrap menuClose ion-item icon-left *ngFor="let p of pages; let i = index; let first = first; let last = last;"
                 [attr.id]="'nav-menu-button-pages-' + i" color="navMenuButton" [class.first-item]="first" [class.last-item]="last"
                 (click)="openPage(p)">
                 <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
@@ -27,7 +27,7 @@
         </ion-list>
 
         <ion-list class="nav-menu-list">
-            <button menuClose ion-item icon-left icon-only *ngFor="let p of userSelections; let i = index; let last = last;" [attr.id]="'nav-menu-button-options-' + i"
+            <button menuClose ion-item icon-left *ngFor="let p of userSelections; let i = index; let last = last;" [attr.id]="'nav-menu-button-options-' + i"
                 [attr.aria-label]="p.title" color="navMenuButton" [class.last-item]="last" (click)="openSettings(p.title)">
                 <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
                 <p class="nav-option-text">{{p.title | translate}}</p>
