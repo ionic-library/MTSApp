@@ -144,9 +144,11 @@ export class User {
 */
     return seq;
   }
+
   logout() {
     this._user = null;
   }
+
   private _loggedIn(resp: any) {
     this._user = resp.user;
   }

@@ -3,7 +3,13 @@
 import { StatusBar } from "@ionic-native/status-bar";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { Storage } from "@ionic/storage";
-
+const NOOP = () => {};
+const EmptyPromise = () =>
+  new Promise(
+    (resolve: Function): void => {
+      resolve();
+    }
+  );
 export class TranslateMock {
   public setDefaultLang() {}
   public getBrowserLang = () => "en";
@@ -98,15 +104,11 @@ export class SplashScreenMock extends SplashScreen {
 
 export class NavMock {
   public pop(): any {
-    return new Promise(function(resolve: Function): void {
-      resolve();
-    });
+    return EmptyPromise();
   }
 
   public push(): any {
-    return new Promise(function(resolve: Function): void {
-      resolve();
-    });
+    return EmptyPromise();
   }
 
   public get(): any {
@@ -147,24 +149,50 @@ export class NavParamsMock {
 
 export class ModalCtrlMock {
   public create(): any {
-    return new Promise(function(resolve: Function): void {
-      resolve();
-    });
+    return EmptyPromise();
   }
 }
 
 export class DeepLinkerMock {}
 
-export class StorageMock  {
+export class StorageMock {
+  // Get and set can't throw errors as they are needed in a constructor
   get() {
-    throw Error("StorageMock.Get not Mocked");
+    return EmptyPromise();
   }
-
   set() {
-    throw Error("StorageMock.Set not Mocked");
+    return EmptyPromise();
   }
 
+  public readonly driver: string;
 
+  public ready() {
+    throw Error("StorageMock.ready() not Mocked");
+  }
+
+  private _getDriverOrder() {
+    throw Error("StorageMock._getDriverOrdere() not Mocked");
+  }
+
+  public remove() {
+    throw Error("StorageMock.remove() not Mocked");
+  }
+
+  public clear() {
+    throw Error("StorageMock.clear() not Mocked");
+  }
+
+  public length() {
+    throw Error("StorageMock.length() not Mocked");
+  }
+
+  public keys() {
+    throw Error("StorageMock.keys() not Mocked");
+  }
+
+  public forEach(iteratorCallback) {
+    throw Error("StorageMock.foreach(iteratorCallback) not Mocked");
+  }
 }
 
 /* tslint:enable*/

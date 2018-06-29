@@ -125,11 +125,12 @@ export class MyApp {
   }
 
   openPage(page: any) {
+
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav
-      .setRoot(page.component)
-      .then(() => console.log("Opening a page as root " + JSON.stringify(page)))
+      .push(page.component)
+      .then(() => console.log("Opening a page with back button " + JSON.stringify(page)))
       .catch((reason: any) => console.error(reason));
   }
 
@@ -144,7 +145,7 @@ export class MyApp {
     this.menuCtrl
       .toggle()
       .then(() => console.log("Toggling dev page menu"))
-      .catch((reason: any) => console.error(reason));
+      .catch((reason: any) => console.error(reason)); 
   }
 
   makeMainNavActive() {

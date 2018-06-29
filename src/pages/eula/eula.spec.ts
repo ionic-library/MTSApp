@@ -1,44 +1,39 @@
 import { CommonTestModule } from "./../../app/sharedModules";
-import { async, TestBed, ComponentFixture } from "@angular/core/testing";
+import { async, TestBed, inject } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
 import { EulaPage } from "./eula";
 import { User } from "../../providers/user/user";
-import { provideSettings } from "../../app/app.module";
 
-let { expect } = chai;
+const { expect } = chai;
 chai.use(sinonChai);
 
 const NOOP = () => {};
 
 describe("The EULA Page", () => {
-  let sut: ComponentFixture<EulaPage>;
-  let comp: EulaPage;
-  let user: User;
-
-  beforeEach(() => {
-    user = new User(null, null, null);
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([EulaPage]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
-        { provide: User, useValue: user }
+        { provide: EulaPage, useClass: EulaPage }
       ])
-    });
-    sut = TestBed.createComponent(EulaPage);
-    comp = sut.componentInstance;
-  });
+    }).compileComponents();
+  }));
 
-  it("Should be created with no errors", () => {
-    expect(comp).to.exist;
-  });
+  it("Should be created with no errors", inject([EulaPage], sut => {
+    expect(sut).to.exist;
+  }));
 
-  it("setEulaAgreed is called on the user object.", () => {
-    const eulaSpy = sinon.stub(user, "setEulaAgreed").returns(NOOP);
+  it("setEulaAgreed is called on the user object.", inject(
+    [User, EulaPage],
+    (mockUser, sut) => {
+      const eulaSpy = sinon.spy(mockUser, "setEulaAgreed");
 
-    comp.setEula();
+      sut.setEula();
 
-    expect(eulaSpy).to.have.been.calledOnce;
-  });
+      expect(eulaSpy).to.have.been.calledOnce;
+    }
+  ));
 });
