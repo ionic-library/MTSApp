@@ -78,9 +78,6 @@ ion-icon {
     border-bottom: 1px solid white;
     height: 10vh;
 
-    .toolbar-background-md {
-      border: none;
-    }
     .toolbar-background-ios {
       border: none;
     }
@@ -147,11 +144,11 @@ ion-icon {
     }
     // Settings, Support and Logout List
     #user-selection-options {
-      .first-item {
-        border: none;
-      }
       .last-item {
         border: none;
+      }
+      .item-md.first-item {
+        border-top: 1px solid white;
       }
     }
   }

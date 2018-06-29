@@ -18,10 +18,10 @@
                 <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
                 <p class="nav-option-text">{{p.title | translate}}</p>
             </button>
-            <button id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
+            <button *ngIf="isDevMode" id="nav-menu-language-toggle" menuClose ion-item color="navMenuButton" (click)="changeLang()">
                 {{"ALT_LANG"| translate}}
             </button>
-            <button id="nav-menu-dev-pages" ion-item color="navMenuButton" (click)="openDevPages()">
+            <button *ngIf="isDevMode" id="nav-menu-dev-pages" ion-item color="navMenuButton" (click)="openDevPages()">
                 Dev Pages
             </button>
         </ion-list>
