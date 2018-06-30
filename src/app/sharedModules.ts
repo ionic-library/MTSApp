@@ -77,7 +77,8 @@ export class CommonTestModule {
       //Create our default lang mock
       { provide: User, useClass: User },
       { provide: Api, useClass: Api },
-      { provide: Storage, useClass: StorageMock }
+      { provide: Storage, useClass: StorageMock },
+      { provide: Reports, useClass: Reports }
     ];
 
     if (overrides == null) {

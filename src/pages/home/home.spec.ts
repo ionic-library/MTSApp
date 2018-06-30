@@ -2,9 +2,8 @@ import { HomePageCarouselComponent } from "./../../components/home-page-carousel
 import { CommonTestModule } from "./../../app/sharedModules";
 import { HomePage } from "./home";
 import { NavController } from "ionic-angular";
-import { NavMock } from "./../../../test-config/mocks-ionic";
 import { SitePages } from "..";
-import { TestBed, ComponentFixture } from "@angular/core/testing";
+import { TestBed, async, inject } from "@angular/core/testing";
 import { User } from "../../providers";
 import * as chai from "chai";
 import * as sinon from "sinon";
@@ -14,15 +13,7 @@ const { expect } = chai;
 chai.use(sinonChai);
 
 describe("The Home Page", () => {
-  let sut: ComponentFixture<HomePage>;
-  let homePage: HomePage;
-  let navSpy: sinon.SinonSpy;
-  let fakeNavController: NavMock;
-  let fakeUser: User;
-
   function setupTestBedConfig() {
-    fakeNavController = new NavMock();
-    fakeUser = new User(null, null, null);
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([
         HomePage,
@@ -30,52 +21,49 @@ describe("The Home Page", () => {
       ]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
-        { provide: NavController, useValue: fakeNavController },
-        { provide: User, useValue: fakeUser }
+        { provide: HomePage, useClass: HomePage }
       ])
     }).compileComponents();
   }
 
-  function createTestObjects() {
-    sut = TestBed.createComponent(HomePage);
-    homePage = sut.componentInstance;
-    navSpy = sinon.spy(fakeNavController, "push");
-  }
-
   describe("itself", () => {
-    beforeEach(async () => {
+    beforeEach(async(() => {
       setupTestBedConfig();
-    });
+    }));
 
-    beforeEach(() => {
-      createTestObjects();
-    });
-
-    it("Should be created with no errors", () => {
-      expect(homePage).to.exist;
-    });
+    it("Should be created with no errors", inject([HomePage], sut => {
+      expect(sut).to.exist;
+    }));
   });
 
   describe("Login Button", () => {
-    beforeEach(async () => {
+    beforeEach(async(() => {
       setupTestBedConfig();
-    });
+    }));
 
-    beforeEach(() => {
-      createTestObjects();
-    });
+    it("Should navigate to the EI Reporting Login Page when user is not logged in", inject(
+      [NavController, User, HomePage],
+      (navCtl, user, sut) => {
+        const navSpy = sinon.spy(navCtl, "push");
+        sinon.stub(user, "isLoggedIn").returns(false);
 
-    it("Should navigate to the EI Reporting Login Page when user is not logged in", () => {
-      sinon.stub(fakeUser, "isLoggedIn").returns(false);
-      homePage.navigateToEIReportingPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.EILogin);
-    });
+        sut.navigateToEIReportingPage();
 
-    it("Should navigate to the EI Reporting Page when user is logged in", () => {
-      sinon.stub(fakeUser, "isLoggedIn").returns(true);
-      homePage.navigateToEIReportingPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.EiReporting);
-    });
+        expect(navSpy).to.have.been.calledWith(SitePages.EILogin);
+      }
+    ));
+
+    it("Should navigate to the EI Reporting Page when user is logged in", inject(
+      [NavController, User, HomePage],
+      (navCtl, user, sut) => {
+        const navSpy = sinon.spy(navCtl, "push");
+        sinon.stub(user, "isLoggedIn").returns(true);
+
+        sut.navigateToEIReportingPage();
+
+        expect(navSpy).to.have.been.calledWith(SitePages.EiReporting);
+      }
+    ));
   });
 
   describe("Navigation Buttons", () => {
@@ -83,33 +71,59 @@ describe("The Home Page", () => {
       setupTestBedConfig();
     });
 
-    beforeEach(() => {
-      createTestObjects();
-    });
+    it("Should navigate to the Search Page when navigateToSearchPage is called", inject(
+      [NavController, HomePage],
+      (navCtl, sut) => {
+        const navSpy = sinon.spy(navCtl, "push");
 
-    it("Should navigate to the Search Page when navigateToSearchPage is called", () => {
-      homePage.navigateToSearchPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
-    });
+        sut.navigateToSearchPage();
 
-    it("Should navigate to the Service Canada Location navigateToSCCLocationPage is called", () => {
-      homePage.navigateToSCCLocationPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.Locations);
-    });
+        expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
+      }
+    ));
 
-    it("Should navigate to the My Notifications Page when navigateToMyNotificationsPage is called", () => {
-      homePage.navigateToMyNotificationsPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
-    });
+    it("Should navigate to the Service Canada Location navigateToSCCLocationPage is called", inject(
+      [NavController, HomePage],
+      (navCtl, sut) => {
+        const navSpy = sinon.spy(navCtl, "push");
 
-    it("Should navigate to the Benefit Finder Page when navigateToBenefitFinderPage is called", () => {
-      homePage.navigateToBenefitFinderPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
-    });
+        sut.navigateToSCCLocationPage();
 
-    it("Should navigate to the Life Events Page when navigationToLifeEventsPage is called", () => {
-      homePage.navigateToLifeEventsPage();
-      expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
-    });
+        expect(navSpy).to.have.been.calledWith(SitePages.Locations);
+      }
+    ));
+
+    it("Should navigate to the My Notifications Page when navigateToMyNotificationsPage is called", inject(
+      [NavController, HomePage],
+      (navCtl, sut) => {
+        const navSpy = sinon.spy(navCtl, "push");
+
+        sut.navigateToMyNotificationsPage();
+
+        expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
+      }
+    ));
+
+    it("Should navigate to the Benefit Finder Page when navigateToBenefitFinderPage is called", inject(
+      [NavController, HomePage],
+      (navCtl, sut) => {
+        const navSpy = sinon.spy(navCtl, "push");
+
+        sut.navigateToBenefitFinderPage();
+
+        expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
+      }
+    ));
+
+    it("Should navigate to the Life Events Page when navigationToLifeEventsPage is called", inject(
+      [NavController, HomePage],
+      (navCtl, sut) => {
+        const navSpy = sinon.spy(navCtl, "push");
+
+        sut.navigateToLifeEventsPage();
+
+        expect(navSpy).to.have.been.calledWith(SitePages.BlankPage);
+      }
+    ));
   });
 });

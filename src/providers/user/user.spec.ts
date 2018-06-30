@@ -1,35 +1,58 @@
+import { CommonTestModule } from "./../../app/sharedModules";
+import { async, TestBed, inject, fakeAsync, tick } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
-import { User } from "./user";
-import { StorageMock } from "../../../test-config/mocks-ionic";
 
-let { expect } = chai;
+import { User } from "./user";
+import { Storage } from "@ionic/storage";
+
+const { expect } = chai;
 chai.use(sinonChai);
 
 const NOOP = () => {};
-describe("User Object", () => {
-  let sut: User;
-  let fakeStorage: StorageMock;
 
-  beforeEach(() => {
-    fakeStorage = new StorageMock();
-    sut = new User(null, fakeStorage, null);
-  });
+describe("User Provider", () => {
+  beforeEach(async(() => {
+    //we have to stub the storage set and get here since the user provider calls to storage in the contstructor
 
-  it("User get Eula should be called", () => {
-    const spy = sinon.stub(fakeStorage, "get").resolves(NOOP);
+    TestBed.configureTestingModule({
+      declarations: CommonTestModule.getDeclarations(),
+      imports: CommonTestModule.getImports(),
+      providers: CommonTestModule.getProviders()
+    }).compileComponents();
+  }));
 
-    sut.isEulaAgreed(NOOP, NOOP);
+  it("User get Eula should be called", inject(
+    [Storage, User],
+    (storage, sut) => {
+      sinon
+        .stub(storage, "get")
+        .withArgs("eula")
+        .resolves("Yes");
 
-    expect(spy).to.have.been.calledWith("eula");
-  });
+      sut.isEulaAgreed(val => {
+        expect(val).to.be.true;
+      }, NOOP);
+    }
+  ));
 
-  it("User set Eula should be called", () => {
-    const spy = sinon.stub(fakeStorage, "set").resolves(NOOP);
+  it(
+    "User set Eula should be called",
+    fakeAsync(
+      inject([Storage, User], (storage, sut) => {
+        const successSpy = sinon.spy();
 
-    sut.setEulaAgreed(NOOP, NOOP);
+        sinon
+          .stub(storage, "set")
+          .withArgs("eula", "Yes")
+          .resolves();
 
-    expect(spy).to.have.been.calledWith("eula");
-  });
+        sut.setEulaAgreed(successSpy, NOOP);
+
+        tick(10000);
+        expect(successSpy).to.have.been.called;
+      })
+    )
+  );
 });
