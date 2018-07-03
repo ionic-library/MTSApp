@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 import {
   ViewController,
   IonicPage,
@@ -25,7 +26,8 @@ export class HelpModalPage {
   constructor(
     public viewCtrl: ViewController,
     public navCtrl: NavController,
-    public navParams: NavParams
+    public navParams: NavParams,
+    public translate: TranslateService
   ) {
     this.modalTitle = navParams.get("modalTitle");
     console.log(this.modalTitle);
