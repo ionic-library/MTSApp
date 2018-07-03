@@ -12,7 +12,7 @@
         </button>
         <ion-title>Login Failed</ion-title>
         <ion-buttons end>
-          <button id="help-button" aria-label="Help button" ion-button clear (click)="presentHelpModal()">
+          <button id="help-button" attr.aria-label="{{ 'HELP_MODAL_ARIA_LABEL' | translate }}" ion-button clear (click)="presentHelpModal()">
             <i class="help" class="fa fa-question-circle"></i>
           </button>
         </ion-buttons>
