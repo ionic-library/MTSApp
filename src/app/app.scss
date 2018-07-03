@@ -97,8 +97,6 @@ ion-icon {
         .item-inner {
           // Removes built-in border for list items
           border: none;
-          // Match list item height to design
-          height: 5.5rem;
 
           .nav-menu-icon {
             // Prevents display issues where container clips icon mask
@@ -117,7 +115,6 @@ ion-icon {
           .item-icon {
             height: 1.1em;
             width: 1.1em;
-            margin-left: -0.05em !important;
           }
         }
       }
@@ -126,8 +123,6 @@ ion-icon {
         .item-inner {
           // Removes built-in border for list items
           border: none;
-          // Match list item height to design
-          height: 5.5rem;
 
           .nav-menu-icon {
             // Prevents display issues where container clips icon mask
@@ -144,11 +139,68 @@ ion-icon {
     }
     // Settings, Support and Logout List
     #user-selection-options {
-      .last-item {
-        border: none;
-      }
+      max-height: 90%;
+
       .item-md.first-item {
         border-top: 1px solid white;
+      }
+      .first-item {
+        .label {
+          .item-icon {
+            height: 1em;
+            width: 1em;
+          }
+        }
+      }
+      // On iOS, remove bottom border of last item in list
+      .last-item {
+        border-bottom: none;
+      }
+    }
+  }
+  // Logout Footer CSS
+  // Remove top shadow automatically applied to Android footers
+  .footer-md::before {
+    top: 0;
+  }
+  #nav-menu-logout {
+    // Remove bottom border from Logout option generated automatically on Android
+    .item-inner {
+      border: none;
+    }
+  }
+  #logout-option-text {
+    // Required positioning CSS as Ionic does not automatically vertically center button text in this case
+    position: absolute;
+    left: 5.5rem;
+    top: 1.5rem;
+  }
+  // Very small display media query
+  @media only screen and (max-height: 568px) {
+    .content {
+      .nav-menu-list {
+        .item-md {
+          .item-inner {
+            height: 5.1rem;
+          }
+        }
+        .item-ios {
+          .item-inner {
+            height: 5.1rem;
+          }
+        }
+      }
+      #user-selection-options {
+        .item-md {
+          .item-inner {
+            height: 5rem;
+          }
+        }
+        .item-ios {
+          .item-inner {
+            height: 5rem;
+          }
+        }
       }
     }
   }

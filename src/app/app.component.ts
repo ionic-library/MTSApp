@@ -61,11 +61,6 @@ export class MyApp {
       title: "SUPPORT_NAV_MENU_TITLE",
       component: SitePages.Support,
       iconName: "MTSApp-Support"
-    },
-    {
-      title: "LOGOUT_NAV_MENU_TITLE",
-      component: SitePages.BlankPage,
-      iconName: "MTSApp-Logout"
     }
   ];
 
