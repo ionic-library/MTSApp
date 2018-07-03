@@ -10,10 +10,10 @@ import { SitePages } from "../index";
 
 @IonicPage()
 @Component({
-  selector: "page-questionaire-5",
-  templateUrl: "questionaire-5.html"
+  selector: "page-questionnaire-5a",
+  templateUrl: "questionnaire-5a.html"
 })
-export class Questionaire_5Page {
+export class Questionnaire_5aPage {
   pushPagePrevious: any;
   pushPageNext: any;
   startDate: any;
@@ -26,12 +26,12 @@ export class Questionaire_5Page {
   ) {
     this.startDate = "March 28, 2010";
     this.endDate = "April 10, 2010";
-    this.pushPagePrevious = SitePages.Questionaire3;
-    this.pushPageNext = SitePages.Questionaire5a;
+    this.pushPagePrevious = SitePages.Questionaire5;
+    this.pushPageNext = SitePages.Questionnaire5b;
   }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad QuestionairePage");
+    console.log("ionViewDidLoad Questionnaire_5aPage");
   }
 
   presentHelpModal() {
