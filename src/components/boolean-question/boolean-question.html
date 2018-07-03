@@ -1,17 +1,22 @@
 <!-- Generated template for the YesNoQuestionComponent component -->
 
   <h1 ionic-text padding-horizontal > {{ this.title }} </h1>
-  <ion-label >
-    <span class="questionNumber" ionic-text padding-horizontal >Question {{this.number}}/{{this.total}} </span>
-    <span ionic-text padding-horizontal text-wrap class="questionQuestion" >{{ this.question}}</span>
-  </ion-label>
-  <ion-list radio-group >
-      <ion-item>
-          <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
-          <ion-radio value=true ></ion-radio>
-        </ion-item>
-        <ion-item>
-          <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
-          <ion-radio value=false ></ion-radio>
-        </ion-item>
+
+  <ion-list radio-group>
+
+    <ion-list-header>
+      <span class="questionNumber" ionic-text padding-horizontal >Question {{this.number}}/{{this.total}} </span>
+      <p ionic-text padding-horizontal text-wrap class="questionQuestion" >{{ this.question}}</p>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
+      <ion-radio value=true ></ion-radio>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>{{ 'RESPONSE_NO' | translate }}</ion-label>
+      <ion-radio value=false ></ion-radio>
+    </ion-item>
+
   </ion-list>

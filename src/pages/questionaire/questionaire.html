@@ -27,12 +27,10 @@
     <ion-grid>
         <ion-row>
           <ion-col>
-             <!--
-               <button id="previous" ion-button color="light" block   [navPush]="pushPage" >{{ 'QUESTION_PREVIOUS' | translate }}</button>
-              -->
-              </ion-col>
+              <button id="previous" ion-button color="light" block (onclick)="previousQuestion()" >{{ 'QUESTION_PREVIOUS' | translate }}</button>
+          </ion-col>
           <ion-col>
-              <button id="next" ion-button color="positive" block [navPush]="pushPage" >{{ 'QUESTION_NEXT' | translate }}</button>
+              <button id="next" ion-button color="positive" block (onclick)="nextQuestion()" >{{ 'QUESTION_NEXT' | translate }}</button>
           </ion-col>
         </ion-row>
 

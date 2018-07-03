@@ -24,6 +24,7 @@ import {
   User
 } from "../providers";
 import { MyApp } from "./app.component";
+import { EiReportingQuestionsProvider } from "../providers/ei-reporting-questions/ei-reporting-questions";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -76,7 +77,8 @@ export function provideSettings(storage: Storage) {
     // Keep this to enable Ionic's runtime error handling during development
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProvincesProvider,
-    Lang
+    Lang,
+    EiReportingQuestionsProvider
   ]
 })
 export class AppModule {}
