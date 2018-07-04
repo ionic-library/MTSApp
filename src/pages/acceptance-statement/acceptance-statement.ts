@@ -8,6 +8,8 @@ import {
 } from "ionic-angular";
 import { Report } from "../../models/mockEiReport";
 import { SitePages } from "..";
+import { LogProvider } from "../../providers";
+import { Logger } from "winston";
 
 /**
  * Generated class for the AcceptanceStatementPage page.
@@ -22,6 +24,7 @@ import { SitePages } from "..";
   templateUrl: "acceptance-statement.html"
 })
 export class AcceptanceStatementPage {
+  private readonly logger: Logger;
   report: Report;
 
   readonly helpSelectionOptions = {
@@ -80,36 +83,38 @@ export class AcceptanceStatementPage {
     public translate: TranslateService,
     public navParams: NavParams,
     public navCtrl: NavController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private readonly logProvider: LogProvider
   ) {
+    this.logger = this.logProvider.getLogger();
     this.report = navParams.get("report");
   }
 
   presentHelpModal(helpSelection) {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal, helpSelection);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad AcceptanceStatementPage");
+    this.logger.info("ionViewDidLoad AcceptanceStatementPage");
   }
 
   acceptStatement = (report: any) => {
     this.navCtrl
       .push(SitePages.Questionaire, { report })
-      .then(() => console.log("accepting statement"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("accepting statement"))
+      .catch((reason: any) => this.logger.error(reason));
   };
 
   refuseStatement = (event: Event) => {
     event.preventDefault();
     this.navCtrl
       .push(SitePages.Home)
-      .then(() => console.log("refusing statement"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("refusing statement"))
+      .catch((reason: any) => this.logger.error(reason));
   };
 }

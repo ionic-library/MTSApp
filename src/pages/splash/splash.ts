@@ -3,15 +3,23 @@ import { IonicPage, NavController } from "ionic-angular";
 import { User, LangCodes } from "../../providers";
 import { SitePages } from "../../pages";
 
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 @IonicPage()
 @Component({
   selector: "page-splash",
   templateUrl: "splash.html"
 })
 export class SplashPage {
+  private readonly logger: Logger;
   public show: boolean = false;
 
-  constructor(public navCtrl: NavController, public user: User) {
+  constructor(
+    public navCtrl: NavController,
+    public user: User,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
     this.user.GetLang(
       (_Lang: string) => {
         if (typeof _Lang == "undefined") {
@@ -22,9 +30,9 @@ export class SplashPage {
               if (isAgreed) {
                 this.navCtrl
                   .push(SitePages.Home)
-                  .then(() => console.log("EULA set. Navigating home"))
+                  .then(() => this.logger.info("EULA set. Navigating home"))
                   .catch((reason: any) =>
-                    console.error(
+                    this.logger.error(
                       "Could not navigate home: " + JSON.stringify(reason)
                     )
                   );
@@ -32,23 +40,25 @@ export class SplashPage {
                 this.navCtrl
                   .push(SitePages.eula)
                   .then(() =>
-                    console.log("EULA not set. Navigating to EULA page.")
+                    this.logger.info("EULA not set. Navigating to EULA page.")
                   )
                   .catch((reason: any) =>
-                    console.error(
+                    this.logger.error(
                       "Could not navigate to EULA: " + JSON.stringify(reason)
                     )
                   );
               }
             },
             (Error: any) => {
-              console.error("Could not get EULA val: " + JSON.stringify(Error));
+              this.logger.error(
+                "Could not get EULA val: " + JSON.stringify(Error)
+              );
             }
           );
         }
       },
       (Error: string) => {
-        console.error("Error getting language: " + JSON.stringify(Error));
+        this.logger.error("Error getting language: " + JSON.stringify(Error));
       }
     );
   }
@@ -59,11 +69,11 @@ export class SplashPage {
       () => {
         this.navCtrl
           .push(SitePages.eula)
-          .then(() => console.log("Navigating to " + SitePages.eula))
-          .catch((reason: any) => console.error(reason));
+          .then(() => this.logger.info("Navigating to " + SitePages.eula))
+          .catch((reason: any) => this.logger.error(reason));
       },
       (reason: any) => {
-        console.error("Could not set lang: " + JSON.stringify(reason));
+        this.logger.error("Could not set lang: " + JSON.stringify(reason));
       }
     );
   }

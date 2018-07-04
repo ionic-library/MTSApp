@@ -31,7 +31,7 @@ import {
   StorageMock
 } from "../../test-config/mocks-ionic";
 import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
-import { ProvincesProvider, User, Api } from "../providers";
+import { LogProvider, ProvincesProvider, User, Api } from "../providers";
 import { Type } from "@angular/core";
 import { Reports } from "../mocks/providers/mock-ei-reports";
 
@@ -67,6 +67,7 @@ export class CommonTestModule {
       { provide: ViewController },
       { provide: NavParams, useClass: NavParamsMock },
       { provide: NavController, useClass: NavMock },
+      { provide: LogProvider, useClass: LogProvider },
       { provide: ModalController, useClass: ModalCtrlMock },
       { provide: StatusBar, useClass: StatusBarMock },
       { provide: SplashScreen, useClass: SplashScreenMock },
@@ -75,10 +76,10 @@ export class CommonTestModule {
       { provide: Settings, useClass: SettingsMock },
       { provide: ProvincesProvider, useClass: ProvincesProvider },
       //Create our default lang mock
-      { provide: User, useClass: User },
       { provide: Api, useClass: Api },
       { provide: Storage, useClass: StorageMock },
-      { provide: Reports, useClass: Reports }
+      { provide: Reports, useClass: Reports },
+      { provide: User, useClass: User }
     ];
 
     if (overrides == null) {

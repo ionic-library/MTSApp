@@ -1,4 +1,5 @@
-import { User } from "./../../providers/user/user";
+import { User, LogProvider } from "../../providers";
+import { Logger } from "winston";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { SitePages } from "../index";
@@ -18,13 +19,16 @@ export class HomePage {
   location: string = "";
   temperature: string = "";
   userName: string = "";
+  private readonly logger: Logger;
 
   constructor(
     private readonly navCtrl: NavController,
     private readonly user: User,
     public modalCtrl: ModalController,
-    public translate: TranslateService
+    public translate: TranslateService,
+    private readonly logProvider: LogProvider
   ) {
+    this.logger = this.logProvider.getLogger();
     this.getGreeting("GREETING_MORNING");
     this.getLocation();
     this.getTemperature();
@@ -50,12 +54,12 @@ export class HomePage {
   }
 
   presentHelpModal() {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   /**
@@ -84,9 +88,9 @@ export class HomePage {
   private readonly navigateToPage = (page: SitePages) => {
     this.navCtrl
       .push(page)
-      .then(() => console.log("Navigating to : " + page.toString()))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Navigating to : " + page.toString()))
+      .catch((reason: any) => this.logger.error(reason));
   };
 
-  public ionViewDidLoad = () => console.log("Loading Home Page");
+  public ionViewDidLoad = () => this.logger.info("Loading Home Page");
 }

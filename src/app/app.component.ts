@@ -7,7 +7,8 @@ import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
 import { MenuController } from "ionic-angular";
 import { FirstRunPage } from "../pages";
-import { User } from "../providers";
+import { User, LogProvider } from "../providers";
+import { Logger } from "winston";
 
 @Component({
   templateUrl: "app.html"
@@ -76,6 +77,7 @@ export class MyApp {
   ];
 
   isDevMode = isDevMode();
+  private readonly logger: Logger;
 
   constructor(
     private readonly translate: TranslateService,
@@ -84,8 +86,10 @@ export class MyApp {
     private readonly statusBar: StatusBar,
     private readonly splashScreen: SplashScreen,
     private readonly user: User,
-    private readonly menuCtrl: MenuController
+    private readonly menuCtrl: MenuController,
+    private readonly logProvider: LogProvider
   ) {
+    this.logger = this.logProvider.getLogger();
     platform
       .ready()
       .then(() => {
@@ -97,11 +101,10 @@ export class MyApp {
         this.config.set("android", "backButtonText", "");
       })
       .catch((reason: any) => {
-        console.error(reason);
+        this.logger.error(reason);
       });
 
     this.initTranslate();
-    console.log(isDevMode());
   }
 
   public initTranslate() {
@@ -114,33 +117,36 @@ export class MyApp {
         }
       },
       () => {
-        console.log("lang set error error");
+        this.logger.info("lang set error error");
       }
     );
   }
 
   openPage(page: any) {
-
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
     this.nav
       .push(page.component)
-      .then(() => console.log("Opening a page with back button " + JSON.stringify(page)))
-      .catch((reason: any) => console.error(reason));
+      .then(() =>
+        this.logger.info(
+          "Opening a page with back button " + JSON.stringify(page)
+        )
+      )
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   openDevPages() {
-    console.log("click received");
+    this.logger.info("click received");
     this.menuCtrl
       .toggle()
-      .then(() => console.log("Toggling main nav menu"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Toggling main nav menu"))
+      .catch((reason: any) => this.logger.error(reason));
     this.menuCtrl.enable(true, "dev-pages");
     this.menuCtrl.enable(false, "main-nav-menu");
     this.menuCtrl
       .toggle()
-      .then(() => console.log("Toggling dev page menu"))
-      .catch((reason: any) => console.error(reason)); 
+      .then(() => this.logger.info("Toggling dev page menu"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   makeMainNavActive() {
@@ -153,14 +159,14 @@ export class MyApp {
       case "SUPPORT_NAV_MENU_TITLE":
         this.nav
           .push(SitePages.Support)
-          .then(() => console.log("Opening Support"))
-          .catch((reason: any) => console.error(reason));
+          .then(() => this.logger.info("Opening Support"))
+          .catch((reason: any) => this.logger.error(reason));
         break;
       case "SETTINGS_NAV_MENU_TITLE":
         this.nav
           .push(SitePages.Settings)
-          .then(() => console.log("Opening Settings"))
-          .catch((reason: any) => console.error(reason));
+          .then(() => this.logger.info("Opening Settings"))
+          .catch((reason: any) => this.logger.error(reason));
     }
   }
 

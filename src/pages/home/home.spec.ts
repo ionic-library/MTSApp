@@ -26,21 +26,17 @@ describe("The Home Page", () => {
     }).compileComponents();
   }
 
-  describe("itself", () => {
-    beforeEach(async(() => {
-      setupTestBedConfig();
-    }));
+  beforeEach(async(() => {
+    setupTestBedConfig();
+  }));
 
+  describe("itself", () => {
     it("Should be created with no errors", inject([HomePage], sut => {
       expect(sut).to.exist;
     }));
   });
 
   describe("Login Button", () => {
-    beforeEach(async(() => {
-      setupTestBedConfig();
-    }));
-
     it("Should navigate to the EI Reporting Login Page when user is not logged in", inject(
       [NavController, User, HomePage],
       (navCtl, user, sut) => {
@@ -67,10 +63,6 @@ describe("The Home Page", () => {
   });
 
   describe("Navigation Buttons", () => {
-    beforeEach(async () => {
-      setupTestBedConfig();
-    });
-
     it("Should navigate to the Search Page when navigateToSearchPage is called", inject(
       [NavController, HomePage],
       (navCtl, sut) => {
