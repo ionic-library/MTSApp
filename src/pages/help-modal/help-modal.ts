@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { TranslateService } from "@ngx-translate/core";
 import {
   ViewController,
   IonicPage,
@@ -29,6 +30,8 @@ export class HelpModalPage {
     public viewCtrl: ViewController,
     public navCtrl: NavController,
     public navParams: NavParams,
+    public translate: TranslateService,
+     
     private readonly logProvider: LogProvider
   ) {
     this.logger = this.logProvider.getLogger();

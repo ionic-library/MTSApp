@@ -11,8 +11,8 @@
     <ion-title class="page-title">{{ this.modalTitle || 'HELP_MODAL_TITLE' | translate }}
     </ion-title>
     <ion-buttons end>
-      <button ion-button clear (click)="dismiss()" aria-label="Close Help">
-        <ion-icon class="close-help" name="close" aria-hidden="true"></ion-icon>
+      <button ion-button clear (click)="dismiss()" attr.aria-label="{{ 'HELP_MODAL_ARIA_LABEL_CLOSE' | translate }}">
+        <ion-icon class="close-help" name="close"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
