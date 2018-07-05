@@ -7,6 +7,8 @@ import {
 } from "ionic-angular";
 import { SitePages } from "..";
 
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 /**
  * Generated class for the LoginFailedPage page.
  *
@@ -20,22 +22,26 @@ import { SitePages } from "..";
   templateUrl: "login-failed.html"
 })
 export class LoginFailedPage {
+  private readonly logger: Logger;
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
-    public modalCtrl: ModalController
-  ) {}
+    public modalCtrl: ModalController,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad LoginFailedPage");
+    this.logger.info("ionViewDidLoad LoginFailedPage");
   }
 
   presentHelpModal() {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 }

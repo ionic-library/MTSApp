@@ -1,8 +1,6 @@
-import { StorageMock } from "./../../test-config/mocks-ionic";
-import { async, TestBed } from "@angular/core/testing";
+import { async, TestBed, inject } from "@angular/core/testing";
 import { MyApp } from "./app.component";
 import { CommonTestModule } from "./sharedModules";
-import { User } from "../providers";
 
 import * as chai from "chai";
 import * as sinon from "sinon";
@@ -11,29 +9,18 @@ import * as sinonChai from "sinon-chai";
 const { expect } = chai;
 chai.use(sinonChai);
 
-const NOOP = () => {};
-
 describe("MyApp Component", () => {
-  let fixture;
-  let sut;
-  let fakeUser: User;
-
-  beforeEach(() => {
-    fakeUser = new User(null, null, null);
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations(),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
-        { provide: User, useValue: fakeUser }
+        { provide: MyApp, useClass: MyApp }
       ])
-    });
+    }).compileComponents();
+  }));
 
-    sinon.stub(fakeUser, "GetLang").returns(NOOP);
-    fixture = TestBed.createComponent(MyApp);
-    sut = fixture.componentInstance;
-  });
-
-  it("should be created", () => {
-    expect(sut instanceof MyApp).to.be.true;
-  });
+  it("should be created", inject([MyApp], sut => {
+    expect(sut).to.exist;
+  }));
 });

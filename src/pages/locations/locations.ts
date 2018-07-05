@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 /**
  * Generated class for the LocationsPage page.
  *
@@ -14,9 +15,16 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "locations.html"
 })
 export class LocationsPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  private readonly logger: Logger;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad LocationsPage");
+    this.logger.info("ionViewDidLoad LocationsPage");
   }
 }

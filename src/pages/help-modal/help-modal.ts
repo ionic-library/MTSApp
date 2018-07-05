@@ -6,6 +6,8 @@ import {
   NavController,
   NavParams
 } from "ionic-angular";
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 
 /**
  * Generated class for the HelpModalPage page.
@@ -22,27 +24,31 @@ import {
 export class HelpModalPage {
   public modalTitle: string;
   public helpSections: any;
+  private readonly logger: Logger;
 
   constructor(
     public viewCtrl: ViewController,
     public navCtrl: NavController,
     public navParams: NavParams,
-    public translate: TranslateService
+    public translate: TranslateService,
+     
+    private readonly logProvider: LogProvider
   ) {
+    this.logger = this.logProvider.getLogger();
     this.modalTitle = navParams.get("modalTitle");
-    console.log(this.modalTitle);
+    this.logger.info(this.modalTitle);
     this.helpSections = navParams.get("sections");
-    console.log(this.helpSections);
+    this.logger.info(this.helpSections);
   }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad HelpModalPage");
+    this.logger.info("ionViewDidLoad HelpModalPage");
   }
 
   dismiss() {
     this.viewCtrl
       .dismiss()
-      .then(() => console.log("Help modal dismissed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help modal dismissed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 }

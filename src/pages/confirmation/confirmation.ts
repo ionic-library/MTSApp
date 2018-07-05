@@ -2,6 +2,8 @@ import { SitePages } from "..";
 import { TranslateService } from "@ngx-translate/core";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 
 @IonicPage()
 @Component({
@@ -9,32 +11,37 @@ import { IonicPage, NavController, ModalController } from "ionic-angular";
   templateUrl: "confirmation.html"
 })
 export class ConfirmationPage {
+  private readonly logger: Logger;
+
   constructor(
     private readonly navCtrl: NavController,
     public modalCtrl: ModalController,
-    public translate: TranslateService
-  ) {}
+    public translate: TranslateService,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   presentHelpModal() {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   navigateEiDashboard = () => {
     this.navCtrl
       .setRoot(SitePages.EiReporting)
-      .then(() => console.log("Setting Root to " + SitePages.EiReporting))
-      .catch((reason: any) => console.log(reason));
+      .then(() => this.logger.info("Setting Root to " + SitePages.EiReporting))
+      .catch((reason: any) => this.logger.info(reason));
 
     this.navCtrl
       .popToRoot()
-      .then(() => console.log("navigating to Root"))
-      .catch((reason: any) => console.log(reason));
+      .then(() => this.logger.info("navigating to Root"))
+      .catch((reason: any) => this.logger.info(reason));
   };
 
-  ionViewDidLoad = () => console.log("Loadded ConfirmationPage");
+  ionViewDidLoad = () => this.logger.info("Loadded ConfirmationPage");
 }

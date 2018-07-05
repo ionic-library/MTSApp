@@ -16,38 +16,39 @@
 </ion-header>
 
 <ion-content padding color="dark">
-    <ion-card> 
-        <ion-card-content padding-none>
-            <ion-grid>
-                <ion-row>
-                  <ion-col col-2 text-center>
-                      <ion-icon ios="ios-calendar-outline" md="ios-calendar-outline" class="dateIcon" ></ion-icon>
-                  </ion-col>
-                  <ion-col col-10  >
-                      {{ 'QUESTION_REPORT_PERIOD_TEXT' | translate }} <br/><strong>{{this.startDate}} {{ 'Question_REPORT_PERIOD_TEXT_TO' | translate }} {{this.endDate}}</strong>
-                  </ion-col>
-                </ion-row>
-                
-              </ion-grid>
-          
-        </ion-card-content>
-      </ion-card>
+  <ion-card> 
+    <ion-card-content padding-none class="questionDate">
+        <ion-grid>
+            <ion-row>
+              <ion-col col-2 text-center>
+                  <ion-icon  class="MTSApp-Calendar questionDateIcon" ></ion-icon>
+              </ion-col>
+              <ion-col col-10  >
+                  {{ 'QUESTION_REPORT_PERIOD_TEXT' | translate }} <br/><strong>{{this.startDate}} {{ 'Question_REPORT_PERIOD_TEXT_TO' | translate }} {{this.endDate}}</strong>
+              </ion-col>
+            </ion-row>
 
-    <h1 id="page-heading1" ionic-text padding-horizontal >
+          </ion-grid>
+
+    </ion-card-content>
+  </ion-card>
+    <h1  ionic-text padding-horizontal  class="questionHeading" >
       {{ 'QUESTION_SIX_TITLE' | translate }}
       </h1>
-      <h5 id="page-number1" class="questionNumber" ionic-text padding-horizontal >
-          {{ 'QUESTION_NUMBER_SIX' | translate }}
-      </h5>
-
-        <p  ionic-text padding-horizontal>
-            {{ 'QUESTION_SIX_TEXT' | translate }}
-
-
-        </p>
-
+      
       <form id="page-form2">
-        <ion-list radio-group >
+        <ion-list radio-group no-lines  >
+          <ion-list-header  text-wrap   no-lines>
+            <p ion-text color="primary" padding-bottom  class="questionNumber" >
+              {{ 'QUESTION_NUMBER_SIX' | translate }}
+            </p>
+            <p  class="questionText">
+                {{ 'QUESTION_SIX_TEXT' | translate }}
+    
+            </p>
+  
+          </ion-list-header>
+
 
         
             <ion-item>

@@ -2,6 +2,9 @@ import { Component } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { SitePages } from "../index";
+
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 /**
  * Generated class for the SubmissionPage page.
  *
@@ -15,6 +18,7 @@ import { SitePages } from "../index";
   templateUrl: "submission.html"
 })
 export class SubmissionPage {
+  private readonly logger: Logger;
   readonly helpSelectionOptions = {
     confirmationStatement: {
       modalTitle: "CONFIRMATION_STATEMENT_MODAL_TITLE",
@@ -29,8 +33,11 @@ export class SubmissionPage {
   constructor(
     public navCtrl: NavController,
     public translateService: TranslateService,
-    public modalCtrl: ModalController
-  ) {}
+    public modalCtrl: ModalController,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   goToConfirmation = () => this.navigateToPage(SitePages.Confirmation);
   editQuestion1 = () => this.navigateToPage(SitePages.Questionaire);
@@ -42,22 +49,22 @@ export class SubmissionPage {
   backToEIReporting = () => this.navigateToPage(SitePages.EiReporting);
 
   presentHelpModal(helpSelection) {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal, helpSelection);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   private navigateToPage(page: SitePages) {
     this.navCtrl
       .push(page)
-      .then(() => console.log("Navigating to page : " + page.toString()))
-      .catch((reason: string) => console.log(reason));
+      .then(() => this.logger.info("Navigating to page : " + page.toString()))
+      .catch((reason: string) => this.logger.info(reason));
   }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad SubmissionPage");
+    this.logger.info("ionViewDidLoad SubmissionPage");
   }
 }
