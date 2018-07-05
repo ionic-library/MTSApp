@@ -15,24 +15,25 @@
 
 </ion-header>
 
-<ion-content padding color="dark">
+<ion-content padding color="dark" >
 
-    <h1 id="page-heading1" ionic-text padding-horizontal >
+    <h1  ionic-text padding-horizontal  class="questionHeading" >
       {{ 'QUESTION_ONE_TITLE' | translate }}
       </h1>
-      <h5 id="page-heading2" class="questionNumber" ionic-text padding-horizontal >
-          {{ 'QUESTION_NUMBER_ONE' | translate }}
-      </h5>
-
-        <p ionic-text padding-horizontal >
-            {{ 'QUESTION_ONE_TEXT' | translate }}
-
-
-        </p>
+      
 
       <form id="page-form2">
-        <ion-list radio-group >
+        <ion-list radio-group no-lines  >
+          <ion-list-header  text-wrap   no-lines>
+            <p ion-text color="primary" padding-bottom  class="questionNumber" >
+              {{ 'QUESTION_NUMBER_ONE' | translate }}
+            </p>
+            <p  class="questionText">
+                {{ 'QUESTION_ONE_TEXT' | translate }}
+    
+            </p>
 
+          </ion-list-header>
         
             <ion-item>
                 <ion-label>{{ 'RESPONSE_YES' | translate }}</ion-label>
