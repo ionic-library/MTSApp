@@ -8,12 +8,17 @@ import {
 } from "ionic-angular";
 import { SitePages } from "../index";
 
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 @IonicPage()
 @Component({
   selector: "page-questionaire-5",
   templateUrl: "questionaire-5.html"
 })
 export class Questionaire_5Page {
+  private readonly logger: Logger;
+  //report: Report;
+  //params: Object;
   pushPagePrevious: any;
   pushPageNext: any;
   startDate: any;
@@ -22,24 +27,26 @@ export class Questionaire_5Page {
     public translate: TranslateService,
     public navParams: NavParams,
     public navCtrl: NavController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private readonly logProvider: LogProvider
   ) {
+    this.logger = this.logProvider.getLogger();
     this.startDate = "March 28, 2010";
     this.endDate = "April 10, 2010";
     this.pushPagePrevious = SitePages.Questionaire3;
-    this.pushPageNext = SitePages.Questionaire5a;
+    this.pushPageNext = SitePages.Questionaire6;
   }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad QuestionairePage");
+    this.logger.info("ionViewDidLoad QuestionairePage");
   }
 
   presentHelpModal() {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 }

@@ -1,8 +1,8 @@
 import { Component, ViewChild } from "@angular/core";
-import { User } from "./../../providers/user/user";
 import { SitePages } from "../../pages/index";
 import { NavController, Slides } from "ionic-angular";
-
+import { User, LogProvider } from "../../providers";
+import { Logger } from "winston";
 /**
  * Generated class for the HomePageCarouselComponent component.
  *
@@ -14,10 +14,15 @@ import { NavController, Slides } from "ionic-angular";
   templateUrl: "home-page-carousel.html"
 })
 export class HomePageCarouselComponent {
+  private readonly logger: Logger;
+
   constructor(
     private readonly navCtrl: NavController,
-    private readonly user: User
-  ) {}
+    private readonly user: User,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   @ViewChild("slides") slides: Slides;
 
@@ -44,14 +49,14 @@ export class HomePageCarouselComponent {
   public navigateToBenefitFinderPage = () =>
     this.navigateToPage(SitePages.BlankPage);
   public navigateToSCCLocationPage = () =>
-    this.navigateToPage(SitePages.BlankPage);
+    this.navigateToPage(SitePages.Locations);
   public navigateToLifeEventsPage = () =>
     this.navigateToPage(SitePages.BlankPage);
 
   private readonly navigateToPage = (page: SitePages) => {
     this.navCtrl
       .push(page)
-      .then(() => console.log("Navigating to : " + page.toString()))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Navigating to : " + page.toString()))
+      .catch((reason: any) => this.logger.error(reason));
   };
 }

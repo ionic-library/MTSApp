@@ -1,7 +1,8 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
-import { User } from "../../providers";
 import { SitePages } from "../../pages";
+import { Logger } from "winston";
+import { User, LogProvider } from "../../providers";
 
 @IonicPage()
 @Component({
@@ -9,10 +10,18 @@ import { SitePages } from "../../pages";
   templateUrl: "eula.html"
 })
 export class EulaPage {
-  constructor(public navCtrl: NavController, public user: User) {}
+  private readonly logger: Logger;
+
+  constructor(
+    public navCtrl: NavController,
+    public user: User,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad EulaPage");
+    this.logger.info("ionViewDidLoad EulaPage");
   }
 
   public setEula() {
@@ -20,15 +29,17 @@ export class EulaPage {
       () => {
         this.navCtrl
           .push(SitePages.Home)
-          .then(() => console.log("EULA set. Navigating to " + SitePages.Home))
+          .then(() =>
+            this.logger.info("EULA set. Navigating to " + SitePages.Home)
+          )
           .catch((reason: any) =>
-            console.error(
+            this.logger.error(
               "Could not redirect to home after EULA: " + JSON.stringify(reason)
             )
           );
       },
       (reason: any) => {
-        console.error("Could not set EULA: " + JSON.stringify(reason));
+        this.logger.error("Could not set EULA: " + JSON.stringify(reason));
       }
     );
   }

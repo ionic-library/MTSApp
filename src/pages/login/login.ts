@@ -9,8 +9,8 @@ import {
   ToastController,
   ModalController
 } from "ionic-angular";
-
-import { User, ProvincesProvider } from "../../providers";
+import { Logger } from "winston";
+import { User, ProvincesProvider, LogProvider } from "../../providers";
 
 @IonicPage()
 @Component({
@@ -18,7 +18,9 @@ import { User, ProvincesProvider } from "../../providers";
   templateUrl: "login.html"
 })
 export class LoginPage {
+  private readonly logger: Logger;
   login: FormGroup;
+
   // The account fields for the login form.
   // If you're using the username field with or without email, make
   // sure to add it to the type
@@ -44,8 +46,10 @@ export class LoginPage {
     public readonly toastCtrl: ToastController,
     public readonly translateService: TranslateService,
     public readonly provinces: ProvincesProvider,
-    private readonly formBuilder: FormBuilder
+    private readonly formBuilder: FormBuilder,
+    private readonly logProvider: LogProvider
   ) {
+    this.logger = this.logProvider.getLogger();
     this.login = this.formBuilder.group({
       sin: [
         "",
@@ -85,11 +89,11 @@ export class LoginPage {
       () => {
         this.navCtrl
           .push(SitePages.EiReporting)
-          .then(() => console.log("Login Successfull"))
-          .catch((reason: any) => console.error(reason));
+          .then(() => this.logger.info("Login Successfull"))
+          .catch((reason: any) => this.logger.error(reason));
       },
       (error: any) => {
-        console.error(
+        this.logger.error(
           "An error occured when logging in: " + JSON.stringify(error)
         );
 
@@ -102,19 +106,19 @@ export class LoginPage {
         toast
           .present()
           .then(() =>
-            console.log("toast displayed with " + this.loginErrorString)
+            this.logger.info("toast displayed with " + this.loginErrorString)
           )
-          .catch((reason: any) => console.error(reason));
+          .catch((reason: any) => this.logger.error(reason));
       }
     );
   }
 
   presentHelpModal() {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 }

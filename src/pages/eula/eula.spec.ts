@@ -4,12 +4,10 @@ import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
 import { EulaPage } from "./eula";
-import { User } from "../../providers/user/user";
+import { User } from "../../providers";
 
 const { expect } = chai;
 chai.use(sinonChai);
-
-const NOOP = () => {};
 
 describe("The EULA Page", () => {
   beforeEach(async(() => {
@@ -17,6 +15,7 @@ describe("The EULA Page", () => {
       declarations: CommonTestModule.getDeclarations([EulaPage]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
+        { provide: User, useClass: User },
         { provide: EulaPage, useClass: EulaPage }
       ])
     }).compileComponents();

@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { LogProvider } from "../../providers";
+import { Logger } from "winston";
 
 /**
  * Generated class for the BlankPage page.
@@ -14,9 +16,16 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
   templateUrl: "blank.html"
 })
 export class BlankPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  private readonly logger: Logger;
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad BlankPage");
+    this.logger.info("ionViewDidLoad BlankPage");
   }
 }

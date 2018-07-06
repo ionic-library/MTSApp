@@ -3,6 +3,8 @@ import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { Reports } from "../../mocks/providers/mock-ei-reports";
 import { Report } from "../../models/mockEiReport";
 import { SitePages } from "..";
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 
 /**
  * Generated class for the EiReportingPage page.
@@ -19,25 +21,28 @@ import { SitePages } from "..";
 export class EiReportingPage {
   public currentReports: Report[];
 
+  private readonly logger: Logger;
   constructor(
     private readonly navCtrl: NavController,
     public reports: Reports,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    private readonly logProvider: LogProvider
   ) {
+    this.logger = this.logProvider.getLogger();
     this.currentReports = this.reports.query();
   }
 
   ionViewDidLoad() {
-    console.log("ionViewDidLoad EiReportingPage");
+    this.logger.info("ionViewDidLoad EiReportingPage");
   }
 
   presentHelpModal() {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   startReport = (report: any) =>

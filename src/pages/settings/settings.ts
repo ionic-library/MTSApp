@@ -5,6 +5,8 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { Settings } from "../../providers";
 import { User } from "../../providers/user/user";
 
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 /**
  * The Settings page is a simple form that syncs with a Settings provider
  * to enable the user to customize settings for the app.
@@ -16,6 +18,7 @@ import { User } from "../../providers/user/user";
   templateUrl: "settings.html"
 })
 export class SettingsPage {
+  private readonly logger: Logger;
   // Our local settings object
   options: any;
 
@@ -44,21 +47,24 @@ export class SettingsPage {
     public settings: Settings,
     public navParams: NavParams,
     public translate: TranslateService,
-    public user: User
-  ) {}
+    public user: User,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   changeLang(selection: LangCodes) {
-    console.log(selection);
+    this.logger.info(selection);
     this.user.GetLang(
       (val: any) => {
         if (selection === val) {
-          console.log("Selected Language is already active!");
+          this.logger.info("Selected Language is already active!");
         } else {
           this.user.setLang(selection, () => {}, () => {});
         }
       },
       () => {
-        console.log("unable to get lang");
+        this.logger.info("unable to get lang");
       }
     );
   }
@@ -75,7 +81,7 @@ export class SettingsPage {
           this.selectedLanguage = val;
         },
         (reason: any) => {
-          console.error("unable to change lang:" + JSON.stringify(reason));
+          this.logger.error("unable to change lang:" + JSON.stringify(reason));
         }
       );
     }
@@ -93,11 +99,11 @@ export class SettingsPage {
         this.options = this.settings.allSettings;
       })
       .catch((reason: any) => {
-        console.log(reason);
+        this.logger.info(reason);
       });
   }
 
   ngOnChanges() {
-    console.log("Ng All Changes");
+    this.logger.info("Ng All Changes");
   }
 }

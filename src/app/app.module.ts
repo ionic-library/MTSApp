@@ -15,7 +15,14 @@ import {
 } from "ionic-angular";
 
 import { Reports } from "../mocks/providers/mock-ei-reports";
-import { Settings, User, Api, Lang, ProvincesProvider } from "../providers";
+import {
+  Settings,
+  Api,
+  Lang,
+  ProvincesProvider,
+  LogProvider,
+  User
+} from "../providers";
 import { MyApp } from "./app.component";
 
 // The translate loader needs to know where to load i18n files
@@ -59,6 +66,7 @@ export function provideSettings(storage: Storage) {
   providers: [
     Api,
     Slides,
+    LogProvider,
     User,
     Camera,
     SplashScreen,

@@ -1,9 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Storage } from "@ionic/storage";
 import "rxjs/add/operator/toPromise";
-import { LangCodes } from "../../providers";
+import { LangCodes, LogProvider } from "../../providers";
 import { Api } from "../api/api";
 import { TranslateService } from "@ngx-translate/core";
+import { Logger } from "winston";
 
 @Injectable()
 export class User {
@@ -11,12 +12,16 @@ export class User {
 
   private Lang: LangCodes;
   private LangReady: boolean = false;
+  private readonly logger: Logger;
 
   constructor(
     public api: Api,
     public storage: Storage,
-    public translate: TranslateService
-  ) {}
+    public translate: TranslateService,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   public GetLang(success: Function, error: Function) {
     if (this.LangReady) {
@@ -78,12 +83,12 @@ export class User {
             this.Lang = lc;
           },
           (Error: any) => {
-            console.log("Could not change lang: " + JSON.stringify(Error));
+            this.logger.info("Could not change lang: " + JSON.stringify(Error));
           }
         );
       },
       (Error: any) => {
-        console.log("Could not get lang: " + JSON.stringify(Error));
+        this.logger.info("Could not get lang: " + JSON.stringify(Error));
       }
     );
   }
@@ -125,7 +130,7 @@ export class User {
 
   login(accountInfo: any) {
     const seq = this.api.post("login", accountInfo).share();
-    console.log("UserLogged in with " + JSON.stringify(accountInfo));
+    this.logger.info("UserLogged in with " + JSON.stringify(accountInfo));
     this._loggedIn({
       user: {
         Name: "First Last"
@@ -139,7 +144,7 @@ export class User {
       } else {
       }
     }, err => {
-      console.error('ERROR', err);
+      this.logger.error('ERROR', err);
     });
 */
     return seq;

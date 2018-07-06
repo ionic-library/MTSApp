@@ -7,8 +7,8 @@
       {{ 'APP_HOME_TITLE' | translate }}
     </ion-title>
     <ion-buttons end>
-      <button ion-button clear (click)="this.presentHelpModal()">
-          <i class="help" class="fa fa-question-circle" aria-hidden="true"></i>
+      <button id="help-button" attr.aria-label="{{ 'HELP_MODAL_ARIA_LABEL' | translate }}" ion-button clear (click)="presentHelpModal()">
+        <i class="help" class="fa fa-question-circle"></i>
       </button>
     </ion-buttons>
   </ion-toolbar>

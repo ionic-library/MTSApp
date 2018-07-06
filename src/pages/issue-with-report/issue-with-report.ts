@@ -2,6 +2,8 @@ import { Component } from "@angular/core";
 import { IonicPage, ModalController } from "ionic-angular";
 import { TranslateService } from "@ngx-translate/core";
 import { SitePages } from "..";
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 
 /**
  * Generated class for the IssueWithReportPage page.
@@ -16,19 +18,23 @@ import { SitePages } from "..";
   templateUrl: "issue-with-report.html"
 })
 export class IssueWithReportPage {
+  private readonly logger: Logger;
   constructor(
     public modalCtrl: ModalController,
-    public translate: TranslateService
-  ) {}
+    public translate: TranslateService,
+    private readonly logProvider: LogProvider
+  ) {
+    this.logger = this.logProvider.getLogger();
+  }
 
   presentHelpModal() {
-    console.log("Click Received");
+    this.logger.info("Click Received");
     const helpModal = this.modalCtrl.create(SitePages.HelpModal);
     helpModal
       .present()
-      .then(() => console.log("Help Modal Displayed"))
-      .catch((reason: any) => console.error(reason));
+      .then(() => this.logger.info("Help Modal Displayed"))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
-  ionViewDidLoad = () => console.log("ionViewDidLoad IssueWithReportPage");
+  ionViewDidLoad = () => this.logger.info("ionViewDidLoad IssueWithReportPage");
 }

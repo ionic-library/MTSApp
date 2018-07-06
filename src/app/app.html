@@ -25,16 +25,20 @@
                 Dev Pages
             </button>
         </ion-list>
-
-        <ion-list class="nav-menu-list">
-            <button menuClose ion-item icon-left *ngFor="let p of userSelections; let i = index; let last = last;" [attr.id]="'nav-menu-button-options-' + i"
-                [attr.aria-label]="p.title" color="navMenuButton" [class.last-item]="last" (click)="openSettings(p.title)">
-                <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
-                <p class="nav-option-text">{{p.title | translate}}</p>
-            </button>
-        </ion-list>
-
+            <ion-list id="user-selection-options" class="nav-menu-list">
+                <button menuClose ion-item icon-left *ngFor="let p of userSelections; let i = index; let first = first; let last = last;" [attr.id]="'nav-menu-button-options-' + i"
+                    color="navMenuButton" [class.first-item]="first" [class.last-item]="last" (click)="openSettings(p.title)">
+                    <ion-icon class="nav-menu-icon" name="{{p.iconName}}"></ion-icon>
+                    <p class="nav-option-text">{{p.title | translate}}</p>
+                </button>
+            </ion-list>
     </ion-content>
+    <ion-footer class="bar-stable" id="logout-footer">
+        <button id="nav-menu-logout" menuClose ion-item icon-left color="navMenuButton">
+            <ion-icon class="nav-menu-icon" name="MTSApp-Logout"></ion-icon>
+            <p id="logout-option-text">{{"LOGOUT_NAV_MENU_TITLE" | translate}}</p>
+        </button>
+    </ion-footer>
 </ion-menu>
 
 <ion-menu id="dev-pages" [content]="content" class="nav-menu">
