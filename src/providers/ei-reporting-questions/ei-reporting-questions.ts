@@ -1,4 +1,5 @@
-import { HttpClient } from "@angular/common/http";
+import { Logger } from "winston";
+import { LogProvider } from "../../providers";
 import { Injectable } from "@angular/core";
 
 /*
@@ -9,7 +10,10 @@ import { Injectable } from "@angular/core";
 */
 @Injectable()
 export class EiReportingQuestionsProvider {
-  constructor(public http: HttpClient) {
-    console.log("Hello EiReportingQuestionsProvider Provider");
+  private readonly logging: Logger;
+
+  constructor(private readonly logProvider: LogProvider) {
+    this.logging = this.logProvider.getLogger();
+    this.logging.info("Constructing EiReportingQuestionsProvider");
   }
 }

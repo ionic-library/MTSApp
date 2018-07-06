@@ -1,0 +1,109 @@
+<survey>
+    <question type="yesno" id="1" name="hasMoved">
+        <text_en>Have you moved/changed your mailing address or banking info? </text_en>
+        <text_fr>Is this a question le?</text_fr>
+        <answers>
+            <answer name="yes">
+                <action>
+                    <redirect_to_id>10</redirect_to_id>
+                </action>
+            </answer>
+            <answer name="no">
+                <action>
+                    <redirect_to_name>outOfCanada</redirect_to_name>
+                </action>
+            </answer>
+        </answers>
+    </question>
+    <question type="yesno" id="2" name="outOfCanada">
+        <text_en>Were you outside of Canada from dates? </text_en>
+        <text_fr>Is this a question le?</text_fr>
+        <answers>
+            <answer name="yes">
+                <action>
+                    <redirect_to_id>10</redirect_to_id>
+                </action>
+            </answer>
+            <answer name="no">
+                <action>
+                    <redirect_to_name>selfEmployed</redirect_to_name>
+                </action>
+            </answer>
+        </answers>
+    </question>
+    <question type="yesno" id="3" name="selfEmployed">
+        <text_en>Are you self employed?</text_en>
+        <text_fr>Is this a question le?</text_fr>
+        <answers>
+            <answer name="yes">
+                <action>
+                    <redirect_to_id>10</redirect_to_id>
+                </action>
+            </answer>
+            <answer name="no">
+                <action>
+                    <redirect_to_name>attendedSchool</redirect_to_name>
+                </action>
+            </answer>
+        </answers>
+    </question>
+    <question type="yesno" id="4" name="attendedSchool">
+        <text_en>Did you attend school?</text_en>
+        <text_fr>Is this a question le?</text_fr>
+        <answers>
+            <answer name="yes">
+                <action>
+                    <redirect_to_id>10</redirect_to_id>
+                </action>
+            </answer>
+            <answer name="no">
+                <action>
+                    <redirect_to_name>ableToWork</redirect_to_name>
+                </action>
+            </answer>
+        </answers>
+    </question>
+    <question type="yesno" id="5" name="ableToWork">
+        <text_en>Were you ready and capable of work?</text_en>
+        <text_fr>Is this a question le?</text_fr>
+        <answers>
+            <answer name="yes">
+                <action>
+                    <redirect_to_name>otherMoney</redirect_to_name>
+                </action>
+            </answer>
+            <answer name="no">
+                <action>
+                    <redirect_to_name>whyNot</redirect_to_name>
+                </action>
+            </answer>
+        </answers>
+    </question>
+    <question type="yesno" id="6" name="otherMoney">
+        <text_en>Is there other money you haven't told us about?</text_en>
+        <text_fr>Is this a question le?</text_fr>
+        <answers>
+            <answer name="yes">
+                <action>
+                    <redirect_to_id>10</redirect_to_id>
+                </action>
+            </answer>
+            <answer name="no">
+                <action>
+                    <terminate>true</terminate>
+                </action>
+            </answer>
+        </answers>
+    </question>
+   <question type="freetext" id="7" name="whyNot">
+        <text_en>Why not?</text_en>
+        <text_fr>Is this a question le?</text_fr>
+        <answers>
+            <answer name="valid">
+                <action>
+                    <redirect_to_name>othermoney</redirect_to_name>
+                </action>
+            </answer>
+        </answers>
+    </question>
+</survey>
