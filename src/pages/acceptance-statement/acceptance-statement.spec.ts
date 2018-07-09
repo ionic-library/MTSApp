@@ -1,79 +1,72 @@
 import { CommonTestModule } from "./../../app/sharedModules";
 import { AcceptanceStatementPage } from "./acceptance-statement";
 import { NavController, NavParams, ModalController } from "ionic-angular";
-import { NavMock, NavParamsMock, ModalCtrlMock } from "./../../../test-config/mocks-ionic";
 import { SitePages } from "..";
-import { Report } from "../../models/mockEiReport"
-import { async, TestBed, ComponentFixture } from "@angular/core/testing";
+import { async, TestBed, inject } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
 
-let { expect } = chai;
+const { expect } = chai;
 chai.use(sinonChai);
 
 describe("The Acceptance Statement Page", () => {
-  let sut: ComponentFixture<AcceptanceStatementPage>;
-  let acceptanceStatementPage: AcceptanceStatementPage;
-  let navSpy: sinon.SinonSpy;
-  let modalSpy: sinon.SinonSpy;
-  let fakeNavController: NavMock;
-  let fakeNavParams: NavParamsMock;
-  let fakeModalCtrl: ModalCtrlMock;
-  
-
-  beforeEach(async () => {
-    fakeNavController = new NavMock();
-    fakeNavParams = new NavParamsMock();
-    fakeModalCtrl = new ModalCtrlMock();
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: CommonTestModule.getDeclarations([AcceptanceStatementPage]),
       imports: CommonTestModule.getImports(),
       providers: CommonTestModule.getProviders([
-        { provide: NavController, useValue: fakeNavController },
-        { provide: NavParams, useValue: fakeNavParams },
-        { provide: ModalController, useValue: fakeModalCtrl }
+        { provide: AcceptanceStatementPage, useClass: AcceptanceStatementPage }
       ])
-    });
-  });
+    }).compileComponents();
+  }));
 
-  beforeEach(() => {
-    sut = TestBed.createComponent(AcceptanceStatementPage);
-    acceptanceStatementPage = sut.componentInstance;
-    navSpy = sinon.spy(fakeNavController, "push");
-    modalSpy = sinon.spy(fakeModalCtrl, "create");
-  });
+  it("Should be created with no errors", inject(
+    [AcceptanceStatementPage],
+    sut => {
+      expect(sut).to.exist;
+    }
+  ));
 
-  it("Should be created with no errors", () => {
-    expect(acceptanceStatementPage).to.exist;
-  });
+  it("Should navigate to the Questionaire when acceptStatement is called", inject(
+    [AcceptanceStatementPage, NavParams, NavController],
+    (sut, navParams, navController) => {
+      const navSpy = sinon.spy(navController, "push");
+      sut.acceptStatement(navParams.get(0));
+      expect(navSpy).to.have.been.calledWith(SitePages.Questionaire);
+    }
+  ));
 
-  it("Should navigate to the Questionaire when acceptStatement is called", () => {
-    let report = fakeNavParams.get(0);
-    acceptanceStatementPage.acceptStatement(report);
-    expect(navSpy).to.have.been.calledWith(SitePages.Questionaire);
-  });
+  it("Should call NavParams.get() with 'report' as argument", inject(
+    [NavParams],
+    navParams => {
+      const navParamsSpy = sinon.spy(navParams, "get");
+      const sut = TestBed.createComponent(AcceptanceStatementPage);
+      expect(navParamsSpy).to.have.been.calledWith("report");
+    }
+  ));
 
-  it("Should call NavParams.get() with 'report' as argument", () => {
-    let navParamsSpy = sinon.spy(fakeNavParams, "get");
-    let page = TestBed.createComponent(AcceptanceStatementPage);
-    expect(navParamsSpy).to.have.been.calledWith('report');
-  });
+  it("Should navigate to the Home Page when refuseStatement is called", inject(
+    [AcceptanceStatementPage, NavController],
+    (sut, navController) => {
+      const event = {
+        preventDefault: () => undefined
+      };
 
-  // it("Should receive Report object of type Report", () => {
-  //   let navParamsSpy = sinon.spy(fakeNavParams, "get");
-  //   let page = TestBed.createComponent(AcceptanceStatementPage);
-  //   acceptanceStatementPage = page.componentInstance;
-  //   expect(acceptanceStatementPage.report).to.be.a('Report');
-  // });
+      const navSpy = sinon.spy(navController, "push");
 
-  it("Should navigate to the Home Page when refuseStatement is called", () => {
-    acceptanceStatementPage.refuseStatement(event);
-    expect(navSpy).to.have.been.calledWith(SitePages.Home);
-  });
+      sut.refuseStatement(event);
 
-  it("Should present user with Help Modal when presentHelpModal is called", () => {
-    acceptanceStatementPage.presentHelpModal;
-    expect(modalSpy).to.not.throw();
-  });
+      expect(navSpy).to.have.been.calledWith(SitePages.Home);
+    }
+  ));
+
+  it("Should present user with Help Modal when presentHelpModal is called", inject(
+    [AcceptanceStatementPage, ModalController],
+    (sut, modalController) => {
+      const modalSpy = sinon.spy(modalController, "create");
+      sut.presentHelpModal;
+      expect(modalSpy).to.not.throw();
+    }
+  ));
 });
