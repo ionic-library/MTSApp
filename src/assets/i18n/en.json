@@ -231,10 +231,11 @@
   "SUBMISSION_P1_TEXT":
     "Review your answers to all of the questions shown below. If the answers are correct choose I accept. If you wish to change your answers click edit.",
   "SUBMISSION_P2_TEXT": "By clicking I accept you are agreeing to the",
-  "SUBMISSION_CONFIRMATION": "Confirmation Statement.",
+  "SUBMISSION_CONFIRMATION": "Confirmation Statement ",
+  "SUBMISSION_P2B_TEXT": "and submitting the report.",
 
-  "SUBMISSION_ACCEPT_TEXT": "I accept",
-  "SUBMISSION_REFUSE_TEXT": "I refuse",
+  "SUBMISSION_ACCEPT_TEXT": "I Accept",
+  "SUBMISSION_REFUSE_TEXT": "I Refuse",
   "SUBMISSION_ADDRESS": "Address & Direct Deposit",
   "SUBMISSION_QUESTION_1":
     "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
