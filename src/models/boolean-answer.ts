@@ -1,3 +1,4 @@
+import { RedirectToId, RedirectToName, Terminate } from "./actions/actions";
 import { TranslatedString } from ".";
 
 export class BooleanAnswer {
@@ -6,5 +7,5 @@ export class BooleanAnswer {
   }
 
   text: TranslatedString;
-  action: number | string;
+  action: RedirectToId | RedirectToName | Terminate;
 }

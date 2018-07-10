@@ -1,3 +1,4 @@
+import { RedirectToName, Terminate } from "./../../models/actions/actions";
 import {
   BooleanQuestion,
   TranslatedString,
@@ -5,6 +6,7 @@ import {
 } from "./../../models";
 import { Injectable } from "@angular/core";
 import { decimal } from "../../constants";
+import { RedirectToId } from "../../models/actions/actions";
 
 /*
   Generated class for the QuestionJsonLoaderProvider provider.
@@ -23,24 +25,35 @@ export class QuestionJsonLoaderProvider {
    * @json: The json object to load the BooleanQuestion from
    */
   public loadQuestionFromJson(json: any): BooleanQuestion {
-    const retVal = new BooleanQuestion();
-    retVal.id = json.id;
-    retVal.name = json.name;
-    retVal.title = new TranslatedString(json.title);
-    retVal.question = new TranslatedString(json.question);
-    retVal.answerOne = this.loadAnswerFromJson(json.answers[0]);
-    retVal.answerTwo = this.loadAnswerFromJson(json.answers[1]);
-    retVal.validations = json.validations;
-    return retVal;
+    return new BooleanQuestion({
+      id: json.id,
+      name: json.name,
+      validations: json.validations,
+      title: new TranslatedString(json.title),
+      question: new TranslatedString(json.question),
+      answerOne: this.loadAnswerFromJson(json.answers[0]),
+      answerTwo: this.loadAnswerFromJson(json.answers[1])
+    });
   }
 
-  private getAction(action: any): string | number {
-    if (action.redirect_to_id !== undefined) {
-      return parseInt(action.redirect_to_id, decimal);
-    } else if (action.redirect_to_name !== undefined) {
-      return action.redirect_to_name;
-    } else if (action.terminate !== undefined) {
-      return "terminate";
+  private getAction(action: any): RedirectToId | RedirectToName | Terminate {
+    const props = Object.getOwnPropertyNames(action);
+
+    if (props.length > 1) {
+      throw Error("Too many actions for ${action.name}");
+    }
+
+    switch (props[0]) {
+      case "redirect_to_id":
+        return new RedirectToId({
+          id: parseInt(action.redirect_to_id, decimal)
+        });
+
+      case "redirect_to_name":
+        return new RedirectToName({ name: action.redirect_to_name });
+
+      case "terminate":
+        return new Terminate();
     }
 
     throw Error("No action for answer");

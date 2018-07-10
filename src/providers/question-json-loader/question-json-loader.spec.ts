@@ -1,16 +1,19 @@
-import { BooleanQuestion, BooleanAnswer, TranslatedString } from "../../models";
+import {
+  RedirectToName,
+  RedirectToId,
+  Terminate
+} from "./../../models/actions/actions";
+import { TranslatedString } from "../../models";
 import { QuestionJsonLoaderProvider } from "./question-json-loader";
 import { CommonTestModule } from "./../../app/sharedModules";
 import { async, TestBed, inject } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
-import * as chaiSubset from "chai-subset";
 import { decimal } from "../../constants";
 
 const { expect } = chai;
 chai.use(sinonChai);
-chai.use(chaiSubset);
 
 describe("Question Json Loader Provider", () => {
   beforeEach(async(() => {
@@ -23,7 +26,7 @@ describe("Question Json Loader Provider", () => {
     }).compileComponents();
   }));
 
-  it("Should be created with no isses", inject(
+  it("Should be created with no issues", inject(
     [QuestionJsonLoaderProvider],
     sut => {
       expect(sut).to.exist;
@@ -66,7 +69,7 @@ describe("Question Json Loader Provider", () => {
       });
 
       // tslint:disable-next-line:no-magic-numbers
-      expect(answer.action).to.equal(10);
+      expect(answer.action).to.deep.equal(new RedirectToId({ id: 10 }));
     }
   ));
 
@@ -83,7 +86,7 @@ describe("Question Json Loader Provider", () => {
         }
       });
 
-      expect(answer.action).to.be.equal("name");
+      expect(answer.action).to.deep.equal(new RedirectToName({ name: "name" }));
     }
   ));
 
@@ -99,8 +102,7 @@ describe("Question Json Loader Provider", () => {
           terminate: "true"
         }
       });
-
-      expect(answer.action).to.be.equal("terminate");
+      expect(answer.action instanceof Terminate).to.be.true;
     }
   ));
 });
