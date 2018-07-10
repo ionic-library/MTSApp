@@ -1,9 +1,4 @@
-<!--
-  Generated template for the SubmissionPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header >
 
   <ion-navbar color="mainHeader" >
@@ -28,12 +23,8 @@
       <h2 class="title">{{ 'SUBMISSION_TITLE_TWO' | translate }}</h2>
       <p class="sentences" id="review-statement">{{ 'SUBMISSION_P1_TEXT' | translate }}</p>
 
-      <p class="sentences">{{ 'SUBMISSION_P2_TEXT' | translate }} <a id="confirmation" (click)="this.presentHelpModal(helpSelectionOptions.confirmationStatement)">{{ 'SUBMISSION_CONFIRMATION' | translate }}</a></p>
     </ion-row>
-      <ion-row class="wrapper" align-items-center>
-      <button class="accept" ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
-      <span (click)="this.backToEIReporting()" class="refuse"><a>{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</a></span>
-    </ion-row>
+
 
     <div class="line"></div>
 
@@ -48,7 +39,7 @@
     </ion-row>
 
     <ion-row class="wrapper answer-icon" align-items-center>
-      <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span (click)="this.editQuestion1()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      <span class="answer">{{ 'RESPONSE_NO' | translate }}</span><span (click)="this.editQuestion1()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
     </ion-row>
 
     <ion-row class="wrapper">
@@ -61,7 +52,7 @@
       <p class="question">{{ 'SUBMISSION_QUESTION_2' | translate }}</p>
     </ion-row>
     <ion-row class="wrapper answer-icon" align-items-center>
-      <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span (click)="this.editQuestion2()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      <span class="answer">{{ 'RESPONSE_NO' | translate }}</span><span (click)="this.editQuestion2()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
     </ion-row>
 
     <ion-row class="wrapper">
@@ -74,13 +65,13 @@
       <p class="question">{{ 'SUBMISSION_QUESTION_3' | translate }}</p>
     </ion-row>
    <ion-row class="wrapper answer-icon" align-items-center>
-      <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span (click)="this.editQuestion3()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      <span class="answer">{{ 'RESPONSE_NO' | translate }}</span><span (click)="this.editQuestion3()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
     </ion-row>
     <ion-row class="wrapper">
     <p class="question">{{ 'SUBMISSION_QUESTION_4' | translate }}</p>
     </ion-row>
     <ion-row class="wrapper answer-icon" align-items-center>
-    <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span (click)="this.editQuestion3()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+    <span class="answer">{{ 'RESPONSE_NO' | translate }}</span><span (click)="this.editQuestion3()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
     </ion-row>
 
     <ion-row class="wrapper">
@@ -93,7 +84,7 @@
       <p class="question">{{ 'SUBMISSION_QUESTION_5' | translate }}</p>
     </ion-row>
     <ion-row class="wrapper answer-icon" align-items-center>
-      <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span (click)="this.editQuestion5()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      <span class="answer">{{ 'RESPONSE_NO' | translate }}</span><span (click)="this.editQuestion5()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
     </ion-row>
 
     <ion-row class="wrapper">
@@ -106,7 +97,7 @@
       <p class="question">{{ 'SUBMISSION_QUESTION_6' | translate }}</p>
     </ion-row>
     <ion-row class="wrapper answer-icon" align-items-center>
-      <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span (click)="this.editQuestion6()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      <span class="answer">{{ 'RESPONSE_NO' | translate }}</span><span (click)="this.editQuestion6()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
     </ion-row>
 
     <ion-row class="wrapper">
@@ -119,12 +110,24 @@
       <p class="question">{{ 'SUBMISSION_QUESTION_7' | translate }}</p>
     </ion-row>
     <ion-row class="wrapper answer-icon" align-items-center>
-      <span class="answer">{{ 'SUBMISSION_NO' | translate }}</span><span (click)="this.editQuestion7()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+      <span class="answer">{{ 'RESPONSE_NO' | translate }}</span><span (click)="this.editQuestion7()" class='edit'>{{'SUBMISSION_EDIT' | translate}}<ion-icon id="create" name="create"></ion-icon></span>
+    </ion-row>
+    <div class="line"></div>
+    <ion-row class="wrapper">
+
+      <p class="sentences">{{ 'SUBMISSION_P2_TEXT' | translate }} <a id="confirmation" (click)="this.presentHelpModal(helpSelectionOptions.confirmationStatement)">{{ 'SUBMISSION_CONFIRMATION' | translate }}</a>{{ 'SUBMISSION_P2B_TEXT' | translate }}</p>
     </ion-row>
 
-  <ion-row class="wrapper" align-items-center>
-  <button class="accept" ion-button (click)="this.goToConfirmation()">{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
-  <span (click)="this.backToEIReporting()" class="refuse"><a>{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</a></span>
-</ion-row> 
+
+ 
+
+  <ion-row>
+    <ion-col>
+        <button id="refuse" ion-button color="light" block   (click)="this.backToEIReporting()" border >{{ 'SUBMISSION_REFUSE_TEXT' | translate }}</button>
+    </ion-col>
+    <ion-col>
+        <button id="accept" ion-button color="positive" block (click)="this.goToConfirmation()" >{{ 'SUBMISSION_ACCEPT_TEXT' | translate }}</button>
+    </ion-col>
+  </ion-row>
 </ion-grid>
 </ion-content>
