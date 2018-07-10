@@ -14,6 +14,12 @@ export class User {
   private LangReady: boolean = false;
   private readonly logger: Logger;
 
+  public firstName: string = "";
+  public lastName: string = "";
+  public SIN: string = "";
+  public passCode: string = "";
+  public sessionStart: Date;
+
   constructor(
     public api: Api,
     public storage: Storage,
@@ -120,34 +126,56 @@ export class User {
       });
   }
 
-  //############################### Below this line is standard functions we will redo later once API is ready or mapped out at least.
-
   isLoggedIn(): boolean {
-    //### FOR TESTING
-    return true;
-    //return !(this._user === null || this._user === undefined);
+    return !(this._user === null || this._user === undefined);
   }
 
-  login(accountInfo: any) {
-    const seq = this.api.post("login", accountInfo).share();
-    this.logger.info("UserLogged in with " + JSON.stringify(accountInfo));
-    this._loggedIn({
-      user: {
-        Name: "First Last"
+  login(
+    _SIN: string,
+    _AccessCode: string,
+    _Region: string,
+    _Language: string,
+    Success: Function,
+    Failure: Function
+  ) {
+    let LoggedIn = false;
+    const accountInfo = {
+      sin: _SIN,
+      accesscode: _AccessCode,
+      region: _Region,
+      language: _Language
+    };
+
+    this.api.post("authentication", accountInfo).subscribe(
+      (Response: any) => {
+        console.log(Response);
+        if (Response.AuthResponseStatus === "Success") {
+          this._loggedIn({
+            user: {
+              FirstName: "FName",
+              LastName: "LName",
+              SessionLastHit: Date.now, // We will need to update this on each action in the app
+              SIN: _SIN,
+              PassCode: _AccessCode,
+              Region: _Region,
+              Language: _Language,
+              SessionID: Response.sessionID
+            }
+          });
+          this.logger.info("User was logged in");
+          Success();
+        } else {
+          this.logger.info(
+            "User was not logged in. Non-Success from API on login call"
+          );
+          Failure("invalid"); // Check later for AuthResponseStatus and send that back if it exists (instead of simply saying invalid)
+        }
+      },
+      (error: any) => {
+        this.logger.error(error);
+        Failure(error); // We will want to refactor this to provide more detail. This is likely due to no connectivity either on the device, the API was down or the device killed the connection
       }
-    });
-    /*
-    seq.subscribe((res: any) => {
-      // If the API returned a successful response, mark the user as logged in
-      if (res.status == 'success') {
-        this._loggedIn(res);
-      } else {
-      }
-    }, err => {
-      this.logger.error('ERROR', err);
-    });
-*/
-    return seq;
+    );
   }
 
   logout() {

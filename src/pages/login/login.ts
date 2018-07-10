@@ -28,11 +28,13 @@ export class LoginPage {
   account: {
     sin: string;
     accesscode: string;
-    residence: string;
+    region: string;
+    language: string;
   } = {
     sin: "",
     accesscode: "",
-    residence: "ON"
+    region: "ON",
+    language: "EN"
   };
 
   // Our translated text strings
@@ -85,7 +87,11 @@ export class LoginPage {
       return;
     }
 
-    this.user.login(this.account).subscribe(
+    this.user.login(
+      "SIN",
+      "Access_Code",
+      "Region",
+      "Lang",
       () => {
         this.navCtrl
           .push(SitePages.EiReporting)
@@ -96,7 +102,6 @@ export class LoginPage {
         this.logger.error(
           "An error occured when logging in: " + JSON.stringify(error)
         );
-
         const toast = this.toastCtrl.create({
           message: this.loginErrorString,
           duration: 3000,
