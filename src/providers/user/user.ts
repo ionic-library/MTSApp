@@ -148,7 +148,6 @@ export class User {
 
     this.api.post("authentication", accountInfo).subscribe(
       (Response: any) => {
-        console.log(Response);
         if (Response.AuthResponseStatus === "Success") {
           this._loggedIn({
             user: {
@@ -166,14 +165,14 @@ export class User {
           Success();
         } else {
           this.logger.info(
-            "User was not logged in. Non-Success from API on login call"
+            "User was not logged in. Non-Success from API on login call."
           );
           Failure("invalid"); // Check later for AuthResponseStatus and send that back if it exists (instead of simply saying invalid)
         }
       },
       (error: any) => {
         this.logger.error(error);
-        Failure(error); // We will want to refactor this to provide more detail. This is likely due to no connectivity either on the device, the API was down or the device killed the connection
+        Failure("no-connection"); // We will want to refactor this to provide more detail. This is likely due to no connectivity by the device, the API was down or the device killed the connection mid transfer
       }
     );
   }

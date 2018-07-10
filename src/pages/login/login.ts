@@ -38,7 +38,7 @@ export class LoginPage {
   };
 
   // Our translated text strings
-  private loginErrorString: string = "";
+  private loginErrorString: string = "BLAH";
   submitAttempt: boolean;
 
   constructor(
@@ -64,10 +64,6 @@ export class LoginPage {
       ],
       accessCode: ["", Validators.required],
       provinceOfResidence: ["", Validators.required]
-    });
-
-    this.translateService.get("LOGIN_ERROR").subscribe(value => {
-      this.loginErrorString = value;
     });
 
     this.submitAttempt = false;
@@ -99,9 +95,22 @@ export class LoginPage {
           .catch((reason: any) => this.logger.error(reason));
       },
       (error: any) => {
-        this.logger.error(
-          "An error occured when logging in: " + JSON.stringify(error)
-        );
+        this.translateService.get("LOGIN_ERROR").subscribe(value => {
+          return value;
+        });
+        if (error == "no-connection") {
+          this.logger.error("Cannot log in, no connection.");
+          this.translateService
+            .get("LOGIN_ERROR_NO_CONNECTION")
+            .subscribe(value => {
+              this.loginErrorString = value;
+            });
+        } else {
+          this.logger.error("Cannot log in, invalid creds.");
+          this.translateService.get("LOGIN_ERROR").subscribe(value => {
+            this.loginErrorString = value;
+          });
+        }
         const toast = this.toastCtrl.create({
           message: this.loginErrorString,
           duration: 3000,
