@@ -5,11 +5,12 @@ import { LangCodes, LogProvider } from "../../providers";
 import { Api } from "../api/api";
 import { TranslateService } from "@ngx-translate/core";
 import { Logger } from "winston";
+import { error } from "selenium-webdriver";
 
 @Injectable()
 export class User {
-  _user: any;
-
+  details: any;
+  private SessionTimeOutMinutes: number = 1;
   private Lang: LangCodes;
   private LangReady: boolean = false;
   private readonly logger: Logger;
@@ -18,7 +19,7 @@ export class User {
   public lastName: string = "";
   public SIN: string = "";
   public passCode: string = "";
-  public sessionStart: Date;
+  public sessionLastHit: Date;
 
   constructor(
     public api: Api,
@@ -27,6 +28,15 @@ export class User {
     private readonly logProvider: LogProvider
   ) {
     this.logger = this.logProvider.getLogger();
+    this.storage
+      .get("user")
+      .then((resp: any) => {
+        this.logger.info("Retreiving user information from local storage. Setting user vars.");
+        this._loggedIn(JSON.parse(resp), false);
+      })
+      .catch((Error: any) => {
+        this.logger.info("User object not found in storage. (wich is fine)");
+      });
   }
 
   public GetLang(success: Function, error: Function) {
@@ -127,7 +137,7 @@ export class User {
   }
 
   isLoggedIn(): boolean {
-    return !(this._user === null || this._user === undefined);
+    return !(this.details === null || this.details === undefined);
   }
 
   login(
@@ -138,7 +148,7 @@ export class User {
     Success: Function,
     Failure: Function
   ) {
-    let LoggedIn = false;
+
     const accountInfo = {
       sin: _SIN,
       accesscode: _AccessCode,
@@ -155,12 +165,13 @@ export class User {
               LastName: "LName",
               SessionLastHit: Date.now, // We will need to update this on each action in the app
               SIN: _SIN,
-              PassCode: _AccessCode,
+              AccesCode: _AccessCode,
               Region: _Region,
               Language: _Language,
               SessionID: Response.sessionID
             }
-          });
+          },true
+          );
           this.logger.info("User was logged in");
           Success();
         } else {
@@ -178,10 +189,36 @@ export class User {
   }
 
   logout() {
-    this._user = null;
+    this.details = null;
   }
 
-  private _loggedIn(resp: any) {
-    this._user = resp.user;
+  private _loggedIn(resp: any, SaveLocalStorage: boolean=false) {
+    this.firstName = resp.user.firstName;
+    this.SIN = resp.user.SIN;
+    this.details = resp.user;
+    this.sessionLastHit = resp.user.SessionLastHit;
+    this.logger.info("User has been logged in.");
+    if (SaveLocalStorage) {
+      this.storage
+        .set("user", JSON.stringify(resp))
+        .then(() => {
+          this.logger.info("Saved user session to local storage");
+        })
+        .catch((Error: any) => {
+          this.logger.error("Error saving user session to local storage: " + Error);
+        });
+    }
+  }
+
+  public IsSessionValid() {
+    let now = new Date();
+    if (this.sessionLastHit != undefined && (this.sessionLastHit.getTime() + (this.SessionTimeOutMinutes * 60000) > now.getTime())) {
+      console.log(this.sessionLastHit);
+      this.logger.info("Session is good");
+      return true;
+    } else {
+      this.logger.info("Session is no good");
+      return false;
+    }
   }
 }

@@ -4,7 +4,7 @@ import { Reports } from "../../mocks/providers/mock-ei-reports";
 import { Report } from "../../models/mockEiReport";
 import { SitePages } from "..";
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
+import { LogProvider, User } from "../../providers";
 
 /**
  * Generated class for the EiReportingPage page.
@@ -26,9 +26,11 @@ export class EiReportingPage {
     private readonly navCtrl: NavController,
     public reports: Reports,
     public modalCtrl: ModalController,
-    private readonly logProvider: LogProvider
+    private readonly logProvider: LogProvider,
+    public readonly user: User
   ) {
     this.logger = this.logProvider.getLogger();
+    console.log(user.IsSessionValid());
     this.currentReports = this.reports.query();
   }
 
