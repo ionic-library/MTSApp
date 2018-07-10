@@ -12,12 +12,12 @@ export class TranslatedString {
    * Return a translated text based on a LangCodes
    * @param lang The language to return
    */
-  toString = (lang: LangCodes): string => {
+  toString(lang: LangCodes): string {
     switch (lang) {
       case LangCodes.en:
         return this.en;
       case LangCodes.fr:
         return this.fr;
     }
-  };
+  }
 }
