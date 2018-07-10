@@ -115,30 +115,6 @@
   "QUESTION_NUMBER_SEVEN": "Question  7/7",
   "QUESTION_PREVIOUS": "Previous question",
   "QUESTION_NEXT": "Save and Continue",
-  "QUESTION_TWO_TITLE": "Outside Canada",
-  "QUESTION_TWO_TEXT":
-    "Were you outside Canada between Monday and Friday during the period of this report?",
-  "QUESTION_TWO_HELP": "",
-  "QUESTION_THREE_TITLE": "Work and Wages",
-  "QUESTION_THREE_TEXT": "Are you self-employed?",
-  "QUESTION_THREE_HELP": "",
-  "QUESTION_FOUR_TITLE": "Work and Wages",
-  "QUESTION_FOUR_TEXT":
-    "Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming.",
-  "QUESTION_FOUR_HELP": "",
-  "QUESTION_FIVE_TITLE": "Training",
-  "QUESTION_FIVE_TEXT":
-    "Did you attend school or a training course during the period of this report?",
-  "QUESTION_FIVE_HELP": "",
-  "QUESTION_SIX_TITLE": "Availability",
-  "QUESTION_SIX_TEXT":
-    "Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
-  "QUESTION_SIX_HELP": "",
-  "QUESTION_SEVEN_TITLE": "Other Money",
-  "QUESTION_SEVEN_TEXT":
-    "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
-  "QUESTION_SEVEN_HELP": "",
-
   "REPORT_SUBMITTED_TITLE": "Report Submitted",
 
   "TUTORIAL_SKIP_BUTTON": "Skip",

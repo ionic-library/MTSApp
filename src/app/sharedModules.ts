@@ -31,7 +31,13 @@ import {
   StorageMock
 } from "../../test-config/mocks-ionic";
 import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
-import { LogProvider, ProvincesProvider, User, Api } from "../providers";
+import {
+  LogProvider,
+  ProvincesProvider,
+  User,
+  Api,
+  QuestionJsonLoaderProvider
+} from "../providers";
 import { Type } from "@angular/core";
 import { Reports } from "../mocks/providers/mock-ei-reports";
 
@@ -79,7 +85,11 @@ export class CommonTestModule {
       { provide: Api, useClass: Api },
       { provide: Storage, useClass: StorageMock },
       { provide: Reports, useClass: Reports },
-      { provide: User, useClass: User }
+      { provide: User, useClass: User },
+      {
+        provide: QuestionJsonLoaderProvider,
+        useClass: QuestionJsonLoaderProvider
+      }
     ];
 
     if (overrides == null) {

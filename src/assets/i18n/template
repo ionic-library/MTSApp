@@ -1,0 +1,34 @@
+
+  {
+    "type": "boolean",
+    "id": "",
+    "name": "",
+    "title" : {
+      "en": "",
+      "fr": ""
+    },
+    "question": {
+      "en": "",
+      "fr": ""
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "redirect_to_id": ""
+        }
+      }
+    ]
+  },

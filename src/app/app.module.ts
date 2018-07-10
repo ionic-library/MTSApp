@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { ErrorHandler, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { Camera } from "@ionic-native/camera";
+import { File } from "@ionic-native/file";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 import { IonicStorageModule, Storage } from "@ionic/storage";
@@ -21,10 +22,11 @@ import {
   Lang,
   ProvincesProvider,
   LogProvider,
-  User
+  User,
+  EiReportingQuestionsProvider
 } from "../providers";
 import { MyApp } from "./app.component";
-import { EiReportingQuestionsProvider } from "../providers/ei-reporting-questions/ei-reporting-questions";
+import { QuestionJsonLoaderProvider } from "../providers/question-json-loader/question-json-loader";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -78,7 +80,9 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProvincesProvider,
     Lang,
-    EiReportingQuestionsProvider
+    EiReportingQuestionsProvider,
+    File,
+    QuestionJsonLoaderProvider
   ]
 })
 export class AppModule {}
