@@ -1,10 +1,10 @@
 <ion-content>
   <ion-toolbar class="home-toolbar">
-    <button ion-button menuToggle icon-only>
+    <button ion-button menuToggle icon-only id="homePageHamburgerMenu">
       <ion-icon name='MTSApp-HamburgMenu'></ion-icon>
     </button>
     <ion-title>
-      {{ 'APP_HOME_TITLE' | translate }}
+      <span id="homePageMainTitle">{{ 'APP_HOME_TITLE' | translate }}</span>
     </ion-title>
     <ion-buttons end>
       <button id="help-button" attr.aria-label="{{ 'HELP_MODAL_ARIA_LABEL' | translate }}" ion-button clear (click)="presentHelpModal()">
@@ -16,8 +16,8 @@
     <img class="curved-img-portrait" src="assets/img/nightSkyCROP.png" alt="Header image">
     <img class="curved-img-landscape" src="assets/img/nightSkyCROPLandscape.png" alt="Header image">
     <div class="hello-text">
-      <p class="greeting"><span class="greeting-span">{{ this.greeting }}<br>{{ this.userName }}</span></p>
-      <p><span class="locationInfo"><strong>{{ this.location }}</strong><br><strong>{{ this.temperature }}</strong>°C</span></p>
+      <p class="greeting"><span class="greeting-span" id="homePageGreetingTitle">{{ this.greeting }}<br>{{ this.userName }}</span></p>
+      <p><span class="locationInfo" id="homePageLocationTitle"><strong>{{ this.location }}</strong><br><strong>{{ this.temperature }}</strong>°C</span></p>
     </div>
   </div>
   <ion-searchbar placeholder="{{'SEARCHBAR_PLACEHOLDER' | translate}}"></ion-searchbar>

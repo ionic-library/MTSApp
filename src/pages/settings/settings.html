@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <button ion-button menuToggle icon-only>
+    <button ion-button menuToggle icon-only id="homePageHamburgerMenu">
       <ion-icon name='MTSApp-HamburgMenu'></ion-icon>
     </button>
     <ion-title>{{ pageTitleKey | translate }}</ion-title>
@@ -13,11 +13,11 @@
 
   <section *ngIf="settingsReady">
     <ion-list *ngIf="page == 'main'">
-      <button ion-item [navPush]="subSettings" [navParams]="languageSettings">
+      <button ion-item [navPush]="subSettings" [navParams]="languageSettings" id="settingsOptionLanguage">
         {{ 'SETTINGS_LANGUAGE_BUTTON' | translate }}
       </button>
 
-      <button ion-item [navPush]="subSettings" [navParams]="notificationSettings">
+      <button ion-item [navPush]="subSettings" [navParams]="notificationSettings" id="settingsOptionNotification">
         {{ 'SETTINGS_NOTIFICATION_BUTTON' | translate }}
       </button>
     </ion-list>
