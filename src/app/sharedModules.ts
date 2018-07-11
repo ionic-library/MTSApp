@@ -36,7 +36,8 @@ import {
   ProvincesProvider,
   User,
   Api,
-  QuestionJsonLoaderProvider
+  QuestionJsonLoaderProvider,
+  EiReportingQuestionsProvider
 } from "../providers";
 import { Type } from "@angular/core";
 import { Reports } from "../mocks/providers/mock-ei-reports";
@@ -89,6 +90,10 @@ export class CommonTestModule {
       {
         provide: QuestionJsonLoaderProvider,
         useClass: QuestionJsonLoaderProvider
+      },
+      {
+        provide: EiReportingQuestionsProvider,
+        useClass: EiReportingQuestionsProvider
       }
     ];
 

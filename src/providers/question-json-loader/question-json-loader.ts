@@ -16,9 +16,7 @@ import { RedirectToId } from "../../models/actions/actions";
 */
 @Injectable()
 export class QuestionJsonLoaderProvider {
-  constructor() {
-    console.log("Hello QuestionJsonLoaderProvider Provider");
-  }
+  constructor() {}
 
   /**
    * Load a BooleanQuestion from a json object.
@@ -31,8 +29,8 @@ export class QuestionJsonLoaderProvider {
       validations: json.validations,
       title: new TranslatedString(json.title),
       question: new TranslatedString(json.question),
-      answerOne: this.loadAnswerFromJson(json.answers[0]),
-      answerTwo: this.loadAnswerFromJson(json.answers[1])
+      answerTrue: this.loadAnswerFromJson(json.answers[0]),
+      answerFalse: this.loadAnswerFromJson(json.answers[1])
     });
   }
 

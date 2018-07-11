@@ -1,3 +1,4 @@
+import { BooleanQuestion } from "./../../models/boolean-question";
 import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 import { Component } from "@angular/core";
 import { LangCodes } from "../../providers";
@@ -10,9 +11,12 @@ import { LangCodes } from "../../providers";
   templateUrl: "boolean-question.html"
 })
 export class BooleanQuestionComponent {
+  model: BooleanQuestion;
+
+  answerTrue: string;
+  answerFalse: string;
   title: string;
   question: string;
-  explanation: string;
   readonly number: string = "1";
   readonly total: string = "2";
 
@@ -35,8 +39,10 @@ export class BooleanQuestionComponent {
     if (lang === undefined) {
       throw new Error("No Lang Code passed in.");
     }
-    this.title = "foo";
-    this.question = "bar";
-    this.explanation = "baz";
+
+    this.title = this.model.title.toString(lang);
+    this.question = this.model.question.toString(lang);
+    this.answerTrue = this.model.answerTrue.text.toString(lang);
+    this.answerFalse = this.model.answerFalse.text.toString(lang);
   }
 }

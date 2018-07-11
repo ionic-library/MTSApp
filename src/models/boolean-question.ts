@@ -9,7 +9,7 @@ export class BooleanQuestion {
   id: number;
   title: TranslatedString;
   question: TranslatedString;
-  answerOne: BooleanAnswer;
-  answerTwo: BooleanAnswer;
+  answerTrue: BooleanAnswer;
+  answerFalse: BooleanAnswer;
   validations: string[];
 }

@@ -24,7 +24,10 @@ describe("The Questionaire Page", () => {
     }).compileComponents();
   }));
 
-  it("Should be created with no errors", inject([QuestionairePage], sut => {
-    expect(sut).to.exist;
-  }));
+  it("Should be created with no errors", inject(
+    [QuestionairePage],
+    (sut: QuestionairePage) => {
+      expect(sut).to.exist;
+    }
+  ));
 });

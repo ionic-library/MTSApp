@@ -23,10 +23,10 @@ import {
   ProvincesProvider,
   LogProvider,
   User,
+  QuestionJsonLoaderProvider,
   EiReportingQuestionsProvider
 } from "../providers";
 import { MyApp } from "./app.component";
-import { QuestionJsonLoaderProvider } from "../providers/question-json-loader/question-json-loader";
 
 // The translate loader needs to know where to load i18n files
 // in Ionic's static asset pipeline.
@@ -80,9 +80,9 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProvincesProvider,
     Lang,
+    QuestionJsonLoaderProvider,
     EiReportingQuestionsProvider,
-    File,
-    QuestionJsonLoaderProvider
+    File
   ]
 })
 export class AppModule {}
