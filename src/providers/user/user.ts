@@ -6,10 +6,11 @@ import { Api } from "../api/api";
 import { TranslateService } from "@ngx-translate/core";
 import { Logger } from "winston";
 import { error } from "selenium-webdriver";
+import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 
 @Injectable()
 export class User {
-  details: any;
+  private UserDetails: any; //### When ready, we need to define the user object here
   private SessionTimeOutMinutes: number = 1;
   private Lang: LangCodes;
   private LangReady: boolean = false;
@@ -17,25 +18,56 @@ export class User {
 
   public firstName: string = "";
   public lastName: string = "";
+  public sessionLastHit: Date;
   public SIN: string = "";
   public passCode: string = "";
-  public sessionLastHit: Date;
+  public region = "";
+  public language = ""; //### The chosen user language on the API account may differ from the user chosen mobile app language, that's why we have two language properties
+  public sessionID = "";
+  public deviceID = ""; //### The unique user device ID
+  public userID = ""; //### Random string to identify the user with
 
   constructor(
     public api: Api,
     public storage: Storage,
     public translate: TranslateService,
-    private readonly logProvider: LogProvider
+    private readonly logProvider: LogProvider,
+    private uniqueDeviceID: UniqueDeviceID
   ) {
     this.logger = this.logProvider.getLogger();
     this.storage
       .get("user")
       .then((resp: any) => {
-        this.logger.info("Retreiving user information from local storage. Setting user vars.");
-        this._loggedIn(JSON.parse(resp), false);
+        if (resp != null) {
+          this.logger.info(
+            "Retreived user information from local storage. Setting user vars."
+          );
+          this._loggedIn(resp, false);
+        } else {
+          this.logger.info("User object not found in storage. (wich is fine)");
+          this.uniqueDeviceID
+            .get()
+            .then((uuid: any) => console.log(uuid))
+            .catch((error: any) => {
+              this.deviceID = "TEMPID_WEB"; // Normally due to not being on a device.
+            });
+          //### Set random userID to be saved and used later
+          let text = "";
+          let possible =
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+          this.userID = "t"; // ensure it starts with letter
+          for (var i = 0; i < 100; i++)
+            this.userID += possible.charAt(
+              Math.floor(Math.random() * possible.length)
+            );
+
+          this.logger.info("Set random userID: " + this.userID);
+        }
       })
       .catch((Error: any) => {
-        this.logger.info("User object not found in storage. (wich is fine)");
+        this.logger.error(
+          "Error hitting localstorage. This is not good, not good at all."
+        );
       });
   }
 
@@ -137,7 +169,7 @@ export class User {
   }
 
   isLoggedIn(): boolean {
-    return !(this.details === null || this.details === undefined);
+    return !(this.UserDetails === null || this.UserDetails === undefined);
   }
 
   login(
@@ -148,7 +180,6 @@ export class User {
     Success: Function,
     Failure: Function
   ) {
-
     const accountInfo = {
       sin: _SIN,
       accesscode: _AccessCode,
@@ -158,19 +189,25 @@ export class User {
 
     this.api.post("authentication", accountInfo).subscribe(
       (Response: any) => {
+        //### TODO - Check for non-existants of expected properties (e.g. AuthResponseStatus
         if (Response.AuthResponseStatus === "Success") {
-          this._loggedIn({
-            user: {
-              FirstName: "FName",
-              LastName: "LName",
-              SessionLastHit: Date.now, // We will need to update this on each action in the app
-              SIN: _SIN,
-              AccesCode: _AccessCode,
-              Region: _Region,
-              Language: _Language,
-              SessionID: Response.sessionID
-            }
-          },true
+          let _UserDetails = {
+            firstName: "FName",
+            lastName: "LName",
+            sessionLastHit: Date.now, // We will need to update this on each action in the app
+            SIN: _SIN,
+            passCode: _AccessCode,
+            region: _Region,
+            language: _Language,
+            sessionID: Response.sessionID,
+            deviceID: this.deviceID,
+            userID: this.userID
+          };
+          this._loggedIn(
+            {
+              _UserDetails
+            },
+            true
           );
           this.logger.info("User was logged in");
           Success();
@@ -189,30 +226,45 @@ export class User {
   }
 
   logout() {
-    this.details = null;
+    this.UserDetails = null;
   }
 
-  private _loggedIn(resp: any, SaveLocalStorage: boolean=false) {
-    this.firstName = resp.user.firstName;
-    this.SIN = resp.user.SIN;
-    this.details = resp.user;
-    this.sessionLastHit = resp.user.SessionLastHit;
+  private _loggedIn(resp: any, SaveLocalStorage: boolean = false) {
+    this.firstName = resp.firstName;
+    this.lastName = resp.lastName;
+    this.sessionLastHit = resp.SessionLastHit;
+    this.SIN = resp.SIN;
+    this.passCode = resp.passCode;
+    this.region = resp.region;
+    this.language = resp.language;
+    this.sessionID = resp.sessionID;
+    this.deviceID = resp.deviceID;
+    this.userID = resp.userID;
+
+    this.UserDetails = resp;
+
     this.logger.info("User has been logged in.");
     if (SaveLocalStorage) {
       this.storage
-        .set("user", JSON.stringify(resp))
+        .set("user", JSON.stringify(resp)) // For some reason it throws a DataCloneError on JSON object store. Will address it later.
         .then(() => {
           this.logger.info("Saved user session to local storage");
         })
         .catch((Error: any) => {
-          this.logger.error("Error saving user session to local storage: " + Error);
+          this.logger.error(
+            "Error saving user session to local storage: " + Error
+          );
         });
     }
   }
 
   public IsSessionValid() {
     let now = new Date();
-    if (this.sessionLastHit != undefined && (this.sessionLastHit.getTime() + (this.SessionTimeOutMinutes * 60000) > now.getTime())) {
+    if (
+      this.sessionLastHit != undefined &&
+      this.sessionLastHit.getTime() + this.SessionTimeOutMinutes * 60000 >
+        now.getTime()
+    ) {
       console.log(this.sessionLastHit);
       this.logger.info("Session is good");
       return true;
