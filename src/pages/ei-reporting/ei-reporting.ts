@@ -30,7 +30,6 @@ export class EiReportingPage {
     public readonly user: User
   ) {
     this.logger = this.logProvider.getLogger();
-    console.log(user.IsSessionValid());
     this.currentReports = this.reports.query();
   }
 
