@@ -9,6 +9,7 @@ import { SitePages } from "..";
 
 import { Logger } from "winston";
 import { LogProvider } from "../../providers";
+import { TranslateService } from "../../../node_modules/@ngx-translate/core";
 /**
  * Generated class for the LoginFailedPage page.
  *
@@ -27,7 +28,8 @@ export class LoginFailedPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public modalCtrl: ModalController,
-    private readonly logProvider: LogProvider
+    private readonly logProvider: LogProvider,
+    public translate: TranslateService
   ) {
     this.logger = this.logProvider.getLogger();
   }
