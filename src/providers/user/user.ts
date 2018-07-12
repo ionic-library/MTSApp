@@ -10,29 +10,29 @@ import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 
 @Injectable()
 export class User {
-  private UserDetails: any; //### When ready, we need to define the user object here
-  private SessionTimeOutMinutes: number = 1;
-  private Lang: LangCodes;
-  private LangReady: boolean = false;
+  private userDetails: any; //### When ready, we need to fully define the user object here
+  private sessionTimeOutMinutes: number = 1;
+  private lang: LangCodes;
+  private langReady: boolean = false;
   private readonly logger: Logger;
 
   public firstName: string = "";
   public lastName: string = "";
   public sessionLastHit: Date;
-  public SIN: string = "";
+  public sin: string = "";
   public passCode: string = "";
   public region = "";
   public language = ""; //### The chosen user language on the API account may differ from the user chosen mobile app language, that's why we have two language properties
-  public sessionID = "";
-  public deviceID = ""; //### The unique user device ID
-  public userID = ""; //### Random string to identify the user with
+  public sessionId = "";
+  public deviceId = ""; //### The unique user device ID
+  public userId = ""; //### Random string to identify the user with. Case sensative.
 
   constructor(
     public api: Api,
     public storage: Storage,
     public translate: TranslateService,
     private readonly logProvider: LogProvider,
-    private uniqueDeviceID: UniqueDeviceID
+    private uniqueDeviceId: UniqueDeviceID
   ) {
     this.logger = this.logProvider.getLogger();
     this.storage
@@ -40,28 +40,27 @@ export class User {
       .then((resp: any) => {
         if (resp != null) {
           this.logger.info(
-            "Retreived user information from local storage. Setting user vars."
+            "Retreived user information from local storage and set local vars."
           );
-          this._loggedIn(resp, false);
+          this.SetUserDetails(resp, false);
         } else {
           this.logger.info("User object not found in storage. (wich is fine)");
-          this.uniqueDeviceID
+          this.uniqueDeviceId
             .get()
             .then((uuid: any) => console.log(uuid))
             .catch((error: any) => {
-              this.deviceID = "TEMPID_WEB"; // Normally due to not being on a device.
+              this.deviceId = "TEMPID_WEB"; // Normally due to not being on a device.
             });
           //### Set random userID to be saved and used later
-          let text = "";
           let possible =
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-          this.userID = "t"; // ensure it starts with letter
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"; // Can add special characters or increase length to make more secure.
+          this.userId = "t"; // ensure it starts with letter
           for (var i = 0; i < 100; i++)
-            this.userID += possible.charAt(
+            this.userId += possible.charAt(
               Math.floor(Math.random() * possible.length)
             );
 
-          this.logger.info("Set random userID: " + this.userID);
+          this.logger.info("Set random userID: " + this.userId);
         }
       })
       .catch((Error: any) => {
@@ -72,12 +71,12 @@ export class User {
   }
 
   public GetLang(success: Function, error: Function) {
-    if (this.LangReady) {
-      success(this.Lang);
+    if (this.langReady) {
+      success(this.lang);
     } else {
       this.initializeLang(
         () => {
-          success(this.Lang);
+          success(this.lang);
         },
         (Error: any) => {
           error(Error);
@@ -91,11 +90,11 @@ export class User {
       .get("lang")
       .then((_Lang: string) => {
         if (_Lang == "fr") {
-          this.Lang = LangCodes.FR;
-          this.LangReady = true;
+          this.lang = LangCodes.FR;
+          this.langReady = true;
         } else if (_Lang == "en") {
-          this.Lang = LangCodes.EN;
-          this.LangReady = true;
+          this.lang = LangCodes.EN;
+          this.langReady = true;
         }
         success();
       })
@@ -105,7 +104,7 @@ export class User {
   }
 
   public setLang(lang: LangCodes, success: Function, error: Function) {
-    this.LangReady = false;
+    this.langReady = false;
     this.storage
       .set("lang", lang)
       .then(() => {
@@ -128,7 +127,7 @@ export class User {
         this.setLang(
           lc,
           () => {
-            this.Lang = lc;
+            this.lang = lc;
           },
           (Error: any) => {
             this.logger.info("Could not change lang: " + JSON.stringify(Error));
@@ -169,44 +168,41 @@ export class User {
   }
 
   isLoggedIn(): boolean {
-    return !(this.UserDetails === null || this.UserDetails === undefined);
+    return !(this.userDetails === null || this.userDetails === undefined);
   }
 
   login(
-    _SIN: string,
-    _AccessCode: string,
-    _Region: string,
-    _Language: string,
+    _sin: string,
+    _passCode: string,
+    _region: string,
+    _language: string,
     Success: Function,
     Failure: Function
   ) {
     const accountInfo = {
-      sin: _SIN,
-      accesscode: _AccessCode,
-      region: _Region,
-      language: _Language
+      sin: _sin,
+      accesscode: _passCode,
+      region: _region,
+      language: _language
     };
 
     this.api.post("authentication", accountInfo).subscribe(
       (Response: any) => {
         //### TODO - Check for non-existants of expected properties (e.g. AuthResponseStatus
         if (Response.AuthResponseStatus === "Success") {
-          let _UserDetails = {
-            firstName: "FName",
-            lastName: "LName",
-            sessionLastHit: Date.now, // We will need to update this on each action in the app
-            SIN: _SIN,
-            passCode: _AccessCode,
-            region: _Region,
-            language: _Language,
-            sessionID: Response.sessionID,
-            deviceID: this.deviceID,
-            userID: this.userID
-          };
-          this._loggedIn(
-            {
-              _UserDetails
-            },
+          this.SetUserDetails(
+            this.GetUserDetailsObject(
+              "fName",
+              "lName",
+              new Date(),
+              _sin,
+              _passCode,
+              _region,
+              _language,
+              Response.sessionID,
+              this.deviceId,
+              this.userId
+            ),
             true
           );
           this.logger.info("User was logged in");
@@ -226,27 +222,27 @@ export class User {
   }
 
   logout() {
-    this.UserDetails = null;
+    this.userDetails = null;
   }
 
-  private _loggedIn(resp: any, SaveLocalStorage: boolean = false) {
-    this.firstName = resp.firstName;
-    this.lastName = resp.lastName;
-    this.sessionLastHit = resp.SessionLastHit;
-    this.SIN = resp.SIN;
-    this.passCode = resp.passCode;
-    this.region = resp.region;
-    this.language = resp.language;
-    this.sessionID = resp.sessionID;
-    this.deviceID = resp.deviceID;
-    this.userID = resp.userID;
+  private SetUserDetails(_userDetails: any, SaveLocalStorage: boolean = false) {
+    this.firstName = _userDetails.firstName;
+    this.lastName = _userDetails.lastName;
+    this.sessionLastHit = _userDetails.SessionLastHit;
+    this.sin = _userDetails.sin;
+    this.passCode = _userDetails.passCode;
+    this.region = _userDetails.region;
+    this.language = _userDetails.language;
+    this.sessionId = _userDetails.sessionId;
+    this.deviceId = _userDetails.deviceID;
+    this.userId = _userDetails.userID;
 
-    this.UserDetails = resp;
-
-    this.logger.info("User has been logged in.");
+    this.userDetails = _userDetails;
+    console.log(this.userDetails);
+    this.logger.info("User information has been loaded locally.");
     if (SaveLocalStorage) {
       this.storage
-        .set("user", JSON.stringify(resp)) // For some reason it throws a DataCloneError on JSON object store. Will address it later.
+        .set("user", _userDetails) // For some reason it throws a DataCloneError on JSON object store. Will address it later.
         .then(() => {
           this.logger.info("Saved user session to local storage");
         })
@@ -262,15 +258,42 @@ export class User {
     let now = new Date();
     if (
       this.sessionLastHit != undefined &&
-      this.sessionLastHit.getTime() + this.SessionTimeOutMinutes * 60000 >
+      this.sessionLastHit.getTime() + this.sessionTimeOutMinutes * 60000 >
         now.getTime()
     ) {
-      console.log(this.sessionLastHit);
+      //console.log(this.sessionLastHit);
       this.logger.info("Session is good");
       return true;
     } else {
       this.logger.info("Session is no good");
       return false;
     }
+  }
+
+  public GetUserDetailsObject(
+    _firstName: string,
+    _lastName: string,
+    _sessionLastHit: Date,
+    _sin: string,
+    _passCode: string,
+    _region: string,
+    _language: string,
+    _sessionId: string,
+    _deviceId: string,
+    _userId: string
+  ) {
+    // As new user variables are required they'd get added here.
+    return {
+      firstName: _firstName,
+      lastName: _lastName,
+      sessionLastHit: _sessionLastHit,
+      sin: _sin,
+      passCode: _passCode,
+      region: _region,
+      language: _language,
+      sessionId: _sessionId,
+      deviceId: _deviceId,
+      userId: _userId
+    };
   }
 }
