@@ -28,12 +28,14 @@ import {
   NavMock,
   ModalCtrlMock,
   NavParamsMock,
-  StorageMock
+  StorageMock,
+  UniqueDeviceIDMoch
 } from "../../test-config/mocks-ionic";
 import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
 import { LogProvider, ProvincesProvider, User, Api } from "../providers";
 import { Type } from "@angular/core";
 import { Reports } from "../mocks/providers/mock-ei-reports";
+import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 
 export class CommonTestModule {
   /**
@@ -79,7 +81,8 @@ export class CommonTestModule {
       { provide: Api, useClass: Api },
       { provide: Storage, useClass: StorageMock },
       { provide: Reports, useClass: Reports },
-      { provide: User, useClass: User }
+      { provide: User, useClass: User },
+      { provide: UniqueDeviceID, useClass: UniqueDeviceIDMoch }
     ];
 
     if (overrides == null) {
