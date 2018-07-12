@@ -5,13 +5,15 @@ import { LangCodes, LogProvider } from "../../providers";
 import { Api } from "../api/api";
 import { TranslateService } from "@ngx-translate/core";
 import { Logger } from "winston";
-import { error } from "selenium-webdriver";
 import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 
 @Injectable()
 export class User {
   private userDetails: any; //### When ready, we need to fully define the user object here
-  private sessionTimeOutMinutes: number = 1;
+  private readonly sessionTimeOutMinutes: number = 1;
+  private readonly userIdLength: number = 100;
+  private readonly possibleUserIdChars: string =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"; // Can add special characters or increase length to make more secure.
   private lang: LangCodes;
   private langReady: boolean = false;
   private readonly logger: Logger;
@@ -32,7 +34,7 @@ export class User {
     public storage: Storage,
     public translate: TranslateService,
     private readonly logProvider: LogProvider,
-    private uniqueDeviceId: UniqueDeviceID
+    private readonly uniqueDeviceId: UniqueDeviceID
   ) {
     this.logger = this.logProvider.getLogger();
     this.storage
@@ -48,16 +50,15 @@ export class User {
           this.uniqueDeviceId
             .get()
             .then((uuid: any) => console.log(uuid))
-            .catch((error: any) => {
+            .catch(() => {
               this.deviceId = "TEMPID_WEB"; // Normally due to not being on a device.
             });
           //### Set random userID to be saved and used later
-          let possible =
-            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"; // Can add special characters or increase length to make more secure.
+
           this.userId = "t"; // ensure it starts with letter
-          for (var i = 0; i < 100; i++)
-            this.userId += possible.charAt(
-              Math.floor(Math.random() * possible.length)
+          for (var i = 0; i < this.userIdLength; i++)
+            this.userId += this.possibleUserIdChars.charAt(
+              Math.floor(Math.random() * this.possibleUserIdChars.length)
             );
 
           this.logger.info("Set random userID: " + this.userId);
@@ -65,7 +66,8 @@ export class User {
       })
       .catch((Error: any) => {
         this.logger.error(
-          "Error hitting localstorage. This is not good, not good at all."
+          "Error hitting localstorage. This is not good, not good at all: " +
+            JSON.stringify(Error)
         );
       });
   }
@@ -248,17 +250,20 @@ export class User {
         })
         .catch((Error: any) => {
           this.logger.error(
-            "Error saving user session to local storage: " + Error
+            "Error saving user session to local storage: " +
+              JSON.stringify(Error)
           );
         });
     }
   }
 
   public IsSessionValid() {
-    let now = new Date();
+    const now = new Date();
+    const MilliConvert = 60000; // Doing this because Lint told me to
     if (
       this.sessionLastHit != undefined &&
-      this.sessionLastHit.getTime() + this.sessionTimeOutMinutes * 60000 >
+      this.sessionLastHit.getTime() +
+        this.sessionTimeOutMinutes * MilliConvert >
         now.getTime()
     ) {
       //console.log(this.sessionLastHit);
