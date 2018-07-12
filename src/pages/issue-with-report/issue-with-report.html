@@ -24,31 +24,31 @@
 <ion-content padding>
 
   <ion-grid class="grid">
-    <ion-row justify-content-center align-items-center style="height:15%">
-      <ion-icon class="ex" name="alert"></ion-icon>
+    <ion-row justify-content-center align-items-center id="boxRow">
+      <ion-icon class="ex" name="MTSApp-Box"></ion-icon>
     </ion-row>
-    <ion-row justify-content-center align-items-start style="height:7%">
-      <p class="p"> Unfortunately, at this time we are not able to complete your report online</p>
-    </ion-row>
-
-    <ion-row justify-content-center align-items-center align-self-end style="height: 15%; width: 75%; margin: 0 auto;">
-      <p class="p">In order to continue: </p>
-    </ion-row>
-    <ion-row justify-content-center align-items-center style="height:10%; padding-top: 10px;">
-      <ion-icon class='call' name="call"></ion-icon>
-    </ion-row>
-    <ion-row justify-content-center align-items-start style="height: 10%; width: 60%; margin: 0 auto;">
-      <p class="p" style="padding-top: 10px;">Call Service Canada at 1-800-206-7218</p>
+    <ion-row justify-content-center align-items-start id="unfortunateRow">
+      <p class="p" id="unfortunate"> {{'ISSUE_PAGE_P1_TEXT' | translate}}</p>
     </ion-row>
 
-    <ion-row justify-content-center align-items-end style="height:10%">
-      <p class="p" style="padding-bottom: 5px;">or</p>
+    <ion-row justify-content-center align-items-end align-self-end id="continueRow">
+      <p class="p" id="continue">{{'ISSUE_PAGE_P2_TEXT' | translate}} </p>
     </ion-row>
-    <ion-row justify-content-center align-items-end style="height:17%">
-      <ion-icon class="pin" name="pin"></ion-icon>
+    <ion-row justify-content-center align-items-center id="callRow" >
+      <ion-icon class='call' name="MTSApp-Phone"></ion-icon>
     </ion-row>
-    <ion-row justify-content-center align-items-start align-self-end style="padding-top: 10px; height:15%">
-      <p class="p">Find a Service Canada location</p>
+    <ion-row justify-content-center align-items-start id="serviceCanRow">
+      <p class="p" id="serviceCan">{{'ISSUE_PAGE_P3_TEXT' | translate}}</p>
+    </ion-row>
+
+    <ion-row justify-content-center align-items-end id="orRow">
+      <p class="p" style="padding-bottom: 5px;">{{'ISSUE_PAGE_P4_TEXT' | translate}}</p>
+    </ion-row>
+    <ion-row justify-content-center align-items-end id="gpsRow">
+      <ion-icon class="pin" name="MTSApp-GPS"></ion-icon>
+    </ion-row>
+    <ion-row justify-content-center align-items-start align-self-end id="lastP">
+      <p class="p">{{'ISSUE_PAGE_P5_TEXT' | translate}}</p>
     </ion-row>
   </ion-grid>
 
