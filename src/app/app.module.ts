@@ -8,6 +8,7 @@ import { StatusBar } from "@ionic-native/status-bar";
 import { IonicStorageModule, Storage } from "@ionic/storage";
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 import {
   IonicApp,
   IonicErrorHandler,
@@ -82,7 +83,8 @@ export function provideSettings(storage: Storage) {
     Lang,
     QuestionJsonLoaderProvider,
     EiReportingQuestionsProvider,
-    File
+    File,
+    UniqueDeviceID
   ]
 })
 export class AppModule {}

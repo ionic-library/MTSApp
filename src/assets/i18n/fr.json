@@ -156,6 +156,8 @@
 
   "LOGIN_ERROR":
     "Connexion impossible. Veuillez vérifier les informations de votre compte et réessayer.",
+  "LOGIN_ERROR_NO_CONNECTION":
+    "(FR)We were unable to check your login information. Please check your internet connection.",
   "LOGIN_BUTTON": "Connexion",
   "SIGNUP_TITLE": "Inscription",
   "SIGNUP_ERROR":

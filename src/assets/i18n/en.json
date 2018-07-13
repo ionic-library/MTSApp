@@ -159,6 +159,8 @@
 
   "LOGIN_ERROR":
     "Unable to sign in. Please check your account information and try again.",
+  "LOGIN_ERROR_NO_CONNECTION":
+    "We were unable to check your login information. Please check your internet connection.",
   "LOGIN_BUTTON": "Sign in",
   "SIGNUP_TITLE": "Sign up",
   "SIGNUP_ERROR":

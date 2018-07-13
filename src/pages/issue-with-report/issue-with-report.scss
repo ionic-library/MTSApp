@@ -1,30 +1,9 @@
 page-issue-with-report {
-  // NAVBAR CSS STARTS HERE
-  .menu {
-    color: #fff;
-  }
-  .toolbar-title {
-    color: white;
-  }
-  .page-title {
-    color: white;
-  }
-  .back-button {
-    color: #fff;
-  }
-  .back {
-    color: #fff;
-  }
-  .help {
-    color: #fff;
-    padding-right: 5vw;
-  }
-  // NAVBAR CSS ENDS HERE
   .grid {
     height: 100%;
   }
   .ex {
-    color: black;
+    color: red;
     font-size: 5rem;
   }
   .p {
@@ -34,14 +13,69 @@ page-issue-with-report {
     font-size: 16px;
     padding-top: 0px;
   }
-  .call,
-  .pin {
+  .call {
     color: #0f71c4;
     font-size: 5rem;
   }
-  @media only screen and (orientation: landscape) and (min-width: 568px) and (max-width: 823px) {
+
+  .pin {
+    color: #0f71c4;
+    font-size: 6rem;
+  }
+  #serviceCan {
+    padding-top: 10px;
+    width: 90%;
+  }
+
+  #serviceCanRow {
+    height: 10%;
+    width: 60%;
+    margin: 0 auto;
+  }
+  #unfortunate {
+    padding-top: 10px;
+  }
+  #lastP {
+    height: 15%;
+  }
+  #gpsRow {
+    height: 20%;
+    padding-top: 60px;
+  }
+
+  #unfortunateRow {
+    height: 7%;
+  }
+
+  #continueRow {
+    height: 20%;
+    padding-top: 20px;
+    width: 75%;
+    margin: 0 auto;
+  }
+  #callRow {
+    height: 20%;
+    margin-top: 20px;
+  }
+
+  #boxRow {
+    height: 15%;
+  }
+  #orRow {
+    margin-top: 10px;
+    height: 20%;
+  }
+
+  @media only screen and (orientation: landscape) and (min-width: 568px) and (max-width: 822px) {
     .grid {
-      height: 140%;
+      height: 125%;
+    }
+    #continueRow {
+      height: 30%;
+    }
+
+    #orRow {
+      height: 25%;
     }
   }
   @media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 1024px) {
@@ -49,13 +83,25 @@ page-issue-with-report {
       font-size: 3rem;
     }
     .ex {
-      color: black;
-      font-size: 7rem;
+      color: red;
+      font-size: 9rem;
     }
-    .call,
+    .call {
+      color: #0f71c4;
+      font-size: 10rem;
+    }
+
+    #orRow {
+      height: 10%;
+    }
+
+    #continueRow {
+      height: 15%;
+    }
+
     .pin {
       color: #0f71c4;
-      font-size: 7rem;
+      font-size: 12rem;
     }
   }
   @media only screen and (orientation: landscape) and (min-width: 1024px) {
@@ -63,13 +109,29 @@ page-issue-with-report {
       font-size: 3rem;
     }
     .ex {
-      color: black;
+      color: red;
       font-size: 7rem;
     }
-    .call,
+    .call {
+      color: #0f71c4;
+      font-size: 5rem;
+    }
+
     .pin {
       color: #0f71c4;
-      font-size: 7rem;
+      font-size: 6rem;
+    }
+  }
+
+  @media only screen and (orientation: portrait) and (min-width: 320px) and (max-width: 360px) {
+    #continueRow {
+      height: 25%;
+    }
+  }
+
+  @media only screen and (orientation: landscape) and (min-width: 567px) and (max-width: 568px) {
+    #continueRow {
+      height: 40%;
     }
   }
 }
