@@ -4,6 +4,7 @@ export enum SitePages {
   BlankPage = "BlankPage",
   Confirmation = "ConfirmationPage",
   EILogin = "LoginPage",
+  EiDashboard = "EiDashboardPage",
   EiReporting = "EiReportingPage",
   Home = "HomePage",
   IssueWithReport = "IssueWithReportPage",
