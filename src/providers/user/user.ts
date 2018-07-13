@@ -10,7 +10,7 @@ import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 @Injectable()
 export class User {
   private userDetails: any; //### When ready, we need to fully define the user object here
-  private readonly sessionTimeOutMinutes: number = 1;
+  private readonly sessionTimeOutMinutes: number = 1; // 1 minute for testing purposes but this should really go in an overall config somewhere TODO
   private readonly userIdLength: number = 100;
   private readonly possibleUserIdChars: string =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"; // Can add special characters or increase length to make more secure.
@@ -261,6 +261,7 @@ export class User {
     const now = new Date();
     const MilliConvert = 60000; // Doing this because Lint told me to
     if (
+      this.userDetails != null &&
       this.sessionLastHit != undefined &&
       this.sessionLastHit.getTime() +
         this.sessionTimeOutMinutes * MilliConvert >
