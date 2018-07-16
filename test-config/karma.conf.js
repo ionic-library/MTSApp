@@ -1,18 +1,18 @@
-var webpackConfig = require('./webpack.test.js');
+var webpackConfig = require("./webpack.test.js");
 
 module.exports = function(config) {
   var _config = {
-    basePath: '../',
+    basePath: "../",
 
-    frameworks: ['jasmine'],
+    frameworks: ["jasmine"],
 
     files: [
       {
-        pattern: './test-config/karma-test-shim.js',
+        pattern: "./test-config/karma-test-shim.js",
         watched: true
       },
       {
-        pattern: './src/assets/**/*',
+        pattern: "./src/assets/**/*",
         watched: false,
         included: false,
         served: true,
@@ -21,17 +21,19 @@ module.exports = function(config) {
     ],
 
     proxies: {
-      '/assets/': '/base/src/assets/'
+      "/assets/": "/base/src/assets/"
     },
 
     preprocessors: {
-      './test-config/karma-test-shim.js': ['webpack', 'sourcemap']
+      "./test-config/karma-test-shim.js": ["sourcemap", "webpack"]
     },
 
-    webpack: webpackConfig,
+    webpack: {
+      webpackConfig
+    },
 
     webpackMiddleware: {
-      stats: 'errors-only'
+      stats: "errors-only"
     },
 
     webpackServer: {
@@ -39,22 +41,24 @@ module.exports = function(config) {
     },
 
     browserConsoleLogOptions: {
-      level: 'log',
-      format: '%b %T: %m',
+      level: "log",
+      format: "%b %T: %m",
       terminal: true
     },
 
     coverageIstanbulReporter: {
-      reports: [ 'html', 'lcovonly' ],
+      reports: ["html", "lcovonly"],
       fixWebpackSourcePaths: true
     },
 
-    reporters: config.coverage ? ['kjhtml', 'dots', 'coverage-istanbul'] : ['kjhtml', 'dots'],
+    reporters: config.coverage
+      ? ["kjhtml", "dots", "coverage-istanbul"]
+      : ["kjhtml", "dots"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome', 'ChromeHeadless'],
+    browsers: ["Chrome", "ChromeHeadless"],
     singleRun: false
   };
 
