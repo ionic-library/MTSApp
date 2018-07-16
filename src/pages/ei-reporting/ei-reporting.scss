@@ -1,28 +1,7 @@
 page-ei-reporting {
-  /********* NAV BAR CSS STARTS HERE **********/
-  .menu {
-    color: #fff;
-  }
-  .toolbar-title {
-    color: white;
-  }
-  .page-title {
-    color: white;
-  }
-  .back-button {
-    color: #fff;
-  }
-  .back {
-    color: #fff;
-  }
-  .help {
-    color: #fff;
-    padding-right: 5vw;
-  }
-  /********* NAV BAR CSS ENDS HERE **********/
   /************* CARD CSS *******************/
   .item-block {
-    border-bottom: 1px solid #BBBB
+    border-bottom: 1px solid #bbbb;
   }
   .item-block:last-child {
     border-bottom: none;
@@ -40,11 +19,11 @@ page-ei-reporting {
     .good-status {
       font-size: 3vh;
       color: #49a60e;
-      padding-top: .5vh;
+      padding-top: 0.5vh;
     }
     .alert-due-date {
       color: #bb1328;
-      padding-top: .5rem;
+      padding-top: 0.5rem;
       padding-right: 1vw;
     }
     .ei-report-duedate-alert {
