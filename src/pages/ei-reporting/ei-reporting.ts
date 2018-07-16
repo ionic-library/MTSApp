@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, ModalController } from "ionic-angular";
-import { Reports } from "../../mocks/providers/mock-ei-reports";
-import { Report } from "../../models/mockEiReport";
+import { IonicPage, ModalController } from "ionic-angular";
 import { SitePages } from "..";
 import { Logger } from "winston";
 import { LogProvider, User } from "../../providers";
@@ -19,18 +17,13 @@ import { LogProvider, User } from "../../providers";
   templateUrl: "ei-reporting.html"
 })
 export class EiReportingPage {
-  public currentReports: Report[];
-
   private readonly logger: Logger;
   constructor(
-    private readonly navCtrl: NavController,
-    public reports: Reports,
     public modalCtrl: ModalController,
     private readonly logProvider: LogProvider,
     public readonly user: User
   ) {
     this.logger = this.logProvider.getLogger();
-    this.currentReports = this.reports.query();
   }
 
   ionViewDidLoad() {
@@ -45,7 +38,4 @@ export class EiReportingPage {
       .then(() => this.logger.info("Help Modal Displayed"))
       .catch((reason: any) => this.logger.error(reason));
   }
-
-  startReport = (report: any) =>
-    this.navCtrl.push(SitePages.AcceptanceStatement, { report });
 }
