@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
-import { Reports } from "../../mocks/providers/mock-ei-reports";
-import { Report } from "../../models/mockEiReport";
+import { Reports } from "@mock-providers/mock-ei-reports";
+import { Report } from "@models/mockEiReport";
 import { SitePages } from "..";
 import { Logger } from "winston";
-import { LogProvider, User } from "../../providers";
+import { LogProvider, User } from "@providers";
 
 /**
  * Generated class for the EiReportingPage page.
