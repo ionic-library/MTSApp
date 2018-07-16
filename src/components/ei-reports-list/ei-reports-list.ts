@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { TranslateService } from "../../../node_modules/@ngx-translate/core";
 
 /**
  * Generated class for the EiReportsListComponent component.
@@ -13,7 +14,7 @@ import { Component } from "@angular/core";
 export class EiReportsListComponent {
   text: string;
 
-  constructor() {
+  constructor(public translate: TranslateService) {
     console.log("Hello EiReportsListComponent Component");
     this.text = "Hello World";
   }
