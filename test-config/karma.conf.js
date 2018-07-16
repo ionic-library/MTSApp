@@ -4,7 +4,7 @@ module.exports = function(config) {
   var _config = {
     basePath: "../",
 
-    frameworks: ["jasmine"],
+    frameworks: ["jasmine", "karma-typescript"],
 
     files: [
       {
@@ -17,20 +17,29 @@ module.exports = function(config) {
         included: false,
         served: true,
         nocache: false
+      },
+      {
+        pattern: "src/**/*.ts"
       }
     ],
+
+    karmaTypescriptConfig: {
+      tsconfig: "./tsconfig.json"
+    },
 
     proxies: {
       "/assets/": "/base/src/assets/"
     },
 
     preprocessors: {
-      "./test-config/karma-test-shim.js": ["sourcemap", "webpack"]
+      "./test-config/karma-test-shim.js": [
+        "sourcemap",
+        "webpack",
+        "karma-typescript"
+      ]
     },
 
-    webpack: {
-      webpackConfig
-    },
+    webpack: webpackConfig,
 
     webpackMiddleware: {
       stats: "errors-only"
@@ -53,7 +62,7 @@ module.exports = function(config) {
 
     reporters: config.coverage
       ? ["kjhtml", "dots", "coverage-istanbul"]
-      : ["kjhtml", "dots"],
+      : ["kjhtml", "dots", "karma-typescript"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
