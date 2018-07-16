@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
-import { TranslateService } from "../../../node_modules/@ngx-translate/core";
+import { NavController } from "ionic-angular";
+import { Reports } from "../../mocks/providers/mock-ei-reports";
+import { Report } from "../../models/mockEiReport";
+import { SitePages } from "../../pages/index";
 
 /**
  * Generated class for the EiReportsListComponent component.
@@ -12,10 +15,14 @@ import { TranslateService } from "../../../node_modules/@ngx-translate/core";
   templateUrl: "ei-reports-list.html"
 })
 export class EiReportsListComponent {
-  text: string;
+  public currentReports: Report[];
 
-  constructor(public translate: TranslateService) {
-    console.log("Hello EiReportsListComponent Component");
-    this.text = "Hello World";
+  constructor(
+    private readonly navCtrl: NavController,
+    public reports: Reports
+  ) {
+    this.currentReports = this.reports.query();
   }
+  startReport = (report: any) =>
+    this.navCtrl.push(SitePages.AcceptanceStatement, { report });
 }
