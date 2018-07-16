@@ -28,15 +28,17 @@ export class LoginPage {
   account: {
     sin: string;
     accesscode: string;
-    residence: string;
+    region: string;
+    language: string;
   } = {
     sin: "",
     accesscode: "",
-    residence: "ON"
+    region: "ON",
+    language: "EN"
   };
 
   // Our translated text strings
-  private loginErrorString: string = "";
+  private loginErrorString: string = "BLAH";
   submitAttempt: boolean;
 
   constructor(
@@ -64,10 +66,6 @@ export class LoginPage {
       provinceOfResidence: ["", Validators.required]
     });
 
-    this.translateService.get("LOGIN_ERROR").subscribe(value => {
-      this.loginErrorString = value;
-    });
-
     this.submitAttempt = false;
   }
 
@@ -85,7 +83,11 @@ export class LoginPage {
       return;
     }
 
-    this.user.login(this.account).subscribe(
+    this.user.login(
+      "SIN",
+      "Access_Code",
+      "Region",
+      "Lang",
       () => {
         this.navCtrl
           .push(SitePages.EiReporting)
@@ -93,10 +95,22 @@ export class LoginPage {
           .catch((reason: any) => this.logger.error(reason));
       },
       (error: any) => {
-        this.logger.error(
-          "An error occured when logging in: " + JSON.stringify(error)
-        );
-
+        this.translateService.get("LOGIN_ERROR").subscribe(value => {
+          return value;
+        });
+        if (error == "no-connection") {
+          this.logger.error("Cannot log in, no connection.");
+          this.translateService
+            .get("LOGIN_ERROR_NO_CONNECTION")
+            .subscribe(value => {
+              this.loginErrorString = value;
+            });
+        } else {
+          this.logger.error("Cannot log in, invalid creds.");
+          this.translateService.get("LOGIN_ERROR").subscribe(value => {
+            this.loginErrorString = value;
+          });
+        }
         const toast = this.toastCtrl.create({
           message: this.loginErrorString,
           duration: 3000,
