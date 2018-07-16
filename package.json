@@ -5,7 +5,8 @@
   "homepage": "http://ionicframework.com/",
   "private": true,
   "config": {
-    "ionic_copy": "./scripts/copy-custom-libs.js"
+    "ionic_copy": "./scripts/copy-custom-libs.js",
+    "ionic_webpack": "./scripts/webpack.config.js"
   },
   "scripts": {
     "clean": "ionic-app-scripts clean",
