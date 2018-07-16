@@ -1,2 +1,42 @@
 page-ei-dashboard {
+  /************* CARD CSS *******************/
+  .item-block {
+    border-bottom: 1px solid #bbbb;
+  }
+  .item-block:last-child {
+    border-bottom: none;
+  }
+  .ei-report-item {
+    .ei-report-header {
+      font-size: 1.75rem;
+      font-weight: 450 !important;
+      color: #0f71c4 !important;
+    }
+    .start-report-button {
+      height: 11vw !important;
+      width: 35vw;
+    }
+    .good-status {
+      font-size: 3vh;
+      color: #49a60e;
+      padding-top: 0.5vh;
+    }
+    .alert-due-date {
+      color: #bb1328;
+      padding-top: 0.5rem;
+      padding-right: 1vw;
+    }
+    .ei-report-duedate-alert {
+      color: #bb1328;
+    }
+  }
+  .ei-report-card-header {
+    background-color: #4e5e6f;
+    color: #fff !important;
+    font-weight: 400;
+  }
+  .item-inner {
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
+  }
 }
