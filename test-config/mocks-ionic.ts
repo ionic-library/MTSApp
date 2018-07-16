@@ -195,4 +195,9 @@ export class StorageMock {
   }
 }
 
+export class UniqueDeviceIDMoch {
+  async get(): Promise<string> {
+    return await "fakeudid";
+  }
+}
 /* tslint:enable*/
