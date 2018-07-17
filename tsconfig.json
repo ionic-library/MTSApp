@@ -12,9 +12,8 @@
     "baseUrl": ".",
     "typeRoots": ["../node_modules/@types"],
     "paths": {
-      "@mocks/*": ["src/mocks/*"],
-      "@mock-providers/*": ["src/mocks/providers/*"],
-      "@models/*": ["src/models/*"],
+      "@mock-providers": ["src/mocks/providers/index.ts"],
+      "@models": ["src/models/index.ts"],
       "@providers": ["src/providers/index.ts"]
     },
     "types": ["jasmine", "node"]

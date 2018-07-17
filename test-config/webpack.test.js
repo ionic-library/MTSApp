@@ -7,10 +7,12 @@ module.exports = {
   resolve: {
     extensions: [".ts", ".js"],
     alias: {
-      "@mock-providers": path.resolve(__dirname, "../src/mocks/providers/"),
+      "@mock-providers": path.resolve(
+        __dirname,
+        "../src/mocks/providers/index.ts"
+      ),
       "@providers": path.resolve(__dirname, "../src/providers/index.ts"),
-      "@mocks": path.resolve(__dirname, "../src/mocks/"),
-      "@models": path.resolve(__dirname, "../src/models/")
+      "@models": path.resolve(__dirname, "../src/models/index.ts")
     }
   },
 
