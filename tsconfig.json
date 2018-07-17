@@ -5,14 +5,23 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "lib": ["dom", "es2015"],
-    "module": "es2015",
     "moduleResolution": "node",
+    "module": "es2015",
     "sourceMap": true,
-    "target": "es5"
+    "target": "es5",
+    "baseUrl": ".",
+    "typeRoots": ["../node_modules/@types"],
+    "paths": {
+      "@mock-providers": ["src/mocks/providers/index.ts"],
+      "@models": ["src/models/index.ts"],
+      "@providers": ["src/providers/index.ts"],
+      "@components": ["src/components/index.ts"],
+      "@pages": ["src/pages/index.ts"]
+    }
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "src/**/*.spec.ts", "src/**/__tests__/*.ts"],
-  "compileOnSave": false,
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "src/**/*.spec.ts"],
+  "compileOnSave": true,
   "atom": {
     "rewriteTsconfig": false
   }
