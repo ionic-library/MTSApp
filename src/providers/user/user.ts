@@ -33,9 +33,8 @@ export class User {
     public api: Api,
     public storage: Storage,
     public translate: TranslateService,
-    private readonly logProvider: LogProvider
-  ) //private readonly uniqueDeviceId: UniqueDeviceID
-  {
+    private readonly logProvider: LogProvider //private readonly uniqueDeviceId: UniqueDeviceID
+  ) {
     this.logger = this.logProvider.getLogger();
     this.storage
       .get("user")
@@ -235,7 +234,7 @@ export class User {
     this.userId = _userDetails.userID;
 
     this.userDetails = _userDetails;
-    console.log(this.userDetails);
+
     this.logger.info("User information has been loaded locally.");
     if (SaveLocalStorage) {
       this.storage
@@ -261,7 +260,6 @@ export class User {
         this.sessionTimeOutMinutes * MilliConvert >
         now.getTime()
     ) {
-      //console.log(this.sessionLastHit);
       this.logger.info("Session is good");
       return true;
     } else {
