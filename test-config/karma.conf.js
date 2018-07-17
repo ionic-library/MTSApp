@@ -23,10 +23,6 @@ module.exports = function(config) {
       }
     ],
 
-    karmaTypescriptConfig: {
-      tsconfig: "./tsconfig.json"
-    },
-
     proxies: {
       "/assets/": "/base/src/assets/"
     },
