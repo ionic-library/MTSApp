@@ -17,8 +17,7 @@
       "@providers": ["src/providers/index.ts"],
       "@components": ["src/components/index.ts"],
       "@pages": ["src/pages/index.ts"]
-    },
-    "types": ["jasmine", "node"]
+    }
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/*.spec.ts"],
