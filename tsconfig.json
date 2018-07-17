@@ -9,15 +9,17 @@
     "module": "es2015",
     "sourceMap": true,
     "target": "es5",
-    "baseUrl": "./src",
+    "baseUrl": ".",
+    "typeRoots": ["../node_modules/@types"],
     "paths": {
-      "@mocks/*": ["mocks/*"],
-      "@mock-providers/*": ["mocks/providers/*"],
-      "@models/*": ["models/*"],
-      "@providers": ["providers/index.ts"]
-    }
+      "@mocks/*": ["src/mocks/*"],
+      "@mock-providers/*": ["src/mocks/providers/*"],
+      "@models/*": ["src/models/*"],
+      "@providers": ["src/providers/index.ts"]
+    },
+    "types": ["jasmine", "node"]
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "src/**/*.spec.ts"],
   "compileOnSave": true,
   "atom": {

@@ -32,11 +32,7 @@ module.exports = function(config) {
     },
 
     preprocessors: {
-      "./test-config/karma-test-shim.js": [
-        "sourcemap",
-        "webpack",
-        "karma-typescript"
-      ]
+      "./test-config/karma-test-shim.js": ["sourcemap", "webpack"]
     },
 
     webpack: webpackConfig,
@@ -61,7 +57,7 @@ module.exports = function(config) {
     },
 
     reporters: config.coverage
-      ? ["kjhtml", "dots", "coverage-istanbul"]
+      ? ["kjhtml", "dots", "coverage-istanbul", "karma-typescript"]
       : ["kjhtml", "dots", "karma-typescript"],
     port: 9876,
     colors: true,

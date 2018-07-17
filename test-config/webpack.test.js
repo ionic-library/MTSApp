@@ -5,7 +5,13 @@ module.exports = {
   devtool: "inline-source-map",
 
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".js"],
+    alias: {
+      "@mock-providers": path.resolve(__dirname, "../src/mocks/providers/"),
+      "@providers": path.resolve(__dirname, "../src/providers/index.ts"),
+      "@mocks": path.resolve(__dirname, "../src/mocks/"),
+      "@models": path.resolve(__dirname, "../src/models/")
+    }
   },
 
   // Some libraries import Node modules but don't use them in the browser.
