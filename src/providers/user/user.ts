@@ -46,7 +46,6 @@ export class User {
           );
           this.SetUserDetails(resp, false);
         } else {
-          this.logger.info("User object not found in storage. (wich is fine)");
           this.uniqueDeviceId
             .get()
             .then((uuid: any) => console.log(uuid))
@@ -60,8 +59,6 @@ export class User {
             this.userId += this.possibleUserIdChars.charAt(
               Math.floor(Math.random() * this.possibleUserIdChars.length)
             );
-
-          this.logger.info("Set random userID: " + this.userId);
         }
       })
       .catch((Error: any) => {
