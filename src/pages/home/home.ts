@@ -1,8 +1,8 @@
-import { User, LogProvider } from "../../providers";
+import { User, LogProvider } from "@providers";
 import { Logger } from "winston";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
-import { SitePages } from "../index";
+import { SitePages } from "@pages";
 import { TranslateService } from "@ngx-translate/core";
 
 /**

@@ -6,9 +6,9 @@ import {
   NavParams,
   ModalController
 } from "ionic-angular";
-import { Report } from "../../models/mockEiReport";
-import { SitePages } from "..";
-import { LogProvider } from "../../providers";
+import { Report } from "@models";
+import { SitePages } from "@pages";
+import { LogProvider } from "@providers";
 import { Logger } from "winston";
 
 /**

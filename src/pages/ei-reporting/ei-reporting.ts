@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
-import { IonicPage, ModalController } from "ionic-angular";
-import { SitePages } from "..";
+import { IonicPage, NavController, ModalController } from "ionic-angular";
+import { Reports } from "@mock-providers";
+import { Report } from "@models";
+import { SitePages } from "@pages";
 import { Logger } from "winston";
-import { LogProvider, User } from "../../providers";
+import { LogProvider, User } from "@providers";
 
 /**
  * Generated class for the EiReportingPage page.

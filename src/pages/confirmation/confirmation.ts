@@ -1,9 +1,9 @@
-import { SitePages } from "..";
+import { SitePages } from "@pages";
 import { TranslateService } from "@ngx-translate/core";
 import { Component } from "@angular/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
+import { LogProvider } from "@providers";
 
 @IonicPage()
 @Component({
