@@ -4,7 +4,7 @@ module.exports = function(config) {
   var _config = {
     basePath: "../",
 
-    frameworks: ["jasmine", "karma-typescript"],
+    frameworks: ["jasmine"],
 
     files: [
       {
@@ -57,8 +57,8 @@ module.exports = function(config) {
     },
 
     reporters: config.coverage
-      ? ["kjhtml", "dots", "coverage-istanbul", "karma-typescript"]
-      : ["kjhtml", "dots", "karma-typescript"],
+      ? ["kjhtml", "dots", "coverage-istanbul"]
+      : ["kjhtml", "dots"],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
