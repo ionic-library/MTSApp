@@ -1,7 +1,5 @@
 import { Component } from "@angular/core";
-import { IonicPage, NavController, ModalController } from "ionic-angular";
-import { Reports } from "@mock-providers";
-import { Report } from "@models";
+import { IonicPage, ModalController } from "ionic-angular";
 import { SitePages } from "@pages";
 import { Logger } from "winston";
 import { LogProvider, User } from "@providers";
