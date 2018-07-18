@@ -5,7 +5,7 @@ import { LangCodes, LogProvider } from "../../providers";
 import { Api } from "../api/api";
 import { TranslateService } from "@ngx-translate/core";
 import { Logger } from "winston";
-import { UniqueDeviceID } from "@ionic-native/unique-device-id";
+//import { UniqueDeviceID } from "@ionic-native/unique-device-id";
 
 @Injectable()
 export class User {
@@ -13,7 +13,7 @@ export class User {
   private readonly sessionTimeOutMinutes: number = 1;
   private readonly userIdLength: number = 100;
   private readonly possibleUserIdChars: string =
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-"; // Can add special characters or increase length to make more secure.
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789~_-"; // Can add special characters or increase length to make more random
   private lang: LangCodes;
   private langReady: boolean = false;
   private readonly logger: Logger;
@@ -33,25 +33,22 @@ export class User {
     public api: Api,
     public storage: Storage,
     public translate: TranslateService,
-    private readonly logProvider: LogProvider,
-    private readonly uniqueDeviceId: UniqueDeviceID
+    private readonly logProvider: LogProvider //private readonly uniqueDeviceId: UniqueDeviceID
   ) {
     this.logger = this.logProvider.getLogger();
     this.storage
       .get("user")
       .then((resp: any) => {
         if (resp != null) {
-          this.logger.info(
-            "Retreived user information from local storage and set local vars."
-          );
           this.SetUserDetails(resp, false);
         } else {
-          this.uniqueDeviceId
-            .get()
-            .then((uuid: any) => console.log(uuid))
-            .catch(() => {
-              this.deviceId = "TEMPID_WEB"; // Normally due to not being on a device.
-            });
+          //this.uniqueDeviceId
+          //  .get()
+          //  .then((uuid: any) => console.log(uuid))
+          //  .catch(() => {
+          //    this.deviceId = "TEMPID_WEB"; // Normally due to not being on a device.
+          //  });
+          this.deviceId = "Temporary";
           //### Set random userID to be saved and used later
 
           this.userId = "t"; // ensure it starts with letter
@@ -237,7 +234,7 @@ export class User {
     this.userId = _userDetails.userID;
 
     this.userDetails = _userDetails;
-    console.log(this.userDetails);
+
     this.logger.info("User information has been loaded locally.");
     if (SaveLocalStorage) {
       this.storage
@@ -263,7 +260,6 @@ export class User {
         this.sessionTimeOutMinutes * MilliConvert >
         now.getTime()
     ) {
-      //console.log(this.sessionLastHit);
       this.logger.info("Session is good");
       return true;
     } else {
