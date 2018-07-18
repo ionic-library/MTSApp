@@ -1,4 +1,6 @@
 import { Component } from "@angular/core";
+import { NavController } from "ionic-angular";
+import { RoundProgressComponent } from "angular-svg-round-progressbar";
 
 /**
  * Generated class for the StatusCardComponent component.
@@ -13,7 +15,7 @@ import { Component } from "@angular/core";
 export class StatusCardComponent {
   text: string;
 
-  constructor() {
+  constructor(public navCtrl: NavController) {
     console.log("Hello StatusCardComponent Component");
     this.text = "Hello World";
   }

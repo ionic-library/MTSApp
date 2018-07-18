@@ -1,2 +1,19 @@
 status-card {
+  /************* CARD CSS *******************/
+  .status-card-header {
+    background-color: #4e5e6f;
+    color: #fff !important;
+    padding: 6px;
+  }
+  .status-card-header-wrapper {
+    background-color: #4e5e6f;
+    color: #fff !important;
+  }
+  #status-card-header-title {
+    font-weight: 900;
+    color: #fff;
+  }
+  #view-details {
+    margin-right: -0.5rem;
+  }
 }

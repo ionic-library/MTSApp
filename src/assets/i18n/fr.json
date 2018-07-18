@@ -59,6 +59,9 @@
   "SUBMITTED_STATUS_TEXT": "(FR)Submitted",
   "APPROVED_STATUS_TEXT": "(FR)Approved",
 
+  "STATUS_CARD_TITLE": "(FR)EI Benefits",
+  "STATUS_CARD_DETAILS": "(FR)View Details",
+
   "HELP_MODAL_TITLE": "(FR)Help",
   "HELP_MODAL_HEADER": "(FR)Do you need help with this section?",
   "HELP_MODAL_CONTENT_PAR_1":
