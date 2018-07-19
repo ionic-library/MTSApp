@@ -44,7 +44,20 @@ status-card {
   // Card Content Styling
   #weeks-remaining {
     position: absolute;
-    top: 25%;
+    top: 23%;
+    right: 1%;
+    #num-of-weeks {
+      font-weight: 600;
+    }
+  }
+  #weeks-remaining-landscape {
+    position: absolute;
+    top: 23%;
+    left: 10%;
+    max-width: 80%;
+    #num-of-weeks-landscape {
+      font-weight: 600;
+    }
   }
   .card-content-title {
     padding-bottom: 0.5rem;
