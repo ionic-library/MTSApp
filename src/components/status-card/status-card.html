@@ -12,8 +12,8 @@
 
   <ion-card-content no-padding id="status-card-content">
     <ion-grid id="status-card-grid">
-      <ion-row id="row-1">
-        <ion-col col-5 col-md-3 id="row-1-col-1">
+      <ion-row align-items-center id="row-1">
+        <ion-col col-5 hideWhen="landscape" id="row-1-col-1">
           <round-progress
           [current]="current"
           [max]="max"
@@ -28,13 +28,45 @@
           [duration]="duration"
           [animation]="animation"
           [animationDelay]="animationDelay"></round-progress>
+          <!-- <div id="weeks-remaining">
+            <h2 id="num-of-weeks">
+              18
+            </h2>
+            <p id="progress-message">
+              payable weeks remaining
+            </p>
+          </div> -->
+        </ion-col>
+        <ion-col col-3 hideWhen="portrait" id="row-1-col-1">
+          <round-progress
+          [current]="current"
+          [max]="max"
+          [color]="color"
+          [background]="background"
+          [radius]="radius"
+          [stroke]="stroke"
+          [semicircle]="semicircle"
+          [rounded]="rounded"
+          [clockwise]="clockwise"
+          [responsive]="responsive"
+          [duration]="duration"
+          [animation]="animation"
+          [animationDelay]="animationDelay"></round-progress>
+          <!-- <div id="weeks-remaining">
+            <h2 id="num-of-weeks">
+              18
+            </h2>
+            <p id="progress-message">
+              payable weeks remaining
+            </p>
+          </div> -->
         </ion-col>
         <ion-col id="row-1-col-2">
           <ion-row class="content-row" id="row-1-col-2-row-1">
             <h2 class="card-content-title" id="payable-amount-title">
               Current Payable Amount
             </h2>
-            <p>
+            <p class="card-content-info">
               $152.00 / week *
             </p>
           </ion-row>
@@ -42,12 +74,12 @@
             <h2 class="card-content-title" id="next-deposit-title">
               Next Deposit
             </h2>
-            <p>
+            <p class="card-content-info">
               Monday May 15, 2017
             </p>
           </ion-row>
         </ion-col>
-        <ion-col id="row-1-col-3" class="landscape-mode">
+        <ion-col id="row-1-col-3" showWhen="landscape">
           <ion-row id="row-1-col-3-row-1" class="content-row">
             <h2 id="alert-status">
               <ion-icon class="notification-icon" name="alert"></ion-icon>
@@ -62,8 +94,8 @@
           </ion-row>
         </ion-col>
       </ion-row>
-      <ion-item-divider id="section-divider" class="portrait-mode" mode="md"></ion-item-divider>
-      <ion-row id="row-2" class="portrait-mode">
+      <ion-item-divider id="section-divider" showWhen="portrait" mode="md"></ion-item-divider>
+      <ion-row id="row-2" showWhen="portrait">
         <ion-col id="row-2-col-1">
           <ion-item class="notification-item">
             <ion-label class="notification-label">
@@ -75,7 +107,7 @@
           </ion-item>
         </ion-col>
       </ion-row>
-      <ion-row id="row-3" class="portrait-mode">
+      <ion-row id="row-3" showWhen="portrait">
         <ion-col id="row-3-col-1">
           <ion-item class="notification-item">
             <ion-label class="notification-label">

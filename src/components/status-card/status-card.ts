@@ -19,7 +19,7 @@ export class StatusCardComponent {
   color: string = "#45ccce";
   background: string = "#eaeaea";
   stroke: number = 8;
-  radius: number = 52;
+  radius: number = 60;
   semicircle: boolean = false;
   rounded: boolean = false;
   responsive: boolean = false;
