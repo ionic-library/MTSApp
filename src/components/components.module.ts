@@ -4,7 +4,6 @@ import { StatusCardComponent } from "./status-card/status-card";
 import { EiReportsListComponent } from "./ei-reports-list/ei-reports-list";
 import { CommonModule } from "../../node_modules/@angular/common";
 import { IonicModule } from "../../node_modules/ionic-angular/umd";
-import { RoundProgressModule } from "angular-svg-round-progressbar";
 
 @NgModule({
   declarations: [
@@ -12,7 +11,7 @@ import { RoundProgressModule } from "angular-svg-round-progressbar";
     StatusCardComponent,
     EiReportsListComponent
   ],
-  imports: [CommonModule, IonicModule, RoundProgressModule],
+  imports: [CommonModule, IonicModule],
   exports: [
     HomePageCarouselComponent,
     StatusCardComponent,

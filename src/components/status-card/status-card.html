@@ -13,19 +13,32 @@
   <ion-card-content id="status-card-content">
     <ion-grid id="status-card-grid">
       <ion-row id="row-1">
-        <ion-col id="col-1-row-1">
-          <round-progress [current]="current" [max]="max"></round-progress>
+        <ion-col id="row-1-col-1">
+          <round-progress
+          [current]="current"
+          [max]="max"
+          [color]="color"
+          [background]="background"
+          [radius]="radius"
+          [stroke]="stroke"
+          [semicircle]="semicircle"
+          [rounded]="rounded"
+          [clockwise]="clockwise"
+          [responsive]="responsive"
+          [duration]="duration"
+          [animation]="animation"
+          [animationDelay]="animationDelay"></round-progress>
         </ion-col>
-        <ion-col id="col-2-row-1">
+        <ion-col id="row-1-col-2">
           <ion-row id="row-1-col-2-row-1">
             <h2 id="payable-amount-title">
-              Payable Amount
+              Current Payable Amount
             </h2>
             <p>
               152.00 / week *
             </p>
           </ion-row>
-          <ion-row id="row-2-col-2-row-1">
+          <ion-row id="row-1-col-2-row-2">
             <h2 id="next-deposit-title">
               Next Deposit
             </h2>
@@ -36,8 +49,23 @@
         </ion-col>
       </ion-row>
       <ion-row id="row-2">
-        <ion-col id="col-1-row-2">
-
+        <ion-col id="row-2-col-1">
+          <ion-item>
+            <ion-icon item-left name="alert"></ion-icon>
+            <h2>
+              Next report due in 3 days
+            </h2>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row id="row-3">
+        <ion-col id="row-3-col-1">
+          <ion-item>
+            <ion-icon item-left name="briefcase"></ion-icon>
+            <h2>
+              2 jobs available near you
+            </h2>
+          </ion-item>
         </ion-col>
       </ion-row>
     </ion-grid>

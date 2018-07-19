@@ -15,6 +15,20 @@ import { NavController } from "ionic-angular";
 export class StatusCardComponent {
   text: string;
 
+  current: number = 30;
+  max: number = 50;
+  color: string = "#45ccce";
+  background: string = "#eaeaea";
+  stroke: number = 10;
+  radius: number = 65;
+  semicircle: boolean = false;
+  rounded: boolean = false;
+  responsive: boolean = false;
+  clockwise: boolean = true;
+  duration: number = 800;
+  animation: string = "easeInOutCubic";
+  animationDelay: number = 0;
+
   constructor(public navCtrl: NavController) {
     console.log("Hello StatusCardComponent Component");
     this.text = "Hello World";
