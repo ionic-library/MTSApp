@@ -13,7 +13,7 @@
   <ion-card-content no-padding id="status-card-content">
     <ion-grid id="status-card-grid">
       <ion-row id="row-1">
-        <ion-col id="row-1-col-1">
+        <ion-col col-5 col-md-3 id="row-1-col-1">
           <round-progress
           [current]="current"
           [max]="max"
@@ -30,41 +30,60 @@
           [animationDelay]="animationDelay"></round-progress>
         </ion-col>
         <ion-col id="row-1-col-2">
-          <ion-row id="row-1-col-2-row-1">
-            <h2 id="payable-amount-title">
+          <ion-row class="content-row" id="row-1-col-2-row-1">
+            <h2 class="card-content-title" id="payable-amount-title">
               Current Payable Amount
             </h2>
             <p>
-              152.00 / week *
+              $152.00 / week *
             </p>
           </ion-row>
-          <ion-row id="row-1-col-2-row-2">
-            <h2 id="next-deposit-title">
+          <ion-row class="content-row" id="row-1-col-2-row-2">
+            <h2 class="card-content-title" id="next-deposit-title">
               Next Deposit
             </h2>
             <p>
-              Monday May 15, 2018
+              Monday May 15, 2017
             </p>
           </ion-row>
         </ion-col>
-      </ion-row>
-      <ion-row id="row-2">
-        <ion-col id="row-2-col-1">
-          <ion-item>
-            <ion-icon item-left name="alert"></ion-icon>
-            <h2>
+        <ion-col id="row-1-col-3" class="landscape-mode">
+          <ion-row id="row-1-col-3-row-1" class="content-row">
+            <h2 id="alert-status">
+              <ion-icon class="notification-icon" name="alert"></ion-icon>
               Next report due in 3 days
             </h2>
+          </ion-row>
+          <ion-row id="row-1-col-3-row-2" class="content-row">
+            <h2 id="job-status">
+              <ion-icon class="notification-icon" name="briefcase"></ion-icon>
+              2 jobs available near you
+            </h2>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+      <ion-item-divider id="section-divider" class="portrait-mode" mode="md"></ion-item-divider>
+      <ion-row id="row-2" class="portrait-mode">
+        <ion-col id="row-2-col-1">
+          <ion-item class="notification-item">
+            <ion-label class="notification-label">
+              <h2 id="alert-status">
+                <ion-icon class="notification-icon" name="alert"></ion-icon>
+                Next report due in 3 days
+              </h2>
+            </ion-label>
           </ion-item>
         </ion-col>
       </ion-row>
-      <ion-row id="row-3">
+      <ion-row id="row-3" class="portrait-mode">
         <ion-col id="row-3-col-1">
-          <ion-item>
-            <ion-icon item-left name="briefcase"></ion-icon>
-            <h2>
-              2 jobs available near you
-            </h2>
+          <ion-item class="notification-item">
+            <ion-label class="notification-label">
+              <h2 id="job-status">
+                <ion-icon class="notification-icon" name="briefcase"></ion-icon>
+                2 jobs available near you
+              </h2>
+            </ion-label>
           </ion-item>
         </ion-col>
       </ion-row>
