@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
 import { TranslateService } from "@ngx-translate/core";
-import { SitePages } from "../index";
+import { SitePages } from "@pages";
 
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
+import { LogProvider } from "@providers";
 /**
  * Generated class for the SupportPage page.
  *
