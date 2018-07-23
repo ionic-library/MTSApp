@@ -1,10 +1,19 @@
-page-ei-reporting {
+ei-reports-list {
   /************* CARD CSS *******************/
   .item-block {
-    border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid #bbbb;
   }
   .item-block:last-child {
     border-bottom: none;
+  }
+  .ei-report-card-header {
+    background-color: #4e5e6f;
+    color: #fff !important;
+    font-weight: 400;
+  }
+  .item-inner {
+    padding-top: 1.5vh;
+    padding-bottom: 1.5vh;
   }
   .ei-report-item {
     .ei-report-header {
@@ -29,15 +38,6 @@ page-ei-reporting {
     .ei-report-duedate-alert {
       color: #bb1328;
     }
-  }
-  .ei-report-card-header {
-    background-color: #4e5e6f;
-    color: #fff !important;
-    font-weight: 400;
-  }
-  .item-inner {
-    padding-top: 1.5vh;
-    padding-bottom: 1.5vh;
   }
 }
 

@@ -73,7 +73,8 @@ export class MyApp {
     { title: "Issue", component: SitePages.IssueWithReport },
     { title: "LoginFailed", component: SitePages.LoginFalied },
     { title: "Splash", component: SitePages.Splash },
-    { title: "EULA", component: SitePages.eula }
+    { title: "EULA", component: SitePages.eula },
+    { title: "EIDashboard", component: SitePages.EiDashboard }
   ];
 
   isDevMode = isDevMode();

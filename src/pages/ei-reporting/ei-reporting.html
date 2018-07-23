@@ -2,7 +2,7 @@
 
   <ion-navbar hideBackButton="true">
 
-    <button ion-button menuToggle icon-only>
+    <button id="nav-menu-button" ion-button menuToggle icon-only>
       <ion-icon class="menu" name='MTSApp-HamburgMenu'></ion-icon>
     </button>
 
@@ -22,29 +22,6 @@
 
 <ion-content padding>
 
-  <ion-card>
-    <ion-card-header class="ei-report-card-header">
-      <span id="report-card-title">{{ 'EI_REPORT_CARD_HEADER' | translate }}</span>
-    </ion-card-header>
-
-    <ion-list>
-
-      <ion-item *ngFor="let report of currentReports" class="ei-report-item">
-        <h2 class="ei-report-header">{{ report.schedule }}</h2>
-        <p *ngIf="report.dueDate === 'Due Tomorrow'" class="ei-report-duedate-alert">
-          <ion-icon class="alert-due-date" name="alert"></ion-icon>
-          {{ report.dueDate }}
-        </p>
-        <p *ngIf="report.dueDate !== 'Due Tomorrow'" class="ei-report-duedate">
-          {{ report.dueDate }}
-        </p>
-        <button *ngIf="report.status === 'new'" (click)="startReport(report)" ion-button item-right class="start-report-button" id="start-report-button">{{ 'START_REPORT_BUTTON_TEXT' | translate }}</button>
-        <p *ngIf="report.status === 'Submitted'" item-right class="status">{{ 'SUBMITTED_STATUS_TEXT' | translate }}</p>
-        <p *ngIf="report.status === 'Approved'" item-right class="status">{{ 'APPROVED_STATUS_TEXT' | translate }}</p>
-        <ion-icon *ngIf="report.status === 'Approved' || 'Submitted' && report.status !== 'new'" item-right class="good-status" name="checkmark-circle"></ion-icon>
-      </ion-item>
-
-    </ion-list>
-  </ion-card>
+  <ei-reports-list></ei-reports-list>
 
 </ion-content>

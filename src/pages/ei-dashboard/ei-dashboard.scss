@@ -1,0 +1,13 @@
+page-ei-dashboard {
+  #benefit-information {
+    margin-bottom: 0;
+  }
+  #total-benefits {
+    font-size: 3rem;
+  }
+  // Required to wrap text on clear button
+  .button-text-wrap {
+    white-space: normal;
+    text-align: left;
+  }
+}
