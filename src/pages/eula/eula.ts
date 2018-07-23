@@ -1,8 +1,8 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
-import { SitePages } from "../../pages";
+import { SitePages } from "@pages";
 import { Logger } from "winston";
-import { User, LogProvider } from "../../providers";
+import { User, LogProvider } from "@providers";
 
 @IonicPage()
 @Component({

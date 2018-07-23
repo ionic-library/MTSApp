@@ -5,11 +5,12 @@ import {
   NavParams,
   ModalController
 } from "ionic-angular";
-import { SitePages } from "..";
+import { SitePages } from "@pages";
 
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
 import { TranslateService } from "../../../node_modules/@ngx-translate/core";
+import { LogProvider } from "@providers";
+
 /**
  * Generated class for the LoginFailedPage page.
  *

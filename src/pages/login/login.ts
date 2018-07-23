@@ -1,4 +1,4 @@
-import { SitePages } from "..";
+import { SitePages } from "@pages";
 import { SinValidator } from "./../../validators/sin";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Component } from "@angular/core";
@@ -10,7 +10,7 @@ import {
   ModalController
 } from "ionic-angular";
 import { Logger } from "winston";
-import { User, ProvincesProvider, LogProvider } from "../../providers";
+import { User, ProvincesProvider, LogProvider } from "@providers";
 
 @IonicPage()
 @Component({

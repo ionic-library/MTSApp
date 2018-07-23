@@ -7,7 +7,7 @@ import {
   NavParams
 } from "ionic-angular";
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
+import { LogProvider } from "@providers";
 
 /**
  * Generated class for the HelpModalPage page.
@@ -31,7 +31,6 @@ export class HelpModalPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public translate: TranslateService,
-     
     private readonly logProvider: LogProvider
   ) {
     this.logger = this.logProvider.getLogger();
