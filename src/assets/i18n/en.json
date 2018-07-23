@@ -221,6 +221,13 @@
   "CONFIRMATION_HOME_BUTTON": "Return to EI Reporting Dashboard",
   "CONFIRMATION_TRANSACTION_NUMBER": "Your transaction record number is",
 
+  "EI_DASHBOARD_PAGE_TITLE": "EI Dashboard",
+  "TOTAL_POTENTIAL_BENEFITS": "Total potential benefits for",
+  "TOTAL_POTENTIAL_BENEFITS_DATE_START": "May 1, 2017",
+  "TOTAL_POTENTIAL_BENEFITS_DATE_END": "May 31, 2017",
+  "OTHER_BENEFITS_SERVICES_BUTTON_TEXT":
+    "See if you're elegible for other benefits and services",
+
   "LOGIN_FAILED_TITLE": "Login Failed",
 
   "ISSUE_PAGE_TITLE": "Issue With Report",
