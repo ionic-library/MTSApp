@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { LogProvider } from "../../providers";
+import { LogProvider } from "@providers";
 import { Logger } from "winston";
 
 /**

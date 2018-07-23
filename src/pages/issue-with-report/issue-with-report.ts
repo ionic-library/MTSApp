@@ -1,9 +1,9 @@
 import { Component } from "@angular/core";
 import { IonicPage, ModalController } from "ionic-angular";
 import { TranslateService } from "@ngx-translate/core";
-import { SitePages } from "..";
+import { SitePages } from "@pages";
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
+import { LogProvider } from "@providers";
 
 /**
  * Generated class for the IssueWithReportPage page.

@@ -1,10 +1,10 @@
 import { Component } from "@angular/core";
 import { IonicPage, NavController } from "ionic-angular";
-import { User, LangCodes } from "../../providers";
-import { SitePages } from "../../pages";
+import { User, LangCodes, LogProvider } from "@providers";
+import { SitePages } from "@pages";
 
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
+
 @IonicPage()
 @Component({
   selector: "page-splash",

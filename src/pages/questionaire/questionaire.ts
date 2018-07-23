@@ -6,9 +6,9 @@ import {
   NavParams,
   ModalController
 } from "ionic-angular";
-import { SitePages } from "../index";
+import { SitePages } from "@pages";
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
+import { LogProvider } from "@providers";
 
 @IonicPage()
 @Component({

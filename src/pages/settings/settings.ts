@@ -1,12 +1,9 @@
-import { LangCodes } from "./../../providers/Lang/Lang";
+import { LangCodes, Settings, User, LogProvider } from "@providers";
 import { Component } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { IonicPage, NavController, NavParams } from "ionic-angular";
-import { Settings } from "../../providers";
-import { User } from "../../providers/user/user";
 
 import { Logger } from "winston";
-import { LogProvider } from "../../providers";
 /**
  * The Settings page is a simple form that syncs with a Settings provider
  * to enable the user to customize settings for the app.

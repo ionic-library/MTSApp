@@ -1,7 +1,7 @@
 import { Component, ViewChild } from "@angular/core";
-import { SitePages } from "../../pages/index";
+import { SitePages } from "@pages";
 import { NavController, Slides } from "ionic-angular";
-import { User, LogProvider } from "../../providers";
+import { User, LogProvider } from "@providers";
 import { Logger } from "winston";
 /**
  * Generated class for the HomePageCarouselComponent component.
