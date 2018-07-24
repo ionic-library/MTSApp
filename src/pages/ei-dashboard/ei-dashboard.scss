@@ -1,7 +1,14 @@
 page-ei-dashboard {
+  // Other information under Status Card component
   #benefit-information {
     margin-bottom: 0;
   }
+  // Style total potential benefits start and end dates
+  .benefits-range {
+    color: #0f71c4;
+    font-weight: 900;
+  }
+  //
   #total-benefits {
     font-size: 3rem;
   }
@@ -9,5 +16,8 @@ page-ei-dashboard {
   .button-text-wrap {
     white-space: normal;
     text-align: left;
+  }
+  #other-services {
+    font-weight: 900;
   }
 }

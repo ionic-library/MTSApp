@@ -61,6 +61,17 @@
 
   "STATUS_CARD_TITLE": "(FR)EI Benefits",
   "STATUS_CARD_DETAILS": "(FR)View Details",
+  "STATUS_CARD_PAYABLE_WEEKS": "(FR)payable weeks remaining",
+  "STATUS_CARD_PAYABLE_AMOUNT": "(FR)CURRENT PAYABLE AMOUNT",
+  "STATUS_CARD_DATE_WEEK": "(FR)week",
+  "STATUS_CARD_NEXT_DEPOSIT": "(FR)NEXT DEPOSIT",
+  "STATUS_CARD_NEXT_REPORT_DUE": "(FR)Next report due in",
+  "STATUS_CARD_DATE_DAYS": "(FR)days",
+  "STATUS_CARD_JOB_AVAILABLE": "(FR)jobs available near you",
+  "STATUS_CARD_TOTAL_POTENTIAL": "(FR)Total potential benefits for",
+  "STATUS_CARD_BETWEEN_RANGE": "(FR)to",
+  "STATUS_CARD_OTHER_SERVICES":
+    "(FR)See if you're eleigible for other benefits and services",
 
   "HELP_MODAL_TITLE": "(FR)Help",
   "HELP_MODAL_HEADER": "(FR)Do you need help with this section?",

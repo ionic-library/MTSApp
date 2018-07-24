@@ -4,7 +4,7 @@
   <ion-card-header class="status-card-header">
     <ion-item class="status-card-header-wrapper">
       <p id="status-card-header-title">{{ 'STATUS_CARD_TITLE' | translate }}</p>
-      <button ion-button color="light" clear icon-end item-right id="view-details">View Details
+      <button ion-button color="light" clear icon-end item-right id="view-details">{{ 'STATUS_CARD_DETAILS' | translate }}
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-item>
@@ -33,7 +33,7 @@
               18
             </h2>
             <p id="progress-message">
-              payable weeks remaining
+              {{ 'STATUS_CARD_PAYABLE_WEEKS' | translate }}
             </p>
           </div>
         </ion-col>
@@ -57,7 +57,7 @@
               18
             </h2>
             <p id="progress-message-landscape">
-              payable weeks remaining
+              {{ 'STATUS_CARD_PAYABLE_WEEKS' | translate }}
             </p>
           </div>
         </ion-col>
@@ -65,15 +65,15 @@
         <ion-col id="row-1-col-2">
           <ion-row class="content-row" id="row-1-col-2-row-1">
             <h2 class="card-content-title" id="payable-amount-title">
-              Current Payable Amount
+              {{ 'STATUS_CARD_PAYABLE_AMOUNT' | translate }}
             </h2>
             <p class="card-content-info">
-              $152.00 / week *
+              $152.00 / {{ 'STATUS_CARD_DATE_WEEK' | translate }} *
             </p>
           </ion-row>
           <ion-row class="content-row" id="row-1-col-2-row-2">
             <h2 class="card-content-title" id="next-deposit-title">
-              Next Deposit
+              {{ 'STATUS_CARD_NEXT_DEPOSIT' | translate }}
             </h2>
             <p class="card-content-info">
               Monday May 15, 2017
@@ -84,13 +84,13 @@
           <ion-row id="row-1-col-3-row-1" class="content-row">
             <h2 id="alert-status">
               <ion-icon class="notification-icon" name="alert"></ion-icon>
-              Next report due in 3 days
+              {{ 'STATUS_CARD_NEXT_REPORT_DUE' | translate }} 3 {{ 'STATUS_CARD_DATE_DAYS' | translate }}
             </h2>
           </ion-row>
           <ion-row id="row-1-col-3-row-2" class="content-row">
             <h2 id="job-status">
               <ion-icon class="notification-icon" name="briefcase"></ion-icon>
-              2 jobs available near you
+              2 {{ 'STATUS_CARD_JOB_AVAILABLE' | translate }}
             </h2>
           </ion-row>
         </ion-col>
@@ -104,7 +104,7 @@
             <ion-label class="notification-label">
               <h2 id="alert-status">
                 <ion-icon class="notification-icon" name="alert"></ion-icon>
-                Next report due in 3 days
+                {{ 'STATUS_CARD_NEXT_REPORT_DUE' | translate }} 3 {{ 'STATUS_CARD_DATE_DAYS' | translate }}
               </h2>
             </ion-label>
           </ion-item>
@@ -117,7 +117,7 @@
             <ion-label class="notification-label">
               <h2 id="job-status">
                 <ion-icon class="notification-icon" name="briefcase"></ion-icon>
-                2 jobs available near you
+                2 {{ 'STATUS_CARD_JOB_AVAILABLE' | translate }}
               </h2>
             </ion-label>
           </ion-item>
