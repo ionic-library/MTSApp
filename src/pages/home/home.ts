@@ -4,6 +4,7 @@ import { Component } from "@angular/core";
 import { IonicPage, NavController, ModalController } from "ionic-angular";
 import { SitePages } from "@pages";
 import { TranslateService } from "@ngx-translate/core";
+import { StatusBar } from "../../../node_modules/@ionic-native/status-bar";
 
 /**
  * Home page where user selects services from an
@@ -25,6 +26,7 @@ export class HomePage {
     private readonly navCtrl: NavController,
     private readonly user: User,
     public modalCtrl: ModalController,
+    private readonly statusBar: StatusBar,
     public translate: TranslateService,
     private readonly logProvider: LogProvider
   ) {
@@ -33,6 +35,8 @@ export class HomePage {
     this.getLocation();
     this.getTemperature();
     this.getUserName();
+    this.statusBar.overlaysWebView(false);
+    // this.statusBar.backgroundColorByName('black');
   }
 
   private getLocation() {
