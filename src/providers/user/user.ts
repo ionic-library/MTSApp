@@ -167,7 +167,11 @@ export class User {
   }
 
   isLoggedIn(): boolean {
-    return !(this.userDetails === null || this.userDetails === undefined);
+    if (this.userDetails === null || this.userDetails === undefined) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
   login(
