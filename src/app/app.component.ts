@@ -174,4 +174,20 @@ export class MyApp {
   changeLang() {
     this.user.alternateLang();
   }
+
+  login() {
+    this.nav
+      .push(SitePages.EILogin)
+      .then(() => this.logger.info("Opening EILogin"))
+      .catch((reason: any) => this.logger.error(reason));
+  }
+
+  logout() {
+    this.user.logout();
+    this.nav
+      .push(SitePages.Home)
+      .then(() => this.logger.info("Redirecting to Home"))
+      .catch((reason: any) => this.logger.error(reason));
+    console.log(this.user.isLoggedIn());
+  }
 }

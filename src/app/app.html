@@ -34,7 +34,11 @@
             </ion-list>
     </ion-content>
     <ion-footer class="bar-stable" id="logout-footer">
-        <button id="nav-menu-logout" menuClose ion-item icon-left color="navMenuButton">
+        <button *ngIf="this.user.isLoggedIn()==false" id="nav-menu-login" menuClose ion-item icon-left color="navMenuButton" (click)="login()">
+            <ion-icon class="nav-menu-icon" name="MTSApp-Login"></ion-icon>
+            <p id="login-option-text">{{"LOGIN_NAV_MENU_TITLE" | translate}}</p>
+        </button>
+        <button *ngIf="this.user.isLoggedIn()" id="nav-menu-logout" menuClose ion-item icon-left color="navMenuButton" (click)="logout()">
             <ion-icon class="nav-menu-icon" name="MTSApp-Logout"></ion-icon>
             <p id="logout-option-text">{{"LOGOUT_NAV_MENU_TITLE" | translate}}</p>
         </button>

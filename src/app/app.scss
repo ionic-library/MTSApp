@@ -83,6 +83,9 @@ ion-icon {
   &[class*="MTSApp-Logout"] {
     mask-image: url(../assets/cs-icons/Icon-White-Menu-Logout.svg);
   }
+  &[class*="MTSApp-Login"] {
+    mask-image: url(../assets/cs-icons/Icon-White-Menu-Login.svg);
+  }
   &[class*="MTSApp-Box"] {
     mask-image: url(../assets/icon/noun_275465.svg);
   }
@@ -186,13 +189,15 @@ ion-icon {
   .footer-md::before {
     top: 0;
   }
-  #nav-menu-logout {
+  #nav-menu-logout,
+  #nav-menu-login {
     // Remove bottom border from Logout option generated automatically on Android
     .item-inner {
       border: none;
     }
   }
-  #logout-option-text {
+  #logout-option-text,
+  #login-option-text {
     // Required positioning CSS as Ionic does not automatically vertically center button text in this case
     position: absolute;
     left: 5.5rem;
