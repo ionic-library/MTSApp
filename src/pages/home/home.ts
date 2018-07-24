@@ -35,8 +35,7 @@ export class HomePage {
     this.getLocation();
     this.getTemperature();
     this.getUserName();
-    this.statusBar.overlaysWebView(false);
-    // this.statusBar.backgroundColorByName('black');
+    this.statusBar.overlaysWebView(true);
   }
 
   private getLocation() {
