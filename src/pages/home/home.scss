@@ -174,7 +174,9 @@ page-home {
       width: 100%;
       top: 10vh;
       .greeting {
-        font-size: 18px;
+        .greeting-span {
+          font-size: 18px;
+        }
       }
       .locationInfo {
         position: absolute;
@@ -203,21 +205,19 @@ page-home {
       background-color: #fff;
     }
     .hello-text {
-      position: absolute;
-      top: 10vh;
-      left: 2em;
-      z-index: 10;
-      color: white;
-
+      width: 100%;
+      top: 12vh;
+      left: 12px;
       .greeting {
-        margin-top: 0;
-
         .greeting-span {
-          font-size: 14px;
+          font-size: 16px;
         }
-        .locationInfo {
-          font-size: 12px;
-        }
+      }
+      .locationInfo {
+        position: absolute;
+        right: 0;
+        margin-right: 22px;
+        top: 0;
       }
     }
   }
