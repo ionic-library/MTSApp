@@ -34,10 +34,10 @@ export class HomePageCarouselComponent {
     this.slides.slideNext();
   }
 
-  public navigateToEIReportingPage = () => {
+  public navigateToEIDashboardPage = () => {
     //If the user is not logged in redirect to EILogin Page
     if (this.user.isLoggedIn()) {
-      this.navigateToPage(SitePages.EiReporting);
+      this.navigateToPage(SitePages.EiDashboard);
     } else {
       this.navigateToPage(SitePages.EILogin);
     }

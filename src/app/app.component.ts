@@ -36,8 +36,8 @@ export class MyApp {
       iconName: "MTSApp-JobSearch"
     },
     {
-      title: "EI_REPORTING_TITLE",
-      component: SitePages.EiReporting,
+      title: "EI_DASHBOARD_PAGE_TITLE",
+      component: SitePages.EiDashboard,
       iconName: "MTSApp-EIReporting"
     },
     {
@@ -123,20 +123,39 @@ export class MyApp {
     );
   }
 
-  openPage(page: any) {
+  public openPage(page: any) {
+    console.log(page);
     // Reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav
-      .push(page.component)
-      .then(() =>
-        this.logger.info(
-          "Opening a page with back button " + JSON.stringify(page)
+    if (page.component === "EiDashboardPage") {
+      this.openEIDashboard();
+    } else {
+      this.nav
+        .push(page.component)
+        .then(() =>
+          this.logger.info(
+            "Opening a page with back button " + JSON.stringify(page)
+          )
         )
-      )
-      .catch((reason: any) => this.logger.error(reason));
+        .catch((reason: any) => this.logger.error(reason));
+    }
+  }
+  public openEIDashboard() {
+    if (this.user.isLoggedIn()) {
+      console.log("User is logged in!");
+      this.nav
+        .push(SitePages.EiDashboard)
+        .then(() => this.logger.info("Navigating to Login Page"))
+        .catch((reason: any) => this.logger.error(reason));
+    } else {
+      this.nav
+        .push(SitePages.EILogin)
+        .then(() => this.logger.info("Opening EI Dashboard Page"))
+        .catch((reason: any) => this.logger.error(reason));
+    }
   }
 
-  openDevPages() {
+  public openDevPages() {
     this.logger.info("click received");
     this.menuCtrl
       .toggle()
@@ -150,12 +169,12 @@ export class MyApp {
       .catch((reason: any) => this.logger.error(reason));
   }
 
-  makeMainNavActive() {
+  public makeMainNavActive() {
     this.menuCtrl.enable(true, "main-nav-menu");
     this.menuCtrl.enable(false, "dev-pages");
   }
 
-  openSettings(selection) {
+  public openSettings(selection) {
     switch (selection) {
       case "SUPPORT_NAV_MENU_TITLE":
         this.nav
@@ -171,18 +190,18 @@ export class MyApp {
     }
   }
 
-  changeLang() {
+  public changeLang() {
     this.user.alternateLang();
   }
 
-  login() {
+  public login() {
     this.nav
       .push(SitePages.EILogin)
       .then(() => this.logger.info("Opening EILogin"))
       .catch((reason: any) => this.logger.error(reason));
   }
 
-  logout() {
+  public logout() {
     this.user.logout();
     this.nav
       .push(SitePages.Home)
