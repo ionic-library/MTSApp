@@ -1,7 +1,6 @@
 import { SitePages } from "../pages";
 import { Component, ViewChild } from "@angular/core";
 import { SplashScreen } from "@ionic-native/splash-screen";
-import { StatusBar } from "@ionic-native/status-bar";
 import { isDevMode } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import { Config, Nav, Platform } from "ionic-angular";
@@ -84,7 +83,6 @@ export class MyApp {
     private readonly translate: TranslateService,
     readonly platform: Platform,
     private readonly config: Config,
-    private readonly statusBar: StatusBar,
     private readonly splashScreen: SplashScreen,
     private readonly user: User,
     private readonly menuCtrl: MenuController,
@@ -96,7 +94,6 @@ export class MyApp {
       .then(() => {
         // Okay, so the platform is ready and our plugins are available.
         // Here you can do any higher level native things you might need.
-        this.statusBar.styleDefault();
         this.splashScreen.hide();
         this.config.set("ios", "backButtonText", "");
         this.config.set("android", "backButtonText", "");
