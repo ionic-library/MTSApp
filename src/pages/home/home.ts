@@ -66,10 +66,10 @@ export class HomePage {
    * Navigate to the EI Reporting feature.
    * Will send user to the login page if they aren't logged in
    */
-  public navigateToEIReportingPage = () => {
+  public navigateToEIDashboardPage = () => {
     //If the user is not logged in redirect to EILogin Page
     if (this.user.isLoggedIn()) {
-      this.navigateToPage(SitePages.EiReporting);
+      this.navigateToPage(SitePages.EiDashboard);
     } else {
       this.navigateToPage(SitePages.EILogin);
     }
