@@ -1,17 +1,18 @@
-<ion-content>
-  <ion-toolbar class="home-toolbar">
-    <button ion-button menuToggle icon-only id="homePageHamburgerMenu">
-      <ion-icon name='MTSApp-HamburgMenu'></ion-icon>
+<ion-toolbar class="home-toolbar">
+  <button ion-button menuToggle icon-only id="homePageHamburgerMenu">
+    <ion-icon name='MTSApp-HamburgMenu'></ion-icon>
+  </button>
+  <ion-title class="home-title">
+    <span id="homePageMainTitle">{{ 'APP_HOME_TITLE' | translate }}</span>
+  </ion-title>
+  <ion-buttons end>
+    <button id="help-button" attr.aria-label="{{ 'HELP_MODAL_ARIA_LABEL' | translate }}" ion-button clear (click)="presentHelpModal()">
+      <i class="help" class="fa fa-question-circle"></i>
     </button>
-    <ion-title>
-      <span id="homePageMainTitle">{{ 'APP_HOME_TITLE' | translate }}</span>
-    </ion-title>
-    <ion-buttons end>
-      <button id="help-button" attr.aria-label="{{ 'HELP_MODAL_ARIA_LABEL' | translate }}" ion-button clear (click)="presentHelpModal()">
-        <i class="help" class="fa fa-question-circle"></i>
-      </button>
-    </ion-buttons>
-  </ion-toolbar>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content>
   <div id="header-image-container">
     <img class="curved-img-portrait" src="assets/img/nightSkyCROP.png" alt="Header image">
     <img class="curved-img-landscape" src="assets/img/nightSkyCROPLandscape.png" alt="Header image">
