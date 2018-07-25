@@ -3,14 +3,12 @@ import { async, TestBed, inject, fakeAsync, tick } from "@angular/core/testing";
 import * as chai from "chai";
 import * as sinon from "sinon";
 import * as sinonChai from "sinon-chai";
-
+import { noop } from "../../constants";
 import { User } from "./user";
 import { Storage } from "@ionic/storage";
 
 const { expect } = chai;
 chai.use(sinonChai);
-
-const NOOP = () => {};
 
 describe("User Provider", () => {
   beforeEach(async(() => {
@@ -33,7 +31,7 @@ describe("User Provider", () => {
 
       sut.isEulaAgreed(val => {
         expect(val).to.be.true;
-      }, NOOP);
+      }, noop);
     }
   ));
 
@@ -48,7 +46,7 @@ describe("User Provider", () => {
           .withArgs("eula", "Yes")
           .resolves();
 
-        sut.setEulaAgreed(successSpy, NOOP);
+        sut.setEulaAgreed(successSpy, noop);
 
         tick(10000);
         expect(successSpy).to.have.been.called;

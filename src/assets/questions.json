@@ -1,0 +1,253 @@
+[
+  {
+    "type": "boolean",
+    "id": "1",
+    "name": "hasMoved",
+    "title": {
+      "en": "Address and Direct Deposit",
+      "fr": "Adresse et dépôt direct"
+    },
+    "question": {
+      "en":
+        "Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
+      "fr":
+        "Avez-vous déménagé, changé d'adresse postale ou modifié l'information bancaire fournie pour le dépôt direct ?"
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "redirect_to_name": "outOfCanada"
+        }
+      }
+    ],
+    "validations": ["mandatory"]
+  },
+  {
+    "type": "boolean",
+    "id": "2",
+    "name": "outOfCanada",
+    "title": {
+      "en": "Outside Canada",
+      "fr": "Hors Canada"
+    },
+    "question": {
+      "en":
+        "Were you outside Canada between Monday and Friday during the period of this report?",
+      "fr":
+        "Étiez-vous à l'extérieur du Canada entre le lundi et le vendredi pendant la période visée par cette déclaration ?"
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "redirect_to_name": "selfEmployed"
+        }
+      }
+    ],
+    "validations": ["mandatory"]
+  },
+  {
+    "type": "boolean",
+    "id": "3",
+    "name": "selfEmployed",
+    "title": {
+      "en": "Work and Wages",
+      "fr": "Travail-Gains"
+    },
+    "question": {
+      "en": "Are you self-employed?",
+      "fr": "Travaillez-vous à votre compte ?"
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "redirect_to_name": "earnedWages"
+        }
+      }
+    ],
+    "validations": ["mandatory"]
+  },
+  {
+    "type": "boolean",
+    "id": "4",
+    "name": "earnedWages",
+    "title": {
+      "en": "Work and Wages",
+      "fr": "Travail-Gains"
+    },
+    "question": {
+      "en":
+        "Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming.",
+      "fr":
+        "Avez-vous travaillé ou reçu une rémunération pendant la période visée par cette déclaration ? Ceci inclut un travail pour lequel vous ne serez pas payé ou serez payé plus tard ou un travail autonome y compris un revenu agricole."
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "redirect_to_name": "attendedSchool"
+        }
+      }
+    ],
+    "validations": ["mandatory"]
+  },
+  {
+    "type": "boolean",
+    "id": "5",
+    "name": "attendedSchool",
+    "title": {
+      "en": "Training",
+      "fr": "Formation"
+    },
+    "question": {
+      "en":
+        "Did you attend school or a training course during the period of this report?",
+      "fr":
+        "Étiez-vous aux études ou en formation pendant la période visée par cette déclaration ?"
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "redirect_to_name": "ableToWork"
+        }
+      }
+    ],
+
+    "validations": ["mandatory"]
+  },
+  {
+    "type": "boolean",
+    "id": "6",
+    "name": "ableToWork",
+    "title": {
+      "en": "Availability",
+      "fr": "Disponibilité"
+    },
+    "question": {
+      "en":
+        "Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
+      "fr":
+        "Étiez-vous prêt et disposé à travailler, et capable de le faire chaque jour, du lundi au vendredi, pendant chaque semaine de la période visée par cette déclaration ?"
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_name": "otherMoney"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      }
+    ],
+    "validations": ["mandatory"]
+  },
+  {
+    "type": "boolean",
+    "id": "7",
+    "name": "otherMoney",
+    "title": {
+      "en": "Other Money",
+      "fr": "Autres sommes d'argent"
+    },
+    "question": {
+      "en":
+        "Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
+      "fr":
+        "Avez-vous reçu ou recevrez-vous d'autres sommes d'argent que celles déjà mentionnées pour la période visée par cette déclaration ?"
+    },
+    "answers": [
+      {
+        "text": {
+          "en": "Yes",
+          "fr": "Oui"
+        },
+        "action": {
+          "redirect_to_id": "10"
+        }
+      },
+      {
+        "text": {
+          "en": "No",
+          "fr": "Non"
+        },
+        "action": {
+          "terminate": "true"
+        }
+      }
+    ],
+    "validations": ["mandatory"]
+  }
+]

@@ -86,10 +86,10 @@ export class User {
       .get("lang")
       .then((_Lang: string) => {
         if (_Lang == "fr") {
-          this.lang = LangCodes.FR;
+          this.lang = LangCodes.en;
           this.langReady = true;
         } else if (_Lang == "en") {
-          this.lang = LangCodes.EN;
+          this.lang = LangCodes.fr;
           this.langReady = true;
         }
         success();
@@ -114,10 +114,10 @@ export class User {
 
   public alternateLang() {
     this.GetLang(
-      (_Lang: string) => {
-        let lc = LangCodes.EN;
-        if (_Lang == "en") {
-          lc = LangCodes.FR;
+      (val: string) => {
+        let lc = LangCodes.en;
+        if (val == "en") {
+          lc = LangCodes.fr;
         }
 
         this.setLang(

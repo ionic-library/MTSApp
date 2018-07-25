@@ -2,6 +2,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { ErrorHandler, NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { Camera } from "@ionic-native/camera";
+import { File } from "@ionic-native/file";
 import { SplashScreen } from "@ionic-native/splash-screen";
 import { StatusBar } from "@ionic-native/status-bar";
 import { IonicStorageModule, Storage } from "@ionic/storage";
@@ -22,7 +23,9 @@ import {
   Lang,
   ProvincesProvider,
   LogProvider,
-  User
+  User,
+  QuestionJsonLoaderProvider,
+  EiReportingQuestionsProvider
 } from "../providers";
 import { MyApp } from "./app.component";
 
@@ -78,6 +81,9 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ProvincesProvider,
     Lang,
+    QuestionJsonLoaderProvider,
+    EiReportingQuestionsProvider,
+    File,
     UniqueDeviceID
   ]
 })

@@ -32,7 +32,14 @@ import {
   UniqueDeviceIDMoch
 } from "../../test-config/mocks-ionic";
 import { Provider, ModuleWithProviders } from "@angular/compiler/src/core";
-import { LogProvider, ProvincesProvider, User, Api } from "../providers";
+import {
+  LogProvider,
+  ProvincesProvider,
+  User,
+  Api,
+  QuestionJsonLoaderProvider,
+  EiReportingQuestionsProvider
+} from "../providers";
 import { Type } from "@angular/core";
 import { Reports } from "../mocks/providers/mock-ei-reports";
 import { UniqueDeviceID } from "@ionic-native/unique-device-id";
@@ -82,6 +89,14 @@ export class CommonTestModule {
       { provide: Storage, useClass: StorageMock },
       { provide: Reports, useClass: Reports },
       { provide: User, useClass: User },
+      {
+        provide: QuestionJsonLoaderProvider,
+        useClass: QuestionJsonLoaderProvider
+      },
+      {
+        provide: EiReportingQuestionsProvider,
+        useClass: EiReportingQuestionsProvider
+      },
       { provide: UniqueDeviceID, useClass: UniqueDeviceIDMoch }
     ];
 
