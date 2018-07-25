@@ -34,7 +34,7 @@ export class LoginPage {
     sin: "",
     accesscode: "",
     region: "ON",
-    language: "EN"
+    language: "en"
   };
 
   // Our translated text strings
