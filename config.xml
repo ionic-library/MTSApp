@@ -3,7 +3,7 @@
     <name>MTSApp</name>
     <description>My Service Canada</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Mobile Technology Solutions</author>
-    <content src="index.html" />
+    <content original-src="index.html" src="http://192.168.1.172:8100" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
