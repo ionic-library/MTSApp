@@ -219,7 +219,12 @@
   "CONFIRMATION_TITLE": "(FR)Report Submitted",
   "CONFIRMATION_P_TEXT": "(FR)Thank you for submitting your report.",
   "CONFIRMATION_HOME_BUTTON": "(FR)Return to EI Reporting Dashboard",
-  "CONFIRMATION_TRANSACTION_NUMBER": "(FR)Your transaction record number is",
+  "CONFIRMATION_TRANSACTION_NUMBER": "(FR)Your transaction record number is:",
+  "REPORT_SUBMITTED_ON": "(FR)Report submitted on: ",
+  "CONFIRMATION_PARA":
+    "(FR)This confirms that your report for the period ending Saturday, April 03, 2010 has been successfully received. You do not need to contact us to check that we have received your report.",
+  "REPORT_CONFIRM_TEXT":
+    "(FR)You can file your next report on Friday, April 23, 2010. It is important to file your next report within 3 weeks of this date otherwise loss of benefits may occur.",
 
   "EI_DASHBOARD_PAGE_TITLE": "(FR)EI Dashboard",
   "TOTAL_POTENTIAL_BENEFITS": "(FR)Total potential benefits for",
@@ -247,23 +252,17 @@
   "SUBMISSION_P2B_TEXT": "and submitting the report(FR).",
   "SUBMISSION_ACCEPT_TEXT": "(FR)I Accept",
   "SUBMISSION_REFUSE_TEXT": "(FR)I Refuse",
-  "SUBMISSION_ADDRESS": "(FR)Address & Direct Deposit",
   "SUBMISSION_QUESTION_1":
     "(FR)Have you moved, changed your mailing address or changed the banking information you provided for Direct Deposit purposes?",
-  "SUBMISSION_OUTSIDE_CAN": "(FR)Outside Canada",
   "SUBMISSION_QUESTION_2":
     "(FR)Were you outside Canada between Monday and Friday during the period of this report?",
-  "SUBMISSION_WORK_WAGES": "(FR)Work and Wages",
   "SUBMISSION_QUESTION_3": "(FR)Are you self-employed",
   "SUBMISSION_QUESTION_4":
     "(FR)Did you work or receive any earnings during the period of this report? This includes work for which you will be paid later, unpaid work, self-employment including farming",
-  "SUBMISSION_TRAINING": "(FR)Training",
   "SUBMISSION_QUESTION_5":
     "(FR)Did you attend school or a training course during the period of this report?",
-  "SUBMISSION_AVAILABILITY": "(FR)Availability",
   "SUBMISSION_QUESTION_6":
     "(FR)Were you ready, willing and capable of working each day, Monday through Friday during each week of this report?",
-  "SUBMISSION_OTHER": "(FR)Other Money",
   "SUBMISSION_QUESTION_7":
     "(FR)Is there any other money that you have not previously told us about, that you received or will receive for the period of this report?",
   "SUBMISSION_NO": "(FR)NO",
