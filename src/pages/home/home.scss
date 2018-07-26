@@ -199,14 +199,14 @@ page-home {
   // iPhone 5/SE Media Query
   @media only screen and (max-width: 320px) {
     .home-title {
-      padding-right: 80px;
+      padding: 0 70px 0;
     }
     .curved-img-portrait {
       background-color: #fff;
     }
     .hello-text {
       width: 100%;
-      top: 12vh;
+      top: 10vh;
       left: 12px;
       .greeting {
         .greeting-span {
