@@ -3,7 +3,7 @@ page-home {
     .toolbar-background {
       display: none;
     }
-    .toolbar-title {
+    .home-title {
       color: white;
     }
     .toolbar-background-ios {
@@ -17,8 +17,8 @@ page-home {
   // Home Page Header
   .curved-img-portrait {
     width: 100%;
-    margin-top: -4em;
     filter: brightness(250%);
+    background-color: #fff;
   }
   // Landscape Header Image
   .curved-img-landscape {
@@ -27,8 +27,8 @@ page-home {
   // Personalization Text
   .hello-text {
     position: absolute;
-    top: 7vh;
-    left: 2em;
+    top: 7.5vh;
+    left: 20px;
     z-index: 10;
     color: white;
 
@@ -119,7 +119,7 @@ page-home {
   // Grid Item Styling
   .grid .row .grid-column .service-select {
     border: 1px solid #e6e9ee;
-    padding: 1vh;
+    padding: 2vh;
     text-align: center;
   }
   .service-button {
@@ -167,14 +167,16 @@ page-home {
     }
     .curved-img-landscape {
       display: flex;
-      margin-top: -4em;
       filter: brightness(250%);
+      background-color: #fff;
     }
     .hello-text {
       width: 100%;
       top: 10vh;
       .greeting {
-        font-size: 18px;
+        .greeting-span {
+          font-size: 18px;
+        }
       }
       .locationInfo {
         position: absolute;
@@ -194,11 +196,37 @@ page-home {
       display: unset;
     }
   }
+  // iPhone 5/SE Media Query
+  @media only screen and (max-width: 320px) {
+    .home-title {
+      padding-right: 80px;
+    }
+    .curved-img-portrait {
+      background-color: #fff;
+    }
+    .hello-text {
+      width: 100%;
+      top: 12vh;
+      left: 12px;
+      .greeting {
+        .greeting-span {
+          font-size: 16px;
+        }
+      }
+      .locationInfo {
+        position: absolute;
+        right: 0;
+        margin-right: 22px;
+        top: 0;
+      }
+    }
+  }
   // iPad Pro Media Query
   @media only screen and (orientation: landscape) and (min-width: 1200px) {
     .curved-img-landscape {
       display: flex;
       width: 100%;
+      background-color: #fff;
     }
     .portrait-grid {
       display: unset;
@@ -227,6 +255,7 @@ page-home {
     .curved-img-landscape {
       display: flex;
       width: 100%;
+      background-color: #fff;
     }
     .portrait-grid {
       display: unset;
