@@ -4,7 +4,7 @@
   <ion-card-header class="status-card-header">
     <ion-item class="status-card-header-wrapper">
       <p id="status-card-header-title">{{ 'STATUS_CARD_TITLE' | translate }}</p>
-      <button ion-button color="light" clear icon-end item-right id="view-details">{{ 'STATUS_CARD_DETAILS' | translate }}
+      <button ion-button color="light" clear icon-end item-right id="view-details" (click)="navigateToMobileReporting()">{{ 'STATUS_CARD_DETAILS' | translate }}
         <ion-icon name="arrow-forward"></ion-icon>
       </button>
     </ion-item>

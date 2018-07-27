@@ -43,27 +43,27 @@ describe("The Home Page Carousel", () => {
   });
 
   describe("Login Button", () => {
-    it("Should navigate to the EI Reporting Login Page when user is not logged in", inject(
+    it("Should navigate to the EI Dashboard Login Page when user is not logged in", inject(
       [NavController, User, HomePageCarouselComponent],
       (navCtl, user, sut) => {
         const navSpy = sinon.spy(navCtl, "push");
         sinon.stub(user, "isLoggedIn").returns(false);
 
-        sut.navigateToEIReportingPage();
+        sut.navigateToEIDashboardPage();
 
         expect(navSpy).to.have.been.calledWith(SitePages.EILogin);
       }
     ));
 
-    it("Should navigate to the EI Reporting Page when user is logged in", inject(
+    it("Should navigate to the EI Dashboard Page when user is logged in", inject(
       [NavController, User, HomePageCarouselComponent],
       (navCtl, user, sut) => {
         const navSpy = sinon.spy(navCtl, "push");
         sinon.stub(user, "isLoggedIn").returns(true);
 
-        sut.navigateToEIReportingPage();
+        sut.navigateToEIDashboardPage();
 
-        expect(navSpy).to.have.been.calledWith(SitePages.EiReporting);
+        expect(navSpy).to.have.been.calledWith(SitePages.EiDashboard);
       }
     ));
   });

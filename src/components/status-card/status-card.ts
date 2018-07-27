@@ -1,5 +1,8 @@
 import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
+import { SitePages } from "@pages";
+import { Logger } from "winston";
+import { LogProvider } from "@providers";
 
 /**
  * Generated class for the StatusCardComponent component.
@@ -12,6 +15,7 @@ import { NavController } from "ionic-angular";
   templateUrl: "status-card.html"
 })
 export class StatusCardComponent {
+  private readonly logger: Logger;
   text: string;
 
   current: number = 22;
@@ -28,8 +32,21 @@ export class StatusCardComponent {
   animation: string = "easeInOutCubic";
   animationDelay: number = 1;
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    private readonly logProvider: LogProvider
+  ) {
     console.log("Hello StatusCardComponent Component");
-    this.text = "Hello World";
+    this.logger = this.logProvider.getLogger();
   }
+
+  public navigateToMobileReporting = () =>
+    this.navigateToPage(SitePages.EiReporting);
+
+  private readonly navigateToPage = (page: SitePages) => {
+    this.navCtrl
+      .push(page)
+      .then(() => this.logger.info("Navigating to : " + page.toString()))
+      .catch((reason: any) => this.logger.error(reason));
+  };
 }

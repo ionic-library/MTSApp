@@ -90,7 +90,7 @@ export class LoginPage {
       "Lang",
       () => {
         this.navCtrl
-          .push(SitePages.EiReporting)
+          .push(SitePages.EiDashboard)
           .then(() => this.logger.info("Login Successfull"))
           .catch((reason: any) => this.logger.error(reason));
       },

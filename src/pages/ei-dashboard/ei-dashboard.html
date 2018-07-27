@@ -11,6 +11,11 @@
       <ion-icon class="menu" name='MTSApp-HamburgMenu'></ion-icon>
     </button>
     <ion-title>{{ 'EI_DASHBOARD_PAGE_TITLE' | translate }}</ion-title>
+    <ion-buttons end>
+      <button id="help-button" attr.aria-label="{{ 'HELP_MODAL_ARIA_LABEL' | translate }}" ion-button clear (click)="presentHelpModal()">
+        <i class="help" class="fa fa-question-circle"></i>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
