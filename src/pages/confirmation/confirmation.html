@@ -14,21 +14,21 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-grid class="grid">
-    <ion-row class="row1" justify-content-center align-items-end>
-      <ion-icon class="checkmark" name="checkmark-circle"></ion-icon>
+<ion-content>
+  <ion-grid id="wrapper" class="grid">
+    <ion-row id="row1" justify-content-center align-items-start>
+      <ion-icon id="checkmark" name="checkmark-circle"></ion-icon>
     </ion-row>
     <ion-row justify-content-start align-items-start>
       <p id="thankYou">{{ 'CONFIRMATION_P_TEXT' | translate }}</p>
-      <p>{{'REPORT_SUBMITTED_ON' | translate}} April 09, 2010 09:48:23</p>
+      <p id="reportSubmitted">{{'REPORT_SUBMITTED_ON' | translate}} April 09, 2010 09:48:23</p>
       <p id="reportText">{{'CONFIRMATION_PARA' | translate}}</p>
     </ion-row>
     <ion-row id="row3">
-      <p>{{'CONFIRMATION_TRANSACTION_NUMBER' | translate}} <br><a class="transNumber">23432423-2R2</a></p>
-      <p>{{'REPORT_CONFIRM_TEXT' | translate}}</p>
+      <p id="transaction">{{'CONFIRMATION_TRANSACTION_NUMBER' | translate}} <br><a class="transNumber">23432423-2R2</a></p>
+      <p id="lastP">{{'REPORT_CONFIRM_TEXT' | translate}}</p>
     </ion-row>
-    <ion-row class="row2" justify-content-center align-items-end>
+    <ion-row id="row2" justify-content-center align-items-end align-self-end>
       <button class="home" ion-button block (click)="this.navigateEiDashboard()">{{'CONFIRMATION_HOME_BUTTON' | translate }}</button>
     </ion-row>
   </ion-grid>
