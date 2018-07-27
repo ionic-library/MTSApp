@@ -11,7 +11,7 @@ page-confirmation {
   }
 
   .home {
-    width: 300px;
+    width: 80%;
     height: 40px;
     border-radius: 2.5px;
     background-color: #0f71c4;
@@ -64,6 +64,44 @@ page-confirmation {
 
   #wrapper {
     padding: 0 20px 10px 20px;
+  }
+
+  @media only screen and (orientation: landscape) and (min-width: 568px) and (max-width: 640px) {
+    #wrapper {
+      height: 120%;
+    }
+
+    #checkmark {
+      font-size: 6rem;
+    }
+
+    #row1 {
+      height: 10%;
+      margin-bottom: 10px;
+    }
+    #lastP {
+      margin: 0 0;
+    }
+
+    #row2 {
+      margin-top: 10px;
+    }
+
+    #thankYou {
+      margin: 10px 0 0 0;
+    }
+
+    #transaction {
+      margin: 0 0;
+    }
+
+    #reportSubmitted {
+      margin: 5px 0;
+    }
+
+    #reportText {
+      margin: 0 0 5px 0;
+    }
   }
 
   @media only screen and (orientation: portrait) and (min-width: 319px) and (max-width: 321px) {
