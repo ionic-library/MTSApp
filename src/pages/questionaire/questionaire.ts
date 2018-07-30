@@ -43,8 +43,7 @@ export class QuestionairePage {
   // Reference Navbar Back button and Override navCtrl.pop() to set Nav Guard flag to TRUE
   @ViewChild(Navbar) navBar: Navbar;
   // After page loads, set back button override
-  ionViewDidLoad() {
-    this.setBackButtonAction();
+  ionViewDidEnter() {
     const activeView = this.navCtrl.getActive();
     const previousView = this.navCtrl.getPrevious(activeView);
     if (this.viewRegEx.test(previousView.component.name)) {
@@ -52,28 +51,18 @@ export class QuestionairePage {
     } else {
       this.allowedToLeave = false;
     }
+    this.setBackButtonAction();
     // Register override for Android hardware back button
     this.platform.registerBackButtonAction(() => {
-      const activeView = this.navCtrl.getActive();
-      const previousView = this.navCtrl.getPrevious(activeView);
-      if (this.viewRegEx.test(previousView.component.name)) {
-        this.allowedToLeave = true;
-      } else {
-        this.allowedToLeave = false;
-      }
+      this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
+      this.allowedToLeave = false;
     });
   }
   // Navbar Back button override
   setBackButtonAction() {
-    const activeView = this.navCtrl.getActive();
-    const previousView = this.navCtrl.getPrevious(activeView);
     this.navBar.backButtonClick = () => {
-      if (this.viewRegEx.test(previousView.component.name)) {
-        this.allowedToLeave = true;
-      } else {
-        this.allowedToLeave = false;
-      }
       this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
+      this.allowedToLeave = false;
     };
   }
   // Nav Guard

@@ -28,6 +28,8 @@ export class Questionaire_3Page {
   endDate: any;
   allowedToLeave: boolean = false;
 
+  viewRegEx = new RegExp("^QuestionaireS*");
+
   constructor(
     public translate: TranslateService,
     public navParams: NavParams,
@@ -49,18 +51,23 @@ export class Questionaire_3Page {
   // Reference Navbar Back button and Override navCtrl.pop() to set Nav Guard flag to TRUE
   @ViewChild(Navbar) navBar: Navbar;
   // After page loads, set back button override
-  ionViewDidLoad() {
+  ionViewDidEnter() {
+    const activeView = this.navCtrl.getActive();
+    const previousView = this.navCtrl.getPrevious(activeView);
+    if (this.viewRegEx.test(previousView.component.name)) {
+      this.allowedToLeave = true;
+    } else {
+      this.allowedToLeave = false;
+    }
     this.setBackButtonAction();
     // Register override for Android hardware back button
     this.platform.registerBackButtonAction(() => {
-      this.allowedToLeave = true;
       this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
     });
   }
   // Navbar Back button override
   setBackButtonAction() {
     this.navBar.backButtonClick = () => {
-      this.allowedToLeave = true;
       this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
     };
   }
