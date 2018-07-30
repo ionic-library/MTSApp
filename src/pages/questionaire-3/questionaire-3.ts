@@ -1,11 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import {
   IonicPage,
   NavController,
   NavParams,
   ModalController,
-  AlertController
+  AlertController,
+  Navbar
 } from "ionic-angular";
 import { SitePages } from "@pages";
 
@@ -43,10 +44,20 @@ export class Questionaire_3Page {
     //this.params = { id: 42 };
   }
 
+  // Reference Navbar Back button and Override navCtrl.pop() to set Nav Guard flag to TRUE
+  @ViewChild(Navbar) navBar: Navbar;
+  // After page loads, set back button override
   ionViewDidLoad() {
-    this.logger.info("ionViewDidLoad QuestionairePage");
+    this.setBackButtonAction();
   }
-
+  // Navbar Back button override
+  setBackButtonAction() {
+    this.navBar.backButtonClick = () => {
+      this.allowedToLeave = true;
+      this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
+    };
+  }
+  // Nav Guard
   ionViewCanLeave() {
     if (!this.allowedToLeave) {
       return new Promise<any>((resolve, reject) => {
