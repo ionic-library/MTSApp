@@ -1,10 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
 import { TranslateService } from "@ngx-translate/core";
 import {
   IonicPage,
   NavController,
   NavParams,
-  ModalController
+  ModalController,
+  Platform,
+  Navbar
 } from "ionic-angular";
 import { SitePages } from "@pages";
 import { Logger } from "winston";
@@ -23,22 +25,53 @@ export class QuestionairePage {
 
   allowedToLeave: boolean = false;
 
+  viewRegEx = new RegExp("^QuestionaireS*");
+
   constructor(
     public translate: TranslateService,
     public navParams: NavParams,
     public navCtrl: NavController,
     public modalCtrl: ModalController,
     public alertCtrl: AlertController,
+    public platform: Platform,
     private readonly logProvider: LogProvider
   ) {
     this.logger = this.logProvider.getLogger();
     this.pushPage = SitePages.Questionaire2;
   }
 
+  // Reference Navbar Back button and Override navCtrl.pop() to set Nav Guard flag to TRUE
+  @ViewChild(Navbar) navBar: Navbar;
+  // After page loads, set back button override
   ionViewDidLoad() {
-    this.logger.info("ionViewDidLoad QuestionairePage");
+    this.setBackButtonAction();
+    const activeView = this.navCtrl.getActive();
+    const previousView = this.navCtrl.getPrevious(activeView);
+    if (this.viewRegEx.test(previousView.component.name)) {
+      this.allowedToLeave = true;
+    } else {
+      this.allowedToLeave = false;
+    }
+    // Register override for Android hardware back button
+    this.platform.registerBackButtonAction(() => {
+      this.allowedToLeave = true;
+      this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
+    });
   }
-
+  // Navbar Back button override
+  setBackButtonAction() {
+    const activeView = this.navCtrl.getActive();
+    const previousView = this.navCtrl.getPrevious(activeView);
+    this.navBar.backButtonClick = () => {
+      if (this.viewRegEx.test(previousView.component.name)) {
+        this.allowedToLeave = true;
+      } else {
+        this.allowedToLeave = false;
+      }
+      this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
+    };
+  }
+  // Nav Guard
   ionViewCanLeave() {
     if (!this.allowedToLeave) {
       return new Promise<any>((resolve, reject) => {
