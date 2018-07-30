@@ -11,7 +11,7 @@ page-confirmation {
   }
 
   .home {
-    width: 300px;
+    width: 80%;
     height: 40px;
     border-radius: 2.5px;
     background-color: #0f71c4;
@@ -66,6 +66,44 @@ page-confirmation {
     padding: 0 20px 10px 20px;
   }
 
+  @media only screen and (orientation: landscape) and (min-width: 568px) and (max-width: 823px) {
+    #wrapper {
+      height: 115%;
+    }
+
+    #checkmark {
+      font-size: 6rem;
+    }
+
+    #row1 {
+      height: 10%;
+      margin-bottom: 10px;
+    }
+    #lastP {
+      margin: 0 0;
+    }
+
+    #row2 {
+      margin-top: 10px;
+    }
+
+    #thankYou {
+      margin: 10px 0 5px 0;
+    }
+
+    #transaction {
+      margin: 0 0;
+    }
+
+    #reportSubmitted {
+      margin: 5px 0;
+    }
+
+    #reportText {
+      margin: 0 0 5px 0;
+    }
+  }
+
   @media only screen and (orientation: portrait) and (min-width: 319px) and (max-width: 321px) {
     #transaction {
       margin: 10px 0;
@@ -76,6 +114,7 @@ page-confirmation {
     }
     #thankYou {
       margin: 5px 0;
+      font-size: 2rem;
     }
     #reportText {
       margin: 5px 0;
@@ -96,7 +135,7 @@ page-confirmation {
       margin-top: 0px;
     }
   }
-  @media only screen and (orientation: portrait) and (min-width: 360px) and (max-width: 361px) {
+  @media only screen and (orientation: portrait) and (min-width: 360px) and (max-width: 360px) {
     #wrapper {
       padding: 15px 20px 15px 20px;
     }
@@ -115,6 +154,139 @@ page-confirmation {
     #checkmark {
       font-size: 6rem;
       margin-bottom: 10px;
+    }
+  }
+
+  @media only screen and (orientation: landscape) and (max-width: 568px) and (max-height: 320px) {
+    #wrapper {
+      padding-bottom: 0;
+    }
+  }
+
+  @media only screen and (orientation: landscape) and (min-width: 736px) and (max-width: 823px) {
+    #thankYou {
+      margin-top: 20px;
+    }
+  }
+
+  @media only screen and (orientation: portrait) and (min-width: 768px) and (max-width: 768px) {
+    #checkmark {
+      font-size: 13rem;
+      padding-bottom: 15px;
+    }
+    #thankYou {
+      font-size: 3.5rem;
+    }
+
+    #reportSubmitted,
+    #reportText,
+    #transaction,
+    #lastP {
+      font-size: 2.5rem;
+    }
+
+    #wrapper {
+      padding: 25px;
+    }
+
+    .home {
+      font-size: 2.5rem;
+      height: 60px;
+    }
+    #row2 {
+      margin-top: 30px;
+    }
+    #transaction {
+      width: 100%;
+    }
+  }
+  @media only screen and (orientation: portrait) and (min-width: 1024px) and (max-width: 1024px) {
+    #checkmark {
+      font-size: 16rem;
+      padding-bottom: 15px;
+    }
+    #thankYou {
+      font-size: 4rem;
+    }
+
+    #reportSubmitted {
+      margin: 30px 0;
+    }
+
+    #reportSubmitted,
+    #reportText,
+    #transaction,
+    #lastP {
+      font-size: 3.5rem;
+    }
+
+    #row2 {
+      margin-top: 50px;
+    }
+    .home {
+      font-size: 3rem;
+      height: 75px;
+    }
+    #wrapper {
+      padding: 0 40px 40px;
+    }
+  }
+  @media only screen and (orientation: landscape) and (min-width: 1024px) {
+    #checkmark {
+      font-size: 13rem;
+    }
+    #thankYou {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+    }
+
+    #reportSubmitted,
+    #reportText,
+    #transaction,
+    #lastP {
+      font-size: 2.5rem;
+      margin: 10px;
+    }
+
+    #row2 {
+      margin-top: 15px;
+    }
+    .home {
+      font-size: 2.5rem;
+      height: 75px;
+    }
+    #wrapper {
+      height: 100%;
+      padding: 0 40px 20px;
+    }
+  }
+  @media only screen and (orientation: landscape) and (min-width: 1366px) {
+    #checkmark {
+      font-size: 15rem;
+    }
+    #thankYou {
+      font-size: 4.5rem;
+      margin-bottom: 20px;
+    }
+
+    #reportSubmitted,
+    #reportText,
+    #transaction,
+    #lastP {
+      font-size: 3rem;
+      margin: 15px 0;
+    }
+
+    #row2 {
+      margin-top: 15px;
+    }
+    .home {
+      font-size: 3.5rem;
+      height: 75px;
+    }
+    #wrapper {
+      height: 100%;
+      padding: 0 40px 20px;
     }
   }
 }
