@@ -54,8 +54,13 @@ export class QuestionairePage {
     }
     // Register override for Android hardware back button
     this.platform.registerBackButtonAction(() => {
-      this.allowedToLeave = true;
-      this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
+      const activeView = this.navCtrl.getActive();
+      const previousView = this.navCtrl.getPrevious(activeView);
+      if (this.viewRegEx.test(previousView.component.name)) {
+        this.allowedToLeave = true;
+      } else {
+        this.allowedToLeave = false;
+      }
     });
   }
   // Navbar Back button override
