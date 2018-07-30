@@ -47,6 +47,7 @@ export class Questionaire_6Page {
   // After page loads, set back button override
   ionViewDidLoad() {
     this.setBackButtonAction();
+    // Register override for Android hardware back button
     this.platform.registerBackButtonAction(() => {
       this.allowedToLeave = true;
       this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
