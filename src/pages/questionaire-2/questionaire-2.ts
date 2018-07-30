@@ -4,7 +4,8 @@ import {
   IonicPage,
   NavParams,
   ModalController,
-  NavController
+  NavController,
+  AlertController
 } from "ionic-angular";
 import { SitePages } from "@pages";
 
@@ -23,11 +24,14 @@ export class Questionaire_2Page {
   pushPageNext: any;
   startDate: any;
   endDate: any;
+  allowedToLeave: boolean = false;
+
   constructor(
     public translate: TranslateService,
     public navParams: NavParams,
     public navCtrl: NavController,
     public modalCtrl: ModalController,
+    public alertCtrl: AlertController,
     private readonly logProvider: LogProvider
   ) {
     this.logger = this.logProvider.getLogger();
@@ -39,6 +43,60 @@ export class Questionaire_2Page {
 
   ionViewDidLoad() {
     this.logger.info("ionViewDidLoad QuestionairePage");
+  }
+
+  ionViewCanLeave() {
+    if (!this.allowedToLeave) {
+      return new Promise<any>((resolve, reject) => {
+        const alert = this.alertCtrl.create({
+          title: "Are you sure you want to leave this page?",
+          message: "Current progress will be lost.",
+          buttons: [
+            {
+              text: "Cancel",
+              role: "cancel",
+              handler: () => {
+                alert
+                  .dismiss()
+                  .then(reject)
+                  .catch((reason: any) => this.logger.error(reason));
+                return false;
+              }
+            },
+            {
+              text: "Continue",
+              handler: () => {
+                alert
+                  .dismiss()
+                  .then(resolve)
+                  .catch((reason: any) => this.logger.error(reason));
+                return false;
+              }
+            }
+          ]
+        });
+        alert.present().catch((reason: any) => this.logger.error(reason));
+      });
+    } else {
+      this.allowedToLeave = false;
+      return true;
+    }
+  }
+
+  nextQuestion() {
+    this.allowedToLeave = true;
+    this.navCtrl
+      .push(this.pushPageNext)
+      .then(() => this.logger.info("Navigating to : Next question..."))
+      .catch((reason: any) => this.logger.error(reason));
+  }
+
+  previousQuestion() {
+    this.allowedToLeave = true;
+    this.navCtrl
+      .push(this.pushPagePrevious)
+      .then(() => this.logger.info("Navigating to : Previous question..."))
+      .catch((reason: any) => this.logger.error(reason));
   }
 
   presentHelpModal() {
