@@ -44,26 +44,31 @@ export class QuestionairePage {
   @ViewChild(Navbar) navBar: Navbar;
   // After page loads, set back button override
   ionViewDidEnter() {
-    const activeView = this.navCtrl.getActive();
-    const previousView = this.navCtrl.getPrevious(activeView);
-    if (this.viewRegEx.test(previousView.component.name)) {
-      this.allowedToLeave = true;
-    } else {
-      this.allowedToLeave = false;
-    }
+    this.contextCheck();
     this.setBackButtonAction();
     // Register override for Android hardware back button
     this.platform.registerBackButtonAction(() => {
+      this.contextCheck();
       this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
-      this.allowedToLeave = false;
     });
   }
   // Navbar Back button override
   setBackButtonAction() {
     this.navBar.backButtonClick = () => {
+      this.contextCheck();
       this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
-      this.allowedToLeave = false;
     };
+    this.allowedToLeave = false;
+  }
+  contextCheck() {
+    const activeView = this.navCtrl.getActive();
+    const previousView = this.navCtrl.getPrevious(activeView);
+    console.log(previousView.component.name);
+    if (this.viewRegEx.test(previousView.component.name)) {
+      this.allowedToLeave = true;
+    } else {
+      this.allowedToLeave = false;
+    }
   }
   // Nav Guard
   ionViewCanLeave() {

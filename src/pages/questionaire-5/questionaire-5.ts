@@ -50,13 +50,7 @@ export class Questionaire_5Page {
   @ViewChild(Navbar) navBar: Navbar;
   // After page loads, set back button override
   ionViewDidEnter() {
-    const activeView = this.navCtrl.getActive();
-    const previousView = this.navCtrl.getPrevious(activeView);
-    if (this.viewRegEx.test(previousView.component.name)) {
-      this.allowedToLeave = true;
-    } else {
-      this.allowedToLeave = false;
-    }
+    this.contextCheck();
     this.setBackButtonAction();
     // Register override for Android hardware back button
     this.platform.registerBackButtonAction(() => {
@@ -68,6 +62,16 @@ export class Questionaire_5Page {
     this.navBar.backButtonClick = () => {
       this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
     };
+  }
+  contextCheck() {
+    const activeView = this.navCtrl.getActive();
+    const previousView = this.navCtrl.getPrevious(activeView);
+    console.log(previousView.component.name);
+    if (this.viewRegEx.test(previousView.component.name)) {
+      this.allowedToLeave = true;
+    } else {
+      this.allowedToLeave = false;
+    }
   }
   // Nav Guard
   ionViewCanLeave() {
