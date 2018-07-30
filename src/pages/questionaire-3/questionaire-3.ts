@@ -6,7 +6,8 @@ import {
   NavParams,
   ModalController,
   AlertController,
-  Navbar
+  Navbar,
+  Platform
 } from "ionic-angular";
 import { SitePages } from "@pages";
 
@@ -33,6 +34,7 @@ export class Questionaire_3Page {
     public navCtrl: NavController,
     public modalCtrl: ModalController,
     public alertCtrl: AlertController,
+    public platform: Platform,
     private readonly logProvider: LogProvider
   ) {
     //this.report = navParams.get('report');
@@ -49,6 +51,10 @@ export class Questionaire_3Page {
   // After page loads, set back button override
   ionViewDidLoad() {
     this.setBackButtonAction();
+    this.platform.registerBackButtonAction(() => {
+      this.allowedToLeave = true;
+      this.navCtrl.pop().catch((reason: any) => this.logger.error(reason));
+    });
   }
   // Navbar Back button override
   setBackButtonAction() {
