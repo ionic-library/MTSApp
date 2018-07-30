@@ -65,7 +65,7 @@
               -->
               </ion-col>
           <ion-col>
-              <button id="next" ion-button color="positive" block [navPush]="pushPage" >{{ 'QUESTION_NEXT' | translate }}</button>
+              <button id="next" ion-button color="positive" block (click)="nextQuestion()" >{{ 'QUESTION_NEXT' | translate }}</button>
           </ion-col>
         </ion-row>
 
